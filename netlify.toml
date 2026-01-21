@@ -9,12 +9,8 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
 
+# Redirect root to component gallery (using 302 to avoid caching issues during development)
 [[redirects]]
   from = "/"
   to = "/component-gallery.html"
-  status = 200
-
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+  status = 302
