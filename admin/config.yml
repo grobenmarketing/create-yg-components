@@ -1,0 +1,125 @@
+backend:
+  name: git-gateway
+  branch: claude/organize-reference-folder-ArKd7
+
+# Optional: Use this for local development
+# local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  # Main Component Gallery
+  - name: "main"
+    label: "Main Pages"
+    files:
+      - label: "Component Gallery"
+        name: "component-gallery"
+        file: "component-gallery.html"
+        fields:
+          - { label: "Body", name: "body", widget: "code", default_language: "html", allow_language_selection: true }
+
+  # Reference HTML Pages
+  - name: "reference-pages"
+    label: "Reference Pages"
+    folder: "reference"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "code", default_language: "html", allow_language_selection: true }
+
+  # CSS Files - Components
+  - name: "css-components"
+    label: "CSS - Components"
+    folder: "reference/css/components"
+    create: true
+    slug: "{{slug}}"
+    extension: "css"
+    format: "frontmatter"
+    fields:
+      - { label: "File Name", name: "title", widget: "string" }
+      - { label: "CSS Code", name: "body", widget: "code", default_language: "css" }
+
+  # CSS Files - Pages
+  - name: "css-pages"
+    label: "CSS - Pages"
+    folder: "reference/css/pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "css"
+    format: "frontmatter"
+    fields:
+      - { label: "File Name", name: "title", widget: "string" }
+      - { label: "CSS Code", name: "body", widget: "code", default_language: "css" }
+
+  # CSS Files - Global
+  - name: "css-global"
+    label: "CSS - Global Styles"
+    files:
+      - label: "Global CSS"
+        name: "global"
+        file: "reference/css/global.css"
+        fields:
+          - { label: "CSS Code", name: "body", widget: "code", default_language: "css" }
+      - label: "Page Styles CSS"
+        name: "page-styles"
+        file: "reference/css/page-styles.css"
+        fields:
+          - { label: "CSS Code", name: "body", widget: "code", default_language: "css" }
+
+  # JavaScript Files
+  - name: "javascript"
+    label: "JavaScript"
+    folder: "reference/js"
+    create: true
+    slug: "{{slug}}"
+    extension: "js"
+    format: "frontmatter"
+    fields:
+      - { label: "File Name", name: "title", widget: "string" }
+      - { label: "JavaScript Code", name: "body", widget: "code", default_language: "javascript" }
+
+  # Include Components
+  - name: "includes-components"
+    label: "Includes - Components"
+    folder: "reference/includes/components"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Component Name", name: "title", widget: "string" }
+      - { label: "HTML Code", name: "body", widget: "code", default_language: "html" }
+
+  # Include Files (Header, Footer, etc.)
+  - name: "includes-main"
+    label: "Includes - Main"
+    files:
+      - label: "Header"
+        name: "header"
+        file: "reference/includes/header.html"
+        fields:
+          - { label: "HTML Code", name: "body", widget: "code", default_language: "html" }
+      - label: "Footer"
+        name: "footer"
+        file: "reference/includes/footer.html"
+        fields:
+          - { label: "HTML Code", name: "body", widget: "code", default_language: "html" }
+      - label: "Analytics"
+        name: "analytics"
+        file: "reference/includes/analytics.html"
+        fields:
+          - { label: "HTML Code", name: "body", widget: "code", default_language: "html" }
+
+  # Configuration Files
+  - name: "config"
+    label: "Configuration"
+    files:
+      - label: "Netlify Config"
+        name: "netlify"
+        file: "netlify.toml"
+        fields:
+          - { label: "TOML Configuration", name: "body", widget: "code", default_language: "toml" }
