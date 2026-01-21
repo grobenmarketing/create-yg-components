@@ -1,0 +1,63 @@
+/* CARD COMPONENT STYLES */
+/* Used for service page cards (apparel, signs, vehicle-graphics, etc.) */
+
+.card {
+    align-items: center;
+    background-color: var(--light);
+    border: 1px solid var(--secondary);
+    border-radius: .5rem;
+    box-shadow: 2px 6px 8px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.text-content {
+    padding: 1rem;
+}
+
+.card.primary {
+    background-color: var(--light);
+}
+
+.card.secondary {
+    background-color: var(--off-light);
+}
+
+.image-content {
+    height: 14rem;
+    max-height: 26rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.image-content img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card {
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .image-content {
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    .card.secondary {
+        direction: rtl;
+    }
+
+    .card.secondary .text-content {
+        direction: ltr;
+    }
+}

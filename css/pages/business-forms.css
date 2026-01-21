@@ -1,0 +1,36 @@
+/* BUSINESS FORMS PAGE STYLES */
+
+/* Hero section with gradient animation */
+.hero-wrapper {
+    align-items: center;
+    animation: gradientAnimation 10s ease infinite;
+    background: linear-gradient(180deg, var(--primary), #18b778);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.hero {
+    color: var(--light);
+    padding: .2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1,
+.hero p {
+    color: var(--light);
+    max-width: 600px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}

@@ -1,0 +1,65 @@
+/* CONTACT PAGE STYLES */
+
+/* Contact hero section */
+.hero-contact {
+    align-items: center;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.hero-contact h1 {
+    color: var(--light);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.hero-contact p {
+    color: var(--light);
+    max-width: 600px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero-contact h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Info grid */
+.info-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* Team table */
+.team-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.team-table th,
+.team-table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.team-table thead {
+    background: #f3f4f6;
+}
+
+.team-table th {
+    color: var(--grey);
+    font-weight: 600;
+}
