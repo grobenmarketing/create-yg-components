@@ -519,8 +519,9 @@
             .cards-wave-bg {
                 position: absolute;
                 bottom: -10px;
-                left: 0;
-                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
                 height: 150px;
                 z-index: 0;
                 pointer-events: none;
