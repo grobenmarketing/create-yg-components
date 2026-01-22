@@ -84,16 +84,59 @@
             }
 
             /* =========================================
-           2. TYPOGRAPHY SCREENSHOT REPLICAS
+           2. GALLERY CARDS & TYPOGRAPHY
            ========================================= */
 
-            /* Screenshot 1: Commercial Printing (Slider Style) */
+            /* Modern Gallery Card */
+            .gallery-card {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            .gallery-card-header {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #eee;
+            }
+            .gallery-card-title {
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #666;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin: 0;
+            }
+            .gallery-card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+            .gallery-item {
+                padding: 1.5rem;
+                background: #fafafa;
+                border-radius: 8px;
+            }
+            .gallery-item-label {
+                font-size: 0.65rem;
+                font-weight: 600;
+                color: #999;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 1rem;
+            }
+
+            /* Typography Display Styles */
             .type-replica-1 {
                 text-align: left;
             }
             .type-replica-1 h2 {
                 font-size: 3.5rem;
-                font-weight: 800; /* ExtraBold */
+                font-weight: 800;
                 color: var(--grey);
                 line-height: 0.85;
                 margin: 0;
@@ -108,8 +151,6 @@
                 color: var(--grey);
                 margin-top: 0.5rem;
             }
-
-            /* Screenshot 2: That's Why (Section Title) */
             .type-replica-2 h2 {
                 font-size: 3rem;
                 font-weight: 800;
@@ -120,8 +161,6 @@
             .type-replica-2 span {
                 color: var(--orange);
             }
-
-            /* Screenshot 3: Print Card List */
             .type-replica-3 {
                 background: #fff;
                 max-width: 300px;
