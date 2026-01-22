@@ -18,6 +18,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) or '.')
 
+socketserver.TCPServer.allow_reuse_address = True
 with socketserver.TCPServer(("0.0.0.0", PORT), MyHandler) as httpd:
     print(f"Serving at http://0.0.0.0:{PORT}")
     httpd.serve_forever()
