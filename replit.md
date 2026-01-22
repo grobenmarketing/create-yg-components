@@ -21,4 +21,5 @@ python server.py
 This is a static website. The deployment serves files directly from the root directory.
 
 ## Recent Changes
+- January 22, 2026: Redesigned typography section with modern gallery card layout - consolidated into "Typography" and "Display Headings" sections, removed H1-H6 showcase and redundant examples
 - January 21, 2026: Initial Replit setup with Python HTTP server
