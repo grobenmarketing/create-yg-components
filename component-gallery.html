@@ -370,23 +370,42 @@
 
             /* --- Our Story Hero --- */
             .story-hero {
-                background-image: url("img/index/background-building.jpg");
+                background-image: url("https://yg-site-preview.netlify.app/img/index/background-building.jpg");
                 background-size: cover;
                 background-position: center;
                 padding: 5rem 0;
                 position: relative;
+                overflow: hidden; /* Added to clip green triangle */
             }
+
+            /* Green Triangle Corner */
+            .story-hero:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 80px 80px 0 0;
+                border-color: var(--primary) transparent transparent transparent;
+                z-index: 10;
+            }
+
+            /* Updated Overlay with slight green top */
             .story-hero:after {
                 content: "";
                 position: absolute;
                 inset: 0;
                 background: linear-gradient(
                     180deg,
-                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(32, 167, 91, 0.4) 0%,   /* Greenish tint at top */
+                    rgba(0, 0, 0, 0.6) 20%,      /* Fades to dark */
                     rgba(0, 0, 0, 0.95) 100%
                 );
                 z-index: 1;
             }
+
             .story-content {
                 position: relative;
                 z-index: 2;
@@ -715,6 +734,7 @@
             }
 
             @media (max-width: 1024px) {
+                /* --- ORANGE FEATURE MOBILE UPDATES --- */
                 .orange-feature:before {
                     background: var(--orange);
                 }
@@ -723,23 +743,33 @@
                 }
                 .orange-img {
                     width: 100%;
+                    max-width: 400px; /* Limit image width */
+                    margin: 0 auto;
                     text-align: center;
                     order: 1;
                 }
                 .orange-txt {
                     width: 100%;
-                    text-align: left;
                     order: 2;
-                    padding: 0 1rem;
+                    /* Updated to Remove White Box and Center Text */
+                    background: transparent;
+                    padding: 2rem 1rem;
+                    text-align: center;
+                    margin-top: 0;
                 }
                 .orange-txt h2 {
                     font-size: 2.4rem;
+                    color: #fff; /* Ensure white text */
                 }
-                .orange-txt {
-                    background: #fff;
-                    padding: 1.5rem;
-                    margin-top: -20px;
+                .orange-txt .green-line {
+                    margin: 1.5rem auto; /* Center the line */
                 }
+                .orange-txt .tagline {
+                    color: #fff; /* Switch tagline to white for contrast */
+                    opacity: 0.9;
+                }
+
+
                 .grid-layout {
                     grid-template-columns: 1fr;
                 }
@@ -760,45 +790,77 @@
                 .header-actions {
                     align-items: center;
                 }
+
+                /* --- OUR STORY HERO MOBILE UPDATES --- */
                 .story-hero {
-                    padding: 0 0 3rem;
+                    padding: 3rem 0; /* Adjusted padding */
                 }
                 .story-content {
                     flex-direction: column;
                 }
+                
+                /* Text Container: Remove white background, keep transparent */
                 .story-text {
-                    background: #fff;
-                    padding: 2rem 1rem;
-                    color: var(--dark-grey);
+                    width: 100%;
+                    text-align: left; 
+                    padding: 0 1rem;
+                    position: relative;
+                    z-index: 5;
+                    background: transparent;
+                    color: #fff;
                 }
+                
+                /* Large White Headline */
                 .story-text h2 {
-                    color: var(--dark-grey);
+                    font-size: 2.8rem;
+                    color: #fff;
                 }
+                
+                /* Orange Subhead */
                 .story-text h3 {
                     color: var(--orange);
+                    font-size: 1rem;
+                    margin-bottom: 1.5rem;
                 }
+                
+                /* White Body Text */
                 .story-text p {
-                    color: var(--dark-grey);
+                    color: #fff;
+                    font-size: 1.1rem;
+                    line-height: 1.5;
+                    margin-bottom: 2rem;
                 }
                 .story-text p strong {
-                    color: var(--dark-grey);
+                    color: #fff;
                 }
+                
+                /* Full Width Orange Button */
                 .story-btn {
                     display: block;
                     text-align: center;
-                    margin: 0;
-                    border-radius: 0;
                     width: 100%;
-                    padding: 1rem 2rem;
+                    padding: 1rem 0;
+                    font-size: 1.4rem;
+                    border-radius: 12px;
+                    background: var(--orange);
+                    color: #fff;
+                    border: none;
+                    margin-top: 1rem;
                 }
+                
+                /* Centered Badge */
                 .story-badge {
-                    margin-top: 0;
-                    padding: 2rem 0;
+                    margin-top: 2rem;
+                    padding: 1rem 0 0;
                     display: block;
+                    text-align: center;
                 }
                 .story-badge img {
-                    max-width: 220px;
+                    max-width: 280px;
+                    width: 100%;
+                    height: auto;
                     margin: 0 auto;
+                    filter: brightness(0) invert(1); /* Ensure it stays white/bright */
                 }
             }
 
@@ -1107,7 +1169,7 @@
                 <div class="header-top-bar">
                     <a href="#">
                         <img
-                            src="img/logo.svg"
+                            src="https://yg-site-preview.netlify.app/img/logo.svg"
                             alt="Yoder Graphics"
                             class="logo-img"
                         />
@@ -1408,7 +1470,7 @@
                     </div>
                     <div class="story-badge">
                         <img
-                            src="img/index/badge.svg"
+                            src="https://yg-site-preview.netlify.app/img/index/badge.svg"
                             alt="Badge"
                         />
                     </div>
@@ -1425,7 +1487,7 @@
                 <div class="container orange-flex">
                     <div class="orange-img">
                         <img
-                            src="img/index/cargo-van.png"
+                            src="https://yg-site-preview.netlify.app/img/index/cargo-van.png"
                             alt="Van"
                         />
                     </div>
@@ -1448,7 +1510,7 @@
                 <div class="cards-grid-sec">
                     <div class="cards-triangle"></div>
                     <div class="cards-wave-bg">
-                        <img src="img/waves.svg" alt="" />
+                        <img src="https://yg-site-preview.netlify.app/img/waves.svg" alt="" />
                     </div>
                     <div class="type-replica-2" style="position: relative; z-index: 1;">
                         <h2>That's Why—<span>We Do It All.</span></h2>
@@ -1458,7 +1520,7 @@
                         <div class="svc-card">
                             <div class="svc-card-img">
                                 <img
-                                    src="img/index/print-card.jpeg"
+                                    src="https://yg-site-preview.netlify.app/img/index/print-card.jpeg"
                                     alt="Print"
                                 />
                             </div>
@@ -1477,7 +1539,7 @@
                         <div class="svc-card">
                             <div class="svc-card-img">
                                 <img
-                                    src="img/index/creative-card.jpeg"
+                                    src="https://yg-site-preview.netlify.app/img/index/creative-card.jpeg"
                                     alt="Creative"
                                 />
                             </div>
@@ -1497,7 +1559,7 @@
                         <div class="svc-card">
                             <div class="svc-card-img">
                                 <img
-                                    src="img/index/promo-card.jpeg"
+                                    src="https://yg-site-preview.netlify.app/img/index/promo-card.jpeg"
                                     alt="Promo"
                                 />
                             </div>
@@ -1515,7 +1577,7 @@
                         <div class="svc-card">
                             <div class="svc-card-img">
                                 <img
-                                    src="img/index/fulfillment-card.png"
+                                    src="https://yg-site-preview.netlify.app/img/index/fulfillment-card.png"
                                     alt="Fulfillment"
                                 />
                             </div>
@@ -1539,7 +1601,7 @@
                 <div class="content-box">
                     <div class="box-img">
                         <img
-                            src="img/signs/securitec.jpeg"
+                            src="https://yg-site-preview.netlify.app/img/signs/securitec.jpeg"
                             alt="Illuminated Signs"
                         />
                     </div>
@@ -1563,7 +1625,7 @@
                 <div class="content-box secondary">
                     <div class="box-img">
                         <img
-                            src="img/signs/community.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/community.webp"
                             alt="Retrofitting"
                         />
                     </div>
@@ -1592,32 +1654,32 @@
                 <div class="masonry">
                     <div class="m-item">
                         <img
-                            src="img/signs/affinitygaming.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/affinitygaming.webp"
                         />
                     </div>
                     <div class="m-item">
                         <img
-                            src="img/signs/akron_childrens.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/akron_childrens.webp"
                         />
                     </div>
                     <div class="m-item">
                         <img
-                            src="img/signs/bballjewelers2.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/bballjewelers2.webp"
                         />
                     </div>
                     <div class="m-item">
                         <img
-                            src="img/signs/bejeweled.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/bejeweled.webp"
                         />
                     </div>
                     <div class="m-item">
                         <img
-                            src="img/signs/candytyme.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/candytyme.webp"
                         />
                     </div>
                     <div class="m-item">
                         <img
-                            src="img/signs/community.webp"
+                            src="https://yg-site-preview.netlify.app/img/signs/community.webp"
                         />
                     </div>
                 </div>
@@ -1630,7 +1692,7 @@
                 <div class="container">
                     <div class="foot-logo-wrap">
                         <img
-                            src="img/logo.svg"
+                            src="https://yg-site-preview.netlify.app/img/logo.svg"
                             alt="Footer Logo"
                             style="height: 5rem"
                         />
