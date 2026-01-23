@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yoder Graphics - Component Gallery</title>
+        <meta
+            name="description"
+            content="Explore Yoder Graphics component library featuring headers, heroes, cards, and more."
+        />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <link rel="stylesheet" href="css/component-gallery.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <nav class="page-navigation" style="background: linear-gradient(135deg, #15803d 0%, #166534 100%); padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; align-items: center;">
+        <a href="index.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
+            Component Gallery
+        </a>
+        <a href="new-design.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
+            New Design Headers
+        </a>
+    </div>
+</nav>
+
+<style>
+.page-navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">Header</div>
+    <header>
+        <div class="header-top-bar">
+            <a href="#">
+                <img
+                    src="img/logo.svg"
+                    alt="Yoder Graphics"
+                    class="logo-img"
+                />
+            </a>
+
+            <div class="header-actions">
+                <a href="#" class="action-btn">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    MAKE A PAYMENT
+                </a>
+                <a href="#" class="action-btn">
+                    <i class="fa-solid fa-upload"></i>
+                    UPLOAD FILES
+                </a>
+                <a href="#" class="action-btn">
+                    <i class="fa-solid fa-phone"></i>
+                    330-334-5060
+                </a>
+            </div>
+        </div>
+
+        <div class="desktop-nav-bar">
+            <nav class="desktop-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Large Format
+                        <svg class="caret" viewBox="0 0 16 16">
+                            <path
+                                d="M4.5 3L8 6.5L11.5 3L13 4.5L8 9.5L3 4.5L4.5 3Z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#">Vehicle Wraps</a>
+                        <a href="#">Signs & Displays</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Print & Promo
+                        <svg class="caret" viewBox="0 0 16 16">
+                            <path
+                                d="M4.5 3L8 6.5L11.5 3L13 4.5L8 9.5L3 4.5L4.5 3Z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#">Commercial Printing</a>
+                        <a href="#">Apparel</a>
+                        <a href="#">Business Forms</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Our Services</a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Get a Quote</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">
+        Green Gradient Hero
+    </div>
+    <div class="hero-green">
+        <h1>Commercial Printing</h1>
+        <p>
+            High-quality printing for all your business needs. From
+            brochures to business cards, we deliver professional results
+            that make your brand stand out.
+        </p>
+    </div>
+</div>
+
+        <!-- Typography Section -->
+<div class="wrapper">
+    <div class="container">
+        <div class="component-label">Typography</div>
+
+        <div class="gallery-card">
+            <div class="gallery-card-header">
+                <h3 class="gallery-card-title">Red Hat Display</h3>
+            </div>
+            <div class="gallery-card-grid">
+                <div class="gallery-item">
+                    <div class="gallery-item-label">Body Text</div>
+                    <p style="margin: 0 0 1rem 0">
+                        Regular body text at 1rem with standard weight
+                        for optimal readability across all content.
+                    </p>
+                    <p style="font-weight: 600; margin: 0">
+                        Semi-bold text (600) for emphasis in supporting
+                        content and key statements.
+                    </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-label">Links</div>
+                    <p style="margin: 0 0 1rem 0">
+                        <a
+                            href="#"
+                            style="
+                                color: var(--primary);
+                                font-weight: 600;
+                                text-decoration: underline;
+                            "
+                            >Standard inline link</a
+                        >
+                    </p>
+                    <p style="margin: 0">
+                        <a
+                            href="#"
+                            style="
+                                color: var(--primary);
+                                font-weight: 800;
+                                font-size: 16px;
+                                text-transform: uppercase;
+                                text-decoration: none;
+                            "
+                            >Navigation Link</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Display Headings Section -->
+<div class="wrapper">
+    <div class="container">
+        <div class="component-label">Display Headings</div>
+
+        <div class="gallery-card">
+            <div class="gallery-card-header">
+                <h3 class="gallery-card-title">
+                    Hero & Section Titles
+                </h3>
+            </div>
+            <div class="gallery-card-grid two-col">
+                <div
+                    class="gallery-item hero-title-demo"
+                >
+                    <div
+                        class="gallery-item-label"
+                        style="color: rgba(255, 255, 255, 0.7)"
+                    >
+                        Hero Title
+                    </div>
+                    <h1 class="hero-title-sample">
+                        Hero Title
+                    </h1>
+                    <p class="hero-title-subtext">
+                        Supporting hero text
+                    </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-label">Slider Display</div>
+                    <div class="type-replica-1">
+                        <h2>COMMERCIAL</h2>
+                        <h2 class="green-text">PRINTING</h2>
+                        <p>cards, flyers, brochures & more</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-label">Section Title</div>
+                    <div class="type-replica-2">
+                        <h2>That's Why—<span>We Do It All.</span></h2>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-label">Story Header</div>
+                    <h2 class="story-header-title">
+                        OUR STORY
+                    </h2>
+                    <h3 class="story-header-subtitle">
+                        VETERAN OWNED & OPERATED
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">
+        Home Page Slider
+    </div>
+    <div id="slider-placeholder"></div>
+</div>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">
+        Our Story Hero
+    </div>
+    <div class="story-hero">
+        <div class="container story-content">
+            <div class="story-text">
+                <h2>OUR STORY</h2>
+                <h3>VETERAN OWNED & OPERATED</h3>
+                <p>
+                    From humble beginnings to our position as a
+                    full-spectrum marketing partner, our story reflects
+                    nearly five decades of adaptation, growth, and
+                    commitment to excellence. <br /><br /><strong
+                        >Discover how we've evolved while staying true
+                        to our founding principles.</strong
+                    >
+                </p>
+                <a href="#" class="story-btn">Learn More About Us</a>
+            </div>
+            <div class="story-badge">
+                <img
+                    src="img/index/badge.svg"
+                    alt="Badge"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">
+        Orange Feature Section
+    </div>
+    <div class="orange-feature">
+        <div class="container orange-flex">
+            <div class="orange-img">
+                <img
+                    src="img/index/cargo-van.png"
+                    alt="Van"
+                />
+            </div>
+            <div class="orange-txt">
+                <h2>
+                    We Bring <span class="hl">Life</span><br />
+                    to Businesses Through<br />
+                    Quality Print Marketing
+                </h2>
+                <hr class="green-line" />
+                <p class="tagline">SHOW EVERYONE HOW ALIVE YOU ARE.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="service-cards-container">
+    <div class="component-label">Service Cards</div>
+    <div class="abstract-background service-cards-wave">
+        <img
+            src="img/waves.svg"
+            alt="Abstract waves"
+            class="abstract-waves service-waves-img"
+        />
+    </div>
+    <div class="container" style="position: relative; z-index: 2">
+        <div class="type-replica-2">
+            <h2>That's Why—<span>We Do It All.</span></h2>
+        </div>
+
+        <div class="grid-layout">
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img
+                        src="img/index/print-card.jpeg"
+                        alt="Print"
+                    />
+                </div>
+                <div class="svc-card-body">
+                    <h3 class="svc-card-title">PRINT</h3>
+                    <hr class="svc-card-hr" />
+                    <div class="svc-card-item">SIGNS & DECALS</div>
+                    <div class="svc-card-item">COMMERCIAL PRINTING</div>
+                    <div class="svc-card-item">DIRECT MAIL</div>
+                    <div class="svc-card-item">BUSINESS FORMS</div>
+                    <div class="svc-card-item">
+                        LARGE FORMAT PRINTING
+                    </div>
+                    <div class="svc-card-item">LABELS & MORE</div>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img
+                        src="img/index/creative-card.jpeg"
+                        alt="Creative"
+                    />
+                </div>
+                <div class="svc-card-body">
+                    <h3 class="svc-card-title">CREATIVE</h3>
+                    <hr class="svc-card-hr" />
+                    <div class="svc-card-item">
+                        IN-HOUSE DESIGN TEAM
+                    </div>
+                    <div class="svc-card-item">BRAND MANAGEMENT</div>
+                    <div class="svc-card-item">COLOR MATCHING</div>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img
+                        src="img/index/promo-card.jpeg"
+                        alt="Promo"
+                    />
+                </div>
+                <div class="svc-card-body">
+                    <h3 class="svc-card-title">PROMO</h3>
+                    <hr class="svc-card-hr" />
+                    <div class="svc-card-item">PROMO PRODUCTS</div>
+                    <div class="svc-card-item">CUSTOM APPAREL</div>
+                    <div class="svc-card-item">TRADE SHOW DISPLAYS</div>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img
+                        src="img/index/fulfillment-card.png"
+                        alt="Fulfillment"
+                    />
+                </div>
+                <div class="svc-card-body">
+                    <h3 class="svc-card-title">FULFILLMENT</h3>
+                    <hr class="svc-card-hr" />
+                    <div class="svc-card-item">LOCAL PICKUP</div>
+                    <div class="svc-card-item">LOCAL DELIVERY</div>
+                    <div class="svc-card-item">WAREHOUSING</div>
+                    <div class="svc-card-item">
+                        INTERNATIONAL SHIPPING
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="wrapper">
+    <div class="container">
+        <div class="component-label">Content Box: Left</div>
+        <div class="content-box">
+            <div class="box-img">
+                <img
+                    src="img/signs/securitec.jpeg"
+                    alt="Illuminated Signs"
+                />
+            </div>
+            <div class="box-txt">
+                <h2>Illuminated Signs</h2>
+                <p>
+                    Whether lit from within or externally, illuminated
+                    signage gives your message extra visibility and
+                    emphasis both day and night. This can include
+                    cabinets with flat or pan faces, custom neon,
+                    channel letters, digital readout boards, and more.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="wrapper">
+    <div class="container">
+        <div class="component-label">Content Box: Right</div>
+        <div class="content-box secondary">
+            <div class="box-img">
+                <img
+                    src="img/signs/community.webp"
+                    alt="Retrofitting"
+                />
+            </div>
+            <div class="box-txt">
+                <h2>Sign Retrofitting</h2>
+                <p>
+                    Our professional installation experts will work
+                    quickly to update your existing sign with newer
+                    materials and internals. With affordable up-front
+                    costs and a longer life span, your total savings on
+                    maintenance will be exponential.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="wrapper">
+    <div class="container">
+        <div class="component-label">Gallery</div>
+        <div class="gal-filters">
+            <button class="gal-btn active" data-filter="all">
+                All
+            </button>
+            <button class="gal-btn" data-filter="illuminated">
+                Illuminated
+            </button>
+            <button class="gal-btn" data-filter="non-illuminated">
+                Non-Illuminated
+            </button>
+        </div>
+        <div class="masonry" id="gallery-masonry">
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="img/signs/affinitygaming.webp"
+                    alt="Affinity Gaming Sign"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="img/signs/akron_childrens.webp"
+                    alt="Akron Children's Sign"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="img/signs/bballjewelers2.webp"
+                    alt="BBall Jewelers Sign"
+                />
+            </div>
+            <div class="m-item" data-category="non-illuminated">
+                <img
+                    src="img/signs/bejeweled.webp"
+                    alt="Bejeweled Sign"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="img/signs/candytyme.webp"
+                    alt="Candy Tyme Sign"
+                />
+            </div>
+            <div class="m-item" data-category="non-illuminated">
+                <img
+                    src="img/signs/community.webp"
+                    alt="Community Sign"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600"
+                    alt="Neon Sign"
+                />
+            </div>
+            <div class="m-item" data-category="non-illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=600"
+                    alt="Store Front Sign"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600"
+                    alt="LED Display"
+                />
+            </div>
+            <div class="m-item" data-category="non-illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600"
+                    alt="Retail Signage"
+                />
+            </div>
+            <div class="m-item" data-category="illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=600"
+                    alt="Neon Lights"
+                />
+            </div>
+            <div class="m-item" data-category="non-illuminated">
+                <img
+                    src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=600"
+                    alt="Shop Sign"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Enlarged view" id="lightbox-img" />
+</div>
+
+        <div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">Footer</div>
+    <footer>
+        <div class="container">
+            <div class="foot-logo-wrap">
+                <img
+                    src="img/logo.svg"
+                    alt="Footer Logo"
+                    style="height: 5rem"
+                />
+            </div>
+            <hr class="foot-divider" />
+            <div class="foot-bottom">
+                <span class="foot-copyright"
+                    >©2025 Yoder Graphics Systems. All Rights
+                    Reserved.</span
+                >
+                <div class="socials">
+                    <a
+                        href="https://www.facebook.com/yodergraphics/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a
+                        href="https://www.instagram.com/yodergraphics/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a
+                        href="https://www.tiktok.com/@yodergraphics"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a
+                        href="https://x.com/yodergraphics"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/yoder-graphic-systems-inc/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Slider Initialization -->
+        <script src="js/component-gallery.js"></script>
+    </body>
+</html>
