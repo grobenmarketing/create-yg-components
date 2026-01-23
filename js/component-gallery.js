@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // GALLERY FUNCTIONALITY
     // ========================================
 
+    // Cache DOM elements
     const gallery = document.getElementById('gallery-masonry');
-    const filterButtons = document.querySelectorAll('.gal-btn');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.querySelector('.lightbox-close');
@@ -239,68 +239,95 @@ document.addEventListener('DOMContentLoaded', function() {
     if (gallery) {
         const items = Array.from(gallery.querySelectorAll('.m-item'));
 
-        // Shuffle items on page load
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
+        // Shuffle items on page load using DocumentFragment (more efficient)
+        const shuffled = items.sort(() => Math.random() - 0.5);
+        const fragment = document.createDocumentFragment();
+        shuffled.forEach(item => fragment.appendChild(item));
+        gallery.appendChild(fragment);
 
-        // Shuffle and re-append items
-        const shuffledItems = shuffleArray(items);
-        shuffledItems.forEach(item => gallery.appendChild(item));
+        // Event delegation for filter buttons
+        const filterContainer = document.querySelector('.gal-filters');
+        if (filterContainer) {
+            filterContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.gal-btn');
+                if (!button) return;
 
-        // Filter functionality
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Update active state
+                filterContainer.querySelectorAll('.gal-btn').forEach(btn =>
+                    btn.classList.remove('active')
+                );
                 button.classList.add('active');
 
+                // Filter items
                 const filter = button.dataset.filter;
-                
                 items.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
+                    item.classList.toggle('hidden',
+                        filter !== 'all' && item.dataset.category !== filter
+                    );
                 });
             });
-        });
+        }
 
-        // Lightbox functionality
-        items.forEach(item => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                if (img && lightbox && lightboxImg) {
-                    lightboxImg.src = img.src;
-                    lightbox.classList.add('active');
-                }
-            });
+        // Event delegation for lightbox
+        gallery.addEventListener('click', (e) => {
+            const item = e.target.closest('.m-item');
+            if (!item) return;
+
+            const img = item.querySelector('img');
+            if (img && lightbox && lightboxImg) {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            }
         });
+    }
+
+    // Escape key handler (only attached when lightbox is active)
+    let escapeHandler = null;
+
+    function closeLightbox() {
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            // Remove escape listener when lightbox closes
+            if (escapeHandler) {
+                document.removeEventListener('keydown', escapeHandler);
+                escapeHandler = null;
+            }
+        }
+    }
+
+    function openLightbox() {
+        // Add escape listener only when lightbox opens
+        if (!escapeHandler) {
+            escapeHandler = (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            };
+            document.addEventListener('keydown', escapeHandler);
+        }
     }
 
     // Close lightbox
     if (lightboxClose) {
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+        lightboxClose.addEventListener('click', closeLightbox);
     }
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-            }
+            if (e.target === lightbox) closeLightbox();
         });
 
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                lightbox.classList.remove('active');
-            }
+        // Monitor lightbox state changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    if (lightbox.classList.contains('active')) {
+                        openLightbox();
+                    } else {
+                        closeLightbox();
+                    }
+                }
+            });
         });
+
+        observer.observe(lightbox, { attributes: true });
     }
 });
