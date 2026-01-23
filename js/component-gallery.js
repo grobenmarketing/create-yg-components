@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="slider-container">
         <!-- Wave Background: Absolute position, z-index 1 -->
         <div class="abstract-background">
-            <img src="https://yg-site-preview.netlify.app/img/waves.svg"
+            <img src="img/waves.svg"
                  alt="Abstract waves"
                  class="abstract-waves"
                  onerror="this.style.display='none'">
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-brochure.png"
+                            <img src="img/bannerimg-brochure.png"
                                  alt="FLEET GRAPHICS"
                                  class="slide-img">
                         </div>
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-signs.png"
+                            <img src="img/bannerimg-signs.png"
                                  alt="LARGE FORMAT"
                                  class="slide-img">
                         </div>
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-computer.png"
+                            <img src="img/bannerimg-computer.png"
                                  alt="IN-HOUSE"
                                  class="slide-img">
                         </div>
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-cards.png"
+                            <img src="img/bannerimg-cards.png"
                                  alt="COMMERCIAL"
                                  class="slide-img">
                         </div>
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-apparel.png"
+                            <img src="img/bannerimg-apparel.png"
                                  alt="CUSTOM"
                                  class="slide-img">
                         </div>
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-wraps.png"
+                            <img src="img/bannerimg-wraps.png"
                                  alt="VEHICLE"
                                  class="slide-img">
                         </div>
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="swiper-slide slide">
                     <div class="slide-content">
                         <div class="slide-image">
-                            <img src="https://yg-site-preview.netlify.app/img/bannerimg-promoitems.png"
+                            <img src="img/bannerimg-promoitems.png"
                                  alt="PROMO"
                                  class="slide-img">
                         </div>
