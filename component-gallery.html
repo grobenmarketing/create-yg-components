@@ -395,43 +395,54 @@
             <div class="container">
                 <div class="component-label">Gallery</div>
                 <div class="gal-filters">
-                    <button class="gal-btn active">All</button>
-                    <button class="gal-btn">Illuminated</button>
-                    <button class="gal-btn">Non-Illuminated</button>
+                    <button class="gal-btn active" data-filter="all">All</button>
+                    <button class="gal-btn" data-filter="illuminated">Illuminated</button>
+                    <button class="gal-btn" data-filter="non-illuminated">Non-Illuminated</button>
                 </div>
-                <div class="masonry">
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/affinitygaming.webp"
-                        />
+                <div class="masonry" id="gallery-masonry">
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" />
                     </div>
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/akron_childrens.webp"
-                        />
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/akron_childrens.webp" alt="Akron Children's Sign" />
                     </div>
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/bballjewelers2.webp"
-                        />
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" />
                     </div>
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/bejeweled.webp"
-                        />
+                    <div class="m-item" data-category="non-illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/bejeweled.webp" alt="Bejeweled Sign" />
                     </div>
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/candytyme.webp"
-                        />
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/candytyme.webp" alt="Candy Tyme Sign" />
                     </div>
-                    <div class="m-item">
-                        <img
-                            src="https://yg-site-preview.netlify.app/img/signs/community.webp"
-                        />
+                    <div class="m-item" data-category="non-illuminated">
+                        <img src="https://yg-site-preview.netlify.app/img/signs/community.webp" alt="Community Sign" />
+                    </div>
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600" alt="Neon Sign" />
+                    </div>
+                    <div class="m-item" data-category="non-illuminated">
+                        <img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=600" alt="Store Front Sign" />
+                    </div>
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1?w=600" alt="LED Display" />
+                    </div>
+                    <div class="m-item" data-category="non-illuminated">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600" alt="Retail Signage" />
+                    </div>
+                    <div class="m-item" data-category="illuminated">
+                        <img src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=600" alt="Neon Lights" />
+                    </div>
+                    <div class="m-item" data-category="non-illuminated">
+                        <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=600" alt="Shop Sign" />
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <img src="" alt="Enlarged view" id="lightbox-img" />
         </div>
 
         <div class="wrapper">
