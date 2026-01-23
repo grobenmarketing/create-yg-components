@@ -16,20 +16,34 @@ import re
 import os
 from pathlib import Path
 
+# Cache for loaded partials to avoid reading the same file multiple times
+_partial_cache = {}
+
 
 def load_partial(partial_name):
-    """Load a partial file from the partials directory."""
+    """Load a partial file from the partials directory with caching."""
+    # Check cache first
+    if partial_name in _partial_cache:
+        return _partial_cache[partial_name]
+
     partial_path = Path("partials") / f"{partial_name}.html"
 
     if not partial_path.exists():
         print(f"Warning: Partial '{partial_name}' not found at {partial_path}")
-        return f"<!-- ERROR: Partial '{partial_name}' not found -->"
+        error_msg = f"<!-- ERROR: Partial '{partial_name}' not found -->"
+        _partial_cache[partial_name] = error_msg
+        return error_msg
 
     with open(partial_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
+    # Cache the content
+    _partial_cache[partial_name] = content
     return content
 
+
+# Compile regex pattern once for better performance
+INCLUDE_PATTERN = re.compile(r'<!-- INCLUDE: ([\w-]+) -->')
 
 def build_html_from_template(template_path, output_path):
     """Build an HTML file from a template and partials."""
@@ -41,17 +55,13 @@ def build_html_from_template(template_path, output_path):
     with open(template_path, 'r', encoding='utf-8') as f:
         template_content = f.read()
 
-    # Find all INCLUDE comments using regex
-    # Pattern: <!-- INCLUDE: partial-name -->
-    include_pattern = r'<!-- INCLUDE: ([\w-]+) -->'
-
     def replace_include(match):
         partial_name = match.group(1)
         print(f"  Including: {partial_name}")
         return load_partial(partial_name)
 
-    # Replace all includes with their content
-    output_content = re.sub(include_pattern, replace_include, template_content)
+    # Replace all includes with their content using precompiled pattern
+    output_content = INCLUDE_PATTERN.sub(replace_include, template_content)
 
     # Write the output file
     with open(output_path, 'w', encoding='utf-8') as f:
