@@ -1,3 +1,9 @@
+/* Nav Link Font Styling */
+.nav-link-inverted {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
 /* Dropdown Animation */
 .dropdown-content {
     opacity: 0;
