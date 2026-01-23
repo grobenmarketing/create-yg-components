@@ -397,21 +397,7 @@
                 overflow: hidden; /* Added to clip green triangle */
             }
 
-            /* Green Triangle Corner */
-            .story-hero:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 80px 80px 0 0;
-                border-color: var(--primary) transparent transparent transparent;
-                z-index: 10;
-            }
-
-            /* Updated Overlay with slight green top */
+            /* Overlay with slight green top */
             .story-hero:after {
                 content: "";
                 position: absolute;
