@@ -229,17 +229,17 @@
             .action-btn {
                 background: #fff;
                 color: var(--primary);
-                padding: 4px 12px;
-                border-radius: 20px;
-                font-weight: 800;
-                font-size: 13px;
+                padding: 4px 8px;
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 14px;
                 display: flex;
                 align-items: center;
-                gap: 8px;
+                gap: 12px;
                 text-transform: uppercase;
-                width: 180px; /* Fixed width for alignment */
-                justify-content: center; /* Center content in pill */
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                width: 155px;
+                justify-content: center;
+                transition: all 0.2s ease;
             }
             .action-btn svg {
                 width: 14px;
@@ -249,8 +249,8 @@
                 stroke-width: 1;
             }
             .action-btn:hover {
+                opacity: 0.9;
                 transform: translateY(-1px);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
             }
 
             /* Nav Bar */
@@ -279,9 +279,9 @@
 
             .nav-link {
                 color: var(--primary);
-                font-weight: 800; /* Heavier font as per Red Hat Display standard */
+                font-weight: 600;
                 text-transform: uppercase;
-                font-size: 16px;
+                font-size: 18px;
                 display: flex;
                 align-items: center;
                 gap: 6px;
@@ -290,8 +290,7 @@
                 cursor: pointer;
             }
             .nav-link:hover {
-                color: var(--secondary);
-                fill: var(--secondary);
+                opacity: 0.7;
             }
 
             .caret {
@@ -445,18 +444,23 @@
             .story-btn {
                 background: var(--orange);
                 color: #fff;
-                font-weight: 800;
-                font-size: 1.5rem;
-                padding: 0.8rem 2rem;
+                font-weight: 700;
+                font-size: 1.6rem;
+                padding: 0.75rem 1.5rem;
                 border-radius: 1rem;
-                border: 4px solid transparent;
-                display: inline-block;
-                margin-top: 1.5rem;
+                border: 5px solid transparent;
+                display: block;
+                margin: 2rem auto;
+                text-align: center;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                width: 100%;
             }
             .story-btn:hover {
                 background: transparent;
                 border-color: var(--orange);
                 color: var(--orange);
+                text-decoration: none;
             }
 
             .story-badge {
@@ -600,7 +604,7 @@
             }
 
             .svc-card-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 font-weight: 800;
                 color: var(--grey);
                 margin: 0;
@@ -890,13 +894,13 @@
                     display: block;
                     text-align: center;
                     width: 100%;
-                    padding: 1rem 0;
-                    font-size: 1.4rem;
-                    border-radius: 12px;
+                    padding: 0.75rem 1.5rem;
+                    font-size: 1.6rem;
+                    border-radius: 1rem;
                     background: var(--orange);
                     color: #fff;
-                    border: none;
-                    margin-top: 1rem;
+                    border: 5px solid transparent;
+                    margin: 2rem auto;
                 }
                 
                 /* Centered Badge */
@@ -1015,6 +1019,17 @@
                 margin: 0.5rem 0 0 0;
             }
 
+            @media (min-width: 1024px) {
+                .slide-title, .slide-subtitle {
+                    font-size: 3.5rem;
+                    line-height: 0.95;
+                }
+                .slide-description {
+                    font-size: 2rem;
+                    margin-top: 0.5rem;
+                }
+            }
+
             /* --- BUTTONS --- */
             .slide-button-container {
                 margin-top: 1rem;
@@ -1030,12 +1045,23 @@
                 border-radius: 1.2rem;
                 color: var(--orange, #f9a01f);
                 cursor: pointer;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-weight: 700;
                 margin: 2rem auto;
                 padding: .75rem 1.5rem;
                 text-align: center;
                 transition: all .2s ease;
+            }
+
+            @media (min-width: 1024px) {
+                .slide-button {
+                    flex: 0 0 auto;
+                    font-size: 1.5rem;
+                    margin: 0;
+                    min-width: 180px;
+                    padding: 0.6rem 1.5rem;
+                    width: auto;
+                }
             }
 
             .slide-button:hover {
@@ -1052,7 +1078,7 @@
                 border-radius: 1.2rem;
                 color: var(--light, #fff);
                 cursor: pointer;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-weight: 700;
                 margin: 1rem auto 0;
                 padding: .75rem 1.5rem;
@@ -1063,6 +1089,23 @@
             .slide-button-secondary:hover {
                 background: var(--secondary, #1cd59d);
                 border-color: var(--secondary, #1cd59d);
+            }
+
+            @media (min-width: 1024px) {
+                .slide-button-secondary {
+                    flex: 0 0 auto;
+                    font-size: 1.5rem;
+                    margin: 0;
+                    min-width: 180px;
+                    padding: 0.6rem 1.5rem;
+                    width: auto;
+                }
+                .slide-button-container {
+                    align-items: center;
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 2rem;
+                }
             }
 
             /* --- NAVIGATION ARROWS --- */
