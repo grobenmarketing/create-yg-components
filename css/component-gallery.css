@@ -888,10 +888,9 @@
                 .orange-txt {
                     width: 100%;
                     order: 2;
-                    /* Updated to Remove White Box and Center Text */
                     background: transparent;
                     padding: 2rem 1rem;
-                    text-align: center;
+                    text-align: left;
                     margin-top: 0;
                 }
 
@@ -902,8 +901,7 @@
                 }
 
                 .orange-txt .green-line {
-                    margin: 1.5rem auto;
-                    /* Center the line */
+                    margin: 1.5rem 0;
                 }
 
                 .orange-txt .tagline {
