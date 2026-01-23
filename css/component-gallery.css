@@ -978,6 +978,10 @@
                     width: 100%;
                 }
 
+                .box-img {
+                    min-height: auto;
+                }
+
                 .desktop-nav-bar {
                     display: none;
                 }
