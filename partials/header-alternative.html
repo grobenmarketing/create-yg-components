@@ -1,43 +1,10 @@
 <div class="wrapper">
     <div class="component-label" style="margin-left: 1rem">Header Alternative (Tailwind)</div>
 
-    <style>
-        /* Dropdown Animation */
-        .dropdown-content {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(8px);
-            transition: all 0.2s ease-out;
-            pointer-events: none;
-        }
-
-        /* Show on hover of the parent group */
-        .group:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        /* Nav Link Underline Effect */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #15803d; /* green-700 */
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        .nav-link:hover::after {
-            width: 70%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/header-alternative.css">
 
     <!-- HEADER REDESIGN V2 -->
-    <header class="shadow-sm border-b border-gray-200 bg-white rounded-xl overflow-hidden">
+    <header class="shadow-sm border-b border-gray-200 bg-white">
         <!-- Utility Bar -->
         <div class="bg-gray-50 border-b border-gray-100 text-green-700 text-[10px] py-2 px-6 font-bold uppercase tracking-widest">
             <div class="container mx-auto flex justify-end items-center gap-6">
@@ -71,7 +38,7 @@
                 </a>
 
                 <!-- Navigation Links -->
-                <div class="hidden lg:flex items-center space-x-1 text-sm font-semibold text-green-700">
+                <div class="hidden lg:flex items-center space-x-1 text-base font-semibold text-green-700">
                     <!-- Home -->
                     <a href="#" class="nav-link relative px-4 py-2 hover:text-green-900 transition">Home</a>
 
