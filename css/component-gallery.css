@@ -425,6 +425,50 @@
                 }
             }
 
+            /* --- Hero Title Demo (Gallery Item) --- */
+            .hero-title-demo {
+                background: var(--primary);
+                padding: 2rem;
+            }
+
+            .hero-title-sample {
+                color: #fff;
+                font-size: 2.5rem;
+                font-weight: 800;
+                letter-spacing: 0.01em;
+                margin: 0;
+                text-transform: uppercase;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .hero-title-subtext {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 600;
+                margin: 0.75rem 0 0 0;
+            }
+
+            /* --- Story Header Demo --- */
+            .story-header-title {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--grey);
+                letter-spacing: 0;
+                margin: 0 0 0.25rem 0;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .story-header-subtitle {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: var(--orange);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
             /* --- Our Story Hero --- */
             .story-hero {
                 background-image: url("https://yg-site-preview.netlify.app/img/index/background-building.jpg");
@@ -1022,6 +1066,53 @@
                     margin: 0 auto;
                     filter: brightness(0) invert(1);
                     /* Ensure it stays white/bright */
+                }
+
+                /* --- TYPOGRAPHY MOBILE UPDATES --- */
+                .type-replica-1 h2 {
+                    font-size: 2rem;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                .type-replica-1 p {
+                    font-size: 1.1rem;
+                }
+
+                .type-replica-2 h2 {
+                    font-size: 1.5rem;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                /* Gallery items padding adjustment for mobile */
+                .gallery-item {
+                    padding: 1rem;
+                }
+
+                .gallery-card {
+                    padding: 1rem;
+                }
+
+                /* Hero green h1 mobile */
+                .hero-green h1 {
+                    font-size: 1.8rem;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                /* Hero Title Demo Mobile */
+                .hero-title-demo {
+                    padding: 1.5rem;
+                }
+
+                .hero-title-sample {
+                    font-size: 1.8rem;
+                }
+
+                /* Story Header Mobile */
+                .story-header-title {
+                    font-size: 1.8rem;
                 }
             }
 
