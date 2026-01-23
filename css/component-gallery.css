@@ -547,7 +547,7 @@
                 color: #fff;
                 line-height: 1.1;
                 margin: 0;
-                font-style: italic;
+                font-style: normal;
             }
 
             .orange-txt .hl {
@@ -565,7 +565,7 @@
                 font-weight: 800;
                 font-size: 0.85rem;
                 letter-spacing: 1.5px;
-                color: var(--dark-grey);
+                color: #000;
             }
 
             /* --- Home Cards Grid --- */
@@ -869,7 +869,7 @@
 
                 /* --- ORANGE FEATURE MOBILE UPDATES --- */
                 .orange-feature:before {
-                    background: var(--orange);
+                    background: linear-gradient(60deg, #fff 25%, var(--orange) 25%);
                 }
 
                 .orange-flex {
@@ -907,9 +907,9 @@
                 }
 
                 .orange-txt .tagline {
-                    color: #fff;
-                    /* Switch tagline to white for contrast */
-                    opacity: 0.9;
+                    color: #000;
+                    /* Keep tagline black for readability */
+                    opacity: 1;
                 }
 
 
