@@ -1,0 +1,124 @@
+<div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">Header Alternative (Tailwind)</div>
+
+    <style>
+        /* Dropdown Animation */
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+
+        /* Show on hover of the parent group */
+        .group:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Nav Link Underline Effect */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #15803d; /* green-700 */
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+    </style>
+
+    <!-- HEADER REDESIGN V2 -->
+    <header class="shadow-sm border-b border-gray-200 bg-white rounded-xl overflow-hidden">
+        <!-- Utility Bar -->
+        <div class="bg-gray-50 border-b border-gray-100 text-green-700 text-[10px] py-2 px-6 font-bold uppercase tracking-widest">
+            <div class="container mx-auto flex justify-end items-center gap-6">
+                <a href="#" class="hover:text-green-900 transition flex items-center gap-2">
+                    <i class="fas fa-credit-card"></i>
+                    Make a Payment
+                </a>
+
+                <span class="text-gray-300 font-normal">|</span>
+
+                <a href="#" class="hover:text-green-900 transition flex items-center gap-2">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    Upload Files
+                </a>
+
+                <span class="text-gray-300 font-normal">|</span>
+
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:3303345060" class="hover:text-green-900 transition font-bold">330-334-5060</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav -->
+        <nav class="bg-white px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-11 w-auto">
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-1 text-sm font-semibold text-green-700">
+                    <!-- Home -->
+                    <a href="#" class="nav-link relative px-4 py-2 hover:text-green-900 transition">Home</a>
+
+                    <!-- Large Format Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link relative px-4 py-2 flex items-center gap-1 hover:text-green-900 transition outline-none">
+                            Large Format <i class="fas fa-chevron-down text-[10px] opacity-40 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Simple Dropdown Menu -->
+                        <div class="dropdown-content absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-lg py-2 z-50">
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Vehicle Wraps</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Signs & Displays</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Banners & Posters</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Wall Graphics</a>
+                        </div>
+                    </div>
+
+                    <!-- Print & Promo Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link relative px-4 py-2 flex items-center gap-1 hover:text-green-900 transition outline-none">
+                            Print & Promo <i class="fas fa-chevron-down text-[10px] opacity-40 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Simple Dropdown Menu -->
+                        <div class="dropdown-content absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-lg py-2 z-50">
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Commercial Printing</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Custom Apparel</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Promotional Products</a>
+                            <a href="#" class="block px-6 py-2.5 hover:bg-green-50 hover:text-green-800 transition">Direct Mail</a>
+                        </div>
+                    </div>
+
+                    <!-- Our Services -->
+                    <a href="#" class="nav-link relative px-4 py-2 hover:text-green-900 transition">Our Services</a>
+
+                    <!-- CTA Button -->
+                    <div class="pl-4">
+                        <a href="#" class="bg-green-700 text-white px-8 py-3 rounded-full font-bold hover:bg-green-800 transition shadow-lg shadow-green-700/20 active:scale-95 duration-150">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <div class="lg:hidden text-green-700">
+                    <i class="fas fa-bars text-xl cursor-pointer"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
