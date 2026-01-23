@@ -869,7 +869,7 @@
 
                 /* --- ORANGE FEATURE MOBILE UPDATES --- */
                 .orange-feature:before {
-                    background: linear-gradient(60deg, #fff 25%, var(--orange) 25%);
+                    background: var(--orange);
                 }
 
                 .orange-flex {
