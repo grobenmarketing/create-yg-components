@@ -1,0 +1,91 @@
+<div class="wrapper">
+    <div class="component-label" style="margin-left: 1rem">Header Inverted (Green Background)</div>
+
+    <link rel="stylesheet" href="css/header-inverted.css">
+
+    <!-- HEADER REDESIGN V2 (Inverted Scheme) -->
+    <header class="shadow-xl border-none">
+        <!-- Utility Bar (Darker Contrast) -->
+        <div class="bg-green-950 text-green-100 text-[10px] py-2 px-6 font-bold uppercase tracking-widest">
+            <div class="container mx-auto flex justify-end items-center gap-6">
+                <a href="#" class="hover:text-white transition flex items-center gap-2">
+                    <i class="fas fa-credit-card text-green-400"></i>
+                    Make a Payment
+                </a>
+
+                <span class="text-green-800 font-normal">|</span>
+
+                <a href="#" class="hover:text-white transition flex items-center gap-2">
+                    <i class="fas fa-cloud-upload-alt text-green-400"></i>
+                    Upload Files
+                </a>
+
+                <span class="text-green-800 font-normal">|</span>
+
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone-alt text-green-400"></i>
+                    <a href="tel:3303345060" class="hover:text-white transition font-bold">330-334-5060</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav (Brand Green) -->
+        <nav class="bg-green-700 px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo (Inverted for Green BG) -->
+                <a href="#" class="flex items-center">
+                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-11 w-auto brightness-0 invert">
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-1 text-base font-semibold text-white">
+                    <!-- Home -->
+                    <a href="#" class="nav-link-inverted relative px-4 py-2 hover:text-green-100 transition">Home</a>
+
+                    <!-- Large Format Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-inverted relative px-4 py-2 flex items-center gap-1 hover:text-green-100 transition outline-none">
+                            Large Format <i class="fas fa-chevron-down text-[10px] opacity-60 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Simple Dropdown Menu -->
+                        <div class="dropdown-content absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-2xl rounded-lg py-2 z-50">
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Vehicle Wraps</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Signs & Displays</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Banners & Posters</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Wall Graphics</a>
+                        </div>
+                    </div>
+
+                    <!-- Print & Promo Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-inverted relative px-4 py-2 flex items-center gap-1 hover:text-green-100 transition outline-none">
+                            Print & Promo <i class="fas fa-chevron-down text-[10px] opacity-60 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Simple Dropdown Menu -->
+                        <div class="dropdown-content absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-2xl rounded-lg py-2 z-50">
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Commercial Printing</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Custom Apparel</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Promotional Products</a>
+                            <a href="#" class="block px-6 py-2.5 text-gray-800 hover:bg-green-50 hover:text-green-700 transition">Direct Mail</a>
+                        </div>
+                    </div>
+
+                    <!-- Our Services -->
+                    <a href="#" class="nav-link-inverted relative px-4 py-2 hover:text-green-100 transition">Our Services</a>
+
+                    <!-- CTA Button (Pop of white for contrast) -->
+                    <div class="pl-4">
+                        <a href="#" class="bg-white text-green-700 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition shadow-lg active:scale-95 duration-150">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <div class="lg:hidden text-white">
+                    <button class="p-2"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
