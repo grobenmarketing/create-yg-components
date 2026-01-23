@@ -21,6 +21,9 @@ python server.py
 This is a static website. The deployment serves files directly from the root directory.
 
 ## Recent Changes
+- January 23, 2026: Improved gallery mobile responsiveness - stacked filter buttons, responsive columns (1 on mobile, 2 on tablet, 3 on desktop), smooth hover zoom effect
+- January 23, 2026: Fixed mobile typography overflow - reduced font sizes for hero, slider, and section titles on mobile screens
+- January 23, 2026: Fixed content box image spacing on mobile - removed min-height causing gaps
 - January 23, 2026: Added Font Awesome icons for footer social links (Facebook, Instagram, TikTok, X/Twitter, LinkedIn)
 - January 23, 2026: Fixed orange divider line thickness from 2px to 1px to match live site
 - January 23, 2026: Fixed broken LED Display gallery image
