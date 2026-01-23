@@ -778,14 +778,13 @@
                 width: 28px;
                 height: 28px;
             }
-            .socials svg {
-                width: 22px;
-                height: 22px;
-                fill: var(--primary);
-                transition: fill 0.3s ease;
+            .socials i {
+                font-size: 18px;
+                color: var(--primary);
+                transition: color 0.3s ease;
             }
-            .socials a:hover svg {
-                fill: var(--brand);
+            .socials a:hover i {
+                color: var(--brand);
             }
 
             @media (max-width: 1024px) {

@@ -21,6 +21,9 @@ python server.py
 This is a static website. The deployment serves files directly from the root directory.
 
 ## Recent Changes
+- January 23, 2026: Added Font Awesome icons for footer social links (Facebook, Instagram, TikTok, X/Twitter, LinkedIn)
+- January 23, 2026: Fixed orange divider line thickness from 2px to 1px to match live site
+- January 23, 2026: Fixed broken LED Display gallery image
 - January 23, 2026: Aligned all typography/font sizes/weights to match live yodergraphics.com site (nav links, header buttons, slider titles, service card titles, story button)
 - January 23, 2026: Added edge-to-edge wave graphic to service cards section (matching slider treatment)
 - January 23, 2026: Made gallery fully functional - added filtering by category, random shuffle on page load, lightbox for enlarged images, and 6 additional stock images
