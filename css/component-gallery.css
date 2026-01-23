@@ -238,10 +238,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0.5rem 1rem;
+                padding: 1rem 1rem 0.5rem 1rem;
                 max-width: 1200px;
                 margin: 0 auto;
-                min-height: 90px;
+                min-height: 100px;
             }
 
             .logo-img {
@@ -258,17 +258,18 @@
             }
 
             .action-btn {
-                background: #fff;
-                color: var(--primary);
-                padding: 4px 8px;
+                background: transparent;
+                color: #fff;
+                border: 2px solid #fff;
+                padding: 6px 12px;
                 border-radius: 25px;
                 font-weight: 600;
-                font-size: 14px;
+                font-size: 13px;
                 display: flex;
                 align-items: center;
-                gap: 12px;
+                gap: 10px;
                 text-transform: uppercase;
-                width: 155px;
+                width: 170px;
                 justify-content: center;
                 transition: all 0.2s ease;
             }
@@ -276,13 +277,13 @@
             .action-btn svg {
                 width: 14px;
                 height: 14px;
-                fill: var(--primary);
-                stroke: var(--primary);
+                fill: #fff;
+                stroke: #fff;
                 stroke-width: 1;
             }
 
             .action-btn:hover {
-                opacity: 0.9;
+                background: rgba(255, 255, 255, 0.1);
                 transform: translateY(-1px);
             }
 
