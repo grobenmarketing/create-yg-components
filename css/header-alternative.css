@@ -1,0 +1,32 @@
+/* Dropdown Animation */
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+}
+
+/* Show on hover of the parent group */
+.group:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Nav Link Underline Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #15803d; /* green-700 */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.nav-link:hover::after {
+    width: 70%;
+}
