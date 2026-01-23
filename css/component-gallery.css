@@ -523,30 +523,52 @@
             }
 
             /* --- Home Cards Grid --- */
-            .cards-grid-sec {
-                text-align: center;
-                padding: 4rem 0 0;
+            /* --- SERVICE CARDS CONTAINER (full-width wave like slider) --- */
+            .service-cards-container {
                 background: #fff;
+                padding: 2rem 0 0;
                 position: relative;
+                min-height: 500px;
                 overflow: hidden;
-            }
-            .cards-wave-bg {
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                transform: translateX(-50%);
+                margin-bottom: 2rem;
+                /* Full bleed - break out of any parent constraints */
                 width: 100vw;
-                height: 150px;
-                z-index: 0;
-                pointer-events: none;
+                margin-left: calc(-50vw + 50%);
             }
-            .cards-wave-bg img {
+            .service-cards-container .component-label {
+                position: relative;
+                z-index: 10;
+                margin-left: 1rem;
+            }
+            .service-cards-wave {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 width: 100%;
                 height: 100%;
+                pointer-events: none;
+                z-index: 1;
+            }
+            .service-waves-img {
+                position: absolute;
+                left: 0;
+                bottom: 0 !important;
+                top: auto !important;
+                width: 100%;
+                height: auto;
                 object-fit: cover;
             }
-            .cards-grid-sec .grid-layout {
-                padding-bottom: 6rem;
+            .service-cards-container .grid-layout {
+                padding-bottom: 8rem;
+                position: relative;
+                z-index: 2;
+            }
+            .service-cards-container .type-replica-2 {
+                text-align: center;
+                padding-top: 2rem;
+                position: relative;
+                z-index: 2;
             }
             .grid-layout {
                 display: grid;
