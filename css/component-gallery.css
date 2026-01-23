@@ -174,8 +174,8 @@
                 letter-spacing: 0.5px;
             }
             .type-replica-3 hr {
-                border: 0;
-                border-top: 2px solid var(--orange);
+                background-color: var(--orange);
+                border: 1px solid var(--orange);
                 margin: 0.2rem 0 1rem 0;
                 width: 100%;
             }
@@ -610,8 +610,8 @@
                 margin: 0;
             }
             .svc-card-hr {
-                border: 0;
-                border-top: 2px solid var(--orange);
+                background-color: var(--orange);
+                border: 1px solid var(--orange);
                 margin: 0.5rem 0 1rem 0;
             }
             .svc-card-item {
