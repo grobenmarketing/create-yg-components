@@ -31,11 +31,8 @@ def load_partial(partial_name):
     return content
 
 
-def build_html():
-    """Build the component-gallery.html from template and partials."""
-    template_path = Path("template.html")
-    output_path = Path("component-gallery.html")
-
+def build_html_from_template(template_path, output_path):
+    """Build an HTML file from a template and partials."""
     if not template_path.exists():
         print(f"Error: Template file not found at {template_path}")
         return False
@@ -62,6 +59,22 @@ def build_html():
 
     print(f"\n✓ Build complete: {output_path}")
     return True
+
+
+def build_html():
+    """Build all HTML files from templates and partials."""
+    templates = [
+        (Path("template.html"), Path("index.html")),
+        (Path("template-new-design.html"), Path("new-design.html")),
+    ]
+
+    success = True
+    for template_path, output_path in templates:
+        print(f"\nBuilding {output_path} from {template_path}...")
+        if not build_html_from_template(template_path, output_path):
+            success = False
+
+    return success
 
 
 def main():
