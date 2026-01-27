@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,16 +42,15 @@
         }
 
         .component-label {
-            display: inline-block;
-            background: #1f2937;
-            color: white;
-            padding: 0.5rem 1rem;
+            display: block;
+            color: #9ca3af;
+            padding: 0;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 0.375rem;
-            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            border-left: 3px solid #d1d5db;
+            padding-left: 0.75rem;
         }
 
         .glass {
@@ -671,38 +670,47 @@
     </section>
 
     <!-- ============================================
-         TYPOGRAPHY
+         TYPOGRAPHY / FONT PAIRINGS
          ============================================ -->
-    <div class="py-8 px-4 max-w-7xl mx-auto">
-        <span class="component-label">Typography</span>
+    <div class="py-6 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Font Pairings</span>
     </div>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <div class="p-6 border-b border-gray-100 bg-gray-50">
-                <h3 class="text-lg font-bold text-gray-900">Red Hat Display</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 p-8">
-                <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 block">Body Text</span>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Regular body text at 1rem with standard weight for optimal readability across all content.
-                    </p>
-                    <p class="text-gray-900 font-semibold leading-relaxed">
-                        Semi-bold text (600) for emphasis in supporting content and key statements.
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 bg-gray-50">
+                    <span class="text-xs font-medium text-brand-green uppercase tracking-wider">Option 1</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1" style="font-family: 'Red Hat Display', sans-serif;">Red Hat Display</h3>
+                    <p class="text-sm text-gray-500 mb-4">Headings + Body</p>
+                    <p class="text-gray-700 leading-relaxed" style="font-family: 'Red Hat Display', sans-serif;">
+                        A versatile sans-serif with excellent readability. Works well for both headlines and body text.
                     </p>
                 </div>
-                <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 block">Links</span>
-                    <p class="mb-4">
-                        <a href="#" class="text-brand-green font-semibold underline underline-offset-2 hover:text-brand-green-dark transition-colors">
-                            Standard inline link
-                        </a>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 bg-gray-50">
+                    <span class="text-xs font-medium text-brand-green uppercase tracking-wider">Option 2</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1" style="font-family: 'Inter', sans-serif;">Inter</h3>
+                    <p class="text-sm text-gray-500 mb-4">Modern & Clean</p>
+                    <p class="text-gray-700 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                        A highly legible typeface designed for screens. Popular choice for modern web applications.
                     </p>
-                    <p>
-                        <a href="#" class="text-brand-green font-bold uppercase text-sm tracking-wide hover:text-brand-green-dark transition-colors">
-                            Navigation Link
-                        </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 bg-gray-50">
+                    <span class="text-xs font-medium text-brand-green uppercase tracking-wider">Option 3</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1" style="font-family: 'Poppins', sans-serif;">Poppins</h3>
+                    <p class="text-sm text-gray-500 mb-4">Geometric & Friendly</p>
+                    <p class="text-gray-700 leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+                        A geometric sans-serif with a friendly, approachable feel. Great for brands wanting warmth.
                     </p>
                 </div>
             </div>
@@ -710,41 +718,171 @@
     </section>
 
     <!-- ============================================
-         DISPLAY HEADINGS
+         UI COMPONENTS
          ============================================ -->
-    <div class="py-8 px-4 max-w-7xl mx-auto">
-        <span class="component-label">Display Headings</span>
+    <div class="py-6 px-4 max-w-7xl mx-auto">
+        <span class="component-label">UI Components</span>
     </div>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <div class="p-6 border-b border-gray-100 bg-gray-50">
-                <h3 class="text-lg font-bold text-gray-900">Hero & Section Titles</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-0">
-                <div class="bg-gradient-to-br from-brand-green to-brand-green-dark p-8 md:p-12">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-white/60 mb-4 block">Hero Title</span>
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hero Title</h1>
-                    <p class="text-white/80 text-lg">Supporting hero text</p>
-                </div>
-                <div class="p-8 md:p-12 border-b border-gray-100">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Slider Display</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Commercial</h2>
-                    <h2 class="text-3xl md:text-4xl font-black text-brand-green uppercase tracking-tight">Printing</h2>
-                    <p class="text-gray-500 text-sm mt-2">cards, flyers, brochures & more</p>
-                </div>
-                <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-100">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Section Title</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-                        That's Why—<span class="text-brand-green">We Do It All.</span>
-                    </h2>
-                </div>
-                <div class="p-8 md:p-12">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Story Header</span>
-                    <h2 class="text-3xl font-black text-gray-900 uppercase tracking-wide">Our Story</h2>
-                    <h3 class="text-lg font-bold text-brand-orange uppercase tracking-widest mt-1">Veteran Owned & Operated</h3>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="space-y-8">
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Buttons</h4>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-lg transition-all">Primary</button>
+                    <button class="px-5 py-2.5 bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold rounded-lg transition-all">Secondary</button>
+                    <button class="px-5 py-2.5 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 text-sm font-semibold rounded-lg transition-all">Outline</button>
+                    <button class="px-5 py-2.5 bg-brand-orange hover:bg-amber-500 text-white text-sm font-semibold rounded-lg transition-all">Accent</button>
+                    <button class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">Pill Button</button>
+                    <button class="px-4 py-2 text-brand-green hover:text-brand-green-dark text-sm font-semibold transition-all">Text Only</button>
                 </div>
             </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Badges & Tags</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-semibold rounded-full">New</span>
+                    <span class="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-semibold rounded-full">Featured</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Info</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">Default</span>
+                    <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">Sale</span>
+                    <span class="px-3 py-1 bg-brand-green text-white text-xs font-semibold rounded-full">Solid</span>
+                    <span class="px-2 py-0.5 bg-gray-900 text-white text-xs font-medium rounded">v2.0</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Alerts</h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i>
+                        <div>
+                            <p class="text-sm font-semibold text-green-800">Success</p>
+                            <p class="text-sm text-green-700">Your order has been placed successfully.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                        <i class="fa-solid fa-circle-info text-blue-600 mt-0.5"></i>
+                        <div>
+                            <p class="text-sm font-semibold text-blue-800">Information</p>
+                            <p class="text-sm text-blue-700">New features are now available in your account.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5"></i>
+                        <div>
+                            <p class="text-sm font-semibold text-amber-800">Warning</p>
+                            <p class="text-sm text-amber-700">Your subscription will expire in 7 days.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <i class="fa-solid fa-circle-xmark text-red-600 mt-0.5"></i>
+                        <div>
+                            <p class="text-sm font-semibold text-red-800">Error</p>
+                            <p class="text-sm text-red-700">There was a problem processing your request.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Icon List</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            <span class="text-gray-700">Free shipping on orders over $50</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            <span class="text-gray-700">Rush production available</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            <span class="text-gray-700">Free design assistance</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            <span class="text-gray-700">Satisfaction guaranteed</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Description List</h4>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500">Turnaround</dt>
+                            <dd class="text-gray-900 font-medium">3-5 business days</dd>
+                        </div>
+                        <div class="flex justify-between border-t border-gray-100 pt-3">
+                            <dt class="text-gray-500">Minimum Order</dt>
+                            <dd class="text-gray-900 font-medium">25 units</dd>
+                        </div>
+                        <div class="flex justify-between border-t border-gray-100 pt-3">
+                            <dt class="text-gray-500">Setup Fee</dt>
+                            <dd class="text-gray-900 font-medium">$0.00</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Tabs</h4>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-xs text-gray-400 mb-2">Underline Style</p>
+                        <div class="flex gap-6 border-b border-gray-200">
+                            <button class="pb-3 text-sm font-semibold text-brand-green border-b-2 border-brand-green -mb-px">Overview</button>
+                            <button class="pb-3 text-sm font-medium text-gray-500 hover:text-gray-700">Specifications</button>
+                            <button class="pb-3 text-sm font-medium text-gray-500 hover:text-gray-700">Reviews</button>
+                            <button class="pb-3 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 mb-2">Pill Style</p>
+                        <div class="flex gap-2 bg-gray-100 p-1 rounded-lg w-fit">
+                            <button class="px-4 py-2 text-sm font-semibold text-white bg-brand-green rounded-md">Overview</button>
+                            <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">Specifications</button>
+                            <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">Reviews</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Accordion / FAQ</h4>
+                <div class="divide-y divide-gray-200">
+                    <details class="group py-4" open>
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="text-gray-900 font-semibold">What file formats do you accept?</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+                            We accept PDF, AI, EPS, PSD, and high-resolution JPG or PNG files. For best results, please provide vector files with fonts outlined.
+                        </p>
+                    </details>
+                    <details class="group py-4">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="text-gray-900 font-semibold">What is your turnaround time?</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+                            Standard turnaround is 3-5 business days. Rush options are available for an additional fee.
+                        </p>
+                    </details>
+                    <details class="group py-4">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="text-gray-900 font-semibold">Do you offer design services?</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+                            Yes! Our in-house design team can help create or modify artwork for your project at no additional charge.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
         </div>
     </section>
 
