@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Yoder Graphics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#00953b',
+                        'brand-green-dark': '#007a30',
+                        'brand-orange': '#f9a01f',
+                        'brand-teal': '#1cd59d',
+                    },
+                    fontFamily: {
+                        'display': ['"Red Hat Display"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Red Hat Display', sans-serif; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-12">
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-gray-700 font-medium hover:text-brand-green transition-colors">Services</a>
+                    <a href="team-page.html" class="text-brand-green font-medium">About</a>
+                    <a href="blog-page.html" class="text-gray-700 font-medium hover:text-brand-green transition-colors">Blog</a>
+                    <a href="#" class="text-gray-700 font-medium hover:text-brand-green transition-colors">Gallery</a>
+                    <a href="#" class="text-gray-700 font-medium hover:text-brand-green transition-colors">Contact</a>
+                </nav>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 bg-brand-green text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide text-sm hover:bg-brand-green-dark transition-all">
+                    Get a Quote
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-gradient-to-br from-brand-green via-brand-green-dark to-gray-900 py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-semibold uppercase tracking-wider mb-6">
+                Veteran Owned & Operated
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">
+                Meet Our <span class="text-brand-orange">Team</span>
+            </h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                The dedicated professionals behind nearly 50 years of exceptional printing and signage solutions.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <img src="img/waves.svg" alt="" class="w-full h-auto">
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">
+                    Leadership <span class="text-brand-orange">Team</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="group text-center">
+                    <div class="relative rounded-2xl overflow-hidden mb-6 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500" alt="Team member" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">John Yoder</h3>
+                    <p class="text-brand-green font-semibold text-lg mb-3">President & Founder</p>
+                    <p class="text-gray-600 max-w-sm mx-auto">
+                        Founded Yoder Graphics in 1976 with a vision to provide quality printing services to Ohio businesses.
+                    </p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative rounded-2xl overflow-hidden mb-6 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Team member" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Sarah Mitchell</h3>
+                    <p class="text-brand-green font-semibold text-lg mb-3">Creative Director</p>
+                    <p class="text-gray-600 max-w-sm mx-auto">
+                        Leads our design team with 15+ years of experience in brand development and visual communications.
+                    </p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative rounded-2xl overflow-hidden mb-6 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500" alt="Team member" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">David Chen</h3>
+                    <p class="text-brand-green font-semibold text-lg mb-3">Operations Manager</p>
+                    <p class="text-gray-600 max-w-sm mx-auto">
+                        Ensures seamless production workflow and maintains our commitment to on-time delivery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">
+                    Production <span class="text-brand-orange">Specialists</span>
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-green/20">
+                        <h3 class="text-lg font-bold text-gray-900">Robert Anderson</h3>
+                        <p class="text-brand-green font-semibold text-sm mb-3">Sign Installation Lead</p>
+                        <p class="text-gray-600 text-sm">15+ years of experience with a perfect safety record.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-orange/20">
+                        <h3 class="text-lg font-bold text-gray-900">Lisa Thompson</h3>
+                        <p class="text-brand-orange font-semibold text-sm mb-3">Senior Graphic Designer</p>
+                        <p class="text-gray-600 text-sm">Creates stunning visual designs that elevate brands.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-teal/20">
+                        <h3 class="text-lg font-bold text-gray-900">Marcus Williams</h3>
+                        <p class="text-brand-teal font-semibold text-sm mb-3">Vehicle Wrap Specialist</p>
+                        <p class="text-gray-600 text-sm">Certified 3M installer with exceptional attention to detail.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-green/20">
+                        <h3 class="text-lg font-bold text-gray-900">Emily Rodriguez</h3>
+                        <p class="text-brand-green font-semibold text-sm mb-3">Print Production Manager</p>
+                        <p class="text-gray-600 text-sm">Ensures every print meets our quality standards.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-orange/20">
+                        <h3 class="text-lg font-bold text-gray-900">Tom Baker</h3>
+                        <p class="text-brand-orange font-semibold text-sm mb-3">Account Manager</p>
+                        <p class="text-gray-600 text-sm">Your dedicated partner from concept to completion.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-teal/20">
+                        <h3 class="text-lg font-bold text-gray-900">Jennifer Lee</h3>
+                        <p class="text-brand-teal font-semibold text-sm mb-3">Customer Service Lead</p>
+                        <p class="text-gray-600 text-sm">Dedicated to exceptional client experiences.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-green/20">
+                        <h3 class="text-lg font-bold text-gray-900">Chris Martinez</h3>
+                        <p class="text-brand-green font-semibold text-sm mb-3">Press Operator</p>
+                        <p class="text-gray-600 text-sm">Master of color matching and print precision.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="p-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Team member" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-orange/20">
+                        <h3 class="text-lg font-bold text-gray-900">Amanda Foster</h3>
+                        <p class="text-brand-orange font-semibold text-sm mb-3">Quality Control</p>
+                        <p class="text-gray-600 text-sm">Final check before every project ships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-brand-green font-bold uppercase tracking-wider text-sm mb-4 block">Our Values</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight mb-6">
+                        What Drives <span class="text-brand-orange">Us</span>
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-medal text-brand-green text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Quality First</h3>
+                                <p class="text-gray-600">Every project receives meticulous attention to detail, ensuring results that exceed expectations.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-handshake text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Customer Partnership</h3>
+                                <p class="text-gray-600">We work alongside you as partners, not just service providers, invested in your success.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-brand-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-lightbulb text-brand-teal text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
+                                <p class="text-gray-600">Continuously investing in the latest technology to deliver cutting-edge solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-brand-green rounded-2xl p-8 text-center">
+                            <p class="text-5xl font-black text-white mb-2">48+</p>
+                            <p class="text-white/80 font-semibold">Years in Business</p>
+                        </div>
+                        <div class="bg-brand-orange rounded-2xl p-8 text-center">
+                            <p class="text-5xl font-black text-white mb-2">25K+</p>
+                            <p class="text-white/80 font-semibold">Projects Completed</p>
+                        </div>
+                        <div class="bg-gray-900 rounded-2xl p-8 text-center">
+                            <p class="text-5xl font-black text-white mb-2">35+</p>
+                            <p class="text-white/70 font-semibold">Team Members</p>
+                        </div>
+                        <div class="bg-brand-teal rounded-2xl p-8 text-center">
+                            <p class="text-5xl font-black text-white mb-2">99%</p>
+                            <p class="text-white/80 font-semibold">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-gradient-to-r from-brand-green via-brand-green-dark to-brand-green py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4">
+                        Join Our Team
+                    </h2>
+                    <p class="text-xl text-white/80 max-w-xl">
+                        We're always looking for talented individuals who share our passion for quality and service.
+                    </p>
+                </div>
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-white text-brand-green px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-gray-100 transition-all shadow-lg">
+                    View Open Positions
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-16 brightness-0 invert mb-6">
+                    <p class="text-gray-400 leading-relaxed max-w-md">
+                        Since 1976, Yoder Graphics has been providing exceptional printing and signage solutions. We're proud to be veteran owned and operated.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wide mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wide mb-4">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-green"></i>
+                            330-334-5060
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-green"></i>
+                            info@yodergraphics.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">&copy;2026 Yoder Graphics Systems. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
