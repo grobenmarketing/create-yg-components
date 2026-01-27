@@ -30,6 +30,7 @@ This is a static website. The deployment serves files directly from the root dir
 - Teal/Secondary: #1cd59d
 
 ## Recent Changes
+- January 27, 2026: Added "Original Slider - Updated" section with 7 slides from index.html, converted to Tailwind CSS with matching typography, pill-style buttons, full-width wave SVG background on green, and independent Swiper instance
 - January 27, 2026: Enhanced home page slider with 6 complete slides (Commercial Printing, Vehicle Wraps, Custom Apparel, Signs & Displays, Banners & Trade Show, Business Forms) - features autoplay, pause on hover, animated progress bar, and improved mobile responsiveness
 - January 27, 2026: Created new components-redesign.html with complete modern redesign using Tailwind CSS - includes header, heroes, typography, slider, service cards, content boxes, gallery with filter/lightbox, and footer
 - January 27, 2026: Updated navigation to include three pages: Current, New, and Redesign
