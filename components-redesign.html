@@ -168,60 +168,98 @@
 
         <nav class="border-t border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-end h-16 gap-1">
-                    <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
-                        Home
-                    </a>
+                <div class="flex items-center justify-between lg:justify-end h-16">
+                    <button onclick="document.getElementById('mobile-menu-1').classList.toggle('hidden')" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-700">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
 
-                    <div class="relative group">
-                        <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
-                            Large Format
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
-                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
-                                    <i class="fa-solid fa-car w-5 text-brand-green/60"></i>
-                                    Vehicle Wraps
-                                </a>
-                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
-                                    <i class="fa-solid fa-signs-post w-5 text-brand-green/60"></i>
-                                    Signs & Displays
-                                </a>
+                    <div class="hidden lg:flex items-center gap-1">
+                        <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                            Home
+                        </a>
+
+                        <div class="relative group">
+                            <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                                Large Format
+                                <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                        <i class="fa-solid fa-car w-5 text-brand-green/60"></i>
+                                        Vehicle Wraps
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                        <i class="fa-solid fa-signs-post w-5 text-brand-green/60"></i>
+                                        Signs & Displays
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="relative group">
-                        <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
-                            Print & Promo
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
-                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
-                                    <i class="fa-solid fa-print w-5 text-brand-green/60"></i>
-                                    Commercial Printing
-                                </a>
-                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
-                                    <i class="fa-solid fa-shirt w-5 text-brand-green/60"></i>
-                                    Apparel
-                                </a>
-                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
-                                    <i class="fa-solid fa-file-lines w-5 text-brand-green/60"></i>
-                                    Business Forms
-                                </a>
+                        <div class="relative group">
+                            <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                                Print & Promo
+                                <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                        <i class="fa-solid fa-print w-5 text-brand-green/60"></i>
+                                        Commercial Printing
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                        <i class="fa-solid fa-shirt w-5 text-brand-green/60"></i>
+                                        Apparel
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                        <i class="fa-solid fa-file-lines w-5 text-brand-green/60"></i>
+                                        Business Forms
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
+                        <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                            Our Services
+                        </a>
+
+                        <a href="#" class="ml-4 px-6 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-brand-green/25 hover:shadow-brand-green/40">
+                            Get a Quote
+                        </a>
                     </div>
 
-                    <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
-                        Our Services
-                    </a>
-
-                    <a href="#" class="ml-4 px-6 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-brand-green/25 hover:shadow-brand-green/40">
+                    <a href="#" class="lg:hidden px-4 py-2 bg-brand-green text-white text-sm font-semibold rounded-full">
                         Get a Quote
                     </a>
+                </div>
+            </div>
+
+            <div id="mobile-menu-1" class="hidden lg:hidden border-t border-gray-100 bg-white">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="#" class="block px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg">Home</a>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg cursor-pointer list-none">
+                            Large Format
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Vehicle Wraps</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Signs & Displays</a>
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg cursor-pointer list-none">
+                            Print & Promo
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Commercial Printing</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Apparel</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Business Forms</a>
+                        </div>
+                    </details>
+                    <a href="#" class="block px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg">Our Services</a>
                 </div>
             </div>
         </nav>
@@ -261,7 +299,7 @@
                         <img src="img/logo.svg" alt="Yoder Graphics" class="h-12">
                     </a>
 
-                    <div class="flex items-center gap-8">
+                    <div class="hidden lg:flex items-center gap-8">
                         <a href="#" class="text-sm font-semibold text-brand-green transition-colors">
                             Home
                         </a>
@@ -313,9 +351,43 @@
                         </a>
                     </div>
 
-                    <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
-                        Get a Quote
-                    </a>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
+                            Get a Quote
+                        </a>
+                        <button onclick="document.getElementById('mobile-menu-2').classList.toggle('hidden')" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-700">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu-2" class="hidden lg:hidden border-t border-gray-100 bg-white">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="#" class="block px-4 py-3 text-sm font-semibold text-brand-green hover:bg-gray-50 rounded-lg">Home</a>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg cursor-pointer list-none">
+                            Large Format
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Vehicle Wraps</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Signs & Displays</a>
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg cursor-pointer list-none">
+                            Print & Promo
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Commercial Printing</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Apparel</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Business Forms</a>
+                        </div>
+                    </details>
+                    <a href="#" class="block px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg">Services</a>
+                    <a href="#" class="block px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 rounded-lg">Contact</a>
                 </div>
             </div>
         </nav>
@@ -351,13 +423,13 @@
         </div>
 
         <div class="max-w-5xl mx-auto px-4 pt-6">
-            <nav class="bg-white/90 backdrop-blur-lg rounded-full shadow-xl border border-gray-200/50 px-3 py-2">
+            <nav class="bg-white/90 backdrop-blur-lg rounded-2xl lg:rounded-full shadow-xl border border-gray-200/50 px-3 py-2">
                 <div class="flex items-center justify-between">
                     <a href="#" class="flex items-center pl-3">
                         <img src="img/logo.svg" alt="Yoder Graphics" class="h-10">
                     </a>
 
-                    <div class="flex items-center gap-1">
+                    <div class="hidden lg:flex items-center gap-1">
                         <a href="#" class="px-4 py-2 text-sm font-semibold text-white bg-brand-green rounded-full transition-all">
                             Home
                         </a>
@@ -410,9 +482,40 @@
                         <a href="#" class="px-5 py-2.5 bg-brand-orange hover:bg-amber-500 text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-brand-orange/25">
                             Get a Quote
                         </a>
-                        <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-all">
+                        <button onclick="document.getElementById('mobile-menu-3').classList.toggle('hidden')" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-all">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <button class="hidden lg:flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-all">
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
+                    </div>
+                </div>
+
+                <div id="mobile-menu-3" class="hidden lg:hidden border-t border-gray-200 mt-3 pt-3">
+                    <div class="space-y-1 pb-2">
+                        <a href="#" class="block px-4 py-3 text-sm font-semibold text-white bg-brand-green rounded-xl">Home</a>
+                        <details class="group">
+                            <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-100 rounded-xl cursor-pointer list-none">
+                                Large Format
+                                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="pl-4 mt-1 space-y-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Vehicle Wraps</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Signs & Displays</a>
+                            </div>
+                        </details>
+                        <details class="group">
+                            <summary class="flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-100 rounded-xl cursor-pointer list-none">
+                                Print & Promo
+                                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                            </summary>
+                            <div class="pl-4 mt-1 space-y-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Commercial Printing</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Apparel</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-green">Business Forms</a>
+                            </div>
+                        </details>
+                        <a href="#" class="block px-4 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-100 rounded-xl">Services</a>
                     </div>
                 </div>
             </nav>
@@ -455,7 +558,7 @@
                     <img src="img/logo.svg" alt="Yoder Graphics" class="h-14 brightness-0 invert">
                 </a>
 
-                <nav class="flex items-center gap-1">
+                <nav class="hidden lg:flex items-center gap-1">
                     <a href="#" class="px-4 py-2 text-sm font-medium text-white hover:text-brand-green transition-colors">
                         Home
                     </a>
@@ -571,9 +674,47 @@
                     </a>
                 </nav>
 
-                <a href="#" class="px-6 py-3 bg-gradient-to-r from-brand-green to-brand-teal hover:from-brand-green-dark hover:to-brand-green text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-brand-green/25">
-                    Get a Quote
-                </a>
+                <div class="flex items-center gap-3">
+                    <a href="#" class="px-6 py-3 bg-gradient-to-r from-brand-green to-brand-teal hover:from-brand-green-dark hover:to-brand-green text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-brand-green/25">
+                        Get a Quote
+                    </a>
+                    <button onclick="document.getElementById('mobile-menu-4').classList.toggle('hidden')" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-800 text-white">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu-4" class="hidden lg:hidden border-t border-gray-800 py-4">
+                <div class="space-y-1">
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-white hover:bg-gray-800 rounded-lg">Home</a>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg cursor-pointer list-none">
+                            Large Format
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-green">Vehicle Wraps</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-green">Signs & Displays</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-green">Banners</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-green">Displays</a>
+                        </div>
+                    </details>
+                    <details class="group">
+                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg cursor-pointer list-none">
+                            Print & Promo
+                            <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pl-4 mt-1 space-y-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Printing</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Apparel</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Promo Items</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Forms</a>
+                        </div>
+                    </details>
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">Services</a>
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">About</a>
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">Contact</a>
+                </div>
             </div>
         </div>
     </header>
