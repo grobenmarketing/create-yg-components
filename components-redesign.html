@@ -54,6 +54,129 @@
             margin-top: 4rem;
         }
 
+        /* Mega Menu Dark Mode */
+        .mega-menu-dark {
+            background-color: #111827;
+        }
+        .mega-menu-dark .utility-bar {
+            background-color: #111827;
+            border-color: #1f2937;
+        }
+        .mega-menu-dark .utility-link {
+            color: #9ca3af;
+        }
+        .mega-menu-dark .utility-link:hover {
+            color: #ffffff;
+        }
+        .mega-menu-dark .utility-divider {
+            color: #374151;
+        }
+        .mega-menu-dark .main-nav {
+            background-color: #111827;
+        }
+        .mega-menu-dark .nav-link {
+            color: #d1d5db;
+        }
+        .mega-menu-dark .nav-link:hover {
+            color: #ffffff;
+        }
+        .mega-menu-dark .nav-link-active {
+            color: #ffffff;
+        }
+        .mega-menu-dark .nav-dropdown {
+            background-color: #1f2937;
+            border-color: #374151;
+        }
+        .mega-menu-dark .nav-dropdown-title {
+            color: #00953b;
+        }
+        .mega-menu-dark .nav-dropdown-item {
+            color: #ffffff;
+        }
+        .mega-menu-dark .nav-dropdown-item:hover {
+            background-color: rgba(55, 65, 81, 0.5);
+        }
+        .mega-menu-dark .nav-dropdown-desc {
+            color: #6b7280;
+        }
+        .mega-menu-dark .mobile-menu {
+            border-color: #1f2937;
+        }
+        .mega-menu-dark .mobile-link {
+            color: #d1d5db;
+        }
+        .mega-menu-dark .mobile-link:hover {
+            background-color: #1f2937;
+        }
+        .mega-menu-dark .hamburger-btn {
+            color: #ffffff;
+        }
+        .mega-menu-dark .hamburger-btn:hover {
+            background-color: #1f2937;
+        }
+
+        /* Mega Menu Light Mode */
+        .mega-menu-light {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        .mega-menu-light .utility-bar {
+            background-color: #f9fafb;
+            border-color: #e5e7eb;
+        }
+        .mega-menu-light .utility-link {
+            color: #6b7280;
+        }
+        .mega-menu-light .utility-link:hover {
+            color: #111827;
+        }
+        .mega-menu-light .utility-divider {
+            color: #d1d5db;
+        }
+        .mega-menu-light .main-nav {
+            background-color: #ffffff;
+        }
+        .mega-menu-light .nav-link {
+            color: #4b5563;
+        }
+        .mega-menu-light .nav-link:hover {
+            color: #00953b;
+        }
+        .mega-menu-light .nav-link-active {
+            color: #00953b;
+        }
+        .mega-menu-light .nav-dropdown {
+            background-color: #ffffff;
+            border-color: #e5e7eb;
+        }
+        .mega-menu-light .nav-dropdown-title {
+            color: #00953b;
+        }
+        .mega-menu-light .nav-dropdown-item {
+            color: #111827;
+        }
+        .mega-menu-light .nav-dropdown-item:hover {
+            background-color: rgba(0, 149, 59, 0.05);
+        }
+        .mega-menu-light .nav-dropdown-desc {
+            color: #9ca3af;
+        }
+        .mega-menu-light .mobile-menu {
+            border-color: #e5e7eb;
+        }
+        .mega-menu-light .mobile-link {
+            color: #4b5563;
+        }
+        .mega-menu-light .mobile-link:hover {
+            background-color: #f3f4f6;
+        }
+        .mega-menu-light .hamburger-btn {
+            color: #374151;
+        }
+        .mega-menu-light .hamburger-btn:hover {
+            background-color: #f3f4f6;
+        }
+
         .glass {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -530,83 +653,88 @@
         <span class="component-label">Header Variation 3: Dark Mega Menu</span>
     </div>
 
-    <header class="bg-gray-900">
-        <div class="border-b border-gray-800">
+    <header id="mega-menu-header" class="mega-menu-dark">
+        <div class="utility-bar border-b">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-9">
                     <div class="flex items-center gap-6 text-xs">
-                        <a href="tel:330-334-5060" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                        <a href="tel:330-334-5060" class="utility-link flex items-center gap-2 transition-colors">
                             <i class="fa-solid fa-phone text-brand-green"></i>
                             330-334-5060
                         </a>
-                        <a href="#" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                        <a href="#" class="utility-link flex items-center gap-2 transition-colors">
                             <i class="fa-solid fa-envelope text-brand-green"></i>
                             info@yodergraphics.com
                         </a>
                     </div>
                     <div class="flex items-center gap-4">
-                        <a href="#" class="text-gray-400 hover:text-white text-xs transition-colors">Make a Payment</a>
-                        <span class="text-gray-700">|</span>
-                        <a href="#" class="text-gray-400 hover:text-white text-xs transition-colors">Upload Files</a>
+                        <a href="#" class="utility-link text-xs transition-colors">Make a Payment</a>
+                        <span class="utility-divider">|</span>
+                        <a href="#" class="utility-link text-xs transition-colors">Upload Files</a>
+                        <span class="utility-divider">|</span>
+                        <button onclick="toggleMegaMenuTheme()" class="utility-link text-xs transition-colors flex items-center gap-1.5">
+                            <i id="theme-icon" class="fa-solid fa-sun"></i>
+                            <span id="theme-text">Light Mode</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="main-nav max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center">
-                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-14 brightness-0 invert">
+                    <img id="mega-menu-logo" src="img/logo.svg" alt="Yoder Graphics" class="h-14 brightness-0 invert">
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-1">
-                    <a href="#" class="px-4 py-2 text-sm font-medium text-white hover:text-brand-green transition-colors">
+                    <a href="#" class="nav-link-active px-4 py-2 text-sm font-medium transition-colors">
                         Home
                     </a>
 
                     <div class="relative group">
-                        <button class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
+                        <button class="nav-link px-4 py-2 text-sm font-medium transition-colors inline-flex items-center gap-1">
                             Large Format
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 min-w-80">
-                                <h4 class="text-brand-green font-bold text-xs uppercase tracking-wider mb-4">Large Format Services</h4>
+                            <div class="nav-dropdown rounded-2xl shadow-2xl border p-6 min-w-80">
+                                <h4 class="nav-dropdown-title font-bold text-xs uppercase tracking-wider mb-4">Large Format Services</h4>
                                 <div class="grid grid-cols-2 gap-3">
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center">
                                             <i class="fa-solid fa-car text-brand-green"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-green transition-colors">Vehicle Wraps</span>
-                                            <span class="text-gray-500 text-xs">Full & partial wraps</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-green transition-colors">Vehicle Wraps</span>
+                                            <span class="nav-dropdown-desc text-xs">Full & partial wraps</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center">
                                             <i class="fa-solid fa-signs-post text-brand-green"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-green transition-colors">Signs</span>
-                                            <span class="text-gray-500 text-xs">Indoor & outdoor</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-green transition-colors">Signs</span>
+                                            <span class="nav-dropdown-desc text-xs">Indoor & outdoor</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center">
                                             <i class="fa-solid fa-image text-brand-green"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-green transition-colors">Banners</span>
-                                            <span class="text-gray-500 text-xs">All sizes available</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-green transition-colors">Banners</span>
+                                            <span class="nav-dropdown-desc text-xs">All sizes available</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center">
                                             <i class="fa-solid fa-store text-brand-green"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-green transition-colors">Displays</span>
-                                            <span class="text-gray-500 text-xs">Trade show ready</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-green transition-colors">Displays</span>
+                                            <span class="nav-dropdown-desc text-xs">Trade show ready</span>
                                         </div>
                                     </a>
                                 </div>
@@ -615,48 +743,48 @@
                     </div>
 
                     <div class="relative group">
-                        <button class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors inline-flex items-center gap-1">
+                        <button class="nav-link px-4 py-2 text-sm font-medium transition-colors inline-flex items-center gap-1">
                             Print & Promo
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 min-w-80">
+                            <div class="nav-dropdown rounded-2xl shadow-2xl border p-6 min-w-80">
                                 <h4 class="text-brand-orange font-bold text-xs uppercase tracking-wider mb-4">Print & Promo Services</h4>
                                 <div class="grid grid-cols-2 gap-3">
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center">
                                             <i class="fa-solid fa-print text-brand-orange"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Printing</span>
-                                            <span class="text-gray-500 text-xs">Commercial quality</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Printing</span>
+                                            <span class="nav-dropdown-desc text-xs">Commercial quality</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center">
                                             <i class="fa-solid fa-shirt text-brand-orange"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Apparel</span>
-                                            <span class="text-gray-500 text-xs">Custom branded</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Apparel</span>
+                                            <span class="nav-dropdown-desc text-xs">Custom branded</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center">
                                             <i class="fa-solid fa-gift text-brand-orange"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Promo Items</span>
-                                            <span class="text-gray-500 text-xs">Branded merchandise</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Promo Items</span>
+                                            <span class="nav-dropdown-desc text-xs">Branded merchandise</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all group/item">
+                                    <a href="#" class="nav-dropdown-item flex items-center gap-3 p-3 rounded-xl transition-all group/item">
                                         <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center">
                                             <i class="fa-solid fa-file-lines text-brand-orange"></i>
                                         </div>
                                         <div>
-                                            <span class="text-white text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Forms</span>
-                                            <span class="text-gray-500 text-xs">Business documents</span>
+                                            <span class="text-sm font-medium block group-hover/item:text-brand-orange transition-colors">Forms</span>
+                                            <span class="nav-dropdown-desc text-xs">Business documents</span>
                                         </div>
                                     </a>
                                 </div>
@@ -664,13 +792,13 @@
                         </div>
                     </div>
 
-                    <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    <a href="#" class="nav-link px-4 py-2 text-sm font-medium transition-colors">
                         Services
                     </a>
-                    <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    <a href="#" class="nav-link px-4 py-2 text-sm font-medium transition-colors">
                         About
                     </a>
-                    <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    <a href="#" class="nav-link px-4 py-2 text-sm font-medium transition-colors">
                         Contact
                     </a>
                 </nav>
@@ -679,17 +807,17 @@
                     <a href="#" class="px-6 py-3 bg-gradient-to-r from-brand-green to-brand-teal hover:from-brand-green-dark hover:to-brand-green text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-brand-green/25">
                         Get a Quote
                     </a>
-                    <button onclick="document.getElementById('mobile-menu-4').classList.toggle('hidden')" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-800 text-white">
+                    <button onclick="document.getElementById('mobile-menu-4').classList.toggle('hidden')" class="hamburger-btn lg:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
 
-            <div id="mobile-menu-4" class="hidden lg:hidden border-t border-gray-800 py-4">
+            <div id="mobile-menu-4" class="mobile-menu hidden lg:hidden border-t py-4">
                 <div class="space-y-1">
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-white hover:bg-gray-800 rounded-lg">Home</a>
+                    <a href="#" class="mobile-link block px-4 py-3 text-sm font-medium rounded-lg">Home</a>
                     <details class="group">
-                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg cursor-pointer list-none">
+                        <summary class="mobile-link flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg cursor-pointer list-none">
                             Large Format
                             <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
                         </summary>
@@ -701,24 +829,49 @@
                         </div>
                     </details>
                     <details class="group">
-                        <summary class="flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg cursor-pointer list-none">
+                        <summary class="mobile-link flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg cursor-pointer list-none">
                             Print & Promo
                             <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <div class="pl-4 mt-1 space-y-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Printing</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Apparel</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Promo Items</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-400 hover:text-brand-orange">Forms</a>
+                            <a href="#" class="mobile-link block px-4 py-2 text-sm hover:text-brand-orange">Printing</a>
+                            <a href="#" class="mobile-link block px-4 py-2 text-sm hover:text-brand-orange">Apparel</a>
+                            <a href="#" class="mobile-link block px-4 py-2 text-sm hover:text-brand-orange">Promo Items</a>
+                            <a href="#" class="mobile-link block px-4 py-2 text-sm hover:text-brand-orange">Forms</a>
                         </div>
                     </details>
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">Services</a>
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">About</a>
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg">Contact</a>
+                    <a href="#" class="mobile-link block px-4 py-3 text-sm font-medium rounded-lg">Services</a>
+                    <a href="#" class="mobile-link block px-4 py-3 text-sm font-medium rounded-lg">About</a>
+                    <a href="#" class="mobile-link block px-4 py-3 text-sm font-medium rounded-lg">Contact</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <script>
+        function toggleMegaMenuTheme() {
+            const header = document.getElementById('mega-menu-header');
+            const logo = document.getElementById('mega-menu-logo');
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+            
+            if (header.classList.contains('mega-menu-dark')) {
+                header.classList.remove('mega-menu-dark');
+                header.classList.add('mega-menu-light');
+                logo.classList.remove('brightness-0', 'invert');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeText.textContent = 'Dark Mode';
+            } else {
+                header.classList.remove('mega-menu-light');
+                header.classList.add('mega-menu-dark');
+                logo.classList.add('brightness-0', 'invert');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeText.textContent = 'Light Mode';
+            }
+        }
+    </script>
 
     <!-- ============================================
          PAGE HEADING OPTION 1: SIMPLE GRADIENT BANNER
