@@ -580,37 +580,93 @@
     </header>
 
     <!-- ============================================
-         GREEN GRADIENT HERO
+         PAGE HEADING OPTION 1: SIMPLE GRADIENT BANNER
          ============================================ -->
     <div class="py-8 px-4 max-w-7xl mx-auto">
-        <span class="component-label">Green Gradient Hero</span>
+        <span class="component-label">Page Heading 1: Simple Gradient Banner</span>
     </div>
 
     <section class="relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-brand-green via-brand-green-light to-brand-teal"></div>
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                     Commercial Printing
                 </h1>
-                <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-8">
-                    High-quality printing for all your business needs. From brochures to business cards, we deliver professional results that make your brand stand out.
+                <p class="mt-3 text-lg text-white/80 max-w-2xl mx-auto">
+                    Professional printing solutions for your business
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#" class="px-8 py-4 bg-white text-brand-green font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl">
-                        Get Started
-                    </a>
-                    <a href="#" class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
-                        Learn More
-                    </a>
-                </div>
             </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f9fafb"/>
-            </svg>
+    </section>
+
+    <!-- ============================================
+         PAGE HEADING OPTION 2: BREADCRUMB + TITLE
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Page Heading 2: Breadcrumb + Title</span>
+    </div>
+
+    <section class="bg-gradient-to-r from-brand-green to-brand-green-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+            <nav class="flex items-center gap-2 text-sm text-white/70 mb-4">
+                <a href="#" class="hover:text-white transition-colors">Home</a>
+                <i class="fa-solid fa-chevron-right text-xs text-white/40"></i>
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <i class="fa-solid fa-chevron-right text-xs text-white/40"></i>
+                <span class="text-white">Commercial Printing</span>
+            </nav>
+            <h1 class="text-3xl md:text-4xl font-bold text-white">
+                Commercial Printing
+            </h1>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PAGE HEADING OPTION 3: LEFT-ALIGNED WITH ACCENT
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Page Heading 3: Left-Aligned with Accent</span>
+    </div>
+
+    <section class="bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Commercial Printing
+                    </h1>
+                    <div class="mt-3 w-20 h-1 bg-brand-green rounded-full"></div>
+                </div>
+                <p class="text-gray-600 md:text-right max-w-md">
+                    High-quality printing for brochures, business cards, and more.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PAGE HEADING OPTION 4: MINIMAL DARK BAR
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Page Heading 4: Minimal Dark Bar</span>
+    </div>
+
+    <section class="bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl md:text-3xl font-bold text-white">
+                    Commercial Printing
+                </h1>
+                <div class="hidden sm:flex items-center gap-2 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors">Home</a>
+                    <span class="text-gray-600">/</span>
+                    <a href="#" class="hover:text-white transition-colors">Services</a>
+                    <span class="text-gray-600">/</span>
+                    <span class="text-brand-green">Commercial Printing</span>
+                </div>
+            </div>
         </div>
     </section>
 
