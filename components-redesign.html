@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoder Graphics - Component Redesign</title>
+    <meta name="description" content="Redesigned Yoder Graphics components built with Tailwind CSS and Preline UI">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#00953b',
+                            'green-light': '#20a75b',
+                            'green-dark': '#007a30',
+                            orange: '#f9a01f',
+                            'orange-light': '#ffb74d',
+                            teal: '#1cd59d',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Red Hat Display', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+        }
+
+        .component-label {
+            display: inline-block;
+            background: #1f2937;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00953b 0%, #1cd59d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .swiper-redesign .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+        }
+        .swiper-redesign .swiper-pagination-bullet-active {
+            background: #f9a01f;
+            opacity: 1;
+        }
+
+        .masonry-grid {
+            columns: 4;
+            column-gap: 1rem;
+        }
+        .masonry-grid > div {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 1024px) {
+            .masonry-grid { columns: 3; }
+        }
+        @media (max-width: 768px) {
+            .masonry-grid { columns: 2; }
+        }
+        @media (max-width: 480px) {
+            .masonry-grid { columns: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-display antialiased">
+
+    <!-- Page Navigation -->
+    <nav class="page-navigation" style="background: linear-gradient(135deg, #15803d 0%, #166534 100%); padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; align-items: center;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
+                Current
+            </a>
+            <a href="components-modern.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
+                New
+            </a>
+            <a href="components-redesign.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; background-color: rgba(255,255,255,0.15); transition: background-color 0.2s;">
+                Redesign
+            </a>
+        </div>
+    </nav>
+
+    <style>
+    .page-navigation a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    </style>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Header</span>
+    </div>
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="bg-gradient-to-r from-brand-green to-brand-green-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-14">
+                    <a href="#" class="flex items-center">
+                        <img src="img/logo.svg" alt="Yoder Graphics" class="h-10 brightness-0 invert">
+                    </a>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="hidden md:flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <span>Make a Payment</span>
+                        </a>
+                        <a href="#" class="hidden md:flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Upload Files</span>
+                        </a>
+                        <a href="tel:330-334-5060" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-white text-sm font-semibold transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>330-334-5060</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-center h-16 gap-1">
+                    <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                        Home
+                    </a>
+
+                    <div class="relative group">
+                        <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                            Large Format
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                    <i class="fa-solid fa-car w-5 text-brand-green/60"></i>
+                                    Vehicle Wraps
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                    <i class="fa-solid fa-signs-post w-5 text-brand-green/60"></i>
+                                    Signs & Displays
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                            Print & Promo
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                    <i class="fa-solid fa-print w-5 text-brand-green/60"></i>
+                                    Commercial Printing
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                    <i class="fa-solid fa-shirt w-5 text-brand-green/60"></i>
+                                    Apparel
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                    <i class="fa-solid fa-file-lines w-5 text-brand-green/60"></i>
+                                    Business Forms
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                        Our Services
+                    </a>
+
+                    <a href="#" class="ml-4 px-6 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-brand-green/25 hover:shadow-brand-green/40">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         GREEN GRADIENT HERO
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Green Gradient Hero</span>
+    </div>
+
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-green via-brand-green-light to-brand-teal"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Commercial Printing
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-8">
+                    High-quality printing for all your business needs. From brochures to business cards, we deliver professional results that make your brand stand out.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#" class="px-8 py-4 bg-white text-brand-green font-semibold rounded-full hover:bg-gray-100 transition-all shadow-xl">
+                        Get Started
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f9fafb"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TYPOGRAPHY
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Typography</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Red Hat Display</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 p-8">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 block">Body Text</span>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Regular body text at 1rem with standard weight for optimal readability across all content.
+                    </p>
+                    <p class="text-gray-900 font-semibold leading-relaxed">
+                        Semi-bold text (600) for emphasis in supporting content and key statements.
+                    </p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 block">Links</span>
+                    <p class="mb-4">
+                        <a href="#" class="text-brand-green font-semibold underline underline-offset-2 hover:text-brand-green-dark transition-colors">
+                            Standard inline link
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-brand-green font-bold uppercase text-sm tracking-wide hover:text-brand-green-dark transition-colors">
+                            Navigation Link
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DISPLAY HEADINGS
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Display Headings</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="p-6 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Hero & Section Titles</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-0">
+                <div class="bg-gradient-to-br from-brand-green to-brand-green-dark p-8 md:p-12">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-white/60 mb-4 block">Hero Title</span>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hero Title</h1>
+                    <p class="text-white/80 text-lg">Supporting hero text</p>
+                </div>
+                <div class="p-8 md:p-12 border-b border-gray-100">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Slider Display</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">Commercial</h2>
+                    <h2 class="text-3xl md:text-4xl font-black text-brand-green uppercase tracking-tight">Printing</h2>
+                    <p class="text-gray-500 text-sm mt-2">cards, flyers, brochures & more</p>
+                </div>
+                <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-100">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Section Title</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+                        That's Why—<span class="text-brand-green">We Do It All.</span>
+                    </h2>
+                </div>
+                <div class="p-8 md:p-12">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4 block">Story Header</span>
+                    <h2 class="text-3xl font-black text-gray-900 uppercase tracking-wide">Our Story</h2>
+                    <h3 class="text-lg font-bold text-brand-orange uppercase tracking-widest mt-1">Veteran Owned & Operated</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SLIDER
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Home Page Slider</span>
+    </div>
+
+    <section class="pb-16">
+        <div class="swiper swiper-redesign rounded-none overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="relative h-[500px] md:h-[600px] bg-gradient-to-br from-brand-green via-brand-green-light to-brand-teal flex items-center">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-white">
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-2">Commercial</h2>
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight text-brand-orange mb-4">Printing</h2>
+                                <p class="text-xl text-white/80 mb-6">cards, flyers, brochures & more</p>
+                                <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-green font-semibold rounded-full hover:bg-gray-100 transition-all">
+                                    Learn More
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="hidden md:block">
+                                <img src="img/bannerimg-brochure.png" alt="Brochure" class="w-full max-w-md mx-auto drop-shadow-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative h-[500px] md:h-[600px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center">
+                        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-white">
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-2">Vehicle</h2>
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight text-brand-green mb-4">Wraps</h2>
+                                <p class="text-xl text-white/80 mb-6">mobile advertising that works</p>
+                                <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-green text-white font-semibold rounded-full hover:bg-brand-green-dark transition-all">
+                                    Get a Quote
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="hidden md:block">
+                                <img src="img/bannerimg-wraps.png" alt="Vehicle Wraps" class="w-full max-w-md mx-auto drop-shadow-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative h-[500px] md:h-[600px] bg-gradient-to-br from-brand-orange via-amber-500 to-yellow-400 flex items-center">
+                        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+                            <div class="text-white">
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-2">Custom</h2>
+                                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-4">Apparel</h2>
+                                <p class="text-xl text-white/90 mb-6">shirts, hats, uniforms & more</p>
+                                <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-orange font-semibold rounded-full hover:bg-gray-100 transition-all">
+                                    Shop Now
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="hidden md:block">
+                                <img src="img/bannerimg-apparel.png" alt="Apparel" class="w-full max-w-md mx-auto drop-shadow-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev !text-white !w-12 !h-12 !bg-black/20 !rounded-full after:!text-lg"></div>
+            <div class="swiper-button-next !text-white !w-12 !h-12 !bg-black/20 !rounded-full after:!text-lg"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OUR STORY HERO
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Our Story Hero</span>
+    </div>
+
+    <section class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\" fill=\"%23ffffff\" fill-opacity=\"1\" fill-rule=\"evenodd\"/%3E%3C/svg%3E')]"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-wide mb-2">Our Story</h2>
+                    <h3 class="text-lg md:text-xl font-bold text-brand-orange uppercase tracking-widest mb-6">Veteran Owned & Operated</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        From humble beginnings to our position as a full-spectrum marketing partner, our story reflects nearly five decades of adaptation, growth, and commitment to excellence.
+                    </p>
+                    <p class="text-white font-semibold text-lg mb-8">
+                        Discover how we've evolved while staying true to our founding principles.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-full transition-all shadow-lg">
+                        Learn More About Us
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <img src="img/index/badge.svg" alt="Veteran Owned Badge" class="w-64 md:w-80 drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ORANGE FEATURE
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Orange Feature Section</span>
+    </div>
+
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-orange via-amber-500 to-yellow-400">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="img/index/cargo-van.png" alt="Cargo Van" class="w-full max-w-lg mx-auto drop-shadow-2xl">
+                </div>
+                <div class="order-1 md:order-2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                        We Bring <span class="text-gray-900">Life</span><br>
+                        to Businesses Through<br>
+                        Quality Print Marketing
+                    </h2>
+                    <div class="w-20 h-1 bg-brand-green mx-auto md:mx-0 mb-6"></div>
+                    <p class="text-white/90 text-xl font-semibold uppercase tracking-widest">
+                        Show Everyone How Alive You Are.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE CARDS
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Service Cards</span>
+    </div>
+
+    <section class="relative overflow-hidden bg-gray-50 pb-20">
+        <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
+        <img src="img/waves.svg" alt="" class="absolute bottom-0 left-0 right-0 w-full opacity-20">
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                    That's Why—<span class="text-brand-green">We Do It All.</span>
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="img/index/print-card.jpeg" alt="Print" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Print</h3>
+                        <div class="w-12 h-0.5 bg-brand-green mb-4"></div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Signs & Decals
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Commercial Printing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Direct Mail
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Business Forms
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Large Format
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Labels & More
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="img/index/creative-card.jpeg" alt="Creative" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Creative</h3>
+                        <div class="w-12 h-0.5 bg-brand-green mb-4"></div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                In-House Design Team
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Brand Management
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Color Matching
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="img/index/promo-card.jpeg" alt="Promo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Promo</h3>
+                        <div class="w-12 h-0.5 bg-brand-green mb-4"></div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Promo Products
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Custom Apparel
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Trade Show Displays
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="img/index/fulfillment-card.png" alt="Fulfillment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Fulfillment</h3>
+                        <div class="w-12 h-0.5 bg-brand-green mb-4"></div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Local Pickup
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Local Delivery
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                Warehousing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-green text-xs"></i>
+                                International Shipping
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTENT BOX LEFT
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Content Box: Left</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="aspect-square md:aspect-auto overflow-hidden">
+                    <img src="img/signs/securitec.jpeg" alt="Illuminated Signs" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Illuminated Signs</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Whether lit from within or externally, illuminated signage gives your message extra visibility and emphasis both day and night. This can include cabinets with flat or pan faces, custom neon, channel letters, digital readout boards, and more.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTENT BOX RIGHT
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Content Box: Right</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-gradient-to-br from-brand-green to-brand-green-dark rounded-3xl shadow-xl overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sign Retrofitting</h2>
+                    <p class="text-white/80 text-lg leading-relaxed mb-8">
+                        Our professional installation experts will work quickly to update your existing sign with newer materials and internals. With affordable up-front costs and a longer life span, your total savings on maintenance will be exponential.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="aspect-square md:aspect-auto overflow-hidden order-1 md:order-2">
+                    <img src="img/signs/community.webp" alt="Sign Retrofitting" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Gallery</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <button class="gallery-filter-btn px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full transition-all" data-filter="all">
+                All
+            </button>
+            <button class="gallery-filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all" data-filter="illuminated">
+                Illuminated
+            </button>
+            <button class="gallery-filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all" data-filter="non-illuminated">
+                Non-Illuminated
+            </button>
+        </div>
+
+        <div class="masonry-grid" id="redesign-gallery">
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="illuminated">
+                <img src="img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="illuminated">
+                <img src="img/signs/akron_childrens.webp" alt="Akron Children's Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="illuminated">
+                <img src="img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="non-illuminated">
+                <img src="img/signs/bejeweled.webp" alt="Bejeweled Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="illuminated">
+                <img src="img/signs/candytyme.webp" alt="Candy Tyme Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="non-illuminated">
+                <img src="img/signs/community.webp" alt="Community Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="illuminated">
+                <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600" alt="Neon Sign" class="w-full">
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lg hover-lift cursor-pointer" data-category="non-illuminated">
+                <img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=600" alt="Store Front Sign" class="w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox-redesign" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+        <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors">&times;</button>
+        <img src="" alt="Enlarged view" class="max-w-full max-h-full object-contain">
+    </div>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <div class="py-8 px-4 max-w-7xl mx-auto">
+        <span class="component-label">Footer</span>
+    </div>
+
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <img src="img/logo.svg" alt="Yoder Graphics" class="h-16 brightness-0 invert mb-6">
+                    <p class="text-gray-400 leading-relaxed max-w-md">
+                        Since 1976, Yoder Graphics has been providing exceptional printing and signage solutions. We're proud to be veteran owned and operated.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wide mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wide mb-4">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-green"></i>
+                            330-334-5060
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-green"></i>
+                            info@yodergraphics.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy;2025 Yoder Graphics Systems. All Rights Reserved.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.facebook.com/yodergraphics/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yodergraphics/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@yodergraphics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://x.com/yodergraphics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/yoder-graphic-systems-inc/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-brand-green rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-redesign', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+
+        // Gallery filter
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-green', 'text-white');
+                    b.classList.add('bg-gray-100', 'text-gray-700');
+                });
+                btn.classList.remove('bg-gray-100', 'text-gray-700');
+                btn.classList.add('bg-brand-green', 'text-white');
+
+                const filter = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox-redesign');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = lightbox.querySelector('button');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+</html>
