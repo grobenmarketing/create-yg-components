@@ -75,7 +75,6 @@ def build_html():
     """Build all HTML files from templates and partials."""
     templates = [
         (Path("template.html"), Path("index.html")),
-        (Path("template-new-design.html"), Path("new-design.html")),
     ]
 
     success = True
