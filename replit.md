@@ -4,11 +4,13 @@
 A static HTML website showcasing UI components and pages for Yoder Graphics, a commercial printing business. This is a component gallery/design system that displays typography, layouts, and page templates.
 
 ## Project Structure
-- `component-gallery.html` - Main component gallery page (entry point)
-- `reference/` - Reference HTML pages for various sections (services, contact, careers, etc.)
-  - `css/` - Stylesheets
-  - `js/` - JavaScript files
-  - `includes/` - HTML includes/partials
+- `index.html` - Main component gallery page ("Current" design)
+- `components-modern.html` - Modern components page ("New" design)
+- `components-redesign.html` - Complete redesign with Tailwind CSS and Preline UI ("Redesign")
+- `partials/` - HTML partial components for building pages
+- `css/` - Stylesheets
+- `js/` - JavaScript files
+- `img/` - Images and assets
 - `server.py` - Simple Python HTTP server for local development
 
 ## Running the Project
@@ -20,7 +22,17 @@ python server.py
 ## Deployment
 This is a static website. The deployment serves files directly from the root directory.
 
+## Brand Colors
+- Brand Green: #00953b
+- Primary Green: #20a75b
+- Green Dark: #007a30
+- Orange: #f9a01f
+- Teal/Secondary: #1cd59d
+
 ## Recent Changes
+- January 27, 2026: Created new components-redesign.html with complete modern redesign using Tailwind CSS - includes header, heroes, typography, slider, service cards, content boxes, gallery with filter/lightbox, and footer
+- January 27, 2026: Updated navigation to include three pages: Current, New, and Redesign
+- January 27, 2026: Removed outdated new-design.html page
 - January 23, 2026: Improved gallery mobile responsiveness - stacked filter buttons, responsive columns (1 on mobile, 2 on tablet, 3 on desktop), smooth hover zoom effect
 - January 23, 2026: Fixed mobile typography overflow - reduced font sizes for hero, slider, and section titles on mobile screens
 - January 23, 2026: Fixed content box image spacing on mobile - removed min-height causing gaps
