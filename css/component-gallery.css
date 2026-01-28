@@ -1324,81 +1324,67 @@
 
             /* --- BUTTONS --- */
             .slide-button-container {
-                margin-top: 1rem;
-                text-align: center;
-            }
-
-            .slide-button {
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
-                background: #fff;
-                border: 5px solid var(--orange, #f9a01f);
-                border-radius: 1.2rem;
-                color: var(--orange, #f9a01f);
-                cursor: pointer;
-                font-size: 1.8rem;
-                font-weight: 700;
-                margin: 2rem auto;
-                padding: .75rem 1.5rem;
-                text-align: center;
-                transition: all .2s ease;
+                margin-top: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: center;
             }
 
             @media (min-width: 1024px) {
-                .slide-button {
-                    flex: 0 0 auto;
-                    font-size: 1.5rem;
-                    margin: 0;
-                    min-width: 180px;
-                    padding: 0.6rem 1.5rem;
-                    width: auto;
-                }
-            }
-
-            .slide-button:hover {
-                background: var(--orange, #f9a01f);
-                color: var(--light, #fff);
-            }
-
-            .slide-button-secondary {
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
-                background: var(--primary, #20a75b);
-                border: 5px solid var(--primary, #20a75b);
-                border-radius: 1.2rem;
-                color: var(--light, #fff);
-                cursor: pointer;
-                font-size: 1.8rem;
-                font-weight: 700;
-                margin: 1rem auto 0;
-                padding: .75rem 1.5rem;
-                text-align: center;
-                transition: all .2s ease;
-            }
-
-            .slide-button-secondary:hover {
-                background: var(--secondary, #1cd59d);
-                border-color: var(--secondary, #1cd59d);
-            }
-
-            @media (min-width: 1024px) {
-                .slide-button-secondary {
-                    flex: 0 0 auto;
-                    font-size: 1.5rem;
-                    margin: 0;
-                    min-width: 180px;
-                    padding: 0.6rem 1.5rem;
-                    width: auto;
-                }
-
                 .slide-button-container {
-                    align-items: center;
-                    display: flex;
+                    flex-direction: row;
                     gap: 1rem;
                     margin-top: 2rem;
                 }
+            }
+
+            .slide-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                background: #fff;
+                border: none;
+                border-radius: 9999px;
+                color: var(--brand-green, #00953b);
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 0.875rem 1.75rem;
+                text-align: center;
+                transition: all .2s ease;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+            }
+
+            .slide-button:hover {
+                background: #f3f4f6;
+                transform: scale(1.05);
+            }
+
+            .slide-button-secondary {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                background: transparent;
+                border: 2px solid #fff;
+                border-radius: 9999px;
+                color: #fff;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 0.875rem 1.75rem;
+                text-align: center;
+                transition: all .2s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+            }
+
+            .slide-button-secondary:hover {
+                background: rgba(255, 255, 255, 0.1);
             }
 
             /* --- NAVIGATION ARROWS --- */

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">Download for Free</p>
                             <div class="slide-button-container">
                                 <a href="https://mailchi.mp/b3e4122ddf2a/2025-fleet-guide" target="_blank">
-                                    <button class="slide-button">Get Your Free Copy</button>
+                                    <button class="slide-button">Get Your Free Copy <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">signs, decals, wraps & more</p>
                             <div class="slide-button-container">
                                 <a href="/signs">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">design & brand management</p>
                             <div class="slide-button-container">
                                 <a href="/creative">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">cards, flyers, brochures & more</p>
                             <div class="slide-button-container">
                                 <a href="/print/commercial-printing">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">explore various styles</p>
                             <div class="slide-button-container">
                                 <a href="/promo/apparel">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">for your Fleet</p>
                             <div class="slide-button-container">
                                 <a href="/vehicle-graphics">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="slide-description">endless options</p>
                             <div class="slide-button-container">
                                 <a href="/promo/promotional-products">
-                                    <button class="slide-button">See Our Work</button>
+                                    <button class="slide-button">See Our Work <i class="fa-solid fa-arrow-right"></i></button>
                                 </a>
                                 <a href="/quote">
                                     <button class="slide-button-secondary">Get a Quote</button>
