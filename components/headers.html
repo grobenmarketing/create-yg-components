@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers - Yoder Graphics Component Gallery</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind.config.js"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Gallery Styles -->
+    <link rel="stylesheet" href="../css/gallery.css">
+</head>
+<body>
+    <div class="gallery-layout">
+        <!-- Sidebar Overlay (mobile) -->
+        <div class="sidebar-overlay"></div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="gallery-sidebar">
+            <div class="sidebar-header">
+                <h1>Yoder Graphics</h1>
+                <p>Component Gallery</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Overview -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="../index.html" class="sidebar-link">
+                        <i class="fa-solid fa-home"></i>
+                        Dashboard
+                    </a>
+                    <a href="../legacy/original-design.html" class="sidebar-link">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Legacy Design
+                    </a>
+                </div>
+
+                <!-- Components -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Components</div>
+                    <a href="headers.html" class="sidebar-link active">
+                        <i class="fa-solid fa-bars"></i>
+                        Headers
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="heroes.html" class="sidebar-link">
+                        <i class="fa-solid fa-star"></i>
+                        Heroes
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="features.html" class="sidebar-link">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                        Features
+                        <span class="sidebar-badge">6</span>
+                    </a>
+                    <a href="sliders.html" class="sidebar-link">
+                        <i class="fa-solid fa-images"></i>
+                        Sliders & Carousels
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="content.html" class="sidebar-link">
+                        <i class="fa-solid fa-newspaper"></i>
+                        Content Sections
+                        <span class="sidebar-badge">12</span>
+                    </a>
+                    <a href="ui-elements.html" class="sidebar-link">
+                        <i class="fa-solid fa-palette"></i>
+                        UI Elements
+                        <span class="sidebar-badge">5</span>
+                    </a>
+                </div>
+
+                <!-- Page Templates -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Page Templates</div>
+                    <a href="../pages/blog-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-blog"></i>
+                        Blog
+                    </a>
+                    <a href="../pages/team-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-users"></i>
+                        Team
+                    </a>
+                    <a href="../pages/case-studies-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Case Studies
+                    </a>
+                    <a href="../pages/testimonials-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-quote-left"></i>
+                        Testimonials
+                    </a>
+                </div>
+
+                <!-- Resources -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Resources</div>
+                    <a href="../DEPENDENCIES.md" class="sidebar-link">
+                        <i class="fa-solid fa-cube"></i>
+                        Dependencies
+                    </a>
+                    <a href="../README.md" class="sidebar-link">
+                        <i class="fa-solid fa-book"></i>
+                        Documentation
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="gallery-main">
+            <!-- Top Bar -->
+            <header class="gallery-topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="topbar-title">Headers</h2>
+                </div>
+
+                <div class="responsive-controls">
+                    <button class="responsive-btn" data-size="mobile">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Mobile</span>
+                    </button>
+                    <button class="responsive-btn" data-size="tablet">
+                        <i class="fa-solid fa-tablet-screen-button"></i>
+                        <span>Tablet</span>
+                    </button>
+                    <button class="responsive-btn active" data-size="desktop">
+                        <i class="fa-solid fa-desktop"></i>
+                        <span>Desktop</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="gallery-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Header <span>Components</span></h1>
+                    <p>Navigation bars with dropdowns, mega menus, utility bars, and mobile-responsive layouts.</p>
+                </div>
+
+                <!-- Component: Header Standard -->
+                <div class="component-card" data-category="headers">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label">
+                                <i class="fa-solid fa-bars"></i>
+                                Header
+                            </span>
+                            <span class="component-variant">Standard with Green Utility Bar</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code>
+                                <i class="fa-solid fa-code"></i> View Code
+                            </button>
+                            <button class="action-btn" data-copy-code>
+                                <i class="fa-solid fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <!-- Header Component -->
+                            <header class="bg-white shadow-sm">
+                                <div class="bg-gradient-to-r from-brand-green to-brand-green-light">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-16">
+                                            <a href="#" class="flex items-center py-2">
+                                                <img src="../img/logo.svg" alt="Yoder Graphics" class="h-10 brightness-0 invert">
+                                            </a>
+                                            <div class="flex items-center gap-6">
+                                                <a href="#" class="hidden md:flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors">
+                                                    <i class="fa-solid fa-dollar-sign"></i>
+                                                    <span>Make a Payment</span>
+                                                </a>
+                                                <a href="#" class="hidden md:flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors">
+                                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                    <span>Upload Files</span>
+                                                </a>
+                                                <a href="tel:330-334-5060" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full text-white text-sm font-semibold transition-all">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                    <span>330-334-5060</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav class="border-t border-gray-100">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between lg:justify-end h-18 py-2">
+                                            <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-700">
+                                                <i class="fa-solid fa-bars text-xl"></i>
+                                            </button>
+
+                                            <div class="hidden lg:flex items-center gap-1">
+                                                <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                                                    Home
+                                                </a>
+
+                                                <div class="relative group">
+                                                    <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                                                        Large Format
+                                                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                                                    </button>
+                                                    <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                                        <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-car w-5 text-brand-green/60"></i>
+                                                                Vehicle Wraps
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-signs-post w-5 text-brand-green/60"></i>
+                                                                Signs & Displays
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="relative group">
+                                                    <button class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all inline-flex items-center gap-1">
+                                                        Print & Promo
+                                                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                                                    </button>
+                                                    <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                                        <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-48">
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-print w-5 text-brand-green/60"></i>
+                                                                Commercial Printing
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-shirt w-5 text-brand-green/60"></i>
+                                                                Apparel
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <a href="#" class="px-5 py-2 text-sm font-semibold text-gray-900 hover:text-brand-green rounded-lg hover:bg-gray-50 transition-all">
+                                                    Our Services
+                                                </a>
+
+                                                <a href="#" class="ml-4 px-6 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-brand-green/25 hover:shadow-brand-green/40">
+                                                    Get a Quote
+                                                </a>
+                                            </div>
+
+                                            <a href="#" class="lg:hidden px-4 py-2 bg-brand-green text-white text-sm font-semibold rounded-full">
+                                                Get a Quote
+                                            </a>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="code-copy-btn">Copy</button>
+                        <pre><code></code></pre>
+                    </div>
+                </div>
+
+                <!-- Component: Header Flowbite Style -->
+                <div class="component-card" data-category="headers">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label">
+                                <i class="fa-solid fa-bars"></i>
+                                Header
+                            </span>
+                            <span class="component-variant">Flowbite Style - Logo Left, Nav Right</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code>
+                                <i class="fa-solid fa-code"></i> View Code
+                            </button>
+                            <button class="action-btn" data-copy-code>
+                                <i class="fa-solid fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <!-- Header Flowbite Style -->
+                            <header class="bg-white shadow-sm">
+                                <div class="hidden md:block bg-gradient-to-r from-brand-green to-brand-green-light">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-end h-10 gap-6">
+                                            <a href="#" class="flex items-center gap-2 text-white/90 hover:text-white text-xs font-medium transition-colors">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                                <span>Make a Payment</span>
+                                            </a>
+                                            <a href="#" class="flex items-center gap-2 text-white/90 hover:text-white text-xs font-medium transition-colors">
+                                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                <span>Upload Files</span>
+                                            </a>
+                                            <a href="tel:330-334-5060" class="flex items-center gap-2 text-white text-xs font-medium transition-colors">
+                                                <i class="fa-solid fa-phone"></i>
+                                                <span>330-334-5060</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav class="bg-white border-b border-gray-100">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-20">
+                                            <a href="#" class="flex items-center py-2">
+                                                <img src="../img/logo.svg" alt="Yoder Graphics" class="h-10 md:h-12">
+                                            </a>
+
+                                            <div class="hidden lg:flex items-center gap-8">
+                                                <a href="#" class="text-sm font-semibold text-brand-green transition-colors">
+                                                    Home
+                                                </a>
+                                                <div class="relative group">
+                                                    <button class="text-sm font-semibold text-gray-700 hover:text-brand-green transition-colors inline-flex items-center gap-1">
+                                                        Large Format
+                                                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                                                    </button>
+                                                    <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                                        <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 min-w-48">
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-car w-5 text-brand-green/60"></i>
+                                                                Vehicle Wraps
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-signs-post w-5 text-brand-green/60"></i>
+                                                                Signs & Displays
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative group">
+                                                    <button class="text-sm font-semibold text-gray-700 hover:text-brand-green transition-colors inline-flex items-center gap-1">
+                                                        Print & Promo
+                                                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                                                    </button>
+                                                    <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                                        <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 min-w-48">
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-print w-5 text-brand-green/60"></i>
+                                                                Commercial Printing
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-all">
+                                                                <i class="fa-solid fa-shirt w-5 text-brand-green/60"></i>
+                                                                Apparel
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="text-sm font-semibold text-gray-700 hover:text-brand-green transition-colors">
+                                                    Our Services
+                                                </a>
+                                            </div>
+
+                                            <div class="flex items-center gap-4">
+                                                <a href="#" class="hidden lg:inline-flex px-6 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
+                                                    Get a Quote
+                                                </a>
+                                                <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 text-gray-700">
+                                                    <i class="fa-solid fa-bars text-xl"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="code-copy-btn">Copy</button>
+                        <pre><code></code></pre>
+                    </div>
+                </div>
+
+                <!-- Component: Header Dark Mega Menu -->
+                <div class="component-card" data-category="headers">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label">
+                                <i class="fa-solid fa-bars"></i>
+                                Header
+                            </span>
+                            <span class="component-variant">Dark Theme with Mega Menu</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code>
+                                <i class="fa-solid fa-code"></i> View Code
+                            </button>
+                            <button class="action-btn" data-copy-code>
+                                <i class="fa-solid fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <!-- Header Dark Mega Menu -->
+                            <header class="bg-gray-900">
+                                <!-- Utility Bar -->
+                                <div class="border-b border-gray-800">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-10">
+                                            <div class="hidden md:flex items-center gap-4 text-xs text-gray-400">
+                                                <span><i class="fa-solid fa-location-dot mr-1"></i> Wadsworth, OH</span>
+                                                <span class="text-gray-700">|</span>
+                                                <span><i class="fa-solid fa-clock mr-1"></i> Mon-Fri 8am-5pm</span>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors">
+                                                    <i class="fa-solid fa-dollar-sign mr-1"></i> Make a Payment
+                                                </a>
+                                                <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors">
+                                                    <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload Files
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Main Nav -->
+                                <nav class="bg-gray-900">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-20">
+                                            <a href="#" class="flex items-center">
+                                                <img src="../img/logo.svg" alt="Yoder Graphics" class="h-10 brightness-0 invert">
+                                            </a>
+
+                                            <div class="hidden lg:flex items-center gap-1">
+                                                <a href="#" class="px-4 py-2 text-sm font-medium text-white rounded-lg hover:bg-gray-800 transition-all">
+                                                    Home
+                                                </a>
+                                                <div class="relative group">
+                                                    <button class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all inline-flex items-center gap-1">
+                                                        Services
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </button>
+                                                    <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                                        <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 w-[600px]">
+                                                            <div class="grid grid-cols-2 gap-6">
+                                                                <div>
+                                                                    <h4 class="text-brand-green font-bold text-sm uppercase tracking-wider mb-4">Large Format</h4>
+                                                                    <div class="space-y-1">
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-car text-brand-green"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="text-white font-medium text-sm">Vehicle Wraps</div>
+                                                                                <div class="text-gray-500 text-xs">Full & partial wraps</div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-signs-post text-brand-green"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="text-white font-medium text-sm">Signs & Banners</div>
+                                                                                <div class="text-gray-500 text-xs">Indoor & outdoor</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="text-brand-orange font-bold text-sm uppercase tracking-wider mb-4">Print & Promo</h4>
+                                                                    <div class="space-y-1">
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-print text-brand-orange"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="text-white font-medium text-sm">Commercial Printing</div>
+                                                                                <div class="text-gray-500 text-xs">Cards, brochures & more</div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-shirt text-brand-orange"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="text-white font-medium text-sm">Custom Apparel</div>
+                                                                                <div class="text-gray-500 text-xs">Screen print & embroidery</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
+                                                    About
+                                                </a>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
+                                                    Portfolio
+                                                </a>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
+                                                    Contact
+                                                </a>
+                                            </div>
+
+                                            <div class="flex items-center gap-3">
+                                                <a href="tel:330-334-5060" class="hidden md:flex items-center gap-2 text-white text-sm font-medium">
+                                                    <i class="fa-solid fa-phone text-brand-green"></i>
+                                                    330-334-5060
+                                                </a>
+                                                <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
+                                                    Get a Quote
+                                                </a>
+                                                <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-800 text-white">
+                                                    <i class="fa-solid fa-bars text-xl"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="code-copy-btn">Copy</button>
+                        <pre><code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Gallery JavaScript -->
+    <script src="../js/gallery.js"></script>
+</body>
+</html>

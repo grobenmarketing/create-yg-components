@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Elements - Yoder Graphics Component Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+</head>
+<body>
+    <div class="gallery-layout">
+        <div class="sidebar-overlay"></div>
+        <aside class="gallery-sidebar">
+            <div class="sidebar-header">
+                <h1>Yoder Graphics</h1>
+                <p>Component Gallery</p>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-home"></i> Dashboard</a>
+                    <a href="../legacy/original-design.html" class="sidebar-link"><i class="fa-solid fa-clock-rotate-left"></i> Legacy Design</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Components</div>
+                    <a href="headers.html" class="sidebar-link"><i class="fa-solid fa-bars"></i> Headers <span class="sidebar-badge">3</span></a>
+                    <a href="heroes.html" class="sidebar-link"><i class="fa-solid fa-star"></i> Heroes <span class="sidebar-badge">3</span></a>
+                    <a href="features.html" class="sidebar-link"><i class="fa-solid fa-puzzle-piece"></i> Features <span class="sidebar-badge">6</span></a>
+                    <a href="sliders.html" class="sidebar-link"><i class="fa-solid fa-images"></i> Sliders & Carousels <span class="sidebar-badge">3</span></a>
+                    <a href="content.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> Content Sections <span class="sidebar-badge">12</span></a>
+                    <a href="ui-elements.html" class="sidebar-link active"><i class="fa-solid fa-palette"></i> UI Elements <span class="sidebar-badge">5</span></a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Page Templates</div>
+                    <a href="../pages/blog-page.html" class="sidebar-link"><i class="fa-solid fa-blog"></i> Blog</a>
+                    <a href="../pages/team-page.html" class="sidebar-link"><i class="fa-solid fa-users"></i> Team</a>
+                    <a href="../pages/case-studies-page.html" class="sidebar-link"><i class="fa-solid fa-briefcase"></i> Case Studies</a>
+                    <a href="../pages/testimonials-page.html" class="sidebar-link"><i class="fa-solid fa-quote-left"></i> Testimonials</a>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Resources</div>
+                    <a href="../DEPENDENCIES.md" class="sidebar-link"><i class="fa-solid fa-cube"></i> Dependencies</a>
+                    <a href="../README.md" class="sidebar-link"><i class="fa-solid fa-book"></i> Documentation</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="gallery-main">
+            <header class="gallery-topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <h2 class="topbar-title">UI Elements</h2>
+                </div>
+                <div class="responsive-controls">
+                    <button class="responsive-btn" data-size="mobile"><i class="fa-solid fa-mobile-screen"></i><span>Mobile</span></button>
+                    <button class="responsive-btn" data-size="tablet"><i class="fa-solid fa-tablet-screen-button"></i><span>Tablet</span></button>
+                    <button class="responsive-btn active" data-size="desktop"><i class="fa-solid fa-desktop"></i><span>Desktop</span></button>
+                </div>
+            </header>
+
+            <div class="gallery-content">
+                <div class="page-header">
+                    <h1>UI <span>Elements</span></h1>
+                    <p>Buttons, typography, forms, badges, and other UI building blocks for the design system.</p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-hand-pointer"></i> Buttons</span>
+                            <span class="component-variant">All Button Styles</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-white py-12">
+                                <div class="max-w-4xl mx-auto px-4">
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Primary Buttons</h4>
+                                    <div class="flex flex-wrap gap-4 mb-10">
+                                        <button class="px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all">Default</button>
+                                        <button class="px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-full transition-all">Rounded</button>
+                                        <button class="inline-flex items-center gap-2 px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-full transition-all">
+                                            With Icon <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                        <button class="px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-full transition-all shadow-lg shadow-brand-green/30">With Shadow</button>
+                                    </div>
+
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Secondary Buttons</h4>
+                                    <div class="flex flex-wrap gap-4 mb-10">
+                                        <button class="px-6 py-3 bg-brand-orange hover:bg-amber-600 text-white font-semibold rounded-lg transition-all">Orange</button>
+                                        <button class="px-6 py-3 bg-brand-teal hover:bg-teal-500 text-white font-semibold rounded-lg transition-all">Teal</button>
+                                        <button class="px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-all">Dark</button>
+                                    </div>
+
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Outline Buttons</h4>
+                                    <div class="flex flex-wrap gap-4 mb-10">
+                                        <button class="px-6 py-3 border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold rounded-lg transition-all">Green Outline</button>
+                                        <button class="px-6 py-3 border-2 border-gray-300 text-gray-700 hover:border-gray-400 font-semibold rounded-lg transition-all">Gray Outline</button>
+                                        <button class="px-6 py-3 border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white font-semibold rounded-full transition-all">Orange Outline</button>
+                                    </div>
+
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Button Sizes</h4>
+                                    <div class="flex flex-wrap items-center gap-4">
+                                        <button class="px-4 py-2 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-lg transition-all">Small</button>
+                                        <button class="px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all">Medium</button>
+                                        <button class="px-8 py-4 bg-brand-green hover:bg-brand-green-dark text-white text-lg font-semibold rounded-lg transition-all">Large</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Typography -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-font"></i> Typography</span>
+                            <span class="component-variant">Red Hat Display Font Family</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-white py-12">
+                                <div class="max-w-4xl mx-auto px-4">
+                                    <div class="grid md:grid-cols-2 gap-12">
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Font Weights</h4>
+                                            <div class="space-y-3">
+                                                <p class="text-2xl text-gray-900" style="font-weight: 300;">Light 300</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 400;">Regular 400</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 500;">Medium 500</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 600;">Semi-Bold 600</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 700;">Bold 700</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 800;">Extra-Bold 800</p>
+                                                <p class="text-2xl text-gray-900" style="font-weight: 900;">Black 900</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Heading Sizes</h4>
+                                            <div class="space-y-4">
+                                                <h1 class="text-5xl font-black text-gray-900 uppercase">H1 Heading</h1>
+                                                <h2 class="text-4xl font-bold text-gray-900">H2 Heading</h2>
+                                                <h3 class="text-3xl font-bold text-gray-900">H3 Heading</h3>
+                                                <h4 class="text-2xl font-semibold text-gray-900">H4 Heading</h4>
+                                                <h5 class="text-xl font-semibold text-gray-900">H5 Heading</h5>
+                                                <h6 class="text-lg font-medium text-gray-900">H6 Heading</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Badges & Tags -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-tag"></i> Badges</span>
+                            <span class="component-variant">Labels, Tags & Status Indicators</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-gray-50 py-12">
+                                <div class="max-w-4xl mx-auto px-4">
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Category Tags</h4>
+                                    <div class="flex flex-wrap gap-3 mb-10">
+                                        <span class="px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-bold rounded-full uppercase">Printing</span>
+                                        <span class="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full uppercase">Vehicle Wraps</span>
+                                        <span class="px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded-full uppercase">Signage</span>
+                                        <span class="px-3 py-1 bg-purple-100 text-purple-600 text-xs font-bold rounded-full uppercase">Apparel</span>
+                                        <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs font-bold rounded-full uppercase">General</span>
+                                    </div>
+
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Status Badges</h4>
+                                    <div class="flex flex-wrap gap-3 mb-10">
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
+                                            <span class="w-2 h-2 bg-green-500 rounded-full"></span> Active
+                                        </span>
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">
+                                            <span class="w-2 h-2 bg-yellow-500 rounded-full"></span> Pending
+                                        </span>
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">
+                                            <span class="w-2 h-2 bg-red-500 rounded-full"></span> Closed
+                                        </span>
+                                    </div>
+
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Feature Labels</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-4 py-1.5 bg-brand-green text-white text-xs font-bold rounded-full uppercase">New</span>
+                                        <span class="px-4 py-1.5 bg-brand-orange text-white text-xs font-bold rounded-full uppercase">Featured</span>
+                                        <span class="px-4 py-1.5 bg-gray-900 text-white text-xs font-bold rounded-full uppercase">Popular</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+                            <span class="component-variant">Accordion Style</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-white py-12">
+                                <div class="max-w-3xl mx-auto px-4">
+                                    <div class="text-center mb-10">
+                                        <h2 class="text-3xl font-bold text-gray-900">Frequently Asked <span class="text-brand-green">Questions</span></h2>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <details class="group bg-gray-50 rounded-xl" open>
+                                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                                <span class="font-semibold text-gray-900">How long does a vehicle wrap last?</span>
+                                                <i class="fa-solid fa-chevron-down text-brand-green transition-transform group-open:rotate-180"></i>
+                                            </summary>
+                                            <div class="px-6 pb-6 text-gray-600">
+                                                With proper care, a high-quality vehicle wrap can last 5-7 years. We use premium 3M and Avery materials that are designed for durability and UV protection.
+                                            </div>
+                                        </details>
+                                        <details class="group bg-gray-50 rounded-xl">
+                                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                                <span class="font-semibold text-gray-900">What file formats do you accept?</span>
+                                                <i class="fa-solid fa-chevron-down text-brand-green transition-transform group-open:rotate-180"></i>
+                                            </summary>
+                                            <div class="px-6 pb-6 text-gray-600">
+                                                We accept AI, EPS, PDF, PSD, and high-resolution JPEG/PNG files. For best results, please provide vector files with outlined fonts.
+                                            </div>
+                                        </details>
+                                        <details class="group bg-gray-50 rounded-xl">
+                                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                                <span class="font-semibold text-gray-900">Do you offer design services?</span>
+                                                <i class="fa-solid fa-chevron-down text-brand-green transition-transform group-open:rotate-180"></i>
+                                            </summary>
+                                            <div class="px-6 pb-6 text-gray-600">
+                                                Yes! Our in-house creative team can help with everything from logo design to complete brand identity packages.
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Form Elements -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-pen-to-square"></i> Forms</span>
+                            <span class="component-variant">Input Fields & Controls</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-gray-50 py-12">
+                                <div class="max-w-xl mx-auto px-4">
+                                    <form class="bg-white rounded-2xl shadow-lg p-8">
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get a Quote</h3>
+                                        <div class="space-y-6">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all" placeholder="John Smith">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all" placeholder="john@example.com">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">Service Needed</label>
+                                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                                                    <option>Select a service...</option>
+                                                    <option>Vehicle Wraps</option>
+                                                    <option>Signs & Banners</option>
+                                                    <option>Commercial Printing</option>
+                                                    <option>Custom Apparel</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all">
+                                                Submit Request
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
