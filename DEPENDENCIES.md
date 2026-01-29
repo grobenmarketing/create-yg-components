@@ -80,12 +80,14 @@ All colors are defined in `tailwind.config.js` and can be used with Tailwind cla
 
 | Color Name | Hex Code | Tailwind Class |
 |------------|----------|----------------|
-| Brand Green | `#00953b` | `bg-brand-green`, `text-brand-green` |
-| Green Light | `#20a75b` | `bg-brand-green-light` |
-| Green Dark | `#007a30` | `bg-brand-green-dark` |
-| Brand Orange | `#f9a01f` | `bg-brand-orange`, `text-brand-orange` |
-| Orange Light | `#ffb74d` | `bg-brand-orange-light` |
-| Brand Teal | `#1cd59d` | `bg-brand-teal`, `text-brand-teal` |
+| Brand Green | `#00954c` | `bg-brand-green`, `text-brand-green` |
+| Green Dark | `#008082` | `bg-brand-green-dark` |
+| Yellow | `#ffd603` | `bg-brand-yellow`, `text-brand-yellow` |
+| Orange | `#f7a022` | `bg-brand-orange`, `text-brand-orange` |
+| Lime | `#b3d137` | `bg-brand-lime`, `text-brand-lime` |
+| Lime Light | `#d1e285` | `bg-brand-lime-light` |
+| Teal | `#2ebbbe` | `bg-brand-teal`, `text-brand-teal` |
+| Teal Dark | `#008082` | `bg-brand-teal-dark` |
 
 ### Neutral Colors
 
@@ -106,11 +108,14 @@ For non-Tailwind contexts, these CSS variables are available in `css/gallery.css
 
 ```css
 :root {
-    --brand-green: #00953b;
-    --brand-green-light: #20a75b;
-    --brand-green-dark: #007a30;
-    --brand-orange: #f9a01f;
-    --brand-teal: #1cd59d;
+    --brand-green: #00954c;
+    --brand-green-dark: #008082;
+    --brand-yellow: #ffd603;
+    --brand-orange: #f7a022;
+    --brand-lime: #b3d137;
+    --brand-lime-light: #d1e285;
+    --brand-teal: #2ebbbe;
+    --brand-teal-dark: #008082;
     --font-display: "Red Hat Display", sans-serif;
 }
 ```

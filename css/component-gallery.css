@@ -2,11 +2,16 @@
            1. GLOBAL VARIABLES & RESET
            ========================================= */
             :root {
-                /* Colors */
-                --brand: #00953b;
-                --primary: #20a75b;
-                --orange: #f9a01f;
-                --secondary: #1cd59d;
+                /* Colors (Official Yoder Graphics) */
+                --brand: #00954c;
+                --primary: #00954c;
+                --orange: #f7a022;
+                --secondary: #2ebbbe;
+                --yellow: #ffd603;
+                --lime: #b3d137;
+                --lime-light: #d1e285;
+                --teal: #2ebbbe;
+                --teal-dark: #008082;
                 --light: #fff;
                 --off-light: #f1eeee;
                 --grey: #58595b;
@@ -427,7 +432,7 @@
             .hero-green {
                 background: linear-gradient(180deg,
                         var(--primary) 0%,
-                        #18b778 100%);
+                        #2ebbbe 100%);
                 background-size: 100% 200%;
                 animation: gradientAnim 8s ease infinite;
                 padding: 3rem 1rem;
@@ -1298,7 +1303,7 @@
             }
 
             .slide-subtitle {
-                color: var(--primary, #20a75b);
+                color: var(--primary, #00954c);
             }
 
             .slide-description {
@@ -1347,7 +1352,7 @@
                 background: #fff;
                 border: none;
                 border-radius: 9999px;
-                color: var(--brand-green, #00953b);
+                color: var(--brand-green, #00954c);
                 cursor: pointer;
                 font-size: 1rem;
                 font-weight: 600;

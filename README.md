@@ -55,11 +55,13 @@ create-yg-components/
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| **Brand Green** | `#00953b` | Primary brand color, CTAs, links |
-| **Green Light** | `#20a75b` | Hover states, gradients |
-| **Green Dark** | `#007a30` | Active states, dark accents |
-| **Brand Orange** | `#f9a01f` | Secondary accent, highlights |
-| **Brand Teal** | `#1cd59d` | Tertiary accent, success states |
+| **Brand Green** | `#00954c` | Primary brand color, CTAs, links |
+| **Yellow** | `#ffd603` | Accent, highlights |
+| **Orange** | `#f7a022` | Secondary accent, highlights |
+| **Lime** | `#b3d137` | Accent color |
+| **Lime Light** | `#d1e285` | Light accent |
+| **Teal** | `#2ebbbe` | Tertiary accent |
+| **Teal Dark** | `#008082` | Dark teal accent |
 | **Dark Gray** | `#171717` | Body text, dark sections |
 
 ### Typography
@@ -108,11 +110,14 @@ tailwind.config = {
         extend: {
             colors: {
                 brand: {
-                    green: '#00953b',
-                    'green-light': '#20a75b',
-                    'green-dark': '#007a30',
-                    orange: '#f9a01f',
-                    teal: '#1cd59d',
+                    green: '#00954c',
+                    'green-dark': '#008082',
+                    yellow: '#ffd603',
+                    orange: '#f7a022',
+                    lime: '#b3d137',
+                    'lime-light': '#d1e285',
+                    teal: '#2ebbbe',
+                    'teal-dark': '#008082',
                 }
             },
             fontFamily: {
