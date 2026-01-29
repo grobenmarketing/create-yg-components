@@ -199,6 +199,113 @@
     }
 
     // =========================================
+    // Resizable Component Previews
+    // =========================================
+    function initResizablePreviews() {
+        document.querySelectorAll('.component-preview').forEach(preview => {
+            const inner = preview.querySelector('.component-preview-inner');
+            if (!inner || preview.querySelector('.resize-container')) return;
+
+            // Create resize container structure
+            const container = document.createElement('div');
+            container.className = 'resize-container';
+            
+            const content = document.createElement('div');
+            content.className = 'resize-content';
+            
+            const handle = document.createElement('div');
+            handle.className = 'resize-handle';
+            handle.setAttribute('title', 'Drag to resize');
+            
+            const indicator = document.createElement('div');
+            indicator.className = 'resize-width-indicator';
+            
+            const resetBtn = document.createElement('button');
+            resetBtn.className = 'resize-reset';
+            resetBtn.textContent = 'Reset';
+            resetBtn.setAttribute('title', 'Reset to full width');
+
+            // Move inner content into resize container
+            inner.parentNode.insertBefore(container, inner);
+            content.appendChild(inner);
+            container.appendChild(content);
+            container.appendChild(handle);
+            container.appendChild(indicator);
+            container.appendChild(resetBtn);
+
+            // Resize functionality
+            let isResizing = false;
+            let startX, startWidth;
+
+            const updateIndicator = () => {
+                indicator.textContent = `${Math.round(container.offsetWidth)}px`;
+            };
+
+            handle.addEventListener('mousedown', (e) => {
+                isResizing = true;
+                startX = e.clientX;
+                startWidth = container.offsetWidth;
+                container.classList.add('resizing');
+                handle.classList.add('dragging');
+                document.body.style.cursor = 'ew-resize';
+                document.body.style.userSelect = 'none';
+                updateIndicator();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isResizing) return;
+                const diff = e.clientX - startX;
+                const newWidth = Math.max(320, Math.min(startWidth + diff, preview.offsetWidth - 48));
+                container.style.width = `${newWidth}px`;
+                updateIndicator();
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isResizing) {
+                    isResizing = false;
+                    container.classList.remove('resizing');
+                    handle.classList.remove('dragging');
+                    document.body.style.cursor = '';
+                    document.body.style.userSelect = '';
+                }
+            });
+
+            // Touch support
+            handle.addEventListener('touchstart', (e) => {
+                isResizing = true;
+                startX = e.touches[0].clientX;
+                startWidth = container.offsetWidth;
+                container.classList.add('resizing');
+                handle.classList.add('dragging');
+                updateIndicator();
+                e.preventDefault();
+            }, { passive: false });
+
+            document.addEventListener('touchmove', (e) => {
+                if (!isResizing) return;
+                const diff = e.touches[0].clientX - startX;
+                const newWidth = Math.max(320, Math.min(startWidth + diff, preview.offsetWidth - 48));
+                container.style.width = `${newWidth}px`;
+                updateIndicator();
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                if (isResizing) {
+                    isResizing = false;
+                    container.classList.remove('resizing');
+                    handle.classList.remove('dragging');
+                }
+            });
+
+            // Reset button
+            resetBtn.addEventListener('click', () => {
+                container.style.width = '100%';
+            });
+        });
+    }
+
+    // =========================================
     // Escape HTML for Code Display
     // =========================================
     function escapeHtml(html) {
@@ -262,6 +369,7 @@
         initActiveLink();
         populateCodeBlocks();
         initKeyboardNav();
+        initResizablePreviews();
 
         console.log('Yoder Graphics Component Gallery initialized');
     }
