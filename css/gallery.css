@@ -364,12 +364,96 @@ body {
     overflow: visible;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     margin-right: 20px;
+    container-type: inline-size;
+    container-name: preview;
 }
 
 .resize-content {
     width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     border-radius: 0.5rem;
+}
+
+.resize-content > .component-preview-inner {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Container Query responsive overrides */
+@container preview (max-width: 640px) {
+    /* Hide elements that should be hidden on mobile */
+    .resize-content [class*="hidden"][class*="md\:flex"],
+    .resize-content [class*="hidden"][class*="md\:block"],
+    .resize-content [class*="hidden"][class*="md\:inline-flex"],
+    .resize-content .hidden.md\:flex,
+    .resize-content .hidden.md\:block,
+    .resize-content .hidden.md\:inline-flex {
+        display: none !important;
+    }
+    
+    /* Show mobile menu buttons */
+    .resize-content .lg\:hidden,
+    .resize-content .md\:hidden {
+        display: flex !important;
+    }
+    
+    /* Collapse grids to single column */
+    .resize-content [class*="grid"][class*="md\:grid-cols-2"],
+    .resize-content [class*="grid"][class*="md\:grid-cols-3"],
+    .resize-content [class*="grid"][class*="lg\:grid-cols-3"],
+    .resize-content [class*="grid"][class*="lg\:grid-cols-4"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Reduce text sizes */
+    .resize-content [class*="md\:text-5xl"],
+    .resize-content [class*="md\:text-6xl"],
+    .resize-content [class*="lg\:text-6xl"],
+    .resize-content [class*="sm\:text-5xl"] {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .resize-content [class*="md\:text-xl"],
+    .resize-content [class*="lg\:text-xl"] {
+        font-size: 1rem !important;
+    }
+    
+    /* Reduce padding */
+    .resize-content [class*="md\:px-8"],
+    .resize-content [class*="lg\:px-12"] {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Reduce gaps */
+    .resize-content [class*="md\:gap-8"],
+    .resize-content [class*="lg\:gap-8"] {
+        gap: 1rem !important;
+    }
+    
+    /* Stack flex items */
+    .resize-content [class*="md\:flex-row"] {
+        flex-direction: column !important;
+    }
+}
+
+@container preview (max-width: 480px) {
+    .resize-content [class*="sm\:text-4xl"],
+    .resize-content [class*="text-4xl"] {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .resize-content [class*="gap-6"] {
+        gap: 0.75rem !important;
+    }
+    
+    .resize-content [class*="px-6"] {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
 }
 
 /* Resize Handle - Preline style */
