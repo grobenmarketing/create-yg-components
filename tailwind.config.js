@@ -15,14 +15,16 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                // Brand Colors - Primary Palette
+                // Brand Colors - Primary Palette (Official Yoder Graphics Colors)
                 brand: {
-                    green: '#00953b',        // Primary brand green
-                    'green-light': '#20a75b', // Lighter green for hovers/accents
-                    'green-dark': '#007a30',  // Darker green for contrast
-                    orange: '#f9a01f',        // Secondary accent color
-                    'orange-light': '#ffb74d', // Lighter orange
-                    teal: '#1cd59d',          // Tertiary accent
+                    green: '#00954c',         // Primary brand green (logo)
+                    'green-dark': '#008082',  // Dark teal
+                    yellow: '#ffd603',        // Brand yellow
+                    orange: '#f7a022',        // Brand orange
+                    lime: '#b3d137',          // Lime green
+                    'lime-light': '#d1e285',  // Light lime green
+                    teal: '#2ebbbe',          // Teal/cyan
+                    'teal-dark': '#008082',   // Dark teal
                 },
                 // Neutral Colors
                 neutral: {
@@ -97,12 +99,14 @@ tailwind.config = {
  * Copy these to your CSS file if needed:
  *
  * :root {
- *     --brand-green: #00953b;
- *     --brand-green-light: #20a75b;
- *     --brand-green-dark: #007a30;
- *     --brand-orange: #f9a01f;
- *     --brand-orange-light: #ffb74d;
- *     --brand-teal: #1cd59d;
+ *     --brand-green: #00954c;
+ *     --brand-green-dark: #008082;
+ *     --brand-yellow: #ffd603;
+ *     --brand-orange: #f7a022;
+ *     --brand-lime: #b3d137;
+ *     --brand-lime-light: #d1e285;
+ *     --brand-teal: #2ebbbe;
+ *     --brand-teal-dark: #008082;
  *
  *     --neutral-white: #ffffff;
  *     --neutral-off-white: #f1eeee;

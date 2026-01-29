@@ -12,13 +12,15 @@
    CSS Variables (matching tailwind.config.js)
    ========================================= */
 :root {
-    /* Brand Colors */
-    --brand-green: #00953b;
-    --brand-green-light: #20a75b;
-    --brand-green-dark: #007a30;
-    --brand-orange: #f9a01f;
-    --brand-orange-light: #ffb74d;
-    --brand-teal: #1cd59d;
+    /* Brand Colors (Official Yoder Graphics Colors) */
+    --brand-green: #00954c;
+    --brand-green-dark: #008082;
+    --brand-yellow: #ffd603;
+    --brand-orange: #f7a022;
+    --brand-lime: #b3d137;
+    --brand-lime-light: #d1e285;
+    --brand-teal: #2ebbbe;
+    --brand-teal-dark: #008082;
 
     /* Neutral Colors */
     --neutral-white: #ffffff;
@@ -133,7 +135,7 @@ body {
 }
 
 .sidebar-link.active {
-    background-color: rgba(0, 149, 59, 0.1);
+    background-color: rgba(0, 149, 76, 0.1);
     color: var(--brand-green);
     border-right: 3px solid var(--brand-green);
 }
