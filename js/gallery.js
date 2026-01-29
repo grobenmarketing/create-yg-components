@@ -269,12 +269,30 @@
                 }
             });
 
-            // Resize functionality
+            // Resize functionality with performance optimization
             let isResizing = false;
             let startX, startWidth;
+            let rafId = null;
+            let pendingWidth = null;
 
-            const updateIndicator = () => {
-                indicator.textContent = `${Math.round(container.offsetWidth)}px`;
+            const updateIndicator = (width) => {
+                indicator.textContent = `${Math.round(width)}px`;
+            };
+
+            const applyResize = () => {
+                if (pendingWidth !== null) {
+                    container.style.width = `${pendingWidth}px`;
+                    updateIndicator(pendingWidth);
+                    pendingWidth = null;
+                }
+                rafId = null;
+            };
+
+            const scheduleResize = (newWidth) => {
+                pendingWidth = newWidth;
+                if (!rafId) {
+                    rafId = requestAnimationFrame(applyResize);
+                }
             };
 
             handle.addEventListener('mousedown', (e) => {
@@ -283,9 +301,10 @@
                 startWidth = container.offsetWidth;
                 container.classList.add('resizing');
                 handle.classList.add('dragging');
+                iframe.style.pointerEvents = 'none';
                 document.body.style.cursor = 'ew-resize';
                 document.body.style.userSelect = 'none';
-                updateIndicator();
+                updateIndicator(startWidth);
                 e.preventDefault();
             });
 
@@ -293,10 +312,7 @@
                 if (!isResizing) return;
                 const diff = e.clientX - startX;
                 const newWidth = Math.max(320, Math.min(startWidth + diff, preview.offsetWidth - 48));
-                container.style.width = `${newWidth}px`;
-                updateIndicator();
-                // Adjust iframe height after resize
-                setTimeout(() => adjustIframeHeight(iframe), 50);
+                scheduleResize(newWidth);
             });
 
             document.addEventListener('mouseup', () => {
@@ -304,9 +320,18 @@
                     isResizing = false;
                     container.classList.remove('resizing');
                     handle.classList.remove('dragging');
+                    iframe.style.pointerEvents = '';
                     document.body.style.cursor = '';
                     document.body.style.userSelect = '';
-                    // Final height adjustment
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                    if (pendingWidth !== null) {
+                        container.style.width = `${pendingWidth}px`;
+                        updateIndicator(pendingWidth);
+                        pendingWidth = null;
+                    }
                     setTimeout(() => adjustIframeHeight(iframe), 100);
                 }
             });
@@ -318,7 +343,8 @@
                 startWidth = container.offsetWidth;
                 container.classList.add('resizing');
                 handle.classList.add('dragging');
-                updateIndicator();
+                iframe.style.pointerEvents = 'none';
+                updateIndicator(startWidth);
                 e.preventDefault();
             }, { passive: false });
 
@@ -326,8 +352,7 @@
                 if (!isResizing) return;
                 const diff = e.touches[0].clientX - startX;
                 const newWidth = Math.max(320, Math.min(startWidth + diff, preview.offsetWidth - 48));
-                container.style.width = `${newWidth}px`;
-                updateIndicator();
+                scheduleResize(newWidth);
             }, { passive: true });
 
             document.addEventListener('touchend', () => {
@@ -335,6 +360,16 @@
                     isResizing = false;
                     container.classList.remove('resizing');
                     handle.classList.remove('dragging');
+                    iframe.style.pointerEvents = '';
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                    if (pendingWidth !== null) {
+                        container.style.width = `${pendingWidth}px`;
+                        updateIndicator(pendingWidth);
+                        pendingWidth = null;
+                    }
                     setTimeout(() => adjustIframeHeight(iframe), 100);
                 }
             });
