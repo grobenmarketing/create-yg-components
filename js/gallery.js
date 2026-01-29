@@ -199,12 +199,17 @@
     }
 
     // =========================================
-    // Resizable Component Previews
+    // Resizable Component Previews with Iframe
     // =========================================
     function initResizablePreviews() {
+        const templatePath = getTemplatePath();
+        
         document.querySelectorAll('.component-preview').forEach(preview => {
             const inner = preview.querySelector('.component-preview-inner');
             if (!inner || preview.querySelector('.resize-container')) return;
+
+            // Get the original HTML content
+            const originalHTML = inner.innerHTML;
 
             // Create resize container structure
             const container = document.createElement('div');
@@ -212,6 +217,13 @@
             
             const content = document.createElement('div');
             content.className = 'resize-content';
+            
+            // Create iframe for true responsive preview
+            const iframe = document.createElement('iframe');
+            iframe.className = 'preview-iframe';
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('scrolling', 'no');
+            iframe.src = templatePath;
             
             const handle = document.createElement('div');
             handle.className = 'resize-handle';
@@ -225,13 +237,37 @@
             resetBtn.textContent = 'Reset';
             resetBtn.setAttribute('title', 'Reset to full width');
 
-            // Move inner content into resize container
+            // Replace inner with container structure
             inner.parentNode.insertBefore(container, inner);
-            content.appendChild(inner);
+            inner.style.display = 'none'; // Keep for code copy functionality
+            content.appendChild(iframe);
             container.appendChild(content);
             container.appendChild(handle);
             container.appendChild(indicator);
             container.appendChild(resetBtn);
+
+            // Send content to iframe when it's ready
+            const sendContent = () => {
+                iframe.contentWindow.postMessage({
+                    type: 'setContent',
+                    html: originalHTML
+                }, '*');
+            };
+
+            // Listen for iframe messages
+            window.addEventListener('message', function handler(e) {
+                if (e.source === iframe.contentWindow) {
+                    if (e.data.type === 'iframeReady') {
+                        sendContent();
+                        // Auto-resize iframe height
+                        setTimeout(() => {
+                            adjustIframeHeight(iframe);
+                        }, 200);
+                    } else if (e.data.type === 'contentHeight') {
+                        iframe.style.height = (e.data.height + 20) + 'px';
+                    }
+                }
+            });
 
             // Resize functionality
             let isResizing = false;
@@ -259,6 +295,8 @@
                 const newWidth = Math.max(320, Math.min(startWidth + diff, preview.offsetWidth - 48));
                 container.style.width = `${newWidth}px`;
                 updateIndicator();
+                // Adjust iframe height after resize
+                setTimeout(() => adjustIframeHeight(iframe), 50);
             });
 
             document.addEventListener('mouseup', () => {
@@ -268,6 +306,8 @@
                     handle.classList.remove('dragging');
                     document.body.style.cursor = '';
                     document.body.style.userSelect = '';
+                    // Final height adjustment
+                    setTimeout(() => adjustIframeHeight(iframe), 100);
                 }
             });
 
@@ -295,14 +335,40 @@
                     isResizing = false;
                     container.classList.remove('resizing');
                     handle.classList.remove('dragging');
+                    setTimeout(() => adjustIframeHeight(iframe), 100);
                 }
             });
 
             // Reset button
             resetBtn.addEventListener('click', () => {
                 container.style.width = '100%';
+                setTimeout(() => adjustIframeHeight(iframe), 100);
             });
         });
+    }
+
+    // Get the correct template path based on current page location
+    function getTemplatePath() {
+        const path = window.location.pathname;
+        if (path.includes('/components/') || path.includes('/pages/')) {
+            return '../templates/preview-template.html';
+        }
+        return 'templates/preview-template.html';
+    }
+
+    // Adjust iframe height to match content
+    function adjustIframeHeight(iframe) {
+        try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            const root = doc.getElementById('component-root');
+            if (root) {
+                const height = root.scrollHeight;
+                iframe.style.height = (height + 20) + 'px';
+            }
+        } catch (e) {
+            // Cross-origin restrictions, use fallback height
+            iframe.style.height = '400px';
+        }
     }
 
     // =========================================
