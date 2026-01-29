@@ -13,7 +13,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == '/':
-            self.path = '/component-gallery.html'
+            self.path = '/index.html'
         return super().do_GET()
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) or '.')
