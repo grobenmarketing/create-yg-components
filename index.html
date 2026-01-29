@@ -1,617 +1,379 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Yoder Graphics - Component Gallery</title>
-        <meta
-            name="description"
-            content="Explore Yoder Graphics component library featuring headers, heroes, cards, and more."
-        />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Gallery - Yoder Graphics</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-        />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
 
-        <link rel="stylesheet" href="css/component-gallery.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
+    <!-- Gallery Styles -->
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <div class="gallery-layout">
+        <!-- Sidebar Overlay (mobile) -->
+        <div class="sidebar-overlay"></div>
 
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
-        <nav class="page-navigation" style="background: linear-gradient(135deg, #15803d 0%, #166534 100%); padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; align-items: center;">
-        <a href="index.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; background-color: rgba(255,255,255,0.15); transition: background-color 0.2s;">
-            Current
-        </a>
-        <a href="components-redesign.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
-            Redesign
-        </a>
-        <a href="components-content.html" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.375rem; transition: background-color 0.2s;">
-            Content
-        </a>
-    </div>
-</nav>
-
-<style>
-.page-navigation a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-</style>
-
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">Header</div>
-    <header>
-        <div class="header-top-bar">
-            <a href="#">
-                <img
-                    src="img/logo.svg"
-                    alt="Yoder Graphics"
-                    class="logo-img"
-                />
-            </a>
-
-            <div class="header-actions">
-                <a href="#" class="action-btn">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    MAKE A PAYMENT
-                </a>
-                <a href="#" class="action-btn">
-                    <i class="fa-solid fa-upload"></i>
-                    UPLOAD FILES
-                </a>
-                <a href="#" class="action-btn">
-                    <i class="fa-solid fa-phone"></i>
-                    330-334-5060
-                </a>
+        <!-- Sidebar Navigation -->
+        <aside class="gallery-sidebar">
+            <div class="sidebar-header">
+                <h1>Yoder Graphics</h1>
+                <p>Component Gallery</p>
             </div>
-        </div>
 
-        <div class="desktop-nav-bar">
-            <nav class="desktop-nav">
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">
-                        Large Format
-                        <svg class="caret" viewBox="0 0 16 16">
-                            <path
-                                d="M4.5 3L8 6.5L11.5 3L13 4.5L8 9.5L3 4.5L4.5 3Z"
-                            ></path>
-                        </svg>
+            <nav class="sidebar-nav">
+                <!-- Overview -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Overview</div>
+                    <a href="index.html" class="sidebar-link active">
+                        <i class="fa-solid fa-home"></i>
+                        Dashboard
                     </a>
-                    <div class="dropdown">
-                        <a href="#">Vehicle Wraps</a>
-                        <a href="#">Signs & Displays</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#" class="nav-link">
-                        Print & Promo
-                        <svg class="caret" viewBox="0 0 16 16">
-                            <path
-                                d="M4.5 3L8 6.5L11.5 3L13 4.5L8 9.5L3 4.5L4.5 3Z"
-                            ></path>
-                        </svg>
+                    <a href="legacy/original-design.html" class="sidebar-link">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Legacy Design
                     </a>
-                    <div class="dropdown">
-                        <a href="#">Commercial Printing</a>
-                        <a href="#">Apparel</a>
-                        <a href="#">Business Forms</a>
-                    </div>
                 </div>
 
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Our Services</a>
+                <!-- Components -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Components</div>
+                    <a href="components/headers.html" class="sidebar-link">
+                        <i class="fa-solid fa-bars"></i>
+                        Headers
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="components/heroes.html" class="sidebar-link">
+                        <i class="fa-solid fa-star"></i>
+                        Heroes
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="components/features.html" class="sidebar-link">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                        Features
+                        <span class="sidebar-badge">6</span>
+                    </a>
+                    <a href="components/sliders.html" class="sidebar-link">
+                        <i class="fa-solid fa-images"></i>
+                        Sliders & Carousels
+                        <span class="sidebar-badge">3</span>
+                    </a>
+                    <a href="components/content.html" class="sidebar-link">
+                        <i class="fa-solid fa-newspaper"></i>
+                        Content Sections
+                        <span class="sidebar-badge">12</span>
+                    </a>
+                    <a href="components/ui-elements.html" class="sidebar-link">
+                        <i class="fa-solid fa-palette"></i>
+                        UI Elements
+                        <span class="sidebar-badge">5</span>
+                    </a>
                 </div>
 
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Get a Quote</a>
+                <!-- Page Templates -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Page Templates</div>
+                    <a href="pages/blog-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-blog"></i>
+                        Blog
+                    </a>
+                    <a href="pages/team-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-users"></i>
+                        Team
+                    </a>
+                    <a href="pages/case-studies-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Case Studies
+                    </a>
+                    <a href="pages/testimonials-page.html" class="sidebar-link">
+                        <i class="fa-solid fa-quote-left"></i>
+                        Testimonials
+                    </a>
+                </div>
+
+                <!-- Resources -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Resources</div>
+                    <a href="DEPENDENCIES.md" class="sidebar-link">
+                        <i class="fa-solid fa-cube"></i>
+                        Dependencies
+                    </a>
+                    <a href="README.md" class="sidebar-link">
+                        <i class="fa-solid fa-book"></i>
+                        Documentation
+                    </a>
                 </div>
             </nav>
-        </div>
-    </header>
-</div>
+        </aside>
 
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">
-        Green Gradient Hero
-    </div>
-    <div class="hero-green">
-        <h1>Commercial Printing</h1>
-        <p>
-            High-quality printing for all your business needs. From
-            brochures to business cards, we deliver professional results
-            that make your brand stand out.
-        </p>
-    </div>
-</div>
-
-        <!-- Typography Section -->
-<div class="wrapper">
-    <div class="container">
-        <div class="component-label">Typography</div>
-
-        <div class="gallery-card">
-            <div class="gallery-card-header">
-                <h3 class="gallery-card-title">Red Hat Display</h3>
-            </div>
-            <div class="gallery-card-grid">
-                <div class="gallery-item">
-                    <div class="gallery-item-label">Body Text</div>
-                    <p style="margin: 0 0 1rem 0">
-                        Regular body text at 1rem with standard weight
-                        for optimal readability across all content.
-                    </p>
-                    <p style="font-weight: 600; margin: 0">
-                        Semi-bold text (600) for emphasis in supporting
-                        content and key statements.
-                    </p>
+        <!-- Main Content -->
+        <main class="gallery-main">
+            <!-- Top Bar -->
+            <header class="gallery-topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="topbar-title">Dashboard</h2>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-label">Links</div>
-                    <p style="margin: 0 0 1rem 0">
-                        <a
-                            href="#"
-                            style="
-                                color: var(--primary);
-                                font-weight: 600;
-                                text-decoration: underline;
-                            "
-                            >Standard inline link</a
-                        >
-                    </p>
-                    <p style="margin: 0">
-                        <a
-                            href="#"
-                            style="
-                                color: var(--primary);
-                                font-weight: 800;
-                                font-size: 16px;
-                                text-transform: uppercase;
-                                text-decoration: none;
-                            "
-                            >Navigation Link</a
-                        >
-                    </p>
+
+                <div class="responsive-controls">
+                    <button class="responsive-btn" data-size="mobile">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Mobile</span>
+                    </button>
+                    <button class="responsive-btn" data-size="tablet">
+                        <i class="fa-solid fa-tablet-screen-button"></i>
+                        <span>Tablet</span>
+                    </button>
+                    <button class="responsive-btn active" data-size="desktop">
+                        <i class="fa-solid fa-desktop"></i>
+                        <span>Desktop</span>
+                    </button>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </header>
 
-        <!-- Display Headings Section -->
-<div class="wrapper">
-    <div class="container">
-        <div class="component-label">Display Headings</div>
+            <!-- Content Area -->
+            <div class="gallery-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Component <span>Gallery</span></h1>
+                    <p>A comprehensive collection of UI components and page templates for the Yoder Graphics website redesign.</p>
+                </div>
 
-        <div class="gallery-card">
-            <div class="gallery-card-header">
-                <h3 class="gallery-card-title">
-                    Hero & Section Titles
-                </h3>
-            </div>
-            <div class="gallery-card-grid two-col">
-                <div
-                    class="gallery-item hero-title-demo"
-                >
-                    <div
-                        class="gallery-item-label"
-                        style="color: rgba(255, 255, 255, 0.7)"
-                    >
-                        Hero Title
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <h3>Components</h3>
+                        <div class="value">32</div>
                     </div>
-                    <h1 class="hero-title-sample">
-                        Hero Title
-                    </h1>
-                    <p class="hero-title-subtext">
-                        Supporting hero text
-                    </p>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-label">Slider Display</div>
-                    <div class="type-replica-1">
-                        <h2>COMMERCIAL</h2>
-                        <h2 class="green-text">PRINTING</h2>
-                        <p>cards, flyers, brochures & more</p>
+                    <div class="stat-card">
+                        <h3>Page Templates</h3>
+                        <div class="value">4</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Categories</h3>
+                        <div class="value">6</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Status</h3>
+                        <div class="value" style="color: var(--brand-orange);">Active</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-label">Section Title</div>
-                    <div class="type-replica-2">
-                        <h2>That's Why—<span>We Do It All.</span></h2>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-label">Story Header</div>
-                    <h2 class="story-header-title">
-                        OUR STORY
-                    </h2>
-                    <h3 class="story-header-subtitle">
-                        VETERAN OWNED & OPERATED
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">
-        Home Page Slider
-    </div>
-    <div id="slider-placeholder"></div>
-</div>
+                <!-- Component Categories Grid -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Browse by Category</h2>
 
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">
-        Our Story Hero
-    </div>
-    <div class="story-hero">
-        <div class="container story-content">
-            <div class="story-text">
-                <h2>OUR STORY</h2>
-                <h3>VETERAN OWNED & OPERATED</h3>
-                <p>
-                    From humble beginnings to our position as a
-                    full-spectrum marketing partner, our story reflects
-                    nearly five decades of adaptation, growth, and
-                    commitment to excellence. <br /><br /><strong
-                        >Discover how we've evolved while staying true
-                        to our founding principles.</strong
-                    >
-                </p>
-                <a href="#" class="story-btn">Learn More About Us</a>
-            </div>
-            <div class="story-badge">
-                <img
-                    src="img/index/badge.svg"
-                    alt="Badge"
-                />
-            </div>
-        </div>
-    </div>
-</div>
-
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">
-        Orange Feature Section
-    </div>
-    <div class="orange-feature">
-        <div class="container orange-flex">
-            <div class="orange-img">
-                <img
-                    src="img/index/cargo-van.png"
-                    alt="Van"
-                />
-            </div>
-            <div class="orange-txt">
-                <h2>
-                    We Bring <span class="hl">Life</span><br />
-                    to Businesses Through<br />
-                    Quality Print Marketing
-                </h2>
-                <hr class="green-line" />
-                <p class="tagline">SHOW EVERYONE HOW ALIVE YOU ARE.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <div class="service-cards-container">
-    <div class="component-label">Service Cards</div>
-    <div class="abstract-background service-cards-wave">
-        <img
-            src="img/waves.svg"
-            alt="Abstract waves"
-            class="abstract-waves service-waves-img"
-        />
-    </div>
-    <div class="container" style="position: relative; z-index: 2">
-        <div class="type-replica-2">
-            <h2>That's Why—<span>We Do It All.</span></h2>
-        </div>
-
-        <div class="grid-layout">
-            <div class="svc-card">
-                <div class="svc-card-img">
-                    <img
-                        src="img/index/print-card.jpeg"
-                        alt="Print"
-                    />
-                </div>
-                <div class="svc-card-body">
-                    <h3 class="svc-card-title">PRINT</h3>
-                    <hr class="svc-card-hr" />
-                    <div class="svc-card-item">SIGNS & DECALS</div>
-                    <div class="svc-card-item">COMMERCIAL PRINTING</div>
-                    <div class="svc-card-item">DIRECT MAIL</div>
-                    <div class="svc-card-item">BUSINESS FORMS</div>
-                    <div class="svc-card-item">
-                        LARGE FORMAT PRINTING
-                    </div>
-                    <div class="svc-card-item">LABELS & MORE</div>
-                </div>
-            </div>
-
-            <div class="svc-card">
-                <div class="svc-card-img">
-                    <img
-                        src="img/index/creative-card.jpeg"
-                        alt="Creative"
-                    />
-                </div>
-                <div class="svc-card-body">
-                    <h3 class="svc-card-title">CREATIVE</h3>
-                    <hr class="svc-card-hr" />
-                    <div class="svc-card-item">
-                        IN-HOUSE DESIGN TEAM
-                    </div>
-                    <div class="svc-card-item">BRAND MANAGEMENT</div>
-                    <div class="svc-card-item">COLOR MATCHING</div>
-                </div>
-            </div>
-
-            <div class="svc-card">
-                <div class="svc-card-img">
-                    <img
-                        src="img/index/promo-card.jpeg"
-                        alt="Promo"
-                    />
-                </div>
-                <div class="svc-card-body">
-                    <h3 class="svc-card-title">PROMO</h3>
-                    <hr class="svc-card-hr" />
-                    <div class="svc-card-item">PROMO PRODUCTS</div>
-                    <div class="svc-card-item">CUSTOM APPAREL</div>
-                    <div class="svc-card-item">TRADE SHOW DISPLAYS</div>
-                </div>
-            </div>
-
-            <div class="svc-card">
-                <div class="svc-card-img">
-                    <img
-                        src="img/index/fulfillment-card.png"
-                        alt="Fulfillment"
-                    />
-                </div>
-                <div class="svc-card-body">
-                    <h3 class="svc-card-title">FULFILLMENT</h3>
-                    <hr class="svc-card-hr" />
-                    <div class="svc-card-item">LOCAL PICKUP</div>
-                    <div class="svc-card-item">LOCAL DELIVERY</div>
-                    <div class="svc-card-item">WAREHOUSING</div>
-                    <div class="svc-card-item">
-                        INTERNATIONAL SHIPPING
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <div class="wrapper">
-    <div class="container">
-        <div class="component-label">Content Box: Left</div>
-        <div class="content-box">
-            <div class="box-img">
-                <img
-                    src="img/signs/securitec.jpeg"
-                    alt="Illuminated Signs"
-                />
-            </div>
-            <div class="box-txt">
-                <h2>Illuminated Signs</h2>
-                <p>
-                    Whether lit from within or externally, illuminated
-                    signage gives your message extra visibility and
-                    emphasis both day and night. This can include
-                    cabinets with flat or pan faces, custom neon,
-                    channel letters, digital readout boards, and more.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <div class="wrapper">
-    <div class="container">
-        <div class="component-label">Content Box: Right</div>
-        <div class="content-box secondary">
-            <div class="box-img">
-                <img
-                    src="img/signs/community.webp"
-                    alt="Retrofitting"
-                />
-            </div>
-            <div class="box-txt">
-                <h2>Sign Retrofitting</h2>
-                <p>
-                    Our professional installation experts will work
-                    quickly to update your existing sign with newer
-                    materials and internals. With affordable up-front
-                    costs and a longer life span, your total savings on
-                    maintenance will be exponential.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <div class="wrapper">
-    <div class="container">
-        <div class="component-label">Gallery</div>
-        <div class="gal-filters">
-            <button class="gal-btn active" data-filter="all">
-                All
-            </button>
-            <button class="gal-btn" data-filter="illuminated">
-                Illuminated
-            </button>
-            <button class="gal-btn" data-filter="non-illuminated">
-                Non-Illuminated
-            </button>
-        </div>
-        <div class="masonry" id="gallery-masonry">
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="img/signs/affinitygaming.webp"
-                    alt="Affinity Gaming Sign"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="img/signs/akron_childrens.webp"
-                    alt="Akron Children's Sign"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="img/signs/bballjewelers2.webp"
-                    alt="BBall Jewelers Sign"
-                />
-            </div>
-            <div class="m-item" data-category="non-illuminated">
-                <img
-                    src="img/signs/bejeweled.webp"
-                    alt="Bejeweled Sign"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="img/signs/candytyme.webp"
-                    alt="Candy Tyme Sign"
-                />
-            </div>
-            <div class="m-item" data-category="non-illuminated">
-                <img
-                    src="img/signs/community.webp"
-                    alt="Community Sign"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600"
-                    alt="Neon Sign"
-                />
-            </div>
-            <div class="m-item" data-category="non-illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=600"
-                    alt="Store Front Sign"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600"
-                    alt="LED Display"
-                />
-            </div>
-            <div class="m-item" data-category="non-illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600"
-                    alt="Retail Signage"
-                />
-            </div>
-            <div class="m-item" data-category="illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=600"
-                    alt="Neon Lights"
-                />
-            </div>
-            <div class="m-item" data-category="non-illuminated">
-                <img
-                    src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=600"
-                    alt="Shop Sign"
-                />
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <img src="" alt="Enlarged view" id="lightbox-img" />
-</div>
-
-        <div class="wrapper">
-    <div class="component-label" style="margin-left: 1rem">Footer</div>
-    <footer>
-        <div class="container">
-            <div class="foot-logo-wrap">
-                <img
-                    src="img/logo.svg"
-                    alt="Footer Logo"
-                    style="height: 5rem"
-                />
-            </div>
-            <hr class="foot-divider" />
-            <div class="foot-bottom">
-                <span class="foot-copyright"
-                    >©2025 Yoder Graphics Systems. All Rights
-                    Reserved.</span
-                >
-                <div class="socials">
-                    <a
-                        href="https://www.facebook.com/yodergraphics/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-facebook-f"></i>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Headers -->
+                    <a href="components/headers.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-green group-hover:text-white transition-all">
+                            <i class="fa-solid fa-bars text-brand-green text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Headers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Navigation bars with dropdowns, mega menus, and mobile-responsive layouts.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            3 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
                     </a>
-                    <a
-                        href="https://www.instagram.com/yodergraphics/?hl=en"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-instagram"></i>
+
+                    <!-- Heroes -->
+                    <a href="components/heroes.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-all">
+                            <i class="fa-solid fa-star text-brand-orange text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Heroes</h3>
+                        <p class="text-gray-600 text-sm mb-4">Page headings, gradient backgrounds, and eye-catching intro sections.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            3 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
                     </a>
-                    <a
-                        href="https://www.tiktok.com/@yodergraphics"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-tiktok"></i>
+
+                    <!-- Features -->
+                    <a href="components/features.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-teal group-hover:text-white transition-all">
+                            <i class="fa-solid fa-puzzle-piece text-brand-teal text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Features</h3>
+                        <p class="text-gray-600 text-sm mb-4">Service cards, content boxes, and feature highlight sections.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            6 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
                     </a>
-                    <a
-                        href="https://x.com/yodergraphics"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-x-twitter"></i>
+
+                    <!-- Sliders -->
+                    <a href="components/sliders.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-images text-purple-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Sliders & Carousels</h3>
+                        <p class="text-gray-600 text-sm mb-4">Homepage sliders, logo marquees, and image carousels.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            3 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
                     </a>
-                    <a
-                        href="https://www.linkedin.com/company/yoder-graphic-systems-inc/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    <!-- Content -->
+                    <a href="components/content.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-newspaper text-blue-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Content Sections</h3>
+                        <p class="text-gray-600 text-sm mb-4">Blog posts, team members, case studies, and testimonials.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            12 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
+                    </a>
+
+                    <!-- UI Elements -->
+                    <a href="components/ui-elements.html" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-pink-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-palette text-pink-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">UI Elements</h3>
+                        <p class="text-gray-600 text-sm mb-4">Buttons, typography, forms, FAQs, and other UI building blocks.</p>
+                        <div class="flex items-center text-brand-green font-semibold text-sm">
+                            5 components <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </div>
                     </a>
                 </div>
+
+                <!-- Page Templates Section -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Page Templates</h2>
+                <p class="text-gray-600 mb-6">Complete page layouts ready for production use.</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <a href="pages/blog-page.html" class="block bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-brand-green hover:shadow-lg transition-all group">
+                        <div class="h-32 bg-gradient-to-br from-brand-green to-brand-green-dark flex items-center justify-center">
+                            <i class="fa-solid fa-blog text-4xl text-white/80"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Blog Page</h3>
+                            <p class="text-gray-500 text-sm">Articles & news</p>
+                        </div>
+                    </a>
+
+                    <a href="pages/team-page.html" class="block bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-brand-orange hover:shadow-lg transition-all group">
+                        <div class="h-32 bg-gradient-to-br from-brand-orange to-amber-600 flex items-center justify-center">
+                            <i class="fa-solid fa-users text-4xl text-white/80"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Team Page</h3>
+                            <p class="text-gray-500 text-sm">Meet the team</p>
+                        </div>
+                    </a>
+
+                    <a href="pages/case-studies-page.html" class="block bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-brand-teal hover:shadow-lg transition-all group">
+                        <div class="h-32 bg-gradient-to-br from-brand-teal to-teal-600 flex items-center justify-center">
+                            <i class="fa-solid fa-briefcase text-4xl text-white/80"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Case Studies</h3>
+                            <p class="text-gray-500 text-sm">Project showcases</p>
+                        </div>
+                    </a>
+
+                    <a href="pages/testimonials-page.html" class="block bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-purple-600 hover:shadow-lg transition-all group">
+                        <div class="h-32 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+                            <i class="fa-solid fa-quote-left text-4xl text-white/80"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Testimonials</h3>
+                            <p class="text-gray-500 text-sm">Customer reviews</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Brand Colors Reference -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Brand Colors</h2>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 mb-12">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #00953b;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Brand Green</p>
+                            <p class="text-xs text-gray-500 font-mono">#00953b</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #20a75b;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Green Light</p>
+                            <p class="text-xs text-gray-500 font-mono">#20a75b</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #007a30;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Green Dark</p>
+                            <p class="text-xs text-gray-500 font-mono">#007a30</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #f9a01f;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Brand Orange</p>
+                            <p class="text-xs text-gray-500 font-mono">#f9a01f</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #1cd59d;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Brand Teal</p>
+                            <p class="text-xs text-gray-500 font-mono">#1cd59d</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-full h-20 rounded-lg mb-2" style="background: #171717;"></div>
+                            <p class="font-semibold text-sm text-gray-900">Dark Gray</p>
+                            <p class="text-xs text-gray-500 font-mono">#171717</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Reference -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Quick Reference</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-keyboard text-brand-green"></i>
+                            Keyboard Shortcuts
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between">
+                                <span>Toggle sidebar</span>
+                                <kbd class="px-2 py-1 bg-gray-100 rounded text-xs font-mono">Ctrl/Cmd + B</kbd>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Toggle code view</span>
+                                <kbd class="px-2 py-1 bg-gray-100 rounded text-xs font-mono">Ctrl/Cmd + Shift + C</kbd>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-font text-brand-orange"></i>
+                            Typography
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between">
+                                <span>Primary Font</span>
+                                <span class="font-semibold">Red Hat Display</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Weights Used</span>
+                                <span class="font-semibold">400, 500, 600, 700, 800</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </main>
+    </div>
 
-
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-        <!-- Slider Initialization -->
-        <script src="js/component-gallery.js"></script>
-    </body>
+    <!-- Gallery JavaScript -->
+    <script src="js/gallery.js"></script>
+</body>
 </html>
