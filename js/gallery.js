@@ -440,7 +440,7 @@
         initActiveLink();
         populateCodeBlocks();
         initKeyboardNav();
-        initResizablePreviews();
+        // Disabled: initResizablePreviews() - iframe overlay blocks element selection
 
         console.log('Yoder Graphics Component Gallery initialized');
     }
