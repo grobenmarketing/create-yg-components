@@ -203,11 +203,6 @@
             
             const indicator = document.createElement('div');
             indicator.className = 'resize-width-indicator';
-            
-            const resetBtn = document.createElement('button');
-            resetBtn.className = 'resize-reset';
-            resetBtn.textContent = 'Reset';
-            resetBtn.setAttribute('title', 'Reset to full width');
 
             // Create toggle button for resize mode
             const toggleBtn = document.createElement('button');
@@ -223,7 +218,6 @@
             container.appendChild(content);
             container.appendChild(handle);
             container.appendChild(indicator);
-            container.appendChild(resetBtn);
 
             let resizeModeActive = false;
             let iframeReady = false;
@@ -377,11 +371,6 @@
                 }
             });
 
-            // Reset button
-            resetBtn.addEventListener('click', () => {
-                container.style.width = '100%';
-                setTimeout(() => adjustIframeHeight(iframe), 100);
-            });
         });
     }
 
