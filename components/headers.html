@@ -19,6 +19,131 @@
 
     <!-- Gallery Styles -->
     <link rel="stylesheet" href="../css/gallery.css">
+
+    <!-- Mega Menu Theme Styles -->
+    <style>
+        /* Light Mode (default) */
+        .mega-menu-light {
+            background: #ffffff;
+        }
+        .mega-menu-light .mega-menu-utility {
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .mega-menu-light .mega-menu-utility-text {
+            color: #6b7280;
+        }
+        .mega-menu-light .mega-menu-utility-divider {
+            color: #d1d5db;
+        }
+        .mega-menu-light .mega-menu-utility-link {
+            color: #6b7280;
+        }
+        .mega-menu-light .mega-menu-utility-link:hover {
+            color: #111827;
+        }
+        .mega-menu-light .mega-menu-nav {
+            background: #ffffff;
+        }
+        .mega-menu-light .mega-menu-logo {
+            filter: none;
+        }
+        .mega-menu-light .mega-menu-link {
+            color: #6b7280;
+        }
+        .mega-menu-light .mega-menu-link:hover {
+            color: #111827;
+        }
+        .mega-menu-light .mega-menu-link-active {
+            color: #111827;
+        }
+        .mega-menu-light .mega-menu-link-hover:hover {
+            background: #f3f4f6;
+        }
+        .mega-menu-light .mega-menu-dropdown {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+        }
+        .mega-menu-light .mega-menu-dropdown-item:hover {
+            background: #f3f4f6;
+        }
+        .mega-menu-light .mega-menu-dropdown-title {
+            color: #111827;
+        }
+        .mega-menu-light .mega-menu-dropdown-subtitle {
+            color: #9ca3af;
+        }
+        .mega-menu-light .mega-menu-phone {
+            color: #111827;
+        }
+        .mega-menu-light .mega-menu-mobile-btn {
+            color: #374151;
+        }
+        .mega-menu-light .mega-menu-mobile-btn:hover {
+            background: #f3f4f6;
+        }
+
+        /* Dark Mode */
+        .mega-menu-dark {
+            background: #111827;
+        }
+        .mega-menu-dark .mega-menu-utility {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+        }
+        .mega-menu-dark .mega-menu-utility-text {
+            color: #9ca3af;
+        }
+        .mega-menu-dark .mega-menu-utility-divider {
+            color: #374151;
+        }
+        .mega-menu-dark .mega-menu-utility-link {
+            color: #9ca3af;
+        }
+        .mega-menu-dark .mega-menu-utility-link:hover {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-nav {
+            background: #111827;
+        }
+        .mega-menu-dark .mega-menu-logo {
+            filter: brightness(0) invert(1);
+        }
+        .mega-menu-dark .mega-menu-link {
+            color: #d1d5db;
+        }
+        .mega-menu-dark .mega-menu-link:hover {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-link-active {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-link-hover:hover {
+            background: #1f2937;
+        }
+        .mega-menu-dark .mega-menu-dropdown {
+            background: #1f2937;
+            border: 1px solid #374151;
+        }
+        .mega-menu-dark .mega-menu-dropdown-item:hover {
+            background: rgba(55, 65, 81, 0.5);
+        }
+        .mega-menu-dark .mega-menu-dropdown-title {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-dropdown-subtitle {
+            color: #6b7280;
+        }
+        .mega-menu-dark .mega-menu-phone {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-mobile-btn {
+            color: #ffffff;
+        }
+        .mega-menu-dark .mega-menu-mobile-btn:hover {
+            background: #1f2937;
+        }
+    </style>
 </head>
 <body>
     <div class="gallery-layout">
@@ -117,6 +242,158 @@
                 <div class="page-header">
                     <h1>Header <span>Components</span></h1>
                     <p>Navigation bars with dropdowns, mega menus, utility bars, and mobile-responsive layouts.</p>
+                </div>
+
+                <!-- Component: Mega Menu -->
+                <div class="component-card" data-category="headers">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label">
+                                <i class="fa-solid fa-bars"></i>
+                                Header
+                            </span>
+                            <span class="component-variant"><i class="fa-solid fa-star" style="color: gold;"></i> Mega Menu</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" id="megaMenuThemeToggle" onclick="toggleMegaMenuTheme()">
+                                <i class="fa-solid fa-moon"></i> Dark Mode
+                            </button>
+                            <button class="action-btn" data-toggle-code>
+                                <i class="fa-solid fa-code"></i> View Code
+                            </button>
+                            <button class="action-btn" data-copy-code>
+                                <i class="fa-solid fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <!-- Mega Menu Header -->
+                            <header id="megaMenuHeader" class="mega-menu-light">
+                                <!-- Utility Bar -->
+                                <div class="mega-menu-utility">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-10">
+                                            <div class="hidden md:flex items-center gap-4 text-xs mega-menu-utility-text">
+                                                <span><i class="fa-solid fa-location-dot mr-1"></i> Wadsworth, OH</span>
+                                                <span class="mega-menu-utility-divider">|</span>
+                                                <span><i class="fa-solid fa-clock mr-1"></i> Mon-Fri 8am-5pm</span>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <a href="#" class="text-xs mega-menu-utility-link">
+                                                    <i class="fa-solid fa-dollar-sign mr-1"></i> Make a Payment
+                                                </a>
+                                                <a href="#" class="text-xs mega-menu-utility-link">
+                                                    <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload Files
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Main Nav -->
+                                <nav class="mega-menu-nav">
+                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div class="flex items-center justify-between h-20">
+                                            <a href="#" class="flex items-center">
+                                                <img src="../img/logo.svg" alt="Yoder Graphics" class="h-10 mega-menu-logo">
+                                            </a>
+
+                                            <div class="hidden lg:flex items-center gap-1">
+                                                <a href="#" class="px-4 py-2 text-sm font-medium mega-menu-link-active rounded-lg mega-menu-link-hover transition-all">
+                                                    Home
+                                                </a>
+                                                <div class="relative group">
+                                                    <button class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all inline-flex items-center gap-1">
+                                                        Services
+                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                                    </button>
+                                                    <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                                        <div class="mega-menu-dropdown rounded-2xl shadow-2xl p-6 w-[600px]">
+                                                            <div class="grid grid-cols-2 gap-6">
+                                                                <div>
+                                                                    <h4 class="text-brand-green font-bold text-sm uppercase tracking-wider mb-4">Large Format</h4>
+                                                                    <div class="space-y-1">
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg mega-menu-dropdown-item transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-car text-brand-green"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="mega-menu-dropdown-title font-medium text-sm">Vehicle Wraps</div>
+                                                                                <div class="mega-menu-dropdown-subtitle text-xs">Full & partial wraps</div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg mega-menu-dropdown-item transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-signs-post text-brand-green"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="mega-menu-dropdown-title font-medium text-sm">Signs & Banners</div>
+                                                                                <div class="mega-menu-dropdown-subtitle text-xs">Indoor & outdoor</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="text-brand-orange font-bold text-sm uppercase tracking-wider mb-4">Print & Promo</h4>
+                                                                    <div class="space-y-1">
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg mega-menu-dropdown-item transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-print text-brand-orange"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="mega-menu-dropdown-title font-medium text-sm">Commercial Printing</div>
+                                                                                <div class="mega-menu-dropdown-subtitle text-xs">Cards, brochures & more</div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg mega-menu-dropdown-item transition-all">
+                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
+                                                                                <i class="fa-solid fa-shirt text-brand-orange"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="mega-menu-dropdown-title font-medium text-sm">Custom Apparel</div>
+                                                                                <div class="mega-menu-dropdown-subtitle text-xs">Screen print & embroidery</div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all">
+                                                    About
+                                                </a>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all">
+                                                    Portfolio
+                                                </a>
+                                                <a href="#" class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all">
+                                                    Contact
+                                                </a>
+                                            </div>
+
+                                            <div class="flex items-center gap-3">
+                                                <a href="tel:330-334-5060" class="hidden md:flex items-center gap-2 mega-menu-phone text-sm font-medium">
+                                                    <i class="fa-solid fa-phone text-brand-green"></i>
+                                                    330-334-5060
+                                                </a>
+                                                <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
+                                                    Get a Quote
+                                                </a>
+                                                <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg mega-menu-mobile-btn">
+                                                    <i class="fa-solid fa-bars text-xl"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="code-copy-btn">Copy</button>
+                        <pre><code></code></pre>
+                    </div>
                 </div>
 
                 <!-- Component: Header Standard -->
@@ -354,160 +631,29 @@
                     </div>
                 </div>
 
-                <!-- Component: Header Dark Mega Menu -->
-                <div class="component-card" data-category="headers">
-                    <div class="component-header">
-                        <div class="component-title">
-                            <span class="component-label">
-                                <i class="fa-solid fa-bars"></i>
-                                Header
-                            </span>
-                            <span class="component-variant">Dark Theme with Mega Menu</span>
-                        </div>
-                        <div class="component-actions">
-                            <button class="action-btn" data-toggle-code>
-                                <i class="fa-solid fa-code"></i> View Code
-                            </button>
-                            <button class="action-btn" data-copy-code>
-                                <i class="fa-solid fa-copy"></i> Copy
-                            </button>
-                        </div>
-                    </div>
-                    <div class="component-preview">
-                        <div class="component-preview-inner">
-                            <!-- Header Dark Mega Menu -->
-                            <header class="bg-gray-900">
-                                <!-- Utility Bar -->
-                                <div class="border-b border-gray-800">
-                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                        <div class="flex items-center justify-between h-10">
-                                            <div class="hidden md:flex items-center gap-4 text-xs text-gray-400">
-                                                <span><i class="fa-solid fa-location-dot mr-1"></i> Wadsworth, OH</span>
-                                                <span class="text-gray-700">|</span>
-                                                <span><i class="fa-solid fa-clock mr-1"></i> Mon-Fri 8am-5pm</span>
-                                            </div>
-                                            <div class="flex items-center gap-4">
-                                                <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors">
-                                                    <i class="fa-solid fa-dollar-sign mr-1"></i> Make a Payment
-                                                </a>
-                                                <a href="#" class="text-xs text-gray-400 hover:text-white transition-colors">
-                                                    <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload Files
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Main Nav -->
-                                <nav class="bg-gray-900">
-                                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                        <div class="flex items-center justify-between h-20">
-                                            <a href="#" class="flex items-center">
-                                                <img src="../img/logo.svg" alt="Yoder Graphics" class="h-10 brightness-0 invert">
-                                            </a>
-
-                                            <div class="hidden lg:flex items-center gap-1">
-                                                <a href="#" class="px-4 py-2 text-sm font-medium text-white rounded-lg hover:bg-gray-800 transition-all">
-                                                    Home
-                                                </a>
-                                                <div class="relative group">
-                                                    <button class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all inline-flex items-center gap-1">
-                                                        Services
-                                                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                                                    </button>
-                                                    <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                                        <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-6 w-[600px]">
-                                                            <div class="grid grid-cols-2 gap-6">
-                                                                <div>
-                                                                    <h4 class="text-brand-green font-bold text-sm uppercase tracking-wider mb-4">Large Format</h4>
-                                                                    <div class="space-y-1">
-                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
-                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
-                                                                                <i class="fa-solid fa-car text-brand-green"></i>
-                                                                            </div>
-                                                                            <div>
-                                                                                <div class="text-white font-medium text-sm">Vehicle Wraps</div>
-                                                                                <div class="text-gray-500 text-xs">Full & partial wraps</div>
-                                                                            </div>
-                                                                        </a>
-                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
-                                                                            <div class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center">
-                                                                                <i class="fa-solid fa-signs-post text-brand-green"></i>
-                                                                            </div>
-                                                                            <div>
-                                                                                <div class="text-white font-medium text-sm">Signs & Banners</div>
-                                                                                <div class="text-gray-500 text-xs">Indoor & outdoor</div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div>
-                                                                    <h4 class="text-brand-orange font-bold text-sm uppercase tracking-wider mb-4">Print & Promo</h4>
-                                                                    <div class="space-y-1">
-                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
-                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
-                                                                                <i class="fa-solid fa-print text-brand-orange"></i>
-                                                                            </div>
-                                                                            <div>
-                                                                                <div class="text-white font-medium text-sm">Commercial Printing</div>
-                                                                                <div class="text-gray-500 text-xs">Cards, brochures & more</div>
-                                                                            </div>
-                                                                        </a>
-                                                                        <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50 transition-all">
-                                                                            <div class="w-10 h-10 bg-brand-orange/20 rounded-lg flex items-center justify-center">
-                                                                                <i class="fa-solid fa-shirt text-brand-orange"></i>
-                                                                            </div>
-                                                                            <div>
-                                                                                <div class="text-white font-medium text-sm">Custom Apparel</div>
-                                                                                <div class="text-gray-500 text-xs">Screen print & embroidery</div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
-                                                    About
-                                                </a>
-                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
-                                                    Portfolio
-                                                </a>
-                                                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-gray-800 transition-all">
-                                                    Contact
-                                                </a>
-                                            </div>
-
-                                            <div class="flex items-center gap-3">
-                                                <a href="tel:330-334-5060" class="hidden md:flex items-center gap-2 text-white text-sm font-medium">
-                                                    <i class="fa-solid fa-phone text-brand-green"></i>
-                                                    330-334-5060
-                                                </a>
-                                                <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
-                                                    Get a Quote
-                                                </a>
-                                                <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-800 text-white">
-                                                    <i class="fa-solid fa-bars text-xl"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </nav>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="component-code">
-                        <button class="code-copy-btn">Copy</button>
-                        <pre><code></code></pre>
-                    </div>
-                </div>
-
             </div>
         </main>
     </div>
 
     <!-- Gallery JavaScript -->
     <script src="../js/gallery.js"></script>
+
+    <!-- Mega Menu Theme Toggle -->
+    <script>
+        function toggleMegaMenuTheme() {
+            const header = document.getElementById('megaMenuHeader');
+            const toggleBtn = document.getElementById('megaMenuThemeToggle');
+            
+            if (header.classList.contains('mega-menu-light')) {
+                header.classList.remove('mega-menu-light');
+                header.classList.add('mega-menu-dark');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+            } else {
+                header.classList.remove('mega-menu-dark');
+                header.classList.add('mega-menu-light');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
+            }
+        }
+    </script>
 </body>
 </html>
