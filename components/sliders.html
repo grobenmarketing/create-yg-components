@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliders & Carousels - Yoder Graphics Component Gallery</title>
+    <title>Sliders & Galleries - Yoder Graphics Component Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/gallery.css">
     <style>
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .animate-marquee { animation: marquee 30s linear infinite; }
+        @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+        .animate-marquee-left { animation: marquee-left 25s linear infinite; }
+        .animate-marquee-right { animation: marquee-right 30s linear infinite; }
     </style>
 </head>
 <body>
@@ -35,7 +37,7 @@
                     <a href="headers.html" class="sidebar-link"><i class="fa-solid fa-bars"></i> Headers <span class="sidebar-badge">3</span></a>
                     <a href="heroes.html" class="sidebar-link"><i class="fa-solid fa-star"></i> Heroes <span class="sidebar-badge">3</span></a>
                     <a href="features.html" class="sidebar-link"><i class="fa-solid fa-puzzle-piece"></i> Features <span class="sidebar-badge">6</span></a>
-                    <a href="sliders.html" class="sidebar-link active"><i class="fa-solid fa-images"></i> Sliders & Carousels <span class="sidebar-badge">3</span></a>
+                    <a href="sliders.html" class="sidebar-link active"><i class="fa-solid fa-images"></i> Sliders & Galleries <span class="sidebar-badge">3</span></a>
                     <a href="content.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> Content Sections <span class="sidebar-badge">12</span></a>
                     <a href="ui-elements.html" class="sidebar-link"><i class="fa-solid fa-palette"></i> UI Elements <span class="sidebar-badge">5</span></a>
                 </div>
@@ -52,14 +54,14 @@
         <main class="gallery-main">
             <header class="gallery-topbar">
                 <div class="topbar-left">
-                    <h2 class="topbar-title">Sliders & Carousels</h2>
+                    <h2 class="topbar-title">Sliders & Galleries</h2>
                 </div>
             </header>
 
             <div class="gallery-content">
                 <div class="page-header">
-                    <h1>Sliders & <span>Carousels</span></h1>
-                    <p>Homepage sliders, client logo marquees, and image carousels powered by Swiper.js.</p>
+                    <h1>Sliders & <span>Galleries</span></h1>
+                    <p>Homepage sliders, client logo marquees, and image galleries powered by Swiper.js.</p>
                 </div>
 
                 <!-- Note about Swiper -->
@@ -87,31 +89,69 @@
                     </div>
                     <div class="component-preview">
                         <div class="component-preview-inner">
+                            <style>
+                                @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+                                @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+                                .animate-marquee-left { animation: marquee-left 25s linear infinite; }
+                                .animate-marquee-right { animation: marquee-right 30s linear infinite; }
+                            </style>
                             <section class="bg-gray-100 py-12 overflow-hidden">
-                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
                                     <p class="text-center text-gray-500 uppercase tracking-widest text-sm font-semibold">
-                                        Trusted by Leading Brands
+                                        Trusted by Our Community
                                     </p>
                                 </div>
-                                <div class="relative">
-                                    <div class="flex animate-marquee">
+                                <!-- Row 1 - scrolls left -->
+                                <div class="relative mb-4">
+                                    <div class="flex animate-marquee-left">
                                         <!-- First set -->
-                                        <div class="flex items-center gap-16 px-8">
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 1</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 2</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 3</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 4</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 5</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 6</div>
+                                        <div class="flex items-center gap-8 px-4">
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-google text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-microsoft text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-apple text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-amazon text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-meta text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-spotify text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-slack text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-shopify text-3xl"></i></div>
                                         </div>
-                                        <!-- Duplicate set for seamless loop -->
-                                        <div class="flex items-center gap-16 px-8">
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 1</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 2</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 3</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 4</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 5</div>
-                                            <div class="w-32 h-16 bg-white rounded-lg shadow flex items-center justify-center text-gray-400 font-bold">Logo 6</div>
+                                        <!-- Duplicate for seamless loop -->
+                                        <div class="flex items-center gap-8 px-4">
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-google text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-microsoft text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-apple text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-amazon text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-meta text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-spotify text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-slack text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-shopify text-3xl"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row 2 - scrolls right, offset/staggered -->
+                                <div class="relative pl-20">
+                                    <div class="flex animate-marquee-right">
+                                        <!-- First set -->
+                                        <div class="flex items-center gap-8 px-4">
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-stripe text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-paypal text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-dropbox text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-github text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-airbnb text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-uber text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-linkedin text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-twitter text-3xl"></i></div>
+                                        </div>
+                                        <!-- Duplicate for seamless loop -->
+                                        <div class="flex items-center gap-8 px-4">
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-stripe text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-paypal text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-dropbox text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-github text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-airbnb text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-uber text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-linkedin text-3xl"></i></div>
+                                            <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i class="fa-brands fa-twitter text-3xl"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -135,50 +175,113 @@
                     </div>
                     <div class="component-preview">
                         <div class="component-preview-inner">
-                            <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 py-20">
-                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                                        <div>
-                                            <span class="inline-block px-4 py-1.5 bg-brand-green/20 text-brand-green text-sm font-semibold rounded-full mb-4">Featured Service</span>
-                                            <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
-                                                Vehicle Wraps
-                                            </h2>
-                                            <p class="text-gray-400 text-lg mb-8">
-                                                Transform your fleet into mobile billboards. Our high-quality vehicle wraps deliver stunning visuals that last.
-                                            </p>
-                                            <div class="flex flex-wrap gap-4">
-                                                <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-green hover:bg-brand-green-dark text-white text-sm md:text-base font-semibold rounded-full transition-all">
-                                                    Learn More <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                                <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-white/30 text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/10 transition-all">
-                                                    View Gallery
-                                                </a>
+                            <style>
+                                .hero-slider-nav { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 0 24px; }
+                                .hero-slider-nav .nav-btn {
+                                    width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; border: none;
+                                    color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+                                }
+                                .hero-slider-nav .nav-btn:hover { background: rgba(255,255,255,0.2); }
+                                .hero-slider-nav .nav-btn i { font-size: 14px; }
+                                .hero-slider-nav .swiper-pagination { position: static !important; width: auto !important; display: flex !important; align-items: center; }
+                                .hero-slider-nav .swiper-pagination-bullet { background: rgba(255,255,255,0.3) !important; opacity: 1 !important; width: 12px !important; height: 12px !important; margin: 0 4px !important; }
+                                .hero-slider-nav .swiper-pagination-bullet-active { background: #f7a022 !important; }
+                            </style>
+                            <section class="relative bg-gradient-to-br from-gray-900 to-gray-800">
+                                <div class="swiper hero-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"pagination":{"el":".swiper-pagination","clickable":true},"navigation":{"nextEl":".slider-next","prevEl":".slider-prev"}}'>
+                                    <div class="swiper-wrapper">
+                                        <!-- Slide 1: Vehicle Wraps -->
+                                        <div class="swiper-slide">
+                                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                                                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                                                    <div>
+                                                        <span class="inline-block px-4 py-1.5 bg-brand-green/20 text-brand-green text-sm font-semibold rounded-full mb-4">Featured Service</span>
+                                                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-4">Vehicle Wraps</h2>
+                                                        <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">Transform your fleet into mobile billboards. Our high-quality vehicle wraps deliver stunning visuals that last.</p>
+                                                        <div class="flex flex-wrap gap-3 md:gap-4">
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-green hover:bg-brand-green-dark text-white text-sm md:text-base font-semibold rounded-full transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-white/30 text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/10 transition-all">View Gallery</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gray-700/30 rounded-2xl aspect-video flex items-center justify-center">
+                                                        <div class="text-center text-gray-500"><i class="fa-solid fa-car text-5xl md:text-6xl mb-3 md:mb-4"></i><p class="font-semibold text-sm md:text-base">Vehicle Wraps</p></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="bg-gray-700/30 rounded-2xl aspect-video flex items-center justify-center">
-                                            <div class="text-center text-gray-500">
-                                                <i class="fa-solid fa-car text-6xl mb-4"></i>
-                                                <p class="font-semibold">Slide Image Placeholder</p>
+                                        <!-- Slide 2: Signs & Banners -->
+                                        <div class="swiper-slide">
+                                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                                                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                                                    <div>
+                                                        <span class="inline-block px-4 py-1.5 bg-brand-orange/20 text-brand-orange text-sm font-semibold rounded-full mb-4">Popular Choice</span>
+                                                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-4">Signs & Banners</h2>
+                                                        <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">Make a bold statement with custom signage. From storefronts to trade shows, we've got you covered.</p>
+                                                        <div class="flex flex-wrap gap-3 md:gap-4">
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-orange hover:bg-amber-500 text-white text-sm md:text-base font-semibold rounded-full transition-all">Explore Options <i class="fa-solid fa-arrow-right"></i></a>
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-white/30 text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/10 transition-all">Get Quote</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gray-700/30 rounded-2xl aspect-video flex items-center justify-center">
+                                                        <div class="text-center text-gray-500"><i class="fa-solid fa-signs-post text-5xl md:text-6xl mb-3 md:mb-4"></i><p class="font-semibold text-sm md:text-base">Signs & Banners</p></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Slider Navigation -->
-                                    <div class="flex items-center justify-center gap-4 mt-12">
-                                        <button class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
-                                            <i class="fa-solid fa-chevron-left"></i>
-                                        </button>
-                                        <div class="flex gap-2">
-                                            <span class="w-3 h-3 rounded-full bg-brand-orange"></span>
-                                            <span class="w-3 h-3 rounded-full bg-white/30"></span>
-                                            <span class="w-3 h-3 rounded-full bg-white/30"></span>
-                                            <span class="w-3 h-3 rounded-full bg-white/30"></span>
+                                        <!-- Slide 3: Custom Apparel -->
+                                        <div class="swiper-slide">
+                                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                                                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                                                    <div>
+                                                        <span class="inline-block px-4 py-1.5 bg-brand-teal/20 text-brand-teal text-sm font-semibold rounded-full mb-4">Team Favorites</span>
+                                                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-4">Custom Apparel</h2>
+                                                        <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">Outfit your team with professional branded apparel. Screen printing and embroidery available.</p>
+                                                        <div class="flex flex-wrap gap-3 md:gap-4">
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-teal hover:bg-brand-teal-dark text-white text-sm md:text-base font-semibold rounded-full transition-all">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-white/30 text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/10 transition-all">View Catalog</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gray-700/30 rounded-2xl aspect-video flex items-center justify-center">
+                                                        <div class="text-center text-gray-500"><i class="fa-solid fa-shirt text-5xl md:text-6xl mb-3 md:mb-4"></i><p class="font-semibold text-sm md:text-base">Custom Apparel</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <button class="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </button>
+                                        <!-- Slide 4: Commercial Print -->
+                                        <div class="swiper-slide">
+                                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                                                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                                                    <div>
+                                                        <span class="inline-block px-4 py-1.5 bg-brand-lime/20 text-brand-lime text-sm font-semibold rounded-full mb-4">Business Essentials</span>
+                                                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-4">Commercial Print</h2>
+                                                        <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">Business cards, brochures, flyers, and more. Premium printing for every business need.</p>
+                                                        <div class="flex flex-wrap gap-3 md:gap-4">
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-lime hover:bg-brand-lime-light text-gray-900 text-sm md:text-base font-semibold rounded-full transition-all">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                                                            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-white/30 text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/10 transition-all">See Samples</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gray-700/30 rounded-2xl aspect-video flex items-center justify-center">
+                                                        <div class="text-center text-gray-500"><i class="fa-solid fa-print text-5xl md:text-6xl mb-3 md:mb-4"></i><p class="font-semibold text-sm md:text-base">Commercial Print</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- Custom Navigation with Pagination -->
+                                <div class="hero-slider-nav">
+                                    <button class="nav-btn slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="swiper-pagination"></div>
+                                    <button class="nav-btn slider-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
                             </section>
+                            <script>
+                                if (typeof Swiper !== 'undefined') {
+                                    document.querySelectorAll('.swiper[data-swiper-config]').forEach(function(el) {
+                                        new Swiper(el, JSON.parse(el.dataset.swiperConfig));
+                                    });
+                                }
+                            </script>
                         </div>
                     </div>
                     <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
