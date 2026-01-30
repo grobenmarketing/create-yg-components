@@ -343,7 +343,8 @@ body {
 /* Component Preview */
 .component-preview {
     padding: 1.5rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     background: #f8fafc;
     position: relative;
 }
