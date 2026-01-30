@@ -381,6 +381,11 @@ body {
     border: none;
     display: block;
     background: white;
+    pointer-events: none;
+}
+
+.resize-container:hover .preview-iframe {
+    pointer-events: auto;
 }
 
 
