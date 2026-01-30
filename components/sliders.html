@@ -690,11 +690,6 @@
                                         grid-template-columns: repeat(2, 1fr);
                                     }
                                 }
-                                @media (max-width: 480px) {
-                                    .filterable-gallery .gallery-grid {
-                                        grid-template-columns: 1fr;
-                                    }
-                                }
                                 .filterable-gallery .gallery-item {
                                     position: relative;
                                     border-radius: 1rem;
@@ -712,11 +707,36 @@
                                 .filterable-gallery .gallery-item:hover img {
                                     transform: scale(1.08);
                                 }
-                                .filterable-gallery .gallery-item.hidden {
+                                .filterable-gallery .gallery-item.filter-hidden {
+                                    display: none;
+                                }
+                                .filterable-gallery .gallery-item.limit-hidden {
+                                    display: none;
+                                }
+                                .filterable-gallery .gallery-actions {
+                                    text-align: center;
+                                    margin-top: 2rem;
+                                }
+                                .filterable-gallery .show-more-btn {
+                                    padding: 0.75rem 2rem;
+                                    border-radius: 9999px;
+                                    border: 2px solid #00954c;
+                                    background: transparent;
+                                    color: #00954c;
+                                    font-size: 0.875rem;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    transition: all 0.2s;
+                                }
+                                .filterable-gallery .show-more-btn:hover {
+                                    background: #00954c;
+                                    color: white;
+                                }
+                                .filterable-gallery .show-more-btn.hidden-btn {
                                     display: none;
                                 }
                                 /* Lightbox Styles */
-                                .gallery-lightbox {
+                                .fg-lightbox {
                                     position: fixed;
                                     inset: 0;
                                     background: rgba(0,0,0,0.9);
@@ -726,16 +746,16 @@
                                     justify-content: center;
                                     padding: 2rem;
                                 }
-                                .gallery-lightbox.active {
+                                .fg-lightbox.active {
                                     display: flex;
                                 }
-                                .gallery-lightbox img {
+                                .fg-lightbox img {
                                     max-width: 90%;
                                     max-height: 90vh;
                                     object-fit: contain;
                                     border-radius: 0.5rem;
                                 }
-                                .gallery-lightbox .lightbox-close {
+                                .fg-lightbox .lb-close {
                                     position: absolute;
                                     top: 1.5rem;
                                     right: 1.5rem;
@@ -752,10 +772,10 @@
                                     justify-content: center;
                                     transition: background 0.2s;
                                 }
-                                .gallery-lightbox .lightbox-close:hover {
+                                .fg-lightbox .lb-close:hover {
                                     background: rgba(255,255,255,0.2);
                                 }
-                                .gallery-lightbox .lightbox-nav {
+                                .fg-lightbox .lb-nav {
                                     position: absolute;
                                     top: 50%;
                                     transform: translateY(-50%);
@@ -772,17 +792,17 @@
                                     justify-content: center;
                                     transition: background 0.2s;
                                 }
-                                .gallery-lightbox .lightbox-nav:hover {
+                                .fg-lightbox .lb-nav:hover {
                                     background: rgba(255,255,255,0.2);
                                 }
-                                .gallery-lightbox .lightbox-prev {
+                                .fg-lightbox .lb-prev {
                                     left: 1.5rem;
                                 }
-                                .gallery-lightbox .lightbox-next {
+                                .fg-lightbox .lb-next {
                                     right: 1.5rem;
                                 }
                             </style>
-                            <section class="filterable-gallery">
+                            <section class="filterable-gallery" id="filterableGallery">
                                 <div class="gallery-container">
                                     <!-- Filter Buttons -->
                                     <div class="gallery-filters">
@@ -793,7 +813,7 @@
                                         <button class="filter-btn" data-filter="print">Print</button>
                                     </div>
 
-                                    <!-- Gallery Grid -->
+                                    <!-- Gallery Grid - 16 images total -->
                                     <div class="gallery-grid">
                                         <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/111/1200/1200">
                                             <img src="https://picsum.photos/id/111/400/400" alt="Vehicle Wrap 1">
@@ -819,98 +839,200 @@
                                         <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/42/1200/1200">
                                             <img src="https://picsum.photos/id/42/400/400" alt="Print 2">
                                         </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/183/1200/1200">
+                                            <img src="https://picsum.photos/id/183/400/400" alt="Vehicle Wrap 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/201/1200/1200">
+                                            <img src="https://picsum.photos/id/201/400/400" alt="Sign 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/160/1200/1200">
+                                            <img src="https://picsum.photos/id/160/400/400" alt="Apparel 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/225/1200/1200">
+                                            <img src="https://picsum.photos/id/225/400/400" alt="Print 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/237/1200/1200">
+                                            <img src="https://picsum.photos/id/237/400/400" alt="Vehicle Wrap 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/239/1200/1200">
+                                            <img src="https://picsum.photos/id/239/400/400" alt="Sign 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/244/1200/1200">
+                                            <img src="https://picsum.photos/id/244/400/400" alt="Apparel 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/250/1200/1200">
+                                            <img src="https://picsum.photos/id/250/400/400" alt="Print 4">
+                                        </div>
+                                    </div>
+
+                                    <!-- Show More Button -->
+                                    <div class="gallery-actions">
+                                        <button class="show-more-btn" id="showMoreBtn">Show More</button>
                                     </div>
                                 </div>
 
                                 <!-- Lightbox Modal -->
-                                <div class="gallery-lightbox" id="galleryLightbox">
-                                    <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
-                                    <button class="lightbox-nav lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                                    <img src="" alt="Full size image" id="lightboxImage">
-                                    <button class="lightbox-nav lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                <div class="fg-lightbox" id="fgLightbox">
+                                    <button class="lb-close"><i class="fa-solid fa-xmark"></i></button>
+                                    <button class="lb-nav lb-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <img src="" alt="Full size image">
+                                    <button class="lb-nav lb-next"><i class="fa-solid fa-chevron-right"></i></button>
                                 </div>
                             </section>
                             <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    const gallery = document.querySelector('.filterable-gallery');
+                                (function initFilterableGallery() {
+                                    var gallery = document.getElementById('filterableGallery');
                                     if (!gallery) return;
 
-                                    const filterBtns = gallery.querySelectorAll('.filter-btn');
-                                    const items = gallery.querySelectorAll('.gallery-item');
-                                    const lightbox = gallery.querySelector('.gallery-lightbox');
-                                    const lightboxImg = lightbox.querySelector('img');
-                                    let currentIndex = 0;
-                                    let visibleItems = [];
+                                    var filterBtns = gallery.querySelectorAll('.filter-btn');
+                                    var items = gallery.querySelectorAll('.gallery-item');
+                                    var lightbox = document.getElementById('fgLightbox');
+                                    var lightboxImg = lightbox.querySelector('img');
+                                    var showMoreBtn = document.getElementById('showMoreBtn');
+                                    var currentIndex = 0;
+                                    var showAll = false;
+                                    var currentFilter = 'all';
 
-                                    // Filter functionality
-                                    filterBtns.forEach(function(btn) {
-                                        btn.addEventListener('click', function() {
-                                            filterBtns.forEach(function(b) { b.classList.remove('active'); });
-                                            btn.classList.add('active');
-                                            const filter = btn.getAttribute('data-filter');
-
-                                            items.forEach(function(item) {
-                                                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                                                    item.classList.remove('hidden');
-                                                } else {
-                                                    item.classList.add('hidden');
-                                                }
-                                            });
-                                            updateVisibleItems();
-                                        });
-                                    });
-
-                                    function updateVisibleItems() {
-                                        visibleItems = [];
-                                        items.forEach(function(item) {
-                                            if (!item.classList.contains('hidden')) {
-                                                visibleItems.push(item);
-                                            }
-                                        });
+                                    function isMobile() {
+                                        return window.innerWidth <= 768;
                                     }
-                                    updateVisibleItems();
 
-                                    // Lightbox functionality
-                                    items.forEach(function(item) {
-                                        item.addEventListener('click', function() {
-                                            const fullSrc = item.getAttribute('data-full');
-                                            lightboxImg.src = fullSrc;
-                                            lightbox.classList.add('active');
-                                            currentIndex = visibleItems.indexOf(item);
-                                            document.body.style.overflow = 'hidden';
-                                        });
-                                    });
+                                    function getVisibleLimit() {
+                                        return isMobile() ? 4 : 12;
+                                    }
 
-                                    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-                                    lightbox.addEventListener('click', function(e) {
-                                        if (e.target === lightbox) closeLightbox();
-                                    });
+                                    function applyFiltersAndLimits() {
+                                        var limit = getVisibleLimit();
+                                        var visibleCount = 0;
+                                        var totalMatchingFilter = 0;
 
+                                        for (var i = 0; i < items.length; i++) {
+                                            var item = items[i];
+                                            var category = item.getAttribute('data-category');
+                                            var matchesFilter = (currentFilter === 'all' || category === currentFilter);
+
+                                            if (matchesFilter) {
+                                                totalMatchingFilter++;
+                                                item.classList.remove('filter-hidden');
+
+                                                if (!showAll && visibleCount >= limit) {
+                                                    item.classList.add('limit-hidden');
+                                                } else {
+                                                    item.classList.remove('limit-hidden');
+                                                    visibleCount++;
+                                                }
+                                            } else {
+                                                item.classList.add('filter-hidden');
+                                                item.classList.remove('limit-hidden');
+                                            }
+                                        }
+
+                                        // Show/hide the Show More button
+                                        if (showAll || visibleCount >= totalMatchingFilter) {
+                                            showMoreBtn.classList.add('hidden-btn');
+                                        } else {
+                                            showMoreBtn.classList.remove('hidden-btn');
+                                        }
+                                    }
+
+                                    function getVisibleItems() {
+                                        var visible = [];
+                                        for (var i = 0; i < items.length; i++) {
+                                            if (!items[i].classList.contains('filter-hidden') && !items[i].classList.contains('limit-hidden')) {
+                                                visible.push(items[i]);
+                                            }
+                                        }
+                                        return visible;
+                                    }
+
+                                    // Filter button clicks
+                                    for (var i = 0; i < filterBtns.length; i++) {
+                                        (function(btn) {
+                                            btn.onclick = function() {
+                                                for (var j = 0; j < filterBtns.length; j++) {
+                                                    filterBtns[j].classList.remove('active');
+                                                }
+                                                btn.classList.add('active');
+                                                currentFilter = btn.getAttribute('data-filter');
+                                                showAll = false;
+                                                applyFiltersAndLimits();
+                                            };
+                                        })(filterBtns[i]);
+                                    }
+
+                                    // Show More button
+                                    showMoreBtn.onclick = function() {
+                                        showAll = true;
+                                        applyFiltersAndLimits();
+                                    };
+
+                                    // Lightbox - open on image click
+                                    for (var i = 0; i < items.length; i++) {
+                                        (function(item) {
+                                            item.onclick = function() {
+                                                var fullSrc = item.getAttribute('data-full');
+                                                lightboxImg.src = fullSrc;
+                                                lightbox.classList.add('active');
+                                                var visibleItems = getVisibleItems();
+                                                for (var k = 0; k < visibleItems.length; k++) {
+                                                    if (visibleItems[k] === item) {
+                                                        currentIndex = k;
+                                                        break;
+                                                    }
+                                                }
+                                                document.body.style.overflow = 'hidden';
+                                            };
+                                        })(items[i]);
+                                    }
+
+                                    // Close lightbox
                                     function closeLightbox() {
                                         lightbox.classList.remove('active');
                                         document.body.style.overflow = '';
                                     }
 
-                                    lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) {
+                                    lightbox.querySelector('.lb-close').onclick = closeLightbox;
+
+                                    lightbox.onclick = function(e) {
+                                        if (e.target === lightbox) {
+                                            closeLightbox();
+                                        }
+                                    };
+
+                                    // Prev button
+                                    lightbox.querySelector('.lb-prev').onclick = function(e) {
                                         e.stopPropagation();
+                                        var visibleItems = getVisibleItems();
                                         currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
                                         lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
-                                    });
+                                    };
 
-                                    lightbox.querySelector('.lightbox-next').addEventListener('click', function(e) {
+                                    // Next button
+                                    lightbox.querySelector('.lb-next').onclick = function(e) {
                                         e.stopPropagation();
+                                        var visibleItems = getVisibleItems();
                                         currentIndex = (currentIndex + 1) % visibleItems.length;
                                         lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
-                                    });
+                                    };
 
                                     // Keyboard navigation
-                                    document.addEventListener('keydown', function(e) {
+                                    document.onkeydown = function(e) {
                                         if (!lightbox.classList.contains('active')) return;
                                         if (e.key === 'Escape') closeLightbox();
-                                        if (e.key === 'ArrowLeft') lightbox.querySelector('.lightbox-prev').click();
-                                        if (e.key === 'ArrowRight') lightbox.querySelector('.lightbox-next').click();
+                                        if (e.key === 'ArrowLeft') lightbox.querySelector('.lb-prev').click();
+                                        if (e.key === 'ArrowRight') lightbox.querySelector('.lb-next').click();
+                                    };
+
+                                    // Handle window resize
+                                    window.addEventListener('resize', function() {
+                                        if (!showAll) {
+                                            applyFiltersAndLimits();
+                                        }
                                     });
-                                });
+
+                                    // Initial setup
+                                    applyFiltersAndLimits();
+                                })();
                             </script>
                         </div>
                     </div>
