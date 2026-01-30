@@ -287,53 +287,6 @@
                     <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
                 </div>
 
-                <!-- Image Gallery Carousel -->
-                <div class="component-card" data-category="sliders">
-                    <div class="component-header">
-                        <div class="component-title">
-                            <span class="component-label"><i class="fa-solid fa-images"></i> Carousel</span>
-                            <span class="component-variant">Portfolio Gallery Carousel</span>
-                        </div>
-                        <div class="component-actions">
-                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
-                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
-                        </div>
-                    </div>
-                    <div class="component-preview">
-                        <div class="component-preview-inner">
-                            <section class="bg-white py-16">
-                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                    <div class="text-center mb-12">
-                                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-                                            Our <span class="text-brand-green">Work</span>
-                                        </h2>
-                                    </div>
-                                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                                        <div class="aspect-square bg-brand-green/10 rounded-xl flex items-center justify-center hover:bg-brand-green/20 transition-colors cursor-pointer">
-                                            <i class="fa-solid fa-image text-4xl text-brand-green/40"></i>
-                                        </div>
-                                        <div class="aspect-square bg-brand-orange/10 rounded-xl flex items-center justify-center hover:bg-brand-orange/20 transition-colors cursor-pointer">
-                                            <i class="fa-solid fa-image text-4xl text-brand-orange/40"></i>
-                                        </div>
-                                        <div class="aspect-square bg-brand-teal/10 rounded-xl flex items-center justify-center hover:bg-brand-teal/20 transition-colors cursor-pointer">
-                                            <i class="fa-solid fa-image text-4xl text-brand-teal/40"></i>
-                                        </div>
-                                        <div class="aspect-square bg-brand-lime/10 rounded-xl flex items-center justify-center hover:bg-brand-lime/20 transition-colors cursor-pointer">
-                                            <i class="fa-solid fa-image text-4xl text-brand-lime/40"></i>
-                                        </div>
-                                    </div>
-                                    <div class="text-center mt-8">
-                                        <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark">
-                                            View Full Gallery <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
-                </div>
-
                 <!-- Legacy Home Page Slider -->
                 <div class="component-card" data-category="sliders">
                     <div class="component-header">
@@ -665,6 +618,421 @@
                                         new Swiper(el, JSON.parse(el.dataset.swiperConfig));
                                     });
                                 }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Filterable Grid Gallery -->
+                <div class="component-card" data-category="galleries">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-images"></i> Gallery</span>
+                            <span class="component-variant">Filterable Grid Gallery with Lightbox</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <style>
+                                .filterable-gallery {
+                                    background: #f9fafb;
+                                    padding: 3rem 1rem;
+                                    font-family: 'Red Hat Display', sans-serif;
+                                }
+                                .filterable-gallery .gallery-container {
+                                    max-width: 1200px;
+                                    margin: 0 auto;
+                                }
+                                .filterable-gallery .gallery-filters {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.5rem;
+                                    justify-content: center;
+                                    margin-bottom: 2rem;
+                                }
+                                .filterable-gallery .filter-btn {
+                                    padding: 0.5rem 1.25rem;
+                                    border-radius: 9999px;
+                                    border: none;
+                                    background: white;
+                                    color: #6b7280;
+                                    font-size: 0.875rem;
+                                    font-weight: 500;
+                                    cursor: pointer;
+                                    transition: all 0.2s;
+                                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                }
+                                .filterable-gallery .filter-btn:hover {
+                                    background: #f3f4f6;
+                                    color: #374151;
+                                }
+                                .filterable-gallery .filter-btn.active {
+                                    background: #00954c;
+                                    color: white;
+                                }
+                                .filterable-gallery .gallery-grid {
+                                    display: grid;
+                                    grid-template-columns: repeat(4, 1fr);
+                                    gap: 1rem;
+                                }
+                                @media (max-width: 1024px) {
+                                    .filterable-gallery .gallery-grid {
+                                        grid-template-columns: repeat(3, 1fr);
+                                    }
+                                }
+                                @media (max-width: 768px) {
+                                    .filterable-gallery .gallery-grid {
+                                        grid-template-columns: repeat(2, 1fr);
+                                    }
+                                }
+                                .filterable-gallery .gallery-item {
+                                    position: relative;
+                                    border-radius: 1rem;
+                                    overflow: hidden;
+                                    cursor: pointer;
+                                    aspect-ratio: 1;
+                                    background: #e5e7eb;
+                                }
+                                .filterable-gallery .gallery-item img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transition: transform 0.3s ease;
+                                }
+                                .filterable-gallery .gallery-item:hover img {
+                                    transform: scale(1.08);
+                                }
+                                .filterable-gallery .gallery-item.filter-hidden {
+                                    display: none;
+                                }
+                                .filterable-gallery .gallery-item.limit-hidden {
+                                    display: none;
+                                }
+                                .filterable-gallery .gallery-actions {
+                                    text-align: center;
+                                    margin-top: 2rem;
+                                }
+                                .filterable-gallery .show-more-btn {
+                                    padding: 0.75rem 2rem;
+                                    border-radius: 9999px;
+                                    border: 2px solid #00954c;
+                                    background: transparent;
+                                    color: #00954c;
+                                    font-size: 0.875rem;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    transition: all 0.2s;
+                                }
+                                .filterable-gallery .show-more-btn:hover {
+                                    background: #00954c;
+                                    color: white;
+                                }
+                                .filterable-gallery .show-more-btn.hidden-btn {
+                                    display: none;
+                                }
+                                /* Lightbox Styles */
+                                .fg-lightbox {
+                                    position: fixed;
+                                    inset: 0;
+                                    background: rgba(0,0,0,0.9);
+                                    z-index: 9999;
+                                    display: none;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 2rem;
+                                }
+                                .fg-lightbox.active {
+                                    display: flex;
+                                }
+                                .fg-lightbox img {
+                                    max-width: 90%;
+                                    max-height: 90vh;
+                                    object-fit: contain;
+                                    border-radius: 0.5rem;
+                                }
+                                .fg-lightbox .lb-close {
+                                    position: absolute;
+                                    top: 1.5rem;
+                                    right: 1.5rem;
+                                    width: 48px;
+                                    height: 48px;
+                                    background: rgba(255,255,255,0.1);
+                                    border: none;
+                                    border-radius: 50%;
+                                    color: white;
+                                    font-size: 1.5rem;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: background 0.2s;
+                                }
+                                .fg-lightbox .lb-close:hover {
+                                    background: rgba(255,255,255,0.2);
+                                }
+                                .fg-lightbox .lb-nav {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 48px;
+                                    height: 48px;
+                                    background: rgba(255,255,255,0.1);
+                                    border: none;
+                                    border-radius: 50%;
+                                    color: white;
+                                    font-size: 1.25rem;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: background 0.2s;
+                                }
+                                .fg-lightbox .lb-nav:hover {
+                                    background: rgba(255,255,255,0.2);
+                                }
+                                .fg-lightbox .lb-prev {
+                                    left: 1.5rem;
+                                }
+                                .fg-lightbox .lb-next {
+                                    right: 1.5rem;
+                                }
+                            </style>
+                            <section class="filterable-gallery" id="filterableGallery">
+                                <div class="gallery-container">
+                                    <!-- Filter Buttons -->
+                                    <div class="gallery-filters">
+                                        <button class="filter-btn active" data-filter="all">All</button>
+                                        <button class="filter-btn" data-filter="wraps">Vehicle Wraps</button>
+                                        <button class="filter-btn" data-filter="signs">Signs</button>
+                                        <button class="filter-btn" data-filter="apparel">Apparel</button>
+                                        <button class="filter-btn" data-filter="print">Print</button>
+                                    </div>
+
+                                    <!-- Gallery Grid - 16 images total -->
+                                    <div class="gallery-grid">
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/111/1200/1200">
+                                            <img src="https://picsum.photos/id/111/400/400" alt="Vehicle Wrap 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/119/1200/1200">
+                                            <img src="https://picsum.photos/id/119/400/400" alt="Sign 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/96/1200/1200">
+                                            <img src="https://picsum.photos/id/96/400/400" alt="Apparel 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/24/1200/1200">
+                                            <img src="https://picsum.photos/id/24/400/400" alt="Print 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/133/1200/1200">
+                                            <img src="https://picsum.photos/id/133/400/400" alt="Vehicle Wrap 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/180/1200/1200">
+                                            <img src="https://picsum.photos/id/180/400/400" alt="Sign 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/177/1200/1200">
+                                            <img src="https://picsum.photos/id/177/400/400" alt="Apparel 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/42/1200/1200">
+                                            <img src="https://picsum.photos/id/42/400/400" alt="Print 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/183/1200/1200">
+                                            <img src="https://picsum.photos/id/183/400/400" alt="Vehicle Wrap 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/201/1200/1200">
+                                            <img src="https://picsum.photos/id/201/400/400" alt="Sign 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/160/1200/1200">
+                                            <img src="https://picsum.photos/id/160/400/400" alt="Apparel 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/225/1200/1200">
+                                            <img src="https://picsum.photos/id/225/400/400" alt="Print 3">
+                                        </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/237/1200/1200">
+                                            <img src="https://picsum.photos/id/237/400/400" alt="Vehicle Wrap 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/239/1200/1200">
+                                            <img src="https://picsum.photos/id/239/400/400" alt="Sign 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/244/1200/1200">
+                                            <img src="https://picsum.photos/id/244/400/400" alt="Apparel 4">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/250/1200/1200">
+                                            <img src="https://picsum.photos/id/250/400/400" alt="Print 4">
+                                        </div>
+                                    </div>
+
+                                    <!-- Show More Button -->
+                                    <div class="gallery-actions">
+                                        <button class="show-more-btn" id="showMoreBtn">Show More</button>
+                                    </div>
+                                </div>
+
+                                <!-- Lightbox Modal -->
+                                <div class="fg-lightbox" id="fgLightbox">
+                                    <button class="lb-close"><i class="fa-solid fa-xmark"></i></button>
+                                    <button class="lb-nav lb-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <img src="" alt="Full size image">
+                                    <button class="lb-nav lb-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                            </section>
+                            <script>
+                                (function initFilterableGallery() {
+                                    var gallery = document.getElementById('filterableGallery');
+                                    if (!gallery) return;
+
+                                    var filterBtns = gallery.querySelectorAll('.filter-btn');
+                                    var items = gallery.querySelectorAll('.gallery-item');
+                                    var lightbox = document.getElementById('fgLightbox');
+                                    var lightboxImg = lightbox.querySelector('img');
+                                    var showMoreBtn = document.getElementById('showMoreBtn');
+                                    var currentIndex = 0;
+                                    var showAll = false;
+                                    var currentFilter = 'all';
+
+                                    function isMobile() {
+                                        return window.innerWidth <= 768;
+                                    }
+
+                                    function getVisibleLimit() {
+                                        return isMobile() ? 4 : 12;
+                                    }
+
+                                    function applyFiltersAndLimits() {
+                                        var limit = getVisibleLimit();
+                                        var visibleCount = 0;
+                                        var totalMatchingFilter = 0;
+
+                                        for (var i = 0; i < items.length; i++) {
+                                            var item = items[i];
+                                            var category = item.getAttribute('data-category');
+                                            var matchesFilter = (currentFilter === 'all' || category === currentFilter);
+
+                                            if (matchesFilter) {
+                                                totalMatchingFilter++;
+                                                item.classList.remove('filter-hidden');
+
+                                                if (!showAll && visibleCount >= limit) {
+                                                    item.classList.add('limit-hidden');
+                                                } else {
+                                                    item.classList.remove('limit-hidden');
+                                                    visibleCount++;
+                                                }
+                                            } else {
+                                                item.classList.add('filter-hidden');
+                                                item.classList.remove('limit-hidden');
+                                            }
+                                        }
+
+                                        // Show/hide the Show More button
+                                        if (showAll || visibleCount >= totalMatchingFilter) {
+                                            showMoreBtn.classList.add('hidden-btn');
+                                        } else {
+                                            showMoreBtn.classList.remove('hidden-btn');
+                                        }
+                                    }
+
+                                    function getVisibleItems() {
+                                        var visible = [];
+                                        for (var i = 0; i < items.length; i++) {
+                                            if (!items[i].classList.contains('filter-hidden') && !items[i].classList.contains('limit-hidden')) {
+                                                visible.push(items[i]);
+                                            }
+                                        }
+                                        return visible;
+                                    }
+
+                                    // Filter button clicks
+                                    for (var i = 0; i < filterBtns.length; i++) {
+                                        (function(btn) {
+                                            btn.onclick = function() {
+                                                for (var j = 0; j < filterBtns.length; j++) {
+                                                    filterBtns[j].classList.remove('active');
+                                                }
+                                                btn.classList.add('active');
+                                                currentFilter = btn.getAttribute('data-filter');
+                                                showAll = false;
+                                                applyFiltersAndLimits();
+                                            };
+                                        })(filterBtns[i]);
+                                    }
+
+                                    // Show More button
+                                    showMoreBtn.onclick = function() {
+                                        showAll = true;
+                                        applyFiltersAndLimits();
+                                    };
+
+                                    // Lightbox - open on image click
+                                    for (var i = 0; i < items.length; i++) {
+                                        (function(item) {
+                                            item.onclick = function() {
+                                                var fullSrc = item.getAttribute('data-full');
+                                                lightboxImg.src = fullSrc;
+                                                lightbox.classList.add('active');
+                                                var visibleItems = getVisibleItems();
+                                                for (var k = 0; k < visibleItems.length; k++) {
+                                                    if (visibleItems[k] === item) {
+                                                        currentIndex = k;
+                                                        break;
+                                                    }
+                                                }
+                                                document.body.style.overflow = 'hidden';
+                                            };
+                                        })(items[i]);
+                                    }
+
+                                    // Close lightbox
+                                    function closeLightbox() {
+                                        lightbox.classList.remove('active');
+                                        document.body.style.overflow = '';
+                                    }
+
+                                    lightbox.querySelector('.lb-close').onclick = closeLightbox;
+
+                                    lightbox.onclick = function(e) {
+                                        if (e.target === lightbox) {
+                                            closeLightbox();
+                                        }
+                                    };
+
+                                    // Prev button
+                                    lightbox.querySelector('.lb-prev').onclick = function(e) {
+                                        e.stopPropagation();
+                                        var visibleItems = getVisibleItems();
+                                        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+                                        lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
+                                    };
+
+                                    // Next button
+                                    lightbox.querySelector('.lb-next').onclick = function(e) {
+                                        e.stopPropagation();
+                                        var visibleItems = getVisibleItems();
+                                        currentIndex = (currentIndex + 1) % visibleItems.length;
+                                        lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
+                                    };
+
+                                    // Keyboard navigation
+                                    document.onkeydown = function(e) {
+                                        if (!lightbox.classList.contains('active')) return;
+                                        if (e.key === 'Escape') closeLightbox();
+                                        if (e.key === 'ArrowLeft') lightbox.querySelector('.lb-prev').click();
+                                        if (e.key === 'ArrowRight') lightbox.querySelector('.lb-next').click();
+                                    };
+
+                                    // Handle window resize
+                                    window.addEventListener('resize', function() {
+                                        if (!showAll) {
+                                            applyFiltersAndLimits();
+                                        }
+                                    });
+
+                                    // Initial setup
+                                    applyFiltersAndLimits();
+                                })();
                             </script>
                         </div>
                     </div>

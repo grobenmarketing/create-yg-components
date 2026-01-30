@@ -14,6 +14,10 @@
     <style>
         .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+        .hover-grow { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-grow:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+        .img-grow img { transition: transform 0.3s ease; }
+        .img-grow:hover img { transform: scale(1.08); }
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
@@ -95,16 +99,16 @@
                                         </h2>
                                     </div>
                                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
-                                            <div class="aspect-video overflow-hidden bg-brand-green/10 flex items-center justify-center">
-                                                <i class="fa-solid fa-image text-6xl text-brand-green/30"></i>
+                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-grow img-grow cursor-pointer">
+                                            <div class="aspect-video overflow-hidden">
+                                                <img src="https://picsum.photos/id/180/600/400" alt="Business cards on desk" class="w-full h-full object-cover">
                                             </div>
                                             <div class="p-6">
                                                 <div class="flex items-center gap-3 mb-4">
                                                     <span class="px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-bold rounded-full uppercase">Printing Tips</span>
                                                     <span class="text-gray-400 text-sm">Jan 15, 2026</span>
                                                 </div>
-                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
                                                     5 Ways to Make Your Business Cards Stand Out
                                                 </h3>
                                                 <p class="text-gray-600 mb-4 line-clamp-3">
@@ -115,16 +119,16 @@
                                                 </a>
                                             </div>
                                         </article>
-                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
-                                            <div class="aspect-video overflow-hidden bg-brand-orange/10 flex items-center justify-center">
-                                                <i class="fa-solid fa-image text-6xl text-brand-orange/30"></i>
+                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-grow img-grow cursor-pointer">
+                                            <div class="aspect-video overflow-hidden">
+                                                <img src="https://picsum.photos/id/133/600/400" alt="Vehicle with wrap" class="w-full h-full object-cover">
                                             </div>
                                             <div class="p-6">
                                                 <div class="flex items-center gap-3 mb-4">
                                                     <span class="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full uppercase">Vehicle Wraps</span>
                                                     <span class="text-gray-400 text-sm">Jan 10, 2026</span>
                                                 </div>
-                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
                                                     Vehicle Wrap Care: Maintenance Tips for Longevity
                                                 </h3>
                                                 <p class="text-gray-600 mb-4 line-clamp-3">
@@ -135,16 +139,16 @@
                                                 </a>
                                             </div>
                                         </article>
-                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift">
-                                            <div class="aspect-video overflow-hidden bg-brand-teal/10 flex items-center justify-center">
-                                                <i class="fa-solid fa-image text-6xl text-brand-teal/30"></i>
+                                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover-grow img-grow cursor-pointer">
+                                            <div class="aspect-video overflow-hidden">
+                                                <img src="https://picsum.photos/id/26/600/400" alt="Signage design" class="w-full h-full object-cover">
                                             </div>
                                             <div class="p-6">
                                                 <div class="flex items-center gap-3 mb-4">
                                                     <span class="px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded-full uppercase">Industry News</span>
                                                     <span class="text-gray-400 text-sm">Jan 5, 2026</span>
                                                 </div>
-                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
                                                     2026 Signage Trends: What's Hot in Visual Marketing
                                                 </h3>
                                                 <p class="text-gray-600 mb-4 line-clamp-3">
@@ -187,8 +191,8 @@
                                     </div>
                                     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                         <div class="group text-center">
-                                            <div class="relative rounded-2xl overflow-hidden mb-6 bg-gray-200 aspect-[3/4] flex items-center justify-center">
-                                                <i class="fa-solid fa-user text-6xl text-gray-400"></i>
+                                            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-[3/4] hover-grow img-grow cursor-pointer">
+                                                <img src="https://picsum.photos/id/1005/400/533" alt="John Yoder" class="w-full h-full object-cover">
                                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                                                     <div class="flex gap-3">
                                                         <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
@@ -204,8 +208,8 @@
                                             <p class="text-brand-green font-semibold">President</p>
                                         </div>
                                         <div class="group text-center">
-                                            <div class="relative rounded-2xl overflow-hidden mb-6 bg-gray-200 aspect-[3/4] flex items-center justify-center">
-                                                <i class="fa-solid fa-user text-6xl text-gray-400"></i>
+                                            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-[3/4] hover-grow img-grow cursor-pointer">
+                                                <img src="https://picsum.photos/id/1027/400/533" alt="Sarah Mitchell" class="w-full h-full object-cover">
                                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                                                     <div class="flex gap-3">
                                                         <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
@@ -221,8 +225,8 @@
                                             <p class="text-brand-green font-semibold">Creative Director</p>
                                         </div>
                                         <div class="group text-center">
-                                            <div class="relative rounded-2xl overflow-hidden mb-6 bg-gray-200 aspect-[3/4] flex items-center justify-center">
-                                                <i class="fa-solid fa-user text-6xl text-gray-400"></i>
+                                            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-[3/4] hover-grow img-grow cursor-pointer">
+                                                <img src="https://picsum.photos/id/1012/400/533" alt="David Chen" class="w-full h-full object-cover">
                                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                                                     <div class="flex gap-3">
                                                         <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
@@ -238,8 +242,8 @@
                                             <p class="text-brand-green font-semibold">Production Manager</p>
                                         </div>
                                         <div class="group text-center">
-                                            <div class="relative rounded-2xl overflow-hidden mb-6 bg-gray-200 aspect-[3/4] flex items-center justify-center">
-                                                <i class="fa-solid fa-user text-6xl text-gray-400"></i>
+                                            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-[3/4] hover-grow img-grow cursor-pointer">
+                                                <img src="https://picsum.photos/id/1011/400/533" alt="Emily Rodriguez" class="w-full h-full object-cover">
                                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                                                     <div class="flex gap-3">
                                                         <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-colors">
