@@ -831,26 +831,26 @@
                                 </div>
                             </section>
                             <script>
-                                (function() {
+                                document.addEventListener('DOMContentLoaded', function() {
                                     const gallery = document.querySelector('.filterable-gallery');
                                     if (!gallery) return;
 
                                     const filterBtns = gallery.querySelectorAll('.filter-btn');
                                     const items = gallery.querySelectorAll('.gallery-item');
-                                    const lightbox = document.getElementById('galleryLightbox');
-                                    const lightboxImg = document.getElementById('lightboxImage');
+                                    const lightbox = gallery.querySelector('.gallery-lightbox');
+                                    const lightboxImg = lightbox.querySelector('img');
                                     let currentIndex = 0;
                                     let visibleItems = [];
 
                                     // Filter functionality
-                                    filterBtns.forEach(btn => {
-                                        btn.addEventListener('click', () => {
-                                            filterBtns.forEach(b => b.classList.remove('active'));
+                                    filterBtns.forEach(function(btn) {
+                                        btn.addEventListener('click', function() {
+                                            filterBtns.forEach(function(b) { b.classList.remove('active'); });
                                             btn.classList.add('active');
-                                            const filter = btn.dataset.filter;
+                                            const filter = btn.getAttribute('data-filter');
 
-                                            items.forEach(item => {
-                                                if (filter === 'all' || item.dataset.category === filter) {
+                                            items.forEach(function(item) {
+                                                if (filter === 'all' || item.getAttribute('data-category') === filter) {
                                                     item.classList.remove('hidden');
                                                 } else {
                                                     item.classList.add('hidden');
@@ -861,14 +861,19 @@
                                     });
 
                                     function updateVisibleItems() {
-                                        visibleItems = Array.from(items).filter(item => !item.classList.contains('hidden'));
+                                        visibleItems = [];
+                                        items.forEach(function(item) {
+                                            if (!item.classList.contains('hidden')) {
+                                                visibleItems.push(item);
+                                            }
+                                        });
                                     }
                                     updateVisibleItems();
 
                                     // Lightbox functionality
-                                    items.forEach((item, index) => {
-                                        item.addEventListener('click', () => {
-                                            const fullSrc = item.dataset.full;
+                                    items.forEach(function(item) {
+                                        item.addEventListener('click', function() {
+                                            const fullSrc = item.getAttribute('data-full');
                                             lightboxImg.src = fullSrc;
                                             lightbox.classList.add('active');
                                             currentIndex = visibleItems.indexOf(item);
@@ -877,7 +882,7 @@
                                     });
 
                                     lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-                                    lightbox.addEventListener('click', (e) => {
+                                    lightbox.addEventListener('click', function(e) {
                                         if (e.target === lightbox) closeLightbox();
                                     });
 
@@ -886,26 +891,26 @@
                                         document.body.style.overflow = '';
                                     }
 
-                                    lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => {
+                                    lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) {
                                         e.stopPropagation();
                                         currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
-                                        lightboxImg.src = visibleItems[currentIndex].dataset.full;
+                                        lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
                                     });
 
-                                    lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => {
+                                    lightbox.querySelector('.lightbox-next').addEventListener('click', function(e) {
                                         e.stopPropagation();
                                         currentIndex = (currentIndex + 1) % visibleItems.length;
-                                        lightboxImg.src = visibleItems[currentIndex].dataset.full;
+                                        lightboxImg.src = visibleItems[currentIndex].getAttribute('data-full');
                                     });
 
                                     // Keyboard navigation
-                                    document.addEventListener('keydown', (e) => {
+                                    document.addEventListener('keydown', function(e) {
                                         if (!lightbox.classList.contains('active')) return;
                                         if (e.key === 'Escape') closeLightbox();
                                         if (e.key === 'ArrowLeft') lightbox.querySelector('.lightbox-prev').click();
                                         if (e.key === 'ArrowRight') lightbox.querySelector('.lightbox-next').click();
                                     });
-                                })();
+                                });
                             </script>
                         </div>
                     </div>
