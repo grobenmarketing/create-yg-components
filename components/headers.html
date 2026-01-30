@@ -22,6 +22,17 @@
 
     <!-- Mega Menu Theme Styles -->
     <style>
+        /* Remove extra height from mega menu preview */
+        #megaMenuHeader {
+            margin-bottom: 0;
+        }
+        .component-card:first-of-type .component-preview {
+            padding-bottom: 0;
+        }
+        .component-card:first-of-type .component-preview-inner {
+            padding-bottom: 0;
+        }
+        
         /* Light Mode (default) */
         .mega-menu-light {
             background: #ffffff;
@@ -274,10 +285,10 @@
                                 <div class="mega-menu-utility">
                                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                         <div class="flex items-center justify-between h-10">
-                                            <div class="hidden md:flex items-center gap-4 text-xs mega-menu-utility-text">
-                                                <span><i class="fa-solid fa-location-dot mr-1"></i> Wadsworth, OH</span>
-                                                <span class="mega-menu-utility-divider">|</span>
-                                                <span><i class="fa-solid fa-clock mr-1"></i> Mon-Fri 8am-5pm</span>
+                                            <div class="flex items-center gap-4 text-xs">
+                                                <a href="tel:330-334-5060" class="mega-menu-utility-link font-medium">
+                                                    <i class="fa-solid fa-phone mr-1"></i> 330-334-5060
+                                                </a>
                                             </div>
                                             <div class="flex items-center gap-4">
                                                 <a href="#" class="text-xs mega-menu-utility-link">
@@ -372,12 +383,8 @@
                                                 </a>
                                             </div>
 
-                                            <div class="flex items-center gap-3">
-                                                <a href="tel:330-334-5060" class="hidden md:flex items-center gap-2 mega-menu-phone text-sm font-medium">
-                                                    <i class="fa-solid fa-phone text-brand-green"></i>
-                                                    330-334-5060
-                                                </a>
-                                                <a href="#" class="px-5 py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-sm font-semibold rounded-full transition-all">
+                                            <div class="flex items-center gap-2 md:gap-3">
+                                                <a href="#" class="px-3 py-1.5 md:px-5 md:py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-xs md:text-sm font-semibold rounded-full transition-all whitespace-nowrap">
                                                     Get a Quote
                                                 </a>
                                                 <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg mega-menu-mobile-btn">
@@ -640,17 +647,21 @@
 
     <!-- Mega Menu Theme Toggle -->
     <script>
+        var megaMenuDarkMode = false;
+        
         function toggleMegaMenuTheme() {
-            const header = document.getElementById('megaMenuHeader');
-            const toggleBtn = document.getElementById('megaMenuThemeToggle');
+            var header = document.getElementById('megaMenuHeader');
+            var toggleBtn = document.getElementById('megaMenuThemeToggle');
             
-            if (header.classList.contains('mega-menu-light')) {
-                header.classList.remove('mega-menu-light');
-                header.classList.add('mega-menu-dark');
+            if (!header || !toggleBtn) return;
+            
+            megaMenuDarkMode = !megaMenuDarkMode;
+            
+            if (megaMenuDarkMode) {
+                header.className = 'mega-menu-dark';
                 toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
             } else {
-                header.classList.remove('mega-menu-dark');
-                header.classList.add('mega-menu-light');
+                header.className = 'mega-menu-light';
                 toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
             }
         }
