@@ -89,6 +89,12 @@
                     </div>
                     <div class="component-preview">
                         <div class="component-preview-inner">
+                            <style>
+                                @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+                                @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+                                .animate-marquee-left { animation: marquee-left 25s linear infinite; }
+                                .animate-marquee-right { animation: marquee-right 30s linear infinite; }
+                            </style>
                             <section class="bg-gray-100 py-12 overflow-hidden">
                                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
                                     <p class="text-center text-gray-500 uppercase tracking-widest text-sm font-semibold">
