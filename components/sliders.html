@@ -176,17 +176,19 @@
                     <div class="component-preview">
                         <div class="component-preview-inner">
                             <style>
-                                .hero-slider .swiper-pagination-bullet { background: rgba(255,255,255,0.3); opacity: 1; width: 12px; height: 12px; }
+                                .hero-slider .swiper-pagination-bullet { background: rgba(255,255,255,0.3); opacity: 1; width: 10px; height: 10px; margin: 0 4px !important; }
                                 .hero-slider .swiper-pagination-bullet-active { background: #f7a022; }
-                                .hero-slider .swiper-button-prev, .hero-slider .swiper-button-next {
-                                    width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 50%;
-                                    color: white; transition: background 0.2s;
+                                .hero-slider-nav { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 16px 0 24px; }
+                                .hero-slider-nav .nav-btn {
+                                    width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; border: none;
+                                    color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;
                                 }
-                                .hero-slider .swiper-button-prev:hover, .hero-slider .swiper-button-next:hover { background: rgba(255,255,255,0.2); }
-                                .hero-slider .swiper-button-prev::after, .hero-slider .swiper-button-next::after { font-size: 18px; }
+                                .hero-slider-nav .nav-btn:hover { background: rgba(255,255,255,0.2); }
+                                .hero-slider-nav .nav-btn i { font-size: 14px; }
+                                .hero-slider .swiper-pagination { position: static !important; width: auto !important; }
                             </style>
                             <section class="relative bg-gradient-to-br from-gray-900 to-gray-800">
-                                <div class="swiper hero-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"pagination":{"el":".swiper-pagination","clickable":true},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"}}'>
+                                <div class="swiper hero-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"pagination":{"el":".swiper-pagination","clickable":true},"navigation":{"nextEl":".slider-next","prevEl":".slider-prev"}}'>
                                     <div class="swiper-wrapper">
                                         <!-- Slide 1: Vehicle Wraps -->
                                         <div class="swiper-slide">
@@ -265,11 +267,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Navigation -->
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
-                                    <!-- Pagination -->
-                                    <div class="swiper-pagination" style="position: relative; margin-top: 1rem; padding-bottom: 1.5rem;"></div>
+                                </div>
+                                <!-- Custom Navigation with Pagination -->
+                                <div class="hero-slider-nav">
+                                    <button class="nav-btn slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="swiper-pagination"></div>
+                                    <button class="nav-btn slider-next"><i class="fa-solid fa-chevron-right"></i></button>
                                 </div>
                             </section>
                             <script>
