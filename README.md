@@ -173,7 +173,7 @@ Some components reference images in the `img/` folder:
 - CTA full-width banner
 - Split image layout
 
-### Sliders & Carousels (3 components)
+### Sliders & Galleries (3 components)
 - Client logo marquee (auto-scroll)
 - Homepage hero slider (Swiper)
 - Portfolio gallery carousel
