@@ -461,6 +461,63 @@
     }
 
     // =========================================
+    // Initialize Swiper Sliders in Component Previews
+    // =========================================
+    function initSwiperSliders() {
+        // Initialize Swiper on any elements with data-swiper-config
+        const initSwiper = () => {
+            if (typeof Swiper === 'undefined') return;
+            
+            document.querySelectorAll('.component-preview-inner .swiper[data-swiper-config]').forEach(el => {
+                if (!el.swiper) { // Don't reinitialize
+                    try {
+                        const config = JSON.parse(el.dataset.swiperConfig);
+                        new Swiper(el, config);
+                    } catch (e) {
+                        console.error('Failed to initialize Swiper:', e);
+                    }
+                }
+            });
+        };
+        
+        // Wait for Swiper library to load
+        if (typeof Swiper !== 'undefined') {
+            initSwiper();
+        } else {
+            // Check periodically until Swiper is available
+            const checkSwiper = setInterval(() => {
+                if (typeof Swiper !== 'undefined') {
+                    clearInterval(checkSwiper);
+                    initSwiper();
+                }
+            }, 100);
+            // Stop checking after 5 seconds
+            setTimeout(() => clearInterval(checkSwiper), 5000);
+        }
+    }
+
+    // =========================================
+    // Execute Inline Scripts in Component Previews
+    // =========================================
+    function initInlineScripts() {
+        // Execute inline scripts within component previews
+        const executeScripts = () => {
+            document.querySelectorAll('.component-preview-inner script').forEach(script => {
+                if (!script.dataset.executed) {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent;
+                    script.dataset.executed = 'true';
+                    document.body.appendChild(newScript);
+                    document.body.removeChild(newScript);
+                }
+            });
+        };
+        
+        // Delay execution to ensure external libraries are loaded
+        setTimeout(executeScripts, 500);
+    }
+
+    // =========================================
     // Initialize Everything
     // =========================================
     function init() {
@@ -473,6 +530,8 @@
         populateCodeBlocks();
         initKeyboardNav();
         initResizablePreviews();
+        initSwiperSliders();
+        initInlineScripts();
 
         console.log('Yoder Graphics Component Gallery initialized');
     }
