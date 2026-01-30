@@ -127,10 +127,11 @@
     }
 
     // =========================================
-    // Category Filtering
+    // Category Filtering (for main page component filters only)
     // =========================================
     function initCategoryFilter() {
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        // Only target filter buttons in the main category-filter container, not inside component previews
+        const filterBtns = document.querySelectorAll('.category-filter > .filter-btn');
         const components = document.querySelectorAll('.component-card[data-category]');
 
         filterBtns.forEach(btn => {
