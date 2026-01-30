@@ -355,11 +355,25 @@
                                     font-family: 'Red Hat Display', sans-serif;
                                     background: white;
                                 }
+                                .legacy-slider-container .abstract-background {
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    z-index: 1;
+                                    pointer-events: none;
+                                }
+                                .legacy-slider-container .abstract-waves {
+                                    width: 100%;
+                                    height: auto;
+                                    display: block;
+                                }
                                 .legacy-slider-container .swiper {
                                     position: relative;
+                                    z-index: 2;
                                 }
                                 .legacy-slider-container .slide {
-                                    background: white;
+                                    background: transparent;
                                 }
                                 .legacy-slider-container .slide-content {
                                     display: flex;
@@ -367,8 +381,41 @@
                                     justify-content: space-between;
                                     max-width: 1200px;
                                     margin: 0 auto;
-                                    padding: 3rem 2rem;
+                                    padding: 3rem 2rem 8rem;
                                     gap: 2rem;
+                                }
+                                .legacy-slider-container .custom-swiper-button-prev,
+                                .legacy-slider-container .custom-swiper-button-next {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 48px;
+                                    height: 48px;
+                                    background: white;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    cursor: pointer;
+                                    z-index: 10;
+                                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                                    transition: all 0.2s;
+                                }
+                                .legacy-slider-container .custom-swiper-button-prev:hover,
+                                .legacy-slider-container .custom-swiper-button-next:hover {
+                                    background: #f5f5f5;
+                                }
+                                .legacy-slider-container .custom-swiper-button-prev {
+                                    left: 1rem;
+                                }
+                                .legacy-slider-container .custom-swiper-button-next {
+                                    right: 1rem;
+                                }
+                                .legacy-slider-container .custom-swiper-button-prev svg,
+                                .legacy-slider-container .custom-swiper-button-next svg {
+                                    width: 16px;
+                                    height: 16px;
+                                    color: #333;
                                 }
                                 .legacy-slider-container .slide-image {
                                     flex: 1;
@@ -457,11 +504,21 @@
                                     .legacy-slider-container .slide-button-container {
                                         justify-content: center;
                                     }
+                                    .legacy-slider-container .abstract-background,
+                                    .legacy-slider-container .custom-swiper-button-prev,
+                                    .legacy-slider-container .custom-swiper-button-next {
+                                        display: none;
+                                    }
                                 }
                             </style>
                             <div class="legacy-slider-container">
+                                <!-- Wave Background -->
+                                <div class="abstract-background">
+                                    <img src="../img/waves.svg" alt="Abstract waves" class="abstract-waves">
+                                </div>
+
                                 <!-- Swiper Slider -->
-                                <div class="swiper legacy-home-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false}}'>
+                                <div class="swiper legacy-home-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"navigation":{"nextEl":".legacy-slider-container .custom-swiper-button-next","prevEl":".legacy-slider-container .custom-swiper-button-prev"}}'>
                                     <div class="swiper-wrapper">
                                         <!-- Slide 1: Fleet Graphics -->
                                         <div class="swiper-slide slide">
@@ -588,6 +645,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <!-- Custom Navigation Buttons -->
+                                <div class="custom-swiper-button-prev">
+                                    <svg viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="custom-swiper-button-next">
+                                    <svg viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                    </svg>
                                 </div>
                             </div>
                             <script>
