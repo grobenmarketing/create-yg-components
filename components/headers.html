@@ -93,6 +93,17 @@
         .mega-menu-light .mega-menu-mobile-btn:hover {
             background: #f3f4f6;
         }
+        .mega-menu-light .mega-menu-mobile-panel {
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+        }
+        .mega-menu-light .mega-menu-mobile-link {
+            color: #374151;
+        }
+        .mega-menu-light .mega-menu-mobile-link:hover {
+            background: #f3f4f6;
+            color: #111827;
+        }
 
         /* Dark Mode */
         .mega-menu-dark {
@@ -153,6 +164,17 @@
         }
         .mega-menu-dark .mega-menu-mobile-btn:hover {
             background: #1f2937;
+        }
+        .mega-menu-dark .mega-menu-mobile-panel {
+            background: #111827;
+            border-top: 1px solid #1f2937;
+        }
+        .mega-menu-dark .mega-menu-mobile-link {
+            color: #d1d5db;
+        }
+        .mega-menu-dark .mega-menu-mobile-link:hover {
+            background: #1f2937;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -387,13 +409,24 @@
                                                 <a href="#" class="px-3 py-1.5 md:px-5 md:py-2.5 bg-brand-green hover:bg-brand-green-dark text-white text-xs md:text-sm font-semibold rounded-full transition-all whitespace-nowrap">
                                                     Get a Quote
                                                 </a>
-                                                <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg mega-menu-mobile-btn">
-                                                    <i class="fa-solid fa-bars text-xl"></i>
+                                                <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg mega-menu-mobile-btn" onclick="toggleMegaMobileMenu()">
+                                                    <i class="fa-solid fa-bars text-xl" id="megaMobileMenuIcon"></i>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </nav>
+                                
+                                <!-- Mobile Menu -->
+                                <div id="megaMobileMenu" class="mega-menu-mobile-panel hidden md:hidden">
+                                    <div class="px-4 py-4 space-y-2">
+                                        <a href="#" class="block px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">Home</a>
+                                        <a href="#" class="block px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">Services</a>
+                                        <a href="#" class="block px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">About</a>
+                                        <a href="#" class="block px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">Portfolio</a>
+                                        <a href="#" class="block px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">Contact</a>
+                                    </div>
+                                </div>
                             </header>
                         </div>
                     </div>
@@ -648,6 +681,7 @@
     <!-- Mega Menu Theme Toggle -->
     <script>
         var megaMenuDarkMode = false;
+        var megaMobileMenuOpen = false;
         
         function toggleMegaMenuTheme() {
             var header = document.getElementById('megaMenuHeader');
@@ -663,6 +697,25 @@
             } else {
                 header.className = 'mega-menu-light';
                 toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
+            }
+        }
+        
+        function toggleMegaMobileMenu() {
+            var mobileMenu = document.getElementById('megaMobileMenu');
+            var menuIcon = document.getElementById('megaMobileMenuIcon');
+            
+            if (!mobileMenu || !menuIcon) return;
+            
+            megaMobileMenuOpen = !megaMobileMenuOpen;
+            
+            if (megaMobileMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
             }
         }
     </script>
