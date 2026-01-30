@@ -37,7 +37,7 @@
                     <a href="headers.html" class="sidebar-link"><i class="fa-solid fa-bars"></i> Headers <span class="sidebar-badge">3</span></a>
                     <a href="heroes.html" class="sidebar-link"><i class="fa-solid fa-star"></i> Heroes <span class="sidebar-badge">3</span></a>
                     <a href="features.html" class="sidebar-link"><i class="fa-solid fa-puzzle-piece"></i> Features <span class="sidebar-badge">6</span></a>
-                    <a href="sliders.html" class="sidebar-link active"><i class="fa-solid fa-images"></i> Sliders & Galleries <span class="sidebar-badge">3</span></a>
+                    <a href="sliders.html" class="sidebar-link active"><i class="fa-solid fa-images"></i> Sliders & Galleries <span class="sidebar-badge">4</span></a>
                     <a href="content.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> Content Sections <span class="sidebar-badge">12</span></a>
                     <a href="ui-elements.html" class="sidebar-link"><i class="fa-solid fa-palette"></i> UI Elements <span class="sidebar-badge">5</span></a>
                 </div>
@@ -618,6 +618,294 @@
                                         new Swiper(el, JSON.parse(el.dataset.swiperConfig));
                                     });
                                 }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Filterable Grid Gallery -->
+                <div class="component-card" data-category="galleries">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-images"></i> Gallery</span>
+                            <span class="component-variant">Filterable Grid Gallery with Lightbox</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <style>
+                                .filterable-gallery {
+                                    background: #f9fafb;
+                                    padding: 3rem 1rem;
+                                    font-family: 'Red Hat Display', sans-serif;
+                                }
+                                .filterable-gallery .gallery-container {
+                                    max-width: 1200px;
+                                    margin: 0 auto;
+                                }
+                                .filterable-gallery .gallery-filters {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.5rem;
+                                    justify-content: center;
+                                    margin-bottom: 2rem;
+                                }
+                                .filterable-gallery .filter-btn {
+                                    padding: 0.5rem 1.25rem;
+                                    border-radius: 9999px;
+                                    border: none;
+                                    background: white;
+                                    color: #6b7280;
+                                    font-size: 0.875rem;
+                                    font-weight: 500;
+                                    cursor: pointer;
+                                    transition: all 0.2s;
+                                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                }
+                                .filterable-gallery .filter-btn:hover {
+                                    background: #f3f4f6;
+                                    color: #374151;
+                                }
+                                .filterable-gallery .filter-btn.active {
+                                    background: #00954c;
+                                    color: white;
+                                }
+                                .filterable-gallery .gallery-grid {
+                                    display: grid;
+                                    grid-template-columns: repeat(4, 1fr);
+                                    gap: 1rem;
+                                }
+                                @media (max-width: 1024px) {
+                                    .filterable-gallery .gallery-grid {
+                                        grid-template-columns: repeat(3, 1fr);
+                                    }
+                                }
+                                @media (max-width: 768px) {
+                                    .filterable-gallery .gallery-grid {
+                                        grid-template-columns: repeat(2, 1fr);
+                                    }
+                                }
+                                @media (max-width: 480px) {
+                                    .filterable-gallery .gallery-grid {
+                                        grid-template-columns: 1fr;
+                                    }
+                                }
+                                .filterable-gallery .gallery-item {
+                                    position: relative;
+                                    border-radius: 1rem;
+                                    overflow: hidden;
+                                    cursor: pointer;
+                                    aspect-ratio: 1;
+                                    background: #e5e7eb;
+                                }
+                                .filterable-gallery .gallery-item img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transition: transform 0.3s ease;
+                                }
+                                .filterable-gallery .gallery-item:hover img {
+                                    transform: scale(1.08);
+                                }
+                                .filterable-gallery .gallery-item.hidden {
+                                    display: none;
+                                }
+                                /* Lightbox Styles */
+                                .gallery-lightbox {
+                                    position: fixed;
+                                    inset: 0;
+                                    background: rgba(0,0,0,0.9);
+                                    z-index: 9999;
+                                    display: none;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 2rem;
+                                }
+                                .gallery-lightbox.active {
+                                    display: flex;
+                                }
+                                .gallery-lightbox img {
+                                    max-width: 90%;
+                                    max-height: 90vh;
+                                    object-fit: contain;
+                                    border-radius: 0.5rem;
+                                }
+                                .gallery-lightbox .lightbox-close {
+                                    position: absolute;
+                                    top: 1.5rem;
+                                    right: 1.5rem;
+                                    width: 48px;
+                                    height: 48px;
+                                    background: rgba(255,255,255,0.1);
+                                    border: none;
+                                    border-radius: 50%;
+                                    color: white;
+                                    font-size: 1.5rem;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: background 0.2s;
+                                }
+                                .gallery-lightbox .lightbox-close:hover {
+                                    background: rgba(255,255,255,0.2);
+                                }
+                                .gallery-lightbox .lightbox-nav {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 48px;
+                                    height: 48px;
+                                    background: rgba(255,255,255,0.1);
+                                    border: none;
+                                    border-radius: 50%;
+                                    color: white;
+                                    font-size: 1.25rem;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: background 0.2s;
+                                }
+                                .gallery-lightbox .lightbox-nav:hover {
+                                    background: rgba(255,255,255,0.2);
+                                }
+                                .gallery-lightbox .lightbox-prev {
+                                    left: 1.5rem;
+                                }
+                                .gallery-lightbox .lightbox-next {
+                                    right: 1.5rem;
+                                }
+                            </style>
+                            <section class="filterable-gallery">
+                                <div class="gallery-container">
+                                    <!-- Filter Buttons -->
+                                    <div class="gallery-filters">
+                                        <button class="filter-btn active" data-filter="all">All</button>
+                                        <button class="filter-btn" data-filter="wraps">Vehicle Wraps</button>
+                                        <button class="filter-btn" data-filter="signs">Signs</button>
+                                        <button class="filter-btn" data-filter="apparel">Apparel</button>
+                                        <button class="filter-btn" data-filter="print">Print</button>
+                                    </div>
+
+                                    <!-- Gallery Grid -->
+                                    <div class="gallery-grid">
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/111/1200/1200">
+                                            <img src="https://picsum.photos/id/111/400/400" alt="Vehicle Wrap 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/119/1200/1200">
+                                            <img src="https://picsum.photos/id/119/400/400" alt="Sign 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/96/1200/1200">
+                                            <img src="https://picsum.photos/id/96/400/400" alt="Apparel 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/24/1200/1200">
+                                            <img src="https://picsum.photos/id/24/400/400" alt="Print 1">
+                                        </div>
+                                        <div class="gallery-item" data-category="wraps" data-full="https://picsum.photos/id/133/1200/1200">
+                                            <img src="https://picsum.photos/id/133/400/400" alt="Vehicle Wrap 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="signs" data-full="https://picsum.photos/id/180/1200/1200">
+                                            <img src="https://picsum.photos/id/180/400/400" alt="Sign 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="apparel" data-full="https://picsum.photos/id/177/1200/1200">
+                                            <img src="https://picsum.photos/id/177/400/400" alt="Apparel 2">
+                                        </div>
+                                        <div class="gallery-item" data-category="print" data-full="https://picsum.photos/id/42/1200/1200">
+                                            <img src="https://picsum.photos/id/42/400/400" alt="Print 2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Lightbox Modal -->
+                                <div class="gallery-lightbox" id="galleryLightbox">
+                                    <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+                                    <button class="lightbox-nav lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <img src="" alt="Full size image" id="lightboxImage">
+                                    <button class="lightbox-nav lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                            </section>
+                            <script>
+                                (function() {
+                                    const gallery = document.querySelector('.filterable-gallery');
+                                    if (!gallery) return;
+
+                                    const filterBtns = gallery.querySelectorAll('.filter-btn');
+                                    const items = gallery.querySelectorAll('.gallery-item');
+                                    const lightbox = document.getElementById('galleryLightbox');
+                                    const lightboxImg = document.getElementById('lightboxImage');
+                                    let currentIndex = 0;
+                                    let visibleItems = [];
+
+                                    // Filter functionality
+                                    filterBtns.forEach(btn => {
+                                        btn.addEventListener('click', () => {
+                                            filterBtns.forEach(b => b.classList.remove('active'));
+                                            btn.classList.add('active');
+                                            const filter = btn.dataset.filter;
+
+                                            items.forEach(item => {
+                                                if (filter === 'all' || item.dataset.category === filter) {
+                                                    item.classList.remove('hidden');
+                                                } else {
+                                                    item.classList.add('hidden');
+                                                }
+                                            });
+                                            updateVisibleItems();
+                                        });
+                                    });
+
+                                    function updateVisibleItems() {
+                                        visibleItems = Array.from(items).filter(item => !item.classList.contains('hidden'));
+                                    }
+                                    updateVisibleItems();
+
+                                    // Lightbox functionality
+                                    items.forEach((item, index) => {
+                                        item.addEventListener('click', () => {
+                                            const fullSrc = item.dataset.full;
+                                            lightboxImg.src = fullSrc;
+                                            lightbox.classList.add('active');
+                                            currentIndex = visibleItems.indexOf(item);
+                                            document.body.style.overflow = 'hidden';
+                                        });
+                                    });
+
+                                    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+                                    lightbox.addEventListener('click', (e) => {
+                                        if (e.target === lightbox) closeLightbox();
+                                    });
+
+                                    function closeLightbox() {
+                                        lightbox.classList.remove('active');
+                                        document.body.style.overflow = '';
+                                    }
+
+                                    lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => {
+                                        e.stopPropagation();
+                                        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+                                        lightboxImg.src = visibleItems[currentIndex].dataset.full;
+                                    });
+
+                                    lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => {
+                                        e.stopPropagation();
+                                        currentIndex = (currentIndex + 1) % visibleItems.length;
+                                        lightboxImg.src = visibleItems[currentIndex].dataset.full;
+                                    });
+
+                                    // Keyboard navigation
+                                    document.addEventListener('keydown', (e) => {
+                                        if (!lightbox.classList.contains('active')) return;
+                                        if (e.key === 'Escape') closeLightbox();
+                                        if (e.key === 'ArrowLeft') lightbox.querySelector('.lightbox-prev').click();
+                                        if (e.key === 'ArrowRight') lightbox.querySelector('.lightbox-next').click();
+                                    });
+                                })();
                             </script>
                         </div>
                     </div>
