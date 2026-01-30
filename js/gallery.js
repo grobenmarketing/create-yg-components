@@ -13,40 +13,10 @@
     'use strict';
 
     // =========================================
-    // Sidebar Toggle
+    // Sidebar (always visible, no toggle)
     // =========================================
     function initSidebar() {
-        const sidebar = document.querySelector('.gallery-sidebar');
-        const main = document.querySelector('.gallery-main');
-        const toggle = document.querySelector('.sidebar-toggle');
-        const overlay = document.querySelector('.sidebar-overlay');
-
-        if (!toggle || !sidebar) return;
-
-        toggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-            sidebar.classList.toggle('collapsed');
-            main?.classList.toggle('expanded');
-            overlay?.classList.toggle('visible');
-        });
-
-        // Close sidebar when clicking overlay (mobile)
-        overlay?.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-            sidebar.classList.add('collapsed');
-            main?.classList.add('expanded');
-            overlay.classList.remove('visible');
-        });
-
-        // Close sidebar on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-                sidebar.classList.add('collapsed');
-                main?.classList.add('expanded');
-                overlay?.classList.remove('visible');
-            }
-        });
+        // Sidebar is always visible - no toggle functionality needed
     }
 
     // =========================================
