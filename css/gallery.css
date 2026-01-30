@@ -381,11 +381,6 @@ body {
     border: none;
     display: block;
     background: white;
-    pointer-events: none;
-}
-
-.resize-container:hover .preview-iframe {
-    pointer-events: auto;
 }
 
 
@@ -550,6 +545,38 @@ body {
 .resize-reset:hover {
     background: #f1f5f9;
     color: var(--brand-green);
+}
+
+/* Resize Mode Toggle Button */
+.resize-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    transition: all 0.2s;
+}
+
+.resize-toggle-btn:hover {
+    border-color: var(--brand-green);
+    color: var(--brand-green);
+}
+
+.resize-toggle-btn.active {
+    background: var(--brand-green);
+    border-color: var(--brand-green);
+    color: white;
+}
+
+.resize-toggle-btn i {
+    font-size: 0.875rem;
 }
 
 /* Component Code */

@@ -184,6 +184,7 @@
             // Create resize container structure
             const container = document.createElement('div');
             container.className = 'resize-container';
+            container.style.display = 'none'; // Hidden by default
             
             const content = document.createElement('div');
             content.className = 'resize-content';
@@ -207,32 +208,63 @@
             resetBtn.textContent = 'Reset';
             resetBtn.setAttribute('title', 'Reset to full width');
 
-            // Replace inner with container structure
+            // Create toggle button for resize mode
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'resize-toggle-btn';
+            toggleBtn.innerHTML = '<i class="fa-solid fa-arrows-left-right"></i> Resize Mode';
+            toggleBtn.setAttribute('title', 'Toggle resize mode');
+
+            // Insert container but keep inner visible by default
             inner.parentNode.insertBefore(container, inner);
-            inner.style.display = 'none'; // Keep for code copy functionality
+            inner.parentNode.insertBefore(toggleBtn, container);
+            // inner stays visible by default
             content.appendChild(iframe);
             container.appendChild(content);
             container.appendChild(handle);
             container.appendChild(indicator);
             container.appendChild(resetBtn);
 
-            // Send content to iframe when it's ready
+            let resizeModeActive = false;
+            let iframeReady = false;
+            let contentSent = false;
+
+            // Send content to iframe
             const sendContent = () => {
-                iframe.contentWindow.postMessage({
-                    type: 'setContent',
-                    html: originalHTML
-                }, '*');
+                if (iframeReady && resizeModeActive && !contentSent) {
+                    iframe.contentWindow.postMessage({
+                        type: 'setContent',
+                        html: originalHTML
+                    }, '*');
+                    contentSent = true;
+                    setTimeout(() => adjustIframeHeight(iframe), 200);
+                }
             };
+
+            // Toggle between modes
+            toggleBtn.addEventListener('click', () => {
+                resizeModeActive = !resizeModeActive;
+                if (resizeModeActive) {
+                    inner.style.display = 'none';
+                    container.style.display = '';
+                    toggleBtn.classList.add('active');
+                    toggleBtn.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Interactive Mode';
+                    // Try to send content if iframe is ready
+                    sendContent();
+                } else {
+                    inner.style.display = '';
+                    container.style.display = 'none';
+                    toggleBtn.classList.remove('active');
+                    toggleBtn.innerHTML = '<i class="fa-solid fa-arrows-left-right"></i> Resize Mode';
+                }
+            });
 
             // Listen for iframe messages
             window.addEventListener('message', function handler(e) {
                 if (e.source === iframe.contentWindow) {
                     if (e.data.type === 'iframeReady') {
+                        iframeReady = true;
+                        // Send content if we're already in resize mode
                         sendContent();
-                        // Auto-resize iframe height
-                        setTimeout(() => {
-                            adjustIframeHeight(iframe);
-                        }, 200);
                     } else if (e.data.type === 'contentHeight') {
                         iframe.style.height = (e.data.height + 20) + 'px';
                     }
@@ -440,7 +472,7 @@
         initActiveLink();
         populateCodeBlocks();
         initKeyboardNav();
-        // Disabled: initResizablePreviews() - iframe overlay blocks element selection
+        initResizablePreviews();
 
         console.log('Yoder Graphics Component Gallery initialized');
     }
