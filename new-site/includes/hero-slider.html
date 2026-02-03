@@ -1,0 +1,350 @@
+<style>
+    .legacy-slider-container {
+        position: relative;
+        width: 100%;
+        font-family: 'Red Hat Display', sans-serif;
+        background: white;
+    }
+
+    .legacy-slider-container .abstract-background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .legacy-slider-container .abstract-waves {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .legacy-slider-container .swiper {
+        position: relative;
+        z-index: 2;
+    }
+
+    .legacy-slider-container .slide {
+        background: transparent;
+    }
+
+    .legacy-slider-container .slide-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem 8rem;
+        gap: 2rem;
+    }
+
+    .legacy-slider-container .custom-swiper-button-prev,
+    .legacy-slider-container .custom-swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s;
+    }
+
+    .legacy-slider-container .custom-swiper-button-prev:hover,
+    .legacy-slider-container .custom-swiper-button-next:hover {
+        background: #f5f5f5;
+    }
+
+    .legacy-slider-container .custom-swiper-button-prev {
+        left: 1rem;
+    }
+
+    .legacy-slider-container .custom-swiper-button-next {
+        right: 1rem;
+    }
+
+    .legacy-slider-container .custom-swiper-button-prev svg,
+    .legacy-slider-container .custom-swiper-button-next svg {
+        width: 16px;
+        height: 16px;
+        color: #333;
+    }
+
+    .legacy-slider-container .slide-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .legacy-slider-container .slide-img {
+        max-width: 100%;
+        max-height: 350px;
+        object-fit: contain;
+    }
+
+    .legacy-slider-container .slide-text {
+        flex: 1;
+        text-align: left;
+    }
+
+    .legacy-slider-container .slide-title {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #333;
+        margin: 0;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+
+    .legacy-slider-container .slide-subtitle {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #00954c;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+
+    .legacy-slider-container .slide-description {
+        font-size: 21px;
+        font-weight: 800;
+        color: #666;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .legacy-slider-container .slide-button-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .legacy-slider-container .slide-button {
+        background: #00954c;
+        color: white;
+        border: none;
+        padding: 0.875rem 1.5rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background 0.2s;
+    }
+
+    .legacy-slider-container .slide-button:hover {
+        background: #007a3d;
+    }
+
+    .legacy-slider-container .slide-button-secondary {
+        background: white;
+        color: #00954c;
+        border: 2px solid #00954c;
+        padding: 0.875rem 1.5rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .legacy-slider-container .slide-button-secondary:hover {
+        background: #00954c;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .legacy-slider-container .slide-content {
+            flex-direction: column;
+            padding: 2rem 1rem;
+        }
+
+        .legacy-slider-container .slide-title,
+        .legacy-slider-container .slide-subtitle {
+            font-size: 2rem;
+        }
+
+        .legacy-slider-container .slide-text {
+            text-align: center;
+        }
+
+        .legacy-slider-container .slide-button-container {
+            justify-content: center;
+        }
+
+        .legacy-slider-container .abstract-background,
+        .legacy-slider-container .custom-swiper-button-prev,
+        .legacy-slider-container .custom-swiper-button-next {
+            display: none;
+        }
+    }
+</style>
+<div class="legacy-slider-container">
+    <!-- Wave Background -->
+    <div class="abstract-background">
+        <img src="img/waves.svg" alt="Abstract waves" class="abstract-waves">
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper legacy-home-slider"
+        data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"navigation":{"nextEl":".legacy-slider-container .custom-swiper-button-next","prevEl":".legacy-slider-container .custom-swiper-button-prev"}}'>
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Fleet Graphics -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-brochure.png" alt="Fleet Graphics" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">FLEET GRAPHICS</h2>
+                        <h3 class="slide-subtitle">BUYER'S GUIDE</h3>
+                        <p class="slide-description">Download for Free</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">Get Your Free Copy <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Large Format -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-signs.png" alt="Large Format" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">LARGE FORMAT</h2>
+                        <h3 class="slide-subtitle">PRINTING</h3>
+                        <p class="slide-description">signs, decals, wraps & more</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: In-House Creative -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-computer.png" alt="In-House Creative" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">IN-HOUSE</h2>
+                        <h3 class="slide-subtitle">CREATIVE</h3>
+                        <p class="slide-description">design & brand management</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Commercial Printing -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-cards.png" alt="Commercial Printing" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">COMMERCIAL</h2>
+                        <h3 class="slide-subtitle">PRINTING</h3>
+                        <p class="slide-description">cards, flyers, brochures & more</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Custom Apparel -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-apparel.png" alt="Custom Apparel" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">CUSTOM</h2>
+                        <h3 class="slide-subtitle">APPAREL</h3>
+                        <p class="slide-description">explore various styles</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Vehicle Wraps -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-wraps.png" alt="Vehicle Wraps" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">VEHICLE</h2>
+                        <h3 class="slide-subtitle">WRAPS</h3>
+                        <p class="slide-description">for your Fleet</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Promo Items -->
+            <div class="swiper-slide slide">
+                <div class="slide-content">
+                    <div class="slide-image">
+                        <img src="img/bannerimg-promoitems.png" alt="Promo Items" class="slide-img">
+                    </div>
+                    <div class="slide-text">
+                        <h2 class="slide-title">PROMO</h2>
+                        <h3 class="slide-subtitle">ITEMS</h3>
+                        <p class="slide-description">endless options</p>
+                        <div class="slide-button-container">
+                            <a href="#"><button class="slide-button">See Our Work <i
+                                        class="fa-solid fa-arrow-right"></i></button></a>
+                            <button class="slide-button-secondary">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Navigation Buttons -->
+    <div class="custom-swiper-button-prev">
+        <svg viewBox="0 0 16 16" fill="currentColor">
+            <path
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
+            </path>
+        </svg>
+    </div>
+    <div class="custom-swiper-button-next">
+        <svg viewBox="0 0 16 16" fill="currentColor">
+            <path
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+        </svg>
+    </div>
+</div>

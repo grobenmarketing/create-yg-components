@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title - Yoder Graphics</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Header Include -->
+    <div id="header-include"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- PAGE CONTENT GOES HERE -->
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+    <script src="js/includes.js"></script>
+</body>
+
+</html>
+
+<!--
+================================================================================
+INSTRUCTIONS FOR CREATING NEW PAGES
+================================================================================
+
+1. Copy this entire file and rename it (e.g., about.html, services.html)
+
+2. Update the <title> tag with your page title
+
+3. Add your page content inside the <main> element
+
+4. For subfolders (e.g., /services/design.html), update paths:
+   - Change "tailwind.config.js" to "../tailwind.config.js"
+   - Change "css/styles.css" to "../css/styles.css"
+   - Change "js/scripts.js" to "../js/scripts.js"
+   - Change "js/includes.js" to "../js/includes.js"
+   - Update includes.js paths or create a subfolder version
+
+IMPORTANT NOTES:
+- This site uses JavaScript fetch() to load header/footer includes
+- Must be served via a web server (Live Server, localhost, etc.)
+- Will NOT work if opened directly as a file (file://) due to CORS
+
+STRUCTURE:
+new-site/
+├── css/
+│   └── styles.css
+├── img/
+│   └── logo.svg
+├── includes/
+│   ├── header.html    <- Shared header (mega menu)
+│   └── footer.html    <- Shared footer
+├── js/
+│   ├── scripts.js     <- Mobile menu toggle
+│   └── includes.js    <- Loads header/footer
+├── index.html
+├── tailwind.config.js
+└── PAGE_TEMPLATE.html <- This file
+
+================================================================================
+-->

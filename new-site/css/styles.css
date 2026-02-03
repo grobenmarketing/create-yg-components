@@ -1,0 +1,212 @@
+/* Mega Menu Styles */
+
+/* Remove extra height from mega menu preview - Not needed for live site but keeping for safety if reused classes rely on it, referencing original component styles
+   Original:
+   #megaMenuHeader { margin-bottom: 0; }
+*/
+
+/* Light Mode (default) */
+header.mega-menu-light {
+    background: #ffffff !important;
+}
+
+header.mega-menu-light .mega-menu-utility {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+header.mega-menu-light .mega-menu-utility-text {
+    color: #6b7280 !important;
+}
+
+header.mega-menu-light .mega-menu-utility-divider {
+    color: #d1d5db !important;
+}
+
+header.mega-menu-light .mega-menu-utility-link {
+    color: #6b7280 !important;
+}
+
+header.mega-menu-light .mega-menu-utility-link:hover {
+    color: #111827 !important;
+}
+
+header.mega-menu-light .mega-menu-nav {
+    background: #ffffff !important;
+}
+
+header.mega-menu-light .mega-menu-logo {
+    filter: none !important;
+}
+
+header.mega-menu-light .mega-menu-link {
+    color: #6b7280 !important;
+}
+
+header.mega-menu-light .mega-menu-link:hover {
+    color: #111827 !important;
+}
+
+header.mega-menu-light .mega-menu-link-active {
+    color: #111827 !important;
+}
+
+header.mega-menu-light .mega-menu-link-hover:hover {
+    background: #f3f4f6 !important;
+}
+
+header.mega-menu-light .mega-menu-dropdown {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb;
+}
+
+header.mega-menu-light .mega-menu-dropdown-item:hover {
+    background: #f3f4f6 !important;
+}
+
+header.mega-menu-light .mega-menu-dropdown-title {
+    color: #111827 !important;
+}
+
+header.mega-menu-light .mega-menu-dropdown-subtitle {
+    color: #9ca3af !important;
+}
+
+header.mega-menu-light .mega-menu-phone {
+    color: #111827 !important;
+}
+
+header.mega-menu-light .mega-menu-mobile-btn {
+    color: #374151 !important;
+}
+
+header.mega-menu-light .mega-menu-mobile-btn:hover {
+    background: #f3f4f6 !important;
+}
+
+header.mega-menu-light .mega-menu-mobile-panel {
+    background: #ffffff !important;
+    border-top: 1px solid #e5e7eb;
+}
+
+header.mega-menu-light .mega-menu-mobile-link {
+    color: #374151 !important;
+}
+
+header.mega-menu-light .mega-menu-mobile-link:hover {
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+header.mega-menu-light .standard-dropdown {
+    width: 20rem !important;
+    padding: 0.5rem !important;
+}
+
+header.mega-menu-light .mega-menu-link-highlight {
+    color: #00954c !important;
+    /* brand-green */
+}
+
+/* Dark Mode */
+header.mega-menu-dark {
+    background: #111827 !important;
+}
+
+header.mega-menu-dark .mega-menu-utility {
+    background: #111827 !important;
+    border-bottom: 1px solid #1f2937;
+}
+
+header.mega-menu-dark .mega-menu-utility-text {
+    color: #9ca3af !important;
+}
+
+header.mega-menu-dark .mega-menu-utility-divider {
+    color: #374151 !important;
+}
+
+header.mega-menu-dark .mega-menu-utility-link {
+    color: #9ca3af !important;
+}
+
+header.mega-menu-dark .mega-menu-utility-link:hover {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-nav {
+    background: #111827 !important;
+}
+
+header.mega-menu-dark .mega-menu-logo {
+    filter: brightness(0) invert(1) !important;
+}
+
+header.mega-menu-dark .mega-menu-link {
+    color: #d1d5db !important;
+}
+
+header.mega-menu-dark .mega-menu-link:hover {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-link-active {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-link-hover:hover {
+    background: #1f2937 !important;
+}
+
+header.mega-menu-dark .mega-menu-dropdown {
+    background: #1f2937 !important;
+    border: 1px solid #374151;
+}
+
+header.mega-menu-dark .mega-menu-dropdown-item:hover {
+    background: rgba(55, 65, 81, 0.5) !important;
+}
+
+header.mega-menu-dark .mega-menu-dropdown-title {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-dropdown-subtitle {
+    color: #6b7280 !important;
+}
+
+header.mega-menu-dark .mega-menu-phone {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-mobile-btn {
+    color: #ffffff !important;
+}
+
+header.mega-menu-dark .mega-menu-mobile-btn:hover {
+    background: #1f2937 !important;
+}
+
+header.mega-menu-dark .mega-menu-mobile-panel {
+    background: #111827 !important;
+    border-top: 1px solid #1f2937;
+}
+
+header.mega-menu-dark .mega-menu-mobile-link {
+    color: #d1d5db !important;
+}
+
+header.mega-menu-dark .mega-menu-mobile-link:hover {
+    background: #1f2937 !important;
+    color: #ffffff !important;
+}
+
+/* Service Card Hovers */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}

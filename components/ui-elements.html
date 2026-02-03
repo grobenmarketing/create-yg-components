@@ -32,7 +32,7 @@
                     <a href="features.html" class="sidebar-link"><i class="fa-solid fa-puzzle-piece"></i> Features <span class="sidebar-badge">5</span></a>
                     <a href="sliders.html" class="sidebar-link"><i class="fa-solid fa-images"></i> Sliders & Galleries <span class="sidebar-badge">4</span></a>
                     <a href="content.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> Content Sections <span class="sidebar-badge">12</span></a>
-                    <a href="ui-elements.html" class="sidebar-link active"><i class="fa-solid fa-palette"></i> UI Elements <span class="sidebar-badge">5</span></a>
+                    <a href="ui-elements.html" class="sidebar-link active"><i class="fa-solid fa-palette"></i> UI Elements <span class="sidebar-badge">7</span></a>
                 </div>
                 <div class="sidebar-section">
                     <div class="sidebar-section-title">Page Templates</div>
@@ -309,6 +309,321 @@
                                                 Submit Request
                                             </button>
                                         </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Client Inquiry Combo Form -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-comments"></i> Client Inquiry</span>
+                            <span class="component-variant">Smart Combo Form with Conditional Fields</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-gray-50 py-12">
+                                <div class="max-w-xl mx-auto px-4">
+                                    <form id="clientInquiryFormDemo" class="bg-white rounded-2xl shadow-lg p-8">
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Start Your Project</h3>
+                                        <p class="text-gray-500 text-sm mb-6">Tell us a bit about what you need, and we'll get right on it.</p>
+
+                                        <!-- Inquiry Type Selector -->
+                                        <div class="mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                How can we help you today?
+                                            </label>
+                                            <div class="relative">
+                                                <select id="inquiryTypeDemo"
+                                                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all appearance-none cursor-pointer">
+                                                    <option value="general">I have a General Question</option>
+                                                    <option value="quote">I'd like to Get a Quote</option>
+                                                    <option value="upload">I'm Uploading Artwork for an Order</option>
+                                                </select>
+                                                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                                    <i class="fa-solid fa-chevron-down text-gray-400"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Contact Info -->
+                                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                    Full Name <span class="text-red-500">*</span>
+                                                </label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                        <i class="fa-solid fa-user text-gray-400"></i>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="w-full pl-11 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                        placeholder="John Doe">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                    Business Name <span class="text-gray-400 text-xs font-normal">(Recommended)</span>
+                                                </label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                        <i class="fa-solid fa-briefcase text-gray-400"></i>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="w-full pl-11 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                        placeholder="Your Company">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                    Email Address <span class="text-red-500">*</span>
+                                                </label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                        <i class="fa-solid fa-envelope text-gray-400"></i>
+                                                    </div>
+                                                    <input type="email"
+                                                        class="w-full pl-11 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                        placeholder="you@company.com">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">Phone Number</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                        <i class="fa-solid fa-phone text-gray-400"></i>
+                                                    </div>
+                                                    <input type="tel"
+                                                        class="w-full pl-11 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                        placeholder="(330) 555-0123">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Conditional: Order Number (Upload only) -->
+                                        <div id="orderNumberFieldDemo" class="mb-6 hidden">
+                                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                                <label class="block text-sm font-semibold text-blue-900 mb-2">
+                                                    Existing Order # <span class="text-red-500">*</span>
+                                                </label>
+                                                <input type="text"
+                                                    class="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                                    placeholder="e.g. YG-2024-100">
+                                                <p class="mt-2 text-xs text-blue-700">This helps us match files to your job instantly.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Conditional: File Upload (Quote or Upload) -->
+                                        <div id="fileUploadFieldDemo" class="mb-6 hidden">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Upload Artwork / Reference Files
+                                            </label>
+                                            <div
+                                                class="flex flex-col items-center justify-center px-6 py-8 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 hover:bg-white hover:border-brand-green transition-all cursor-pointer">
+                                                <i class="fa-solid fa-cloud-arrow-up text-4xl text-gray-400 mb-3"></i>
+                                                <div class="text-sm text-gray-600">
+                                                    <span class="font-semibold text-brand-green">Upload a file</span>
+                                                    <span> or drag and drop</span>
+                                                </div>
+                                                <p class="text-xs text-gray-500 mt-1">PDF, AI, EPS, PNG, JPG up to 50MB</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Message Area -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Project Details & Message <span class="text-red-500">*</span>
+                                            </label>
+                                            <textarea id="messageFieldDemo" rows="4"
+                                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all resize-none"
+                                                placeholder="How can we assist you?"></textarea>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <button type="submit" id="submitBtnDemo"
+                                            class="w-full px-8 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all shadow-lg">
+                                            Submit Inquiry
+                                        </button>
+                                    </form>
+                                </div>
+                            </section>
+                            <script>
+                                (function() {
+                                    const inquiryType = document.getElementById('inquiryTypeDemo');
+                                    const orderNumberField = document.getElementById('orderNumberFieldDemo');
+                                    const fileUploadField = document.getElementById('fileUploadFieldDemo');
+                                    const messageField = document.getElementById('messageFieldDemo');
+                                    const submitBtn = document.getElementById('submitBtnDemo');
+
+                                    if (!inquiryType) return;
+
+                                    const placeholders = {
+                                        general: 'How can we assist you?',
+                                        quote: 'Please describe size, quantity, and material needs...',
+                                        upload: 'Any special instructions for your files?'
+                                    };
+
+                                    const buttonText = {
+                                        general: 'Submit Inquiry',
+                                        quote: 'Request Quote',
+                                        upload: 'Send Files'
+                                    };
+
+                                    function updateForm() {
+                                        const type = inquiryType.value;
+                                        orderNumberField.classList.toggle('hidden', type !== 'upload');
+                                        fileUploadField.classList.toggle('hidden', type !== 'quote' && type !== 'upload');
+                                        messageField.placeholder = placeholders[type];
+                                        submitBtn.textContent = buttonText[type];
+                                    }
+
+                                    inquiryType.addEventListener('change', updateForm);
+                                    updateForm();
+                                })();
+                            </script>
+                        </div>
+                    </div>
+                    <div class="component-code"><button class="code-copy-btn">Copy</button><pre><code></code></pre></div>
+                </div>
+
+                <!-- Job Application Form -->
+                <div class="component-card" data-category="ui">
+                    <div class="component-header">
+                        <div class="component-title">
+                            <span class="component-label"><i class="fa-solid fa-user-plus"></i> Job Application</span>
+                            <span class="component-variant">Careers / Apply Form</span>
+                        </div>
+                        <div class="component-actions">
+                            <button class="action-btn" data-toggle-code><i class="fa-solid fa-code"></i> View Code</button>
+                            <button class="action-btn" data-copy-code><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <div class="component-preview">
+                        <div class="component-preview-inner">
+                            <section class="bg-gray-50 py-12">
+                                <div class="max-w-xl mx-auto px-4">
+                                    <form class="bg-white rounded-2xl shadow-lg p-8">
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Join the Team</h3>
+                                        <p class="text-gray-500 text-sm mb-6">We're always looking for talented installers and designers.</p>
+
+                                        <!-- Name Fields -->
+                                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                    First Name <span class="text-red-500">*</span>
+                                                </label>
+                                                <input type="text"
+                                                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                    placeholder="John">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                    Last Name <span class="text-red-500">*</span>
+                                                </label>
+                                                <input type="text"
+                                                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                    placeholder="Doe">
+                                            </div>
+                                        </div>
+
+                                        <!-- Email -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Email Address <span class="text-red-500">*</span>
+                                            </label>
+                                            <input type="email"
+                                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                placeholder="you@email.com">
+                                        </div>
+
+                                        <!-- Phone -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Phone Number <span class="text-red-500">*</span>
+                                            </label>
+                                            <input type="tel"
+                                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                placeholder="(330) 555-0123">
+                                        </div>
+
+                                        <!-- Position Selection -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Position Applying For <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="relative">
+                                                <select
+                                                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all appearance-none cursor-pointer">
+                                                    <option value="">Select a position...</option>
+                                                    <option value="installer">Vinyl Graphic Installer</option>
+                                                    <option value="designer">Graphic Designer</option>
+                                                    <option value="production">Production Specialist</option>
+                                                    <option value="sales">Sales Representative</option>
+                                                    <option value="other">General Application / Other</option>
+                                                </select>
+                                                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                                    <i class="fa-solid fa-chevron-down text-gray-400"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Resume Upload -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Resume / CV <span class="text-red-500">*</span>
+                                            </label>
+                                            <div
+                                                class="flex flex-col items-center justify-center px-6 py-8 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 hover:bg-white hover:border-brand-green transition-all cursor-pointer">
+                                                <i class="fa-solid fa-file-lines text-4xl text-gray-400 mb-3"></i>
+                                                <div class="text-sm text-gray-600">
+                                                    <span class="font-semibold text-brand-green">Upload Resume</span>
+                                                </div>
+                                                <p class="text-xs text-gray-500 mt-1">PDF or Word Document</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Portfolio Link -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Portfolio Link <span class="text-gray-400 text-xs font-normal">(Optional)</span>
+                                            </label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                    <i class="fa-solid fa-link text-gray-400"></i>
+                                                </div>
+                                                <input type="url"
+                                                    class="w-full pl-11 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                                    placeholder="https://yourportfolio.com">
+                                            </div>
+                                        </div>
+
+                                        <!-- Experience -->
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                                Briefly describe your experience <span class="text-red-500">*</span>
+                                            </label>
+                                            <textarea rows="4"
+                                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all resize-none"
+                                                placeholder="Tell us about your relevant experience..."></textarea>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <button type="submit"
+                                            class="w-full px-8 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all shadow-lg uppercase tracking-wide">
+                                            Submit Application
+                                        </button>
                                     </form>
                                 </div>
                             </section>
