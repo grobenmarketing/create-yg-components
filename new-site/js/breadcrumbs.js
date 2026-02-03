@@ -8,21 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Build breadcrumb trail from URL
     const path = window.location.pathname;
-    const segments = path.split('/').filter(seg => seg && seg !== 'index.html');
 
-    // Build crumb items (excluding current page which we show as text)
+    // Get directory only (remove filename)
+    const lastSlash = path.lastIndexOf('/');
+    const directory = path.substring(0, lastSlash);
+
+    // Get folder segments (e.g., /services/design.html -> ['services'])
+    const segments = directory.split('/').filter(seg => seg);
+
+    // Detect depth for base path
+    const basePath = segments.length > 0 ? '../' : '';
+
+    // Build crumb items
     let crumbs = [];
-    let currentPath = '';
 
     // Always start with home
-    crumbs.push({ label: '<i class="fa-solid fa-house"></i>', href: 'index.html' });
+    crumbs.push({ label: '<i class="fa-solid fa-house"></i>', href: basePath + 'index.html' });
 
-    // Add intermediate segments if nested (e.g., /services/signs.html)
-    for (let i = 0; i < segments.length - 1; i++) {
+    // Add folder segments as breadcrumb links
+    // For /services/design.html -> add "Services" linking to services/index.html
+    for (let i = 0; i < segments.length; i++) {
         const seg = segments[i];
-        currentPath += seg + '/';
         const label = formatLabel(seg);
-        crumbs.push({ label: label, href: currentPath + 'index.html' });
+        // Link goes up to parent then into the folder
+        crumbs.push({ label: label, href: basePath + seg + '/index.html' });
     }
 
     // Generate breadcrumb HTML

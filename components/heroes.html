@@ -156,7 +156,7 @@
                     </div>
                 </div>
 
-                <!-- Page Heading: Breadcrumb -->
+                <!-- Page Heading: Breadcrumb (Auto-Generated) -->
                 <div class="component-card" data-category="heroes">
                     <div class="component-header">
                         <div class="component-title">
@@ -164,7 +164,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 Page Heading
                             </span>
-                            <span class="component-variant">With Breadcrumb Navigation</span>
+                            <span class="component-variant">With Auto-Generated Breadcrumbs</span>
                         </div>
                         <div class="component-actions">
                             <button class="action-btn" data-toggle-code>
@@ -177,25 +177,100 @@
                     </div>
                     <div class="component-preview">
                         <div class="component-preview-inner">
+                            <!-- Live Preview (static example of output) -->
                             <section class="bg-gradient-to-r from-brand-green to-brand-green-dark">
                                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
                                     <nav class="flex items-center gap-2 text-sm text-white/70 mb-4">
                                         <a href="#" class="hover:text-white transition-colors"><i class="fa-solid fa-house"></i></a>
-                                        <i class="fa-solid fa-chevron-right text-xs text-white/40"></i>
-                                        <a href="#" class="hover:text-white transition-colors">Services</a>
                                         <i class="fa-solid fa-chevron-right text-xs text-white/40"></i>
                                         <span class="text-white">Commercial Printing</span>
                                     </nav>
                                     <h1 class="text-3xl md:text-4xl font-bold text-white">
                                         Commercial Printing
                                     </h1>
+                                    <p class="mt-4 text-lg text-white/90 max-w-2xl">Professional printing solutions for your business needs.</p>
                                 </div>
                             </section>
+                            <!-- Usage Instructions -->
+                            <div class="bg-gray-800 text-gray-300 p-4 text-sm">
+                                <p class="font-semibold text-white mb-2"><i class="fa-solid fa-info-circle text-brand-green mr-2"></i>How to Use:</p>
+                                <p class="mb-2">1. Add placeholder div with data attributes:</p>
+                                <code class="block bg-gray-900 p-2 rounded text-xs mb-2">&lt;div id="breadcrumb-include" data-title="Page Title" data-description="Optional description"&gt;&lt;/div&gt;</code>
+                                <p class="mb-2">2. Include the breadcrumbs script:</p>
+                                <code class="block bg-gray-900 p-2 rounded text-xs">&lt;script src="js/breadcrumbs.js"&gt;&lt;/script&gt;</code>
+                            </div>
                         </div>
                     </div>
                     <div class="component-code">
                         <button class="code-copy-btn">Copy</button>
-                        <pre><code></code></pre>
+                        <pre><code>&lt;!-- HTML Placeholder (place in your page) --&gt;
+&lt;div id="breadcrumb-include"
+     data-title="Commercial Printing"
+     data-description="Professional printing solutions for your business needs."&gt;
+&lt;/div&gt;
+
+&lt;!-- Include the script (before closing body tag) --&gt;
+&lt;script src="js/breadcrumbs.js"&gt;&lt;/script&gt;
+
+&lt;!-- ========================================= --&gt;
+&lt;!-- breadcrumbs.js (save to js/breadcrumbs.js) --&gt;
+&lt;!-- ========================================= --&gt;
+
+// Auto-generate breadcrumbs from URL path
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('breadcrumb-include');
+    if (!container) return;
+
+    const title = container.dataset.title || 'Page';
+    const description = container.dataset.description || '';
+
+    // Build breadcrumb trail from URL
+    const path = window.location.pathname;
+    const segments = path.split('/').filter(seg =&gt; seg &amp;&amp; seg !== 'index.html');
+
+    // Build crumb items (excluding current page which we show as text)
+    let crumbs = [];
+    let currentPath = '';
+
+    // Always start with home
+    crumbs.push({ label: '&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;', href: 'index.html' });
+
+    // Add intermediate segments if nested (e.g., /services/signs.html)
+    for (let i = 0; i &lt; segments.length - 1; i++) {
+        const seg = segments[i];
+        currentPath += seg + '/';
+        const label = formatLabel(seg);
+        crumbs.push({ label: label, href: currentPath + 'index.html' });
+    }
+
+    // Generate breadcrumb HTML
+    const crumbsHtml = crumbs.map(crumb =&gt;
+        `&lt;a href="${crumb.href}" class="hover:text-white transition-colors"&gt;${crumb.label}&lt;/a&gt;
+         &lt;i class="fa-solid fa-chevron-right text-xs text-white/40"&gt;&lt;/i&gt;`
+    ).join('');
+
+    // Build the full section
+    container.outerHTML = `
+        &lt;section class="bg-gradient-to-r from-brand-green to-brand-green-dark"&gt;
+            &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12"&gt;
+                &lt;nav class="flex items-center gap-2 text-sm text-white/70 mb-4"&gt;
+                    ${crumbsHtml}
+                    &lt;span class="text-white"&gt;${title}&lt;/span&gt;
+                &lt;/nav&gt;
+                &lt;h1 class="text-3xl md:text-4xl font-bold text-white"&gt;${title}&lt;/h1&gt;
+                ${description ? `&lt;p class="mt-4 text-lg text-white/90 max-w-2xl"&gt;${description}&lt;/p&gt;` : ''}
+            &lt;/div&gt;
+        &lt;/section&gt;
+    `;
+});
+
+// Convert filename/folder to readable label
+function formatLabel(segment) {
+    return segment
+        .replace('.html', '')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c =&gt; c.toUpperCase());
+}</code></pre>
                     </div>
                 </div>
 
