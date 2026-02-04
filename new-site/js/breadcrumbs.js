@@ -29,9 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add folder segments as breadcrumb links (excluding root folder)
     // For /new-site/services/design.html -> add "Services" linking to services/index.html
+    // Skip the last segment if it matches the page title (avoids "Resources > Resources" on index pages)
     for (let i = 0; i < segments.length; i++) {
         const seg = segments[i];
         const label = formatLabel(seg);
+        // Skip if this is the last segment and it matches the page title
+        if (i === segments.length - 1 && label.toLowerCase() === title.toLowerCase()) {
+            continue;
+        }
         crumbs.push({ label: label, href: basePath + seg + '/index.html' });
     }
 
