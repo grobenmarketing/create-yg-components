@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const rootFolders = ['new-site'];
     const segments = allSegments.filter(seg => !rootFolders.includes(seg.toLowerCase()));
 
-    // Calculate depth for base path (count all segments including root)
-    const basePath = allSegments.length > 0 ? '../'.repeat(allSegments.length) : '';
+    // Calculate depth for base path (only count segments within the site, not the root folder)
+    const basePath = segments.length > 0 ? '../'.repeat(segments.length) : '';
 
     // Build crumb items
     let crumbs = [];
