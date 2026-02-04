@@ -21,6 +21,22 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -31,7 +47,7 @@
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Breadcrumb Section -->
-        <div id="breadcrumb-include" data-title="Gallery" data-description="Keith, write a sub-headline here...">
+        <div id="breadcrumb-include" data-title="Gallery" data-description="See examples of our work across signage, wraps, and print.">
         </div>
 
         <!-- Gallery Section -->
@@ -43,13 +59,49 @@
                     </h2>
                     <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore our portfolio of stunning vehicle wraps, signage, and print projects.</p>
                 </div>
-                <div class="text-center text-gray-400">
-                    <i class="fa-solid fa-images text-6xl mb-4 text-gray-300"></i>
-                    <p class="text-lg">Keith, write content here...</p>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/akron_childrens.webp" alt="Akron Children's Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/bejeweled.webp" alt="Bejeweled Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/candytyme.webp" alt="Candy Tyme Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/community.webp" alt="Community Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/signs/securitec.jpeg" alt="Securitec Sign" class="w-full h-48 md:h-56 object-cover">
+                    </div>
+                    <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" onclick="openLightbox(this)">
+                        <img src="../../legacy/img/index/cargo-van.png" alt="Vehicle Wrap" class="w-full h-48 md:h-56 object-cover">
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 transition-colors z-10" onclick="closeLightbox(event)">&times;</button>
+        <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 p-2" onclick="prevImage(event)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 p-2" onclick="nextImage(event)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-[90vh] object-contain">
+    </div>
 
     <!-- Footer Include -->
     <div id="footer-include"></div>
@@ -58,6 +110,65 @@
     <script src="../js/scripts.js"></script>
     <script src="../js/includes.js"></script>
     <script src="../js/breadcrumbs.js"></script>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            currentIndex = Array.from(galleryItems).indexOf(element);
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.tagName === 'BUTTON' || event.target.closest('button')) {
+                if (event.target.closest('button')?.onclick?.toString().includes('prev') || 
+                    event.target.closest('button')?.onclick?.toString().includes('next')) {
+                    return;
+                }
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function prevImage(event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateLightboxImage();
+        }
+
+        function nextImage(event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            const img = galleryItems[currentIndex].querySelector('img');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox({ target: lightbox });
+                if (e.key === 'ArrowLeft') prevImage(e);
+                if (e.key === 'ArrowRight') nextImage(e);
+            }
+        });
+    </script>
 </body>
 
 </html>
