@@ -21,6 +21,24 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -31,14 +49,104 @@
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Breadcrumb Section -->
-        <div id="breadcrumb-include" data-title="About Us" data-description="Keith, write a sub-headline here...">
+        <div id="breadcrumb-include" data-title="About Us"
+            data-description="Nearly five decades of dedication, growth, and commitment to excellence.">
         </div>
 
-        <!-- Page Content Placeholder -->
+        <!-- About Grid Section -->
         <section class="py-16 md:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-                <i class="fa-solid fa-building text-6xl mb-4 text-gray-300"></i>
-                <p class="text-lg">Keith, write content here...</p>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Our Team -->
+                    <a href="team.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-green/10 flex items-center justify-center">
+                            <i class="fa-solid fa-users text-6xl text-brand-green/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Our Team
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Meet the talented individuals who bring creativity and expertise to every project we undertake.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Meet the Team <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Our History -->
+                    <a href="history.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-orange/10 flex items-center justify-center">
+                            <i class="fa-solid fa-clock-rotate-left text-6xl text-brand-orange/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Our History
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                From humble beginnings in 1976 to a full-spectrum marketing partner—discover our journey.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Explore Our Story <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Testimonials -->
+                    <a href="testimonials.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-teal/10 flex items-center justify-center">
+                            <i class="fa-solid fa-quote-right text-6xl text-brand-teal/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Testimonials
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Hear directly from our clients about their experiences working with Yoder Graphics.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read Reviews <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Gallery -->
+                    <a href="gallery.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-yellow/20 flex items-center justify-center">
+                            <i class="fa-solid fa-images text-6xl text-brand-yellow transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Gallery
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Browse our portfolio of completed projects showcasing our range of capabilities and quality.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                View Our Work <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Our Commitment -->
+                    <a href="commitment.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-lime/20 flex items-center justify-center">
+                            <i class="fa-solid fa-handshake text-6xl text-brand-lime transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Our Commitment
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Learn about our values, quality standards, and dedication to customer satisfaction.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Our Promise <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>

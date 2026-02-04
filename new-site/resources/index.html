@@ -21,6 +21,24 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -31,14 +49,86 @@
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Breadcrumb Section -->
-        <div id="breadcrumb-include" data-title="Resources" data-description="Keith, write a sub-headline here...">
+        <div id="breadcrumb-include" data-title="Resources"
+            data-description="Helpful guides, insights, and information to support your marketing decisions.">
         </div>
 
-        <!-- Page Content Placeholder -->
+        <!-- Resources Grid Section -->
         <section class="py-16 md:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-                <i class="fa-solid fa-folder-open text-6xl mb-4 text-gray-300"></i>
-                <p class="text-lg">Keith, write content here...</p>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Blog -->
+                    <a href="blog.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-green/10 flex items-center justify-center">
+                            <i class="fa-solid fa-pen-nib text-6xl text-brand-green/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Blog
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Stay up to date with industry trends, tips, and insights from our team of marketing experts.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read Articles <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- FAQs -->
+                    <a href="faqs.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-orange/10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-question text-6xl text-brand-orange/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                FAQs
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Find quick answers to common questions about our services, processes, and turnaround times.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                View FAQs <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Case Studies -->
+                    <a href="case-studies.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-teal/10 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-6xl text-brand-teal/60 transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Case Studies
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Explore real-world examples of how we've helped businesses achieve their marketing goals.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                See Results <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Buyer's Guide -->
+                    <a href="buyers-guide.html" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift block">
+                        <div class="aspect-video overflow-hidden bg-brand-yellow/20 flex items-center justify-center">
+                            <i class="fa-solid fa-book-open text-6xl text-brand-yellow transition-transform duration-500 hover:scale-105"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors">
+                                Buyer's Guide
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                A comprehensive guide to help you make informed decisions about print and marketing materials.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Download Guide <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
