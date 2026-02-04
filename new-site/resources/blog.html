@@ -34,11 +34,200 @@
         <div id="breadcrumb-include" data-title="Blog" data-description="Keith, write a sub-headline here...">
         </div>
 
-        <!-- Page Content Placeholder -->
-        <section class="py-16 md:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-                <i class="fa-solid fa-newspaper text-6xl mb-4 text-gray-300"></i>
-                <p class="text-lg">Keith, write content here...</p>
+        <!-- Category Filter -->
+        <section class="py-12 bg-white border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <button class="px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full transition-all">All Posts</button>
+                    <button class="px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all">Printing Tips</button>
+                    <button class="px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all">Vehicle Wraps</button>
+                    <button class="px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all">Signage</button>
+                    <button class="px-6 py-2.5 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all">Industry News</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Featured Article -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
+                    <div class="grid lg:grid-cols-2">
+                        <div class="aspect-video lg:aspect-auto overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800" alt="Featured post" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-green text-white text-xs font-bold rounded-full uppercase">Featured</span>
+                                <span class="text-gray-400 text-sm">Jan 20, 2026</span>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 hover:text-brand-green transition-colors cursor-pointer">
+                                The Complete Guide to Trade Show Displays: Maximizing Your Booth Impact
+                            </h2>
+                            <p class="text-gray-600 text-lg mb-6">
+                                Everything you need to know about creating an impactful trade show presence. From banners to booth design, we cover all the essential elements for success.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Author" class="w-12 h-12 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mike Thompson</p>
+                                        <p class="text-gray-500 text-sm">Marketing Director</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="inline-flex items-center gap-2 bg-brand-green text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide text-sm hover:bg-brand-green-dark transition-all">
+                                    Read More <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-bold rounded-full uppercase">Printing Tips</span>
+                                <span class="text-gray-400 text-sm">Jan 15, 2026</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                5 Ways to Make Your Business Cards Stand Out
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Your business card is often the first impression you make. Learn how to create cards that leave a lasting impact.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full uppercase">Vehicle Wraps</span>
+                                <span class="text-gray-400 text-sm">Jan 10, 2026</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                Vehicle Wrap Care: Maintenance Tips for Longevity
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Protect your investment with proper wrap care. These maintenance tips will keep your vehicle looking great for years.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded-full uppercase">Industry News</span>
+                                <span class="text-gray-400 text-sm">Jan 5, 2026</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                2026 Signage Trends: What's Hot in Visual Marketing
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Stay ahead of the curve with the latest trends in signage and visual communication for the new year.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-green/10 text-brand-green text-xs font-bold rounded-full uppercase">Business</span>
+                                <span class="text-gray-400 text-sm">Dec 28, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                How Signage Impacts Customer Experience
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Discover the psychology behind effective signage and how it can transform your customer's journey.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full uppercase">Apparel</span>
+                                <span class="text-gray-400 text-sm">Dec 20, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                Screen Printing vs. Embroidery: Which Is Right?
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Compare the benefits of screen printing and embroidery to choose the best option for your custom apparel needs.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600" alt="Blog post" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded-full uppercase">Tips</span>
+                                <span class="text-gray-400 text-sm">Dec 15, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                                Preparing Print-Ready Files: A Designer's Checklist
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Ensure your designs come out perfect with this comprehensive checklist for print-ready file preparation.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-green font-semibold hover:text-brand-green-dark transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center gap-2">
+                        <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-brand-green text-white font-semibold">1</button>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors font-semibold">2</button>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors font-semibold">3</button>
+                        <span class="px-2 text-gray-400">...</span>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors font-semibold">8</button>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </nav>
+                </div>
             </div>
         </section>
     </main>
