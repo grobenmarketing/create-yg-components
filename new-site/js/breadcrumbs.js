@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Build breadcrumb trail from URL
     const path = window.location.pathname;
+    const filename = path.substring(path.lastIndexOf('/') + 1);
+    const isIndexPage = filename === 'index.html' || filename === '';
 
     // Get directory only (remove filename)
     const lastSlash = path.lastIndexOf('/');
@@ -29,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add folder segments as breadcrumb links (excluding root folder)
     // For /new-site/services/design.html -> add "Services" linking to services/index.html
-    // Skip the last segment if it matches the page title (avoids "Resources > Resources" on index pages)
+    // On index pages, skip the last segment (the current folder) to avoid redundancy like "About > About Us"
     for (let i = 0; i < segments.length; i++) {
         const seg = segments[i];
         const label = formatLabel(seg);
-        // Skip if this is the last segment and it matches the page title
-        if (i === segments.length - 1 && label.toLowerCase() === title.toLowerCase()) {
+        // Skip the last segment if we're on an index page (avoids "Services > Our Services")
+        if (isIndexPage && i === segments.length - 1) {
             continue;
         }
         crumbs.push({ label: label, href: basePath + seg + '/index.html' });
