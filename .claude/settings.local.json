@@ -4,7 +4,8 @@
       "Bash(findstr:*)",
       "Bash(python -m http.server:*)",
       "Bash(timeout:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git fetch:*)"
     ]
   }
 }
