@@ -59,12 +59,12 @@
             transition: all 0.2s ease;
         }
         .filter-btn.active {
-            background-color: #1a365d;
+            background-color: #00864f;
             color: white;
+            border-color: #00864f;
         }
-        .category-label {
-            backdrop-filter: blur(8px);
-            background-color: rgba(255, 255, 255, 0.9);
+        .filter-btn.active:hover {
+            background-color: #006b3f;
         }
     </style>
 </head>
@@ -92,16 +92,16 @@
 
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-                    <button class="filter-btn active px-6 py-2.5 bg-gray-900 text-white font-semibold rounded-full" data-filter="all">
+                    <button class="filter-btn active px-4 py-2 md:px-6 md:py-3 bg-brand-green text-white text-sm md:text-base font-semibold rounded-full border-2 border-brand-green transition-all" data-filter="all">
                         All
                     </button>
-                    <button class="filter-btn px-6 py-2.5 bg-white text-gray-700 font-semibold rounded-full border border-gray-200 hover:bg-gray-100" data-filter="signs">
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm md:text-base font-semibold rounded-full transition-all" data-filter="signs">
                         Signs
                     </button>
-                    <button class="filter-btn px-6 py-2.5 bg-white text-gray-700 font-semibold rounded-full border border-gray-200 hover:bg-gray-100" data-filter="wraps">
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm md:text-base font-semibold rounded-full transition-all" data-filter="wraps">
                         Wraps
                     </button>
-                    <button class="filter-btn px-6 py-2.5 bg-white text-gray-700 font-semibold rounded-full border border-gray-200 hover:bg-gray-100" data-filter="print">
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm md:text-base font-semibold rounded-full transition-all" data-filter="print">
                         Print
                     </button>
                 </div>
@@ -109,43 +109,43 @@
                 <!-- Masonry Gallery Grid -->
                 <div class="masonry-grid">
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/akron_childrens.webp" alt="Akron Children's Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="wraps" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Wraps</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-orange/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Vehicle Wraps</span>
                         <img src="../../legacy/img/index/cargo-van.png" alt="Vehicle Wrap" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/bejeweled.webp" alt="Bejeweled Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="print" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Print</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-green/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Printing</span>
                         <img src="../../legacy/img/index/print-card.jpeg" alt="Print Project" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/candytyme.webp" alt="Candy Tyme Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/community.webp" alt="Community Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Signs</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
                         <img src="../../legacy/img/signs/securitec.jpeg" alt="Securitec Sign" class="w-full object-cover">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="print" onclick="openLightbox(this)">
-                        <span class="category-label absolute top-4 left-4 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700 rounded-full shadow-sm">Print</span>
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-brand-green/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Printing</span>
                         <img src="../../legacy/img/index/creative-card.jpeg" alt="Creative Design" class="w-full object-cover">
                     </div>
                 </div>
@@ -182,11 +182,11 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-gray-900', 'text-white');
-                    b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+                    b.classList.remove('active', 'bg-brand-green', 'text-white', 'border-brand-green');
+                    b.classList.add('border-gray-300', 'text-gray-700');
                 });
-                btn.classList.add('active', 'bg-gray-900', 'text-white');
-                btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+                btn.classList.add('active', 'bg-brand-green', 'text-white', 'border-brand-green');
+                btn.classList.remove('border-gray-300', 'text-gray-700');
 
                 const filter = btn.dataset.filter;
                 galleryItems.forEach(item => {
