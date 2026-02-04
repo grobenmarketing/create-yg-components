@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastSlash = path.lastIndexOf('/');
     const directory = path.substring(0, lastSlash);
 
-    // Get folder segments (e.g., /services/design.html -> ['services'])
-    const segments = directory.split('/').filter(seg => seg);
+    // Get folder segments and filter out root folder (new-site)
+    const allSegments = directory.split('/').filter(seg => seg);
+    const rootFolders = ['new-site'];
+    const segments = allSegments.filter(seg => !rootFolders.includes(seg.toLowerCase()));
 
-    // Detect depth for base path
-    const basePath = segments.length > 0 ? '../' : '';
+    // Calculate depth for base path (count all segments including root)
+    const basePath = allSegments.length > 0 ? '../'.repeat(allSegments.length) : '';
 
     // Build crumb items
     let crumbs = [];
@@ -25,12 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Always start with home
     crumbs.push({ label: '<i class="fa-solid fa-house"></i>', href: basePath + 'index.html' });
 
-    // Add folder segments as breadcrumb links
-    // For /services/design.html -> add "Services" linking to services/index.html
+    // Add folder segments as breadcrumb links (excluding root folder)
+    // For /new-site/services/design.html -> add "Services" linking to services/index.html
     for (let i = 0; i < segments.length; i++) {
         const seg = segments[i];
         const label = formatLabel(seg);
-        // Link goes up to parent then into the folder
         crumbs.push({ label: label, href: basePath + seg + '/index.html' });
     }
 
