@@ -1,10 +1,10 @@
 // Auto-generate breadcrumbs from URL path
+// Simplified version - minimal inline breadcrumb + page title
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('breadcrumb-include');
     if (!container) return;
 
     const title = container.dataset.title || 'Page';
-    const description = container.dataset.description || '';
 
     // Build breadcrumb trail from URL
     const path = window.location.pathname;
@@ -25,10 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let crumbs = [];
 
     // Always start with home
-    crumbs.push({ label: '<i class="fa-solid fa-house"></i>', href: basePath + 'index.html' });
+    crumbs.push({ label: 'Home', href: basePath + 'index.html' });
 
     // Add folder segments as breadcrumb links (excluding root folder)
-    // For /new-site/services/design.html -> add "Services" linking to services/index.html
     for (let i = 0; i < segments.length; i++) {
         const seg = segments[i];
         const label = formatLabel(seg);
@@ -37,22 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Generate breadcrumb HTML
     const crumbsHtml = crumbs.map(crumb =>
-        `<a href="${crumb.href}" class="hover:text-white transition-colors">${crumb.label}</a>
-         <i class="fa-solid fa-chevron-right text-xs text-white/40"></i>`
+        `<a href="${crumb.href}" class="text-gray-500 hover:text-brand-green transition-colors">${crumb.label}</a>
+         <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>`
     ).join('');
 
-    // Build the full section
+    // Build the simplified section - just breadcrumbs and title, no banner
     container.outerHTML = `
-        <section class="bg-gradient-to-r from-brand-green to-brand-green-dark">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
-                <nav class="flex items-center gap-2 text-sm text-white/70 mb-4">
+        <div class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <nav class="flex items-center gap-2 text-sm mb-3">
                     ${crumbsHtml}
-                    <span class="text-white">${title}</span>
+                    <span class="text-gray-900 font-medium">${title}</span>
                 </nav>
-                <h1 class="text-3xl md:text-4xl font-bold text-white">${title}</h1>
-                ${description ? `<p class="mt-4 text-lg text-white/90 max-w-2xl">${description}</p>` : ''}
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900">${title}</h1>
             </div>
-        </section>
+        </div>
     `;
 });
 
