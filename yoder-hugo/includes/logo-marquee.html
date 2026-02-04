@@ -1,0 +1,127 @@
+<style>
+    @keyframes marquee-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes marquee-right {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .marquee-track {
+        display: flex;
+        width: fit-content;
+    }
+
+    .animate-marquee-left {
+        animation: marquee-left 45s linear infinite;
+    }
+
+    .animate-marquee-right {
+        animation: marquee-right 50s linear infinite;
+    }
+</style>
+<section class="bg-gray-100 py-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        <p class="text-center text-gray-500 uppercase tracking-widest text-sm font-semibold">
+            Trusted by Our Community
+        </p>
+    </div>
+    <!-- Row 1 - scrolls left -->
+    <div class="relative mb-4 overflow-hidden">
+        <div class="marquee-track animate-marquee-left">
+            <!-- First set -->
+            <div class="flex items-center gap-8 px-4 flex-shrink-0">
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-google text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-microsoft text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-apple text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-amazon text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-meta text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-spotify text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-slack text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-shopify text-3xl"></i></div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex items-center gap-8 px-4 flex-shrink-0">
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-google text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-microsoft text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-apple text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-amazon text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-meta text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-spotify text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-slack text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-shopify text-3xl"></i></div>
+            </div>
+        </div>
+    </div>
+    <!-- Row 2 - scrolls right, offset/staggered -->
+    <div class="relative pl-20 overflow-hidden">
+        <div class="marquee-track animate-marquee-right">
+            <!-- First set -->
+            <div class="flex items-center gap-8 px-4 flex-shrink-0">
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-stripe text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-paypal text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-dropbox text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-github text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-airbnb text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-uber text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-linkedin text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-twitter text-3xl"></i></div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex items-center gap-8 px-4 flex-shrink-0">
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-stripe text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-paypal text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-dropbox text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-github text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-airbnb text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-uber text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-linkedin text-3xl"></i></div>
+                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
+                        class="fa-brands fa-twitter text-3xl"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
