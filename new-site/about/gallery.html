@@ -107,47 +107,55 @@
                 </div>
 
                 <!-- Masonry Gallery Grid -->
-                <div class="masonry-grid">
+                <div class="masonry-grid" id="gallery-grid">
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/affinitygaming.webp" alt="Affinity Gaming Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/akron_childrens.webp" alt="Akron Children's Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/akron_childrens.webp" alt="Akron Children's Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="wraps" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-orange/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Vehicle Wraps</span>
-                        <img src="../../legacy/img/index/cargo-van.png" alt="Vehicle Wrap" class="w-full object-cover">
+                        <img src="../../legacy/img/index/cargo-van.png" alt="Vehicle Wrap" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/bballjewelers2.webp" alt="BBall Jewelers Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/bejeweled.webp" alt="Bejeweled Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/bejeweled.webp" alt="Bejeweled Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="print" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-green/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Printing</span>
-                        <img src="../../legacy/img/index/print-card.jpeg" alt="Print Project" class="w-full object-cover">
+                        <img src="../../legacy/img/index/print-card.jpeg" alt="Print Project" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/candytyme.webp" alt="Candy Tyme Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/candytyme.webp" alt="Candy Tyme Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/community.webp" alt="Community Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/community.webp" alt="Community Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="signs" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-teal/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Signage</span>
-                        <img src="../../legacy/img/signs/securitec.jpeg" alt="Securitec Sign" class="w-full object-cover">
+                        <img src="../../legacy/img/signs/securitec.jpeg" alt="Securitec Sign" class="w-full object-cover" loading="lazy">
                     </div>
                     <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="print" onclick="openLightbox(this)">
                         <span class="absolute top-4 left-4 px-3 py-1 bg-brand-green/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">Printing</span>
-                        <img src="../../legacy/img/index/creative-card.jpeg" alt="Creative Design" class="w-full object-cover">
+                        <img src="../../legacy/img/index/creative-card.jpeg" alt="Creative Design" class="w-full object-cover" loading="lazy">
                     </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12" id="load-more-container">
+                    <button id="load-more-btn" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold rounded-full transition-all">
+                        <i class="fa-solid fa-plus"></i> Load More Projects
+                    </button>
+                    <p class="text-gray-500 text-sm mt-3">Showing <span id="shown-count">10</span> of <span id="total-count">10</span> projects</p>
                 </div>
             </div>
         </section>
