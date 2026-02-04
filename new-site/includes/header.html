@@ -139,11 +139,11 @@
 
                     <!-- About (Dropdown) -->
                     <div class="relative group">
-                        <button
+                        <a href="about/index.html"
                             class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all inline-flex items-center gap-1">
                             About
                             <i class="fa-solid fa-chevron-down text-xs"></i>
-                        </button>
+                        </a>
                         <div
                             class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="mega-menu-dropdown standard-dropdown rounded-2xl shadow-xl">
@@ -186,11 +186,11 @@
 
                     <!-- Resources (Dropdown) -->
                     <div class="relative group">
-                        <button
+                        <a href="resources/index.html"
                             class="px-4 py-2 text-sm font-medium mega-menu-link rounded-lg mega-menu-link-hover transition-all inline-flex items-center gap-1">
                             Resources
                             <i class="fa-solid fa-chevron-down text-xs"></i>
-                        </button>
+                        </a>
                         <div
                             class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="mega-menu-dropdown standard-dropdown rounded-2xl shadow-xl">
@@ -298,11 +298,13 @@
 
             <!-- Mobile About -->
             <div class="space-y-1">
-                <button
-                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg mega-menu-mobile-link font-medium"
-                    onclick="this.nextElementSibling.classList.toggle('hidden')">
-                    About <i class="fa-solid fa-chevron-down text-xs"></i>
-                </button>
+                <div
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">
+                    <a href="about/index.html" class="flex-grow">About</a>
+                    <button onclick="this.parentElement.nextElementSibling.classList.toggle('hidden')">
+                        <i class="fa-solid fa-chevron-down text-xs p-2"></i>
+                    </button>
+                </div>
                 <div class="hidden pl-4 space-y-1 bg-gray-50 rounded-lg pb-2">
                     <a href="about/team.html"
                         class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-brand-green group">
@@ -339,11 +341,13 @@
 
             <!-- Mobile Resources -->
             <div class="space-y-1">
-                <button
-                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg mega-menu-mobile-link font-medium"
-                    onclick="this.nextElementSibling.classList.toggle('hidden')">
-                    Resources <i class="fa-solid fa-chevron-down text-xs"></i>
-                </button>
+                <div
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-lg mega-menu-mobile-link font-medium">
+                    <a href="resources/index.html" class="flex-grow">Resources</a>
+                    <button onclick="this.parentElement.nextElementSibling.classList.toggle('hidden')">
+                        <i class="fa-solid fa-chevron-down text-xs p-2"></i>
+                    </button>
+                </div>
                 <div class="hidden pl-4 space-y-1 bg-gray-50 rounded-lg pb-2">
                     <a href="resources/blog.html"
                         class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:text-brand-green group">
