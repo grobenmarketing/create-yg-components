@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const path = window.location.pathname;
 
     // Known subfolders within the site
-    const subfolders = ['services', 'about', 'contact', 'portfolio', 'blog'];
+    const subfolders = ['services', 'about', 'resources', 'contact', 'portfolio', 'blog'];
 
     // Check if any known subfolder appears in the path
     const hasSubfolder = subfolders.some(folder => path.includes('/' + folder + '/'));
