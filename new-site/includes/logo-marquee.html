@@ -1,22 +1,12 @@
 <style>
     @keyframes marquee-left {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
     }
 
     @keyframes marquee-right {
-        0% {
-            transform: translateX(-50%);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
     }
 
     .marquee-track {
@@ -31,96 +21,287 @@
     .animate-marquee-right {
         animation: marquee-right 50s linear infinite;
     }
+
+    /* Logo container - handles any aspect ratio */
+    .logo-card {
+        width: 160px;
+        height: 80px;
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        flex-shrink: 0;
+    }
+
+    .logo-card svg {
+        max-height: 56px;
+        max-width: 140px;
+        width: auto;
+        height: auto;
+    }
 </style>
+
+<!-- Top border for visual separation -->
+<div class="h-px bg-gray-200"></div>
+
 <section class="bg-gray-100 py-12 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <p class="text-center text-gray-500 uppercase tracking-widest text-sm font-semibold">
             Trusted by Our Community
         </p>
     </div>
+
     <!-- Row 1 - scrolls left -->
     <div class="relative mb-4 overflow-hidden">
         <div class="marquee-track animate-marquee-left">
             <!-- First set -->
-            <div class="flex items-center gap-8 px-4 flex-shrink-0">
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-google text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-microsoft text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-apple text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-amazon text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-meta text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-spotify text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-slack text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-shopify text-3xl"></i></div>
+            <div class="flex items-center gap-6 px-3 flex-shrink-0">
+                <!-- Wide horizontal logo -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#3B82F6"/>
+                        <path d="M20 10L28 25H12L20 10Z" fill="white"/>
+                        <text x="48" y="27" font-family="system-ui" font-weight="700" font-size="18" fill="#1F2937">Pinnacle</text>
+                    </svg>
+                </div>
+                <!-- Square icon only -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="50" height="50" rx="12" fill="#10B981"/>
+                        <circle cx="25" cy="25" r="12" fill="white"/>
+                        <circle cx="25" cy="25" r="6" fill="#10B981"/>
+                    </svg>
+                </div>
+                <!-- Wide text only -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" font-family="system-ui" font-weight="800" font-size="24" fill="#7C3AED">SPECTRUM</text>
+                    </svg>
+                </div>
+                <!-- Icon + stacked text (taller) -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" width="40" height="40" rx="8" fill="#F59E0B"/>
+                        <path d="M30 8L42 32H18L30 8Z" fill="white"/>
+                        <text x="30" y="55" font-family="system-ui" font-weight="700" font-size="11" fill="#1F2937" text-anchor="middle">APEX</text>
+                        <text x="30" y="66" font-family="system-ui" font-weight="400" font-size="8" fill="#6B7280" text-anchor="middle">SYSTEMS</text>
+                    </svg>
+                </div>
+                <!-- Very wide logo -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 200 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="17" r="17" fill="#EC4899"/>
+                        <path d="M17 7L24 22H10L17 7Z" fill="white"/>
+                        <text x="42" y="24" font-family="system-ui" font-weight="600" font-size="16" fill="#1F2937">Rose & Harbor Co.</text>
+                    </svg>
+                </div>
+                <!-- Compact square -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="55" height="55" rx="10" fill="#0EA5E9"/>
+                        <text x="27" y="35" font-family="system-ui" font-weight="800" font-size="28" fill="white" text-anchor="middle">W</text>
+                    </svg>
+                </div>
+                <!-- Medium with icon left -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#EF4444"/>
+                        <circle cx="20" cy="20" r="8" fill="white"/>
+                        <text x="50" y="28" font-family="system-ui" font-weight="700" font-size="16" fill="#1F2937">Orion</text>
+                    </svg>
+                </div>
+                <!-- Tall vertical -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 40 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="45" rx="6" fill="#8B5CF6"/>
+                        <rect x="8" y="8" width="24" height="29" rx="4" fill="white"/>
+                        <text x="20" y="60" font-family="system-ui" font-weight="700" font-size="9" fill="#1F2937" text-anchor="middle">FRAME</text>
+                    </svg>
+                </div>
             </div>
             <!-- Duplicate for seamless loop -->
-            <div class="flex items-center gap-8 px-4 flex-shrink-0">
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-google text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-microsoft text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-apple text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-amazon text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-meta text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-spotify text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-slack text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-shopify text-3xl"></i></div>
+            <div class="flex items-center gap-6 px-3 flex-shrink-0">
+                <div class="logo-card">
+                    <svg viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#3B82F6"/>
+                        <path d="M20 10L28 25H12L20 10Z" fill="white"/>
+                        <text x="48" y="27" font-family="system-ui" font-weight="700" font-size="18" fill="#1F2937">Pinnacle</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="50" height="50" rx="12" fill="#10B981"/>
+                        <circle cx="25" cy="25" r="12" fill="white"/>
+                        <circle cx="25" cy="25" r="6" fill="#10B981"/>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" font-family="system-ui" font-weight="800" font-size="24" fill="#7C3AED">SPECTRUM</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" width="40" height="40" rx="8" fill="#F59E0B"/>
+                        <path d="M30 8L42 32H18L30 8Z" fill="white"/>
+                        <text x="30" y="55" font-family="system-ui" font-weight="700" font-size="11" fill="#1F2937" text-anchor="middle">APEX</text>
+                        <text x="30" y="66" font-family="system-ui" font-weight="400" font-size="8" fill="#6B7280" text-anchor="middle">SYSTEMS</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 200 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="17" r="17" fill="#EC4899"/>
+                        <path d="M17 7L24 22H10L17 7Z" fill="white"/>
+                        <text x="42" y="24" font-family="system-ui" font-weight="600" font-size="16" fill="#1F2937">Rose & Harbor Co.</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="55" height="55" rx="10" fill="#0EA5E9"/>
+                        <text x="27" y="35" font-family="system-ui" font-weight="800" font-size="28" fill="white" text-anchor="middle">W</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#EF4444"/>
+                        <circle cx="20" cy="20" r="8" fill="white"/>
+                        <text x="50" y="28" font-family="system-ui" font-weight="700" font-size="16" fill="#1F2937">Orion</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 40 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="45" rx="6" fill="#8B5CF6"/>
+                        <rect x="8" y="8" width="24" height="29" rx="4" fill="white"/>
+                        <text x="20" y="60" font-family="system-ui" font-weight="700" font-size="9" fill="#1F2937" text-anchor="middle">FRAME</text>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- Row 2 - scrolls right, offset/staggered -->
     <div class="relative pl-20 overflow-hidden">
         <div class="marquee-track animate-marquee-right">
             <!-- First set -->
-            <div class="flex items-center gap-8 px-4 flex-shrink-0">
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-stripe text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-paypal text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-dropbox text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-github text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-airbnb text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-uber text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-linkedin text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-twitter text-3xl"></i></div>
+            <div class="flex items-center gap-6 px-3 flex-shrink-0">
+                <!-- Extra wide -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 180 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="23" font-family="system-ui" font-weight="300" font-size="20" fill="#1F2937">northwind</text>
+                        <text x="108" y="23" font-family="system-ui" font-weight="700" font-size="20" fill="#14B8A6">studio</text>
+                    </svg>
+                </div>
+                <!-- Small square -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="45" height="45" rx="8" fill="#1F2937"/>
+                        <rect x="10" y="10" width="25" height="25" rx="4" fill="#F59E0B"/>
+                    </svg>
+                </div>
+                <!-- Wide with dots -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="20" r="10" fill="#6366F1"/>
+                        <circle cx="40" cy="20" r="10" fill="#8B5CF6"/>
+                        <circle cx="65" cy="20" r="10" fill="#A855F7"/>
+                        <text x="85" y="26" font-family="system-ui" font-weight="600" font-size="14" fill="#1F2937">Prism</text>
+                    </svg>
+                </div>
+                <!-- Tall stacked -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 50 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" width="40" height="40" rx="20" fill="#22C55E"/>
+                        <path d="M25 12L35 30H15L25 12Z" fill="white"/>
+                        <text x="25" y="55" font-family="system-ui" font-weight="800" font-size="12" fill="#1F2937" text-anchor="middle">LEAF</text>
+                        <text x="25" y="66" font-family="system-ui" font-weight="400" font-size="8" fill="#6B7280" text-anchor="middle">ORGANIC</text>
+                    </svg>
+                </div>
+                <!-- Lettermark only -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="42" font-family="system-ui" font-weight="900" font-size="48" fill="#DC2626">M</text>
+                    </svg>
+                </div>
+                <!-- Wide thin -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 160 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="160" height="25" rx="4" fill="#0F172A"/>
+                        <text x="80" y="17" font-family="system-ui" font-weight="600" font-size="12" fill="white" text-anchor="middle">BLACKSTONE INDUSTRIES</text>
+                    </svg>
+                </div>
+                <!-- Circle badge -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#0EA5E9" stroke-width="4"/>
+                        <text x="30" y="35" font-family="system-ui" font-weight="800" font-size="16" fill="#0EA5E9" text-anchor="middle">BAY</text>
+                    </svg>
+                </div>
+                <!-- Icon right -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="system-ui" font-weight="700" font-size="18" fill="#1F2937">Ember</text>
+                        <rect x="75" y="5" width="30" height="30" rx="6" fill="#F97316"/>
+                        <path d="M90 12L98 25H82L90 12Z" fill="white"/>
+                    </svg>
+                </div>
             </div>
             <!-- Duplicate for seamless loop -->
-            <div class="flex items-center gap-8 px-4 flex-shrink-0">
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-stripe text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-paypal text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-dropbox text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-github text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-airbnb text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-uber text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-linkedin text-3xl"></i></div>
-                <div class="w-36 h-14 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-400"><i
-                        class="fa-brands fa-twitter text-3xl"></i></div>
+            <div class="flex items-center gap-6 px-3 flex-shrink-0">
+                <div class="logo-card">
+                    <svg viewBox="0 0 180 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="23" font-family="system-ui" font-weight="300" font-size="20" fill="#1F2937">northwind</text>
+                        <text x="108" y="23" font-family="system-ui" font-weight="700" font-size="20" fill="#14B8A6">studio</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="45" height="45" rx="8" fill="#1F2937"/>
+                        <rect x="10" y="10" width="25" height="25" rx="4" fill="#F59E0B"/>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="20" r="10" fill="#6366F1"/>
+                        <circle cx="40" cy="20" r="10" fill="#8B5CF6"/>
+                        <circle cx="65" cy="20" r="10" fill="#A855F7"/>
+                        <text x="85" y="26" font-family="system-ui" font-weight="600" font-size="14" fill="#1F2937">Prism</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 50 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" width="40" height="40" rx="20" fill="#22C55E"/>
+                        <path d="M25 12L35 30H15L25 12Z" fill="white"/>
+                        <text x="25" y="55" font-family="system-ui" font-weight="800" font-size="12" fill="#1F2937" text-anchor="middle">LEAF</text>
+                        <text x="25" y="66" font-family="system-ui" font-weight="400" font-size="8" fill="#6B7280" text-anchor="middle">ORGANIC</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="42" font-family="system-ui" font-weight="900" font-size="48" fill="#DC2626">M</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 160 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="160" height="25" rx="4" fill="#0F172A"/>
+                        <text x="80" y="17" font-family="system-ui" font-weight="600" font-size="12" fill="white" text-anchor="middle">BLACKSTONE INDUSTRIES</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#0EA5E9" stroke-width="4"/>
+                        <text x="30" y="35" font-family="system-ui" font-weight="800" font-size="16" fill="#0EA5E9" text-anchor="middle">BAY</text>
+                    </svg>
+                </div>
+                <div class="logo-card">
+                    <svg viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="system-ui" font-weight="700" font-size="18" fill="#1F2937">Ember</text>
+                        <rect x="75" y="5" width="30" height="30" rx="6" fill="#F97316"/>
+                        <path d="M90 12L98 25H82L90 12Z" fill="white"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>

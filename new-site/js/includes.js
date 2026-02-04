@@ -1,25 +1,35 @@
 document.addEventListener('DOMContentLoaded', async function () {
-    // Detect base path based on folder depth
-    // /index.html = 1 slash = root level (no prefix needed)
-    // /services/design.html = 2 slashes = 1 folder deep (../ needed)
+    // Detect base path by checking if we're in a subfolder of the site
     const path = window.location.pathname;
-    const slashCount = (path.match(/\//g) || []).length;
-    const basePath = slashCount > 1 ? '../' : '';
+
+    // Known subfolders within the site
+    const subfolders = ['services', 'about', 'contact', 'portfolio', 'blog'];
+
+    // Check if any known subfolder appears in the path
+    const hasSubfolder = subfolders.some(folder => path.includes('/' + folder + '/'));
+
+    const basePath = hasSubfolder ? '../' : '';
+
+    console.log('Path:', path, '| basePath:', basePath);
 
     // Helper function to load HTML
     async function loadInclude(id, file) {
+        const url = basePath + file;
+        console.log('Loading:', url);
         try {
-            const response = await fetch(basePath + file);
-            if (!response.ok) throw new Error(`Failed to load ${file}`);
+            const response = await fetch(url);
+            console.log('Response for', url, ':', response.status);
+            if (!response.ok) throw new Error(`Failed to load ${file}: ${response.status}`);
             const text = await response.text();
             const element = document.getElementById(id);
             if (element) {
                 element.innerHTML = text;
+                console.log('Loaded', id, 'successfully');
             } else {
                 console.error(`Element with id ${id} not found.`);
             }
         } catch (error) {
-            console.error(error);
+            console.error('Error loading', url, ':', error);
         }
     }
 

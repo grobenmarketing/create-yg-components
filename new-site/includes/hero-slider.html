@@ -1,330 +1,149 @@
+<!-- Top border for visual separation from header -->
+<div class="h-px bg-gray-200"></div>
+
 <style>
-    .legacy-slider-container {
-        position: relative;
-        width: 100%;
-        font-family: 'Red Hat Display', sans-serif;
-        background: #f9fafb;
-    }
-
-    .legacy-slider-container .abstract-background {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .legacy-slider-container .abstract-waves {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .legacy-slider-container .swiper {
-        position: relative;
-        z-index: 2;
-    }
-
-    .legacy-slider-container .slide {
-        background: transparent;
-    }
-
-    .legacy-slider-container .slide-content {
+    .hero-slider-nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem 8rem;
-        gap: 2rem;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px 0 24px;
     }
-
-    .legacy-slider-container .custom-swiper-button-prev,
-    .legacy-slider-container .custom-swiper-button-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
-        background: white;
+    .hero-slider-nav .nav-btn {
+        width: 36px;
+        height: 36px;
+        background: rgba(0,0,0,0.05);
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        transition: all 0.2s;
-    }
-
-    .legacy-slider-container .custom-swiper-button-prev:hover,
-    .legacy-slider-container .custom-swiper-button-next:hover {
-        background: #f5f5f5;
-    }
-
-    .legacy-slider-container .custom-swiper-button-prev {
-        left: 1rem;
-    }
-
-    .legacy-slider-container .custom-swiper-button-next {
-        right: 1rem;
-    }
-
-    .legacy-slider-container .custom-swiper-button-prev svg,
-    .legacy-slider-container .custom-swiper-button-next svg {
-        width: 16px;
-        height: 16px;
-        color: #333;
-    }
-
-    .legacy-slider-container .slide-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-
-    .legacy-slider-container .slide-img {
-        max-width: 100%;
-        max-height: 350px;
-        object-fit: contain;
-    }
-
-    .legacy-slider-container .slide-text {
-        flex: 1;
-        text-align: left;
-    }
-
-    .legacy-slider-container .slide-title {
-        font-size: 3rem;
-        font-weight: 900;
-        color: #333;
-        margin: 0;
-        line-height: 1.1;
-        text-transform: uppercase;
-    }
-
-    .legacy-slider-container .slide-subtitle {
-        font-size: 3rem;
-        font-weight: 900;
-        color: #00954c;
-        margin: 0 0 0.5rem 0;
-        line-height: 1.1;
-        text-transform: uppercase;
-    }
-
-    .legacy-slider-container .slide-description {
-        font-size: 21px;
-        font-weight: 800;
-        color: #666;
-        margin: 0 0 1.5rem 0;
-    }
-
-    .legacy-slider-container .slide-button-container {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .legacy-slider-container .slide-button {
-        background: #00954c;
-        color: white;
         border: none;
-        padding: 0.875rem 1.5rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 600;
+        color: #374151;
         cursor: pointer;
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        gap: 0.5rem;
+        justify-content: center;
         transition: background 0.2s;
     }
-
-    .legacy-slider-container .slide-button:hover {
-        background: #007a3d;
+    .hero-slider-nav .nav-btn:hover {
+        background: rgba(0,0,0,0.1);
     }
-
-    .legacy-slider-container .slide-button-secondary {
-        background: white;
-        color: #00954c;
-        border: 2px solid #00954c;
-        padding: 0.875rem 1.5rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
+    .hero-slider-nav .nav-btn i {
+        font-size: 14px;
     }
-
-    .legacy-slider-container .slide-button-secondary:hover {
-        background: #00954c;
-        color: white;
+    .hero-slider-nav .swiper-pagination {
+        position: static !important;
+        width: auto !important;
+        display: flex !important;
+        align-items: center;
     }
-
-    @media (max-width: 768px) {
-        .legacy-slider-container .slide-content {
-            flex-direction: column;
-            padding: 2rem 1rem;
-        }
-
-        .legacy-slider-container .slide-title,
-        .legacy-slider-container .slide-subtitle {
-            font-size: 2rem;
-        }
-
-        .legacy-slider-container .slide-text {
-            text-align: center;
-        }
-
-        .legacy-slider-container .slide-button-container {
-            justify-content: center;
-        }
-
-        .legacy-slider-container .abstract-background,
-        .legacy-slider-container .custom-swiper-button-prev,
-        .legacy-slider-container .custom-swiper-button-next {
-            display: none;
-        }
+    .hero-slider-nav .swiper-pagination-bullet {
+        background: rgba(0,0,0,0.2) !important;
+        opacity: 1 !important;
+        width: 12px !important;
+        height: 12px !important;
+        margin: 0 4px !important;
+    }
+    .hero-slider-nav .swiper-pagination-bullet-active {
+        background: #00954c !important;
     }
 </style>
-<div class="legacy-slider-container">
-    <!-- Wave Background -->
-    <div class="abstract-background">
-        <img src="img/waves.svg" alt="Abstract waves" class="abstract-waves">
-    </div>
 
-    <!-- Swiper Slider -->
-    <div class="swiper legacy-home-slider"
-        data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"navigation":{"nextEl":".legacy-slider-container .custom-swiper-button-next","prevEl":".legacy-slider-container .custom-swiper-button-prev"}}'>
+<section class="relative bg-gradient-to-br from-gray-50 to-white">
+    <div class="swiper hero-slider" data-swiper-config='{"loop":true,"autoplay":{"delay":5000,"disableOnInteraction":false},"pagination":{"el":".swiper-pagination","clickable":true},"navigation":{"nextEl":".slider-next","prevEl":".slider-prev"}}'>
         <div class="swiper-wrapper">
-            <!-- Slide 1: Fleet Graphics -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-brochure.png" alt="Fleet Graphics" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">FLEET GRAPHICS</h2>
-                        <h3 class="slide-subtitle">BUYER'S GUIDE</h3>
-                        <p class="slide-description">Download for Free</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">Get Your Free Copy <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
+            <!-- Slide 1: Vehicle Wraps -->
+            <div class="swiper-slide">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-green/10 text-brand-green text-sm font-semibold rounded-full mb-4">Featured Service</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4">Vehicle Wraps</h2>
+                            <p class="text-gray-600 text-base md:text-lg mb-6 md:mb-8">Transform your fleet into mobile billboards. Our high-quality vehicle wraps deliver stunning visuals that last.</p>
+                            <div class="flex flex-wrap gap-3 md:gap-4">
+                                <a href="services/wraps.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-green hover:bg-brand-green-dark text-white text-sm md:text-base font-semibold rounded-full transition-all shadow-lg shadow-brand-green/20">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="quote.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 text-sm md:text-base font-semibold rounded-full hover:bg-gray-100 transition-all">Get Quote</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200/60 rounded-2xl aspect-video flex items-center justify-center p-6">
+                            <img src="img/bannerimg-wraps.png" alt="Vehicle Wraps" class="max-h-64 object-contain drop-shadow-xl">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2: Large Format -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-signs.png" alt="Large Format" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">LARGE FORMAT</h2>
-                        <h3 class="slide-subtitle">PRINTING</h3>
-                        <p class="slide-description">signs, decals, wraps & more</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
+            <!-- Slide 2: Signs & Banners -->
+            <div class="swiper-slide">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-orange/10 text-brand-orange text-sm font-semibold rounded-full mb-4">Popular Choice</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4">Signs & Banners</h2>
+                            <p class="text-gray-600 text-base md:text-lg mb-6 md:mb-8">Make a bold statement with custom signage. From storefronts to trade shows, we've got you covered.</p>
+                            <div class="flex flex-wrap gap-3 md:gap-4">
+                                <a href="services/print.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-orange hover:bg-amber-500 text-white text-sm md:text-base font-semibold rounded-full transition-all shadow-lg shadow-brand-orange/20">Explore Options <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="quote.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 text-sm md:text-base font-semibold rounded-full hover:bg-gray-100 transition-all">Get Quote</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200/60 rounded-2xl aspect-video flex items-center justify-center p-6">
+                            <img src="img/bannerimg-signs.png" alt="Signs & Banners" class="max-h-64 object-contain drop-shadow-xl">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 3: In-House Creative -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-computer.png" alt="In-House Creative" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">IN-HOUSE</h2>
-                        <h3 class="slide-subtitle">CREATIVE</h3>
-                        <p class="slide-description">design & brand management</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
+            <!-- Slide 3: Custom Apparel -->
+            <div class="swiper-slide">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-teal/10 text-brand-teal text-sm font-semibold rounded-full mb-4">Team Favorites</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4">Custom Apparel</h2>
+                            <p class="text-gray-600 text-base md:text-lg mb-6 md:mb-8">Outfit your team with professional branded apparel. Screen printing and embroidery available.</p>
+                            <div class="flex flex-wrap gap-3 md:gap-4">
+                                <a href="services/promo.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-teal hover:bg-brand-teal-dark text-white text-sm md:text-base font-semibold rounded-full transition-all shadow-lg shadow-brand-teal/20">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="quote.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 text-sm md:text-base font-semibold rounded-full hover:bg-gray-100 transition-all">Get Quote</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200/60 rounded-2xl aspect-video flex items-center justify-center p-6">
+                            <img src="img/bannerimg-apparel.png" alt="Custom Apparel" class="max-h-64 object-contain drop-shadow-xl">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 4: Commercial Printing -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-cards.png" alt="Commercial Printing" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">COMMERCIAL</h2>
-                        <h3 class="slide-subtitle">PRINTING</h3>
-                        <p class="slide-description">cards, flyers, brochures & more</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
+            <!-- Slide 4: Commercial Print -->
+            <div class="swiper-slide">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-lime/20 text-brand-lime text-sm font-semibold rounded-full mb-4">Business Essentials</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4">Commercial Print</h2>
+                            <p class="text-gray-600 text-base md:text-lg mb-6 md:mb-8">Business cards, brochures, flyers, and more. Premium printing for every business need.</p>
+                            <div class="flex flex-wrap gap-3 md:gap-4">
+                                <a href="services/print.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-lime hover:bg-brand-lime-light text-gray-900 text-sm md:text-base font-semibold rounded-full transition-all shadow-lg shadow-brand-lime/20">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="quote.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 text-sm md:text-base font-semibold rounded-full hover:bg-gray-100 transition-all">Get Quote</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200/60 rounded-2xl aspect-video flex items-center justify-center p-6">
+                            <img src="img/bannerimg-cards.png" alt="Commercial Print" class="max-h-64 object-contain drop-shadow-xl">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 5: Custom Apparel -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-apparel.png" alt="Custom Apparel" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">CUSTOM</h2>
-                        <h3 class="slide-subtitle">APPAREL</h3>
-                        <p class="slide-description">explore various styles</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
+            <!-- Slide 5: Design Services -->
+            <div class="swiper-slide">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-yellow/20 text-yellow-600 text-sm font-semibold rounded-full mb-4">Creative Services</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4">In-House Design</h2>
+                            <p class="text-gray-600 text-base md:text-lg mb-6 md:mb-8">Professional graphic design and brand management. Let our creative team bring your vision to life.</p>
+                            <div class="flex flex-wrap gap-3 md:gap-4">
+                                <a href="services/design.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-yellow hover:bg-yellow-400 text-gray-900 text-sm md:text-base font-semibold rounded-full transition-all shadow-lg shadow-brand-yellow/20">See Our Work <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="quote.html" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 border-gray-300 text-gray-700 text-sm md:text-base font-semibold rounded-full hover:bg-gray-100 transition-all">Get Quote</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 6: Vehicle Wraps -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-wraps.png" alt="Vehicle Wraps" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">VEHICLE</h2>
-                        <h3 class="slide-subtitle">WRAPS</h3>
-                        <p class="slide-description">for your Fleet</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 7: Promo Items -->
-            <div class="swiper-slide slide">
-                <div class="slide-content">
-                    <div class="slide-image">
-                        <img src="img/bannerimg-promoitems.png" alt="Promo Items" class="slide-img">
-                    </div>
-                    <div class="slide-text">
-                        <h2 class="slide-title">PROMO</h2>
-                        <h3 class="slide-subtitle">ITEMS</h3>
-                        <p class="slide-description">endless options</p>
-                        <div class="slide-button-container">
-                            <a href="#"><button class="slide-button">See Our Work <i
-                                        class="fa-solid fa-arrow-right"></i></button></a>
-                            <button class="slide-button-secondary">Get a Quote</button>
+                        <div class="bg-gray-200/60 rounded-2xl aspect-video flex items-center justify-center p-6">
+                            <img src="img/bannerimg-computer.png" alt="Design Services" class="max-h-64 object-contain drop-shadow-xl">
                         </div>
                     </div>
                 </div>
@@ -332,19 +151,10 @@
         </div>
     </div>
 
-    <!-- Custom Navigation Buttons -->
-    <div class="custom-swiper-button-prev">
-        <svg viewBox="0 0 16 16" fill="currentColor">
-            <path
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
-            </path>
-        </svg>
+    <!-- Custom Navigation with Pagination -->
+    <div class="hero-slider-nav">
+        <button class="nav-btn slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="swiper-pagination"></div>
+        <button class="nav-btn slider-next"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-    <div class="custom-swiper-button-next">
-        <svg viewBox="0 0 16 16" fill="currentColor">
-            <path
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg>
-    </div>
-</div>
+</section>
