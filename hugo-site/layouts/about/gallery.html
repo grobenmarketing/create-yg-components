@@ -1,0 +1,183 @@
+{{ define "head" }}
+<style>
+    .gallery-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    .gallery-item img {
+        transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+    .gallery-item.hidden {
+        display: none;
+    }
+    .masonry-grid {
+        column-count: 3;
+        column-gap: 1rem;
+    }
+    @media (max-width: 1024px) {
+        .masonry-grid {
+            column-count: 2;
+        }
+    }
+    @media (max-width: 640px) {
+        .masonry-grid {
+            column-count: 1;
+        }
+    }
+    .filter-btn {
+        transition: all 0.2s ease;
+    }
+    .filter-btn.active {
+        background-color: #00954c;
+        color: white;
+        border-color: #00954c;
+    }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<!-- Breadcrumb Section -->
+{{ partial "breadcrumb.html" . }}
+
+<!-- Gallery Section -->
+<section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">
+                Our <span class="text-brand-orange">Work</span>
+            </h2>
+            <p class="text-gray-700 text-lg mt-4 max-w-2xl mx-auto">Explore our portfolio of stunning vehicle wraps, signage, and print projects.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+            <button class="filter-btn active px-4 py-1.5 bg-brand-green text-white text-sm font-semibold rounded-full border-2 border-brand-green transition-all" data-filter="all">
+                All
+            </button>
+            <button class="filter-btn px-4 py-1.5 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm font-semibold rounded-full transition-all" data-filter="signs">
+                Signs
+            </button>
+            <button class="filter-btn px-4 py-1.5 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm font-semibold rounded-full transition-all" data-filter="wraps">
+                Wraps
+            </button>
+            <button class="filter-btn px-4 py-1.5 border-2 border-gray-300 text-gray-700 hover:border-brand-green hover:text-brand-green text-sm font-semibold rounded-full transition-all" data-filter="print">
+                Print
+            </button>
+        </div>
+
+        <!-- Masonry Gallery Grid -->
+        <div class="masonry-grid" id="gallery-grid">
+            {{ range .Params.gallery }}
+            <div class="gallery-item rounded-2xl overflow-hidden shadow-lg cursor-pointer relative" data-category="{{ .category }}" onclick="openLightbox(this)">
+                <span class="absolute top-4 left-4 px-3 py-1 bg-{{ .color }}/90 text-white text-xs font-bold uppercase tracking-wide rounded-full shadow-sm">{{ .label }}</span>
+                <img src="{{ .image | relURL }}" alt="{{ .alt }}" class="w-full object-cover" loading="lazy">
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 transition-colors z-10" onclick="closeLightbox(event)">&times;</button>
+    <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 p-2" onclick="prevImage(event)">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 p-2" onclick="nextImage(event)">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-[90vh] object-contain">
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let currentIndex = 0;
+    let visibleItems = Array.from(galleryItems);
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('active', 'bg-brand-green', 'text-white', 'border-brand-green');
+                b.classList.add('border-gray-300', 'text-gray-700');
+            });
+            btn.classList.add('active', 'bg-brand-green', 'text-white', 'border-brand-green');
+            btn.classList.remove('border-gray-300', 'text-gray-700');
+
+            const filter = btn.dataset.filter;
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+        });
+    });
+
+    function openLightbox(element) {
+        const img = element.querySelector('img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        currentIndex = visibleItems.indexOf(element);
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+        if (event.target.id === 'lightbox' || event.target.tagName === 'BUTTON' || event.target.closest('button')) {
+            if (event.target.closest('button')?.onclick?.toString().includes('prev') ||
+                event.target.closest('button')?.onclick?.toString().includes('next')) {
+                return;
+            }
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function prevImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+        updateLightboxImage();
+    }
+
+    function nextImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % visibleItems.length;
+        updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+        const img = visibleItems[currentIndex].querySelector('img');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    }
+
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'Escape') closeLightbox({ target: lightbox });
+            if (e.key === 'ArrowLeft') prevImage(e);
+            if (e.key === 'ArrowRight') nextImage(e);
+        }
+    });
+</script>
+{{ end }}

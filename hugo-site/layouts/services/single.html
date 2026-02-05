@@ -1,0 +1,74 @@
+{{ define "main" }}
+<!-- Breadcrumb Section -->
+{{ partial "breadcrumb.html" . }}
+
+<!-- Hero Section -->
+<section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{{ .Params.headline }}</h2>
+                {{ range .Params.intro }}
+                <p class="text-gray-700 text-lg mb-6">{{ . }}</p>
+                {{ end }}
+                <div class="flex flex-wrap gap-4">
+                    <a href="{{ "contact/" | relURL }}" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-lg transition-all">
+                        {{ .Params.cta_text | default "Get a Quote" }} <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    {{ if .Params.secondary_cta }}
+                    <a href="{{ .Params.secondary_cta.url }}" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-100 transition-all">
+                        {{ .Params.secondary_cta.text }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="bg-{{ .Params.color | default "brand-green" }}/10 rounded-2xl aspect-video flex items-center justify-center">
+                <i class="fa-solid fa-{{ .Params.icon | default "cog" }} text-8xl text-{{ .Params.color | default "brand-green" }}/40"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">{{ .Params.services_title | default "What We Offer" }}</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range .Params.services }}
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <i class="fa-solid fa-{{ .icon }} text-{{ $.Params.color | default "brand-green" }} text-2xl mb-4"></i>
+                <h4 class="font-bold text-gray-900 mb-2">{{ .title }}</h4>
+                <p class="text-gray-700">{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ with .Params.stats }}
+<!-- Proof Points -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+            {{ range . }}
+            <div>
+                <div class="text-4xl font-bold text-{{ $.Params.color | default "brand-green" }} mb-2">{{ .value }}</div>
+                <p class="text-gray-700">{{ .label }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<!-- CTA Section -->
+<section class="py-16 bg-{{ .Params.color | default "brand-green" }}">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold {{ if or (eq .Params.color "brand-yellow") (eq .Params.color "brand-lime") }}text-gray-900{{ else }}text-white{{ end }} mb-4">{{ .Params.cta_headline }}</h3>
+        <p class="{{ if or (eq .Params.color "brand-yellow") (eq .Params.color "brand-lime") }}text-gray-800{{ else }}text-white/90{{ end }} text-lg mb-8">{{ .Params.cta_description }}</p>
+        <a href="{{ "contact/" | relURL }}" class="inline-flex items-center gap-2 px-8 py-4 {{ if or (eq .Params.color "brand-yellow") (eq .Params.color "brand-lime") }}bg-gray-900 hover:bg-gray-800 text-white{{ else }}bg-white hover:bg-gray-100 text-{{ .Params.color | default "brand-green" }}{{ end }} font-bold rounded-lg transition-all">
+            {{ .Params.cta_button | default "Get a Quote" }} <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+{{ end }}

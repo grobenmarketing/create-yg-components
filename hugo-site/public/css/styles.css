@@ -1,0 +1,83 @@
+/* Mega Menu Theme Variables */
+.mega-menu-light {
+    --mm-bg: #ffffff;
+    --mm-utility-bg: #f9fafb;
+    --mm-utility-border: #e5e7eb;
+    --mm-text: #4b5563;
+    --mm-text-hover: #111827;
+    --mm-divider: #d1d5db;
+    --mm-dropdown-bg: #ffffff;
+    --mm-dropdown-border: #e5e7eb;
+    --mm-dropdown-hover: #f3f4f6;
+    --mm-dropdown-title: #111827;
+    --mm-dropdown-subtitle: #9ca3af;
+    --mm-mobile-text: #374151;
+    --mm-mobile-hover: #f3f4f6;
+    --mm-logo-filter: none;
+}
+
+.mega-menu-dark {
+    --mm-bg: #111827;
+    --mm-utility-bg: #111827;
+    --mm-utility-border: #1f2937;
+    --mm-text: #9ca3af;
+    --mm-text-hover: #ffffff;
+    --mm-divider: #374151;
+    --mm-dropdown-bg: #1f2937;
+    --mm-dropdown-border: #374151;
+    --mm-dropdown-hover: rgba(55, 65, 81, 0.5);
+    --mm-dropdown-title: #ffffff;
+    --mm-dropdown-subtitle: #6b7280;
+    --mm-mobile-text: #d1d5db;
+    --mm-mobile-hover: #1f2937;
+    --mm-logo-filter: brightness(0) invert(1);
+}
+
+/* Mega Menu Styles (using variables) */
+header[class*="mega-menu-"] { background: var(--mm-bg) !important; }
+.mega-menu-utility { background: var(--mm-utility-bg) !important; border-bottom: 1px solid var(--mm-utility-border); }
+.mega-menu-utility-text { color: var(--mm-text) !important; }
+.mega-menu-utility-divider { color: var(--mm-divider) !important; }
+.mega-menu-utility-link { color: var(--mm-text) !important; }
+.mega-menu-utility-link:hover { color: var(--mm-text-hover) !important; }
+.mega-menu-nav { background: var(--mm-bg) !important; }
+.mega-menu-logo { filter: var(--mm-logo-filter) !important; }
+.mega-menu-link { color: var(--mm-text) !important; }
+.mega-menu-link:hover { color: var(--mm-text-hover) !important; }
+.mega-menu-link-active { color: var(--mm-text-hover) !important; }
+.mega-menu-link-hover:hover { background: var(--mm-dropdown-hover) !important; }
+.mega-menu-dropdown { background: var(--mm-dropdown-bg) !important; border: 1px solid var(--mm-dropdown-border); }
+.mega-menu-dropdown-item:hover { background: var(--mm-dropdown-hover) !important; }
+.mega-menu-dropdown-title { color: var(--mm-dropdown-title) !important; }
+.mega-menu-dropdown-subtitle { color: var(--mm-dropdown-subtitle) !important; }
+.mega-menu-phone { color: var(--mm-text-hover) !important; }
+.mega-menu-mobile-btn { color: var(--mm-mobile-text) !important; }
+.mega-menu-mobile-btn:hover { background: var(--mm-dropdown-hover) !important; }
+.mega-menu-mobile-panel { background: var(--mm-bg) !important; border-top: 1px solid var(--mm-utility-border); }
+.mega-menu-mobile-link { color: var(--mm-mobile-text) !important; }
+.mega-menu-mobile-link:hover { background: var(--mm-mobile-hover) !important; color: var(--mm-text-hover) !important; }
+.mega-menu-link-highlight { color: #00954c !important; }
+.standard-dropdown { width: 20rem !important; padding: 0.5rem !important; }
+
+/* Service Card Hovers */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

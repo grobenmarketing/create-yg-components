@@ -1,0 +1,142 @@
+{{ define "main" }}
+<!-- Breadcrumb Section -->
+{{ partial "breadcrumb.html" . }}
+
+<!-- Quote Form Section -->
+<section class="bg-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ .Params.headline }}</h2>
+            <p class="text-gray-700 text-lg">{{ .Params.intro }}</p>
+        </div>
+
+        <form id="quoteForm" class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
+            <!-- Contact Information -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-user-circle text-brand-green"></i>
+                    Contact Information
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                            placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            Business Name
+                        </label>
+                        <input type="text"
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                            placeholder="Your Company">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" required
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                            placeholder="you@company.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            Phone Number
+                        </label>
+                        <input type="tel"
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                            placeholder="(330) 555-0123">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-clipboard-list text-brand-orange"></i>
+                    Project Details
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            What type of project is this? <span class="text-red-500">*</span>
+                        </label>
+                        <select required
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                            <option value="">Select a category...</option>
+                            {{ range .Params.project_types }}
+                            <option value="{{ . }}">{{ . }}</option>
+                            {{ end }}
+                        </select>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                Estimated Quantity
+                            </label>
+                            <input type="text"
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+                                placeholder="e.g. 500 pieces">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-900 mb-2">
+                                Target Deadline
+                            </label>
+                            <input type="date"
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">
+                            Project Description <span class="text-red-500">*</span>
+                        </label>
+                        <textarea rows="4" required
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all resize-none"
+                            placeholder="Please describe your project, including size, materials, colors, and any special requirements..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-cloud-arrow-up text-brand-teal"></i>
+                    Artwork / Reference Files
+                </h3>
+                <div class="flex flex-col items-center justify-center px-6 py-8 border-2 border-dashed border-gray-300 rounded-lg bg-white hover:border-brand-green transition-all cursor-pointer">
+                    <i class="fa-solid fa-cloud-arrow-up text-4xl text-gray-400 mb-3"></i>
+                    <div class="text-sm text-gray-600">
+                        <label class="font-semibold text-brand-green hover:text-brand-green-dark cursor-pointer">
+                            Upload files
+                            <input type="file" class="sr-only" multiple accept=".pdf,.ai,.eps,.png,.jpg,.jpeg">
+                        </label>
+                        <span> or drag and drop</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">PDF, AI, EPS, PNG, JPG up to 50MB</p>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="px-10 py-4 bg-brand-green hover:bg-brand-green-dark text-white font-bold rounded-full transition-all shadow-lg hover:shadow-brand-green/20 uppercase tracking-wide">
+                    Request Quote
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Contact Alternative -->
+        <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-2">Prefer to talk to someone?</p>
+            <p class="text-gray-900">
+                Call us at <a href="tel:800-370-9694" class="text-brand-green font-semibold hover:text-brand-green-dark">800-370-9694</a>
+                or email <a href="mailto:sales@yodergraphics.com" class="text-brand-green font-semibold hover:text-brand-green-dark">sales@yodergraphics.com</a>
+            </p>
+        </div>
+    </div>
+</section>
+{{ end }}

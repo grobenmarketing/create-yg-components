@@ -1,0 +1,44 @@
+baseURL = 'https://yodergraphics.com/'
+languageCode = 'en-us'
+title = 'Yoder Graphics'
+
+# Disable default Hugo taxonomies we don't need
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = "Yoder Graphics - Design, Print, Wraps, Promo, Fulfillment"
+  author = "Yoder Graphics"
+
+  # Brand colors (for use in templates)
+  [params.colors]
+    green = "#00954c"
+    greenDark = "#008082"
+    yellow = "#ffd603"
+    orange = "#f7a022"
+    lime = "#b3d137"
+    limeLight = "#d1e285"
+    teal = "#2ebbbe"
+    tealDark = "#008082"
+
+[menus]
+  [[menus.main]]
+    name = 'Services'
+    pageRef = '/services'
+    weight = 10
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+  [[menus.main]]
+    name = 'Resources'
+    pageRef = '/resources'
+    weight = 30
+  [[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow raw HTML in markdown

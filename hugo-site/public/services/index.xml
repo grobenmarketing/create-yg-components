@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Our Services on Yoder Graphics</title>
+    <link>https://yodergraphics.com/services/</link>
+    <description>Recent content in Our Services on Yoder Graphics</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://yodergraphics.com/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commercial Printing</title>
+      <link>https://yodergraphics.com/services/print/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yodergraphics.com/services/print/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design Services</title>
+      <link>https://yodergraphics.com/services/design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yodergraphics.com/services/design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fulfillment Services</title>
+      <link>https://yodergraphics.com/services/fulfillment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yodergraphics.com/services/fulfillment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promo &amp; Apparel</title>
+      <link>https://yodergraphics.com/services/promo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yodergraphics.com/services/promo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vehicle Wraps &amp; Fleet Graphics</title>
+      <link>https://yodergraphics.com/services/wraps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yodergraphics.com/services/wraps/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

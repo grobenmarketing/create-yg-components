@@ -1,0 +1,22 @@
+---
+title: "Contact"
+description: "Let's talk about your project."
+layout: "contact"
+headline: "Get in touch"
+intro: "Whether you need a quote, have questions about a project, or want to discuss your marketing needs — we're here to help. Most clients don't know exactly what they need when they call. That's fine. We'll figure it out together."
+contact_info:
+  - icon: "phone"
+    label: "Toll Free"
+    value: "800-370-9694"
+  - icon: "phone"
+    label: "Main Office"
+    value: "330-334-5060"
+  - icon: "fax"
+    label: "Fax"
+    value: "330-334-5067"
+  - icon: "envelope"
+    value: "sales@yodergraphics.com"
+  - icon: "location-dot"
+    value: "724 Seville Road"
+    subvalue: "Wadsworth, OH 44281"
+---

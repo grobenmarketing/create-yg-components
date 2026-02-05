@@ -1,0 +1,170 @@
+{{ define "head" }}
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{{ end }}
+
+{{ define "main" }}
+<!-- Hero Slider -->
+{{ partial "hero-slider.html" . }}
+
+<!-- Logo Marquee (placeholder for now) -->
+{{/* {{ partial "logo-marquee.html" . }} */}}
+
+<!-- Orange Gradient Section -->
+<div class="h-px bg-gray-200"></div>
+<section class="relative overflow-hidden bg-brand-orange">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
+            <div class="order-2 md:order-1 relative z-10">
+                <img src="{{ "img/index/cargo-van.png" | relURL }}" alt="Cargo Van"
+                    class="w-full max-w-xl mx-auto drop-shadow-2xl">
+            </div>
+            <div class="order-1 md:order-2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                    <span class="text-brand-green">Your Brand</span> on the Road,<br>
+                    in the Lobby, & in Your<br>
+                    Customers' Hands
+                </h2>
+                <div class="w-full max-w-sm h-1 bg-brand-green mx-auto md:mx-0 mb-4"></div>
+                <p class="text-gray-900 text-lg md:text-xl font-semibold uppercase tracking-widest">
+                    Business-Critical Marketing Since 1976
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<div class="h-px bg-gray-200"></div>
+<section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Five Divisions. <span class="text-brand-green">One Team That Knows Your Brand.</span>
+            </h2>
+            <p class="text-gray-700 text-lg mt-4 max-w-2xl mx-auto">Design it. Print it. Wrap it. Ship it. All brand-perfect, all under one roof.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <a href="{{ "services/design/" | relURL }}" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group block">
+                <div class="aspect-[4/3] overflow-hidden bg-brand-orange/10 flex items-center justify-center">
+                    <i class="fa-solid fa-palette text-6xl text-brand-orange/60 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Design</h3>
+                    <div class="w-12 h-0.5 bg-brand-orange mb-4"></div>
+                    <ul class="space-y-2 text-base text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange text-xs"></i>Graphic Design</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange text-xs"></i>Brand Identity</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange text-xs"></i>Logo Design</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ "services/wraps/" | relURL }}" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group block">
+                <div class="aspect-[4/3] overflow-hidden bg-brand-green/10 flex items-center justify-center">
+                    <i class="fa-solid fa-car text-6xl text-brand-green/60 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Wraps</h3>
+                    <div class="w-12 h-0.5 bg-brand-green mb-4"></div>
+                    <ul class="space-y-2 text-base text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green text-xs"></i>Vehicle Wraps</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green text-xs"></i>Fleet Graphics</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-green text-xs"></i>Wall Wraps</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ "services/print/" | relURL }}" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group block">
+                <div class="aspect-[4/3] overflow-hidden bg-brand-teal/10 flex items-center justify-center">
+                    <i class="fa-solid fa-print text-6xl text-brand-teal/60 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Print</h3>
+                    <div class="w-12 h-0.5 bg-brand-teal mb-4"></div>
+                    <ul class="space-y-2 text-base text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal text-xs"></i>Signs & Decals</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal text-xs"></i>Banners & Displays</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal text-xs"></i>Business Cards</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ "services/promo/" | relURL }}" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group block">
+                <div class="aspect-[4/3] overflow-hidden bg-brand-yellow/20 flex items-center justify-center">
+                    <i class="fa-solid fa-shirt text-6xl text-brand-yellow group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Promo</h3>
+                    <div class="w-12 h-0.5 bg-brand-yellow mb-4"></div>
+                    <ul class="space-y-2 text-base text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow text-xs"></i>Custom Apparel</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow text-xs"></i>Promotional Items</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow text-xs"></i>Corporate Gifts</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="{{ "services/fulfillment/" | relURL }}" class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group block">
+                <div class="aspect-[4/3] overflow-hidden bg-brand-lime/20 flex items-center justify-center">
+                    <i class="fa-solid fa-box text-6xl text-brand-lime group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Fulfillment</h3>
+                    <div class="w-12 h-0.5 bg-brand-lime mb-4"></div>
+                    <ul class="space-y-2 text-base text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime text-xs"></i>Warehousing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime text-xs"></i>Kitting & Assembly</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime text-xs"></i>Drop Shipping</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<div class="h-px bg-gray-200"></div>
+<section class="relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{{ "img/index/background-building.jpg" | relURL }}" alt="" class="w-full h-full object-cover saturate-50">
+        <div class="absolute inset-0 bg-gray-900/85"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-wide mb-2">Our Story</h2>
+                <h3 class="text-lg md:text-xl font-bold text-brand-orange uppercase tracking-widest mb-6">Veteran Owned & Operated</h3>
+                <p class="text-gray-100 text-lg leading-relaxed mb-6">
+                    We started in 1976 when business forms were carbon copy. We've outlasted trends, technologies, and competitors by doing one thing: delivering what our clients need, when they need it.
+                </p>
+                <p class="text-white font-semibold text-lg mb-8">
+                    Fifty years later, we're still here — and just expanded to keep up with demand.
+                </p>
+                <a href="{{ "about/" | relURL }}"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-4 bg-brand-orange hover:bg-amber-500 text-gray-900 text-sm md:text-base font-bold rounded-lg transition-all shadow-lg">
+                    Learn More About Us
+                </a>
+            </div>
+            <div class="flex justify-center">
+                <img src="{{ "img/index/badge.svg" | relURL }}" alt="Yoder Graphics Since 1976"
+                    class="w-72 md:w-96 lg:w-[28rem] drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.swiper[data-swiper-config]').forEach(function (el) {
+            new Swiper(el, JSON.parse(el.dataset.swiperConfig));
+        });
+    });
+</script>
+{{ end }}
