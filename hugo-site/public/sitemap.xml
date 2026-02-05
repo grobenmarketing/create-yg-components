@@ -2,23 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
-  </url><url>
     <loc>http://localhost:1313/resources/blog/</loc>
-  </url><url>
-    <loc>http://localhost:1313/resources/case-studies/</loc>
   </url><url>
     <loc>http://localhost:1313/services/print/</loc>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/services/design/</loc>
-  </url><url>
     <loc>http://localhost:1313/resources/faqs/</loc>
-  </url><url>
-    <loc>http://localhost:1313/services/fulfillment/</loc>
-  </url><url>
-    <loc>http://localhost:1313/about/gallery/</loc>
   </url><url>
     <loc>http://localhost:1313/quote/</loc>
   </url><url>
@@ -26,20 +16,10 @@
   </url><url>
     <loc>http://localhost:1313/payment/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/history/</loc>
+    <loc>http://localhost:1313/resources/</loc>
   </url><url>
     <loc>http://localhost:1313/services/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/team/</loc>
-  </url><url>
-    <loc>http://localhost:1313/services/promo/</loc>
-  </url><url>
-    <loc>http://localhost:1313/resources/</loc>
-  </url><url>
-    <loc>http://localhost:1313/about/testimonials/</loc>
-  </url><url>
     <loc>http://localhost:1313/upload/</loc>
-  </url><url>
-    <loc>http://localhost:1313/services/wraps/</loc>
   </url>
 </urlset>
