@@ -1,0 +1,20 @@
+<!-- Breadcrumb Section -->
+<section class="bg-gray-100 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <nav class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+            <a href="{{ "/" | relURL }}" class="hover:text-brand-green transition-colors"><i class="fa-solid fa-house"></i></a>
+            {{ range .Ancestors.Reverse }}
+            {{ if not .IsHome }}
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+            <a href="{{ .RelPermalink }}" class="hover:text-brand-green transition-colors">{{ .Title }}</a>
+            {{ end }}
+            {{ end }}
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+            <span class="text-gray-900 font-medium">{{ .Title }}</span>
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="text-gray-700 text-lg mt-2">{{ . }}</p>
+        {{ end }}
+    </div>
+</section>

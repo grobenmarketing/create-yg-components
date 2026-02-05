@@ -1,0 +1,20 @@
+---
+title: "Make a Payment"
+description: "Securely pay your invoice online."
+layout: "payment"
+headline: "Make a Payment"
+intro: "Choose your preferred payment method to quickly and securely pay your invoice."
+payment_methods:
+  - icon: "credit-card"
+    color: "brand-green"
+    title: "Pay Online"
+    description: "Use your credit or debit card for instant payment processing."
+    button_text: "Pay Now"
+    button_url: "#paymentForm"
+  - icon: "building-columns"
+    color: "brand-orange"
+    title: "Bank Transfer"
+    description: "Contact us for ACH or wire transfer details for larger payments."
+    button_text: "Get Details"
+    button_url: "/contact/"
+---

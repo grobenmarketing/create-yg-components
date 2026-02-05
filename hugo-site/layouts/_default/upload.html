@@ -1,0 +1,111 @@
+{{ define "main" }}
+<!-- Breadcrumb Section -->
+{{ partial "breadcrumb.html" . }}
+
+<!-- Upload Section -->
+<section class="bg-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ .Params.headline }}</h2>
+            <p class="text-gray-700 text-lg">{{ .Params.intro }}</p>
+        </div>
+
+        <form id="uploadForm" class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
+            <!-- Order Information -->
+            <div class="mb-8">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-receipt text-blue-600"></i>
+                        Order Information
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-blue-900 mb-2">
+                                Order Number <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required
+                                class="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="e.g. YG-2024-100">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-blue-900 mb-2">
+                                Your Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" required
+                                class="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="you@company.com">
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-blue-700">
+                        <i class="fa-solid fa-info-circle mr-1"></i>
+                        Your order number can be found in your email confirmation or invoice.
+                    </p>
+                </div>
+            </div>
+
+            <!-- File Upload Area -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-cloud-arrow-up text-brand-green"></i>
+                    Upload Your Files
+                </h3>
+                <div id="dropZone" class="flex flex-col items-center justify-center px-6 py-12 border-2 border-dashed border-gray-300 rounded-xl bg-white hover:border-brand-green hover:bg-brand-green/5 transition-all cursor-pointer">
+                    <i class="fa-solid fa-cloud-arrow-up text-6xl text-gray-300 mb-4"></i>
+                    <div class="text-lg text-gray-600 mb-2">
+                        <label class="font-semibold text-brand-green hover:text-brand-green-dark cursor-pointer">
+                            Click to upload
+                            <input type="file" class="sr-only" multiple accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.zip">
+                        </label>
+                        <span> or drag and drop</span>
+                    </div>
+                    <p class="text-sm text-gray-500">PDF, AI, EPS, PNG, JPG, ZIP up to 100MB</p>
+                </div>
+
+                <!-- File List (populated by JS) -->
+                <div id="fileList" class="mt-4 space-y-2 hidden">
+                    <!-- Files will be listed here -->
+                </div>
+            </div>
+
+            <!-- Special Instructions -->
+            <div class="mb-8">
+                <label class="block text-sm font-semibold text-gray-900 mb-2">
+                    Special Instructions (Optional)
+                </label>
+                <textarea rows="3"
+                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all resize-none"
+                    placeholder="Any notes about your files or the job..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="px-10 py-4 bg-brand-green hover:bg-brand-green-dark text-white font-bold rounded-full transition-all shadow-lg hover:shadow-brand-green/20 uppercase tracking-wide">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>
+                    Send Files
+                </button>
+            </div>
+        </form>
+
+        <!-- File Format Info -->
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+            {{ range .Params.file_tips }}
+            <div class="bg-gray-50 rounded-xl p-6 text-center">
+                <i class="fa-solid fa-{{ .icon }} text-3xl text-{{ .color }} mb-3"></i>
+                <h4 class="font-bold text-gray-900 mb-2">{{ .title }}</h4>
+                <p class="text-sm text-gray-600">{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- Contact Alternative -->
+        <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-2">Having trouble uploading?</p>
+            <p class="text-gray-900">
+                Email files directly to <a href="mailto:artwork@yodergraphics.com" class="text-brand-green font-semibold hover:text-brand-green-dark">artwork@yodergraphics.com</a>
+                or call <a href="tel:800-370-9694" class="text-brand-green font-semibold hover:text-brand-green-dark">800-370-9694</a>
+            </p>
+        </div>
+    </div>
+</section>
+{{ end }}

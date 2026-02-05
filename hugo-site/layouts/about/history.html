@@ -1,0 +1,118 @@
+{{ define "head" }}
+<style>
+    .timeline-item {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+    .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+    .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+    .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+    .timeline-item:nth-child(9) { animation-delay: 0.9s; }
+    .timeline-item:nth-child(10) { animation-delay: 1.0s; }
+    .timeline-item:nth-child(11) { animation-delay: 1.1s; }
+    .timeline-item:nth-child(12) { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .timeline-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<!-- Breadcrumb Section -->
+{{ partial "breadcrumb.html" . }}
+
+<!-- Timeline Section -->
+<section class="py-16 md:py-24 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Author Introduction -->
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-16 pb-12 border-b border-gray-200">
+            <div class="flex-shrink-0">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-brand-green/10 flex items-center justify-center ring-4 ring-brand-green/20 overflow-hidden">
+                    <i class="fa-solid fa-user text-5xl text-brand-green/40"></i>
+                </div>
+            </div>
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{{ .Params.author_name }}</h2>
+                <p class="text-brand-green font-semibold text-lg mb-3">{{ .Params.author_title }}</p>
+                <p class="text-gray-600 max-w-xl mb-5">{{ .Params.author_bio }}</p>
+                <a href="#" class="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-brand-orange hover:bg-amber-600 text-white text-sm md:text-base font-semibold rounded-lg transition-all">
+                    <i class="fa-solid fa-play"></i> {{ .Params.author_cta_text }}
+                </a>
+            </div>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative">
+            <!-- Vertical Line -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-green via-brand-teal to-brand-orange md:-translate-x-1/2 rounded-full"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-12">
+                {{ range $index, $item := .Params.timeline }}
+                {{ $isLeft := eq (mod $index 2) 0 }}
+                <div class="timeline-item relative flex flex-col md:flex-row md:items-center">
+                    {{ if $isLeft }}
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                        <div class="timeline-card bg-white rounded-2xl shadow-lg p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-{{ $item.color }}">
+                            <span class="inline-block px-3 py-1 bg-{{ $item.color }}/10 text-{{ $item.color }} text-sm font-bold rounded-full mb-3">{{ $item.year }}</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $item.title }}</h3>
+                            <p class="text-gray-700 text-base">{{ $item.description | safeHTML }}</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 top-6 md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 w-9 h-9 bg-{{ $item.color }} rounded-full flex items-center justify-center shadow-lg ring-4 ring-white z-10">
+                        <i class="fa-solid fa-{{ $item.icon }} text-white text-sm"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    {{ else }}
+                    <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                    <div class="absolute left-0 md:left-1/2 top-6 md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 w-9 h-9 bg-{{ $item.color }} rounded-full flex items-center justify-center shadow-lg ring-4 ring-white z-10">
+                        <i class="fa-solid fa-{{ $item.icon }} text-white text-sm"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12">
+                        <div class="timeline-card bg-white rounded-2xl shadow-lg p-6 md:p-8 border-l-4 border-{{ $item.color }}">
+                            <span class="inline-block px-3 py-1 bg-{{ $item.color }}/10 text-{{ $item.color }} text-sm font-bold rounded-full mb-3">{{ $item.year }}</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $item.title }}</h3>
+                            <p class="text-gray-700 text-base">{{ $item.description | safeHTML }}</p>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-gray-100 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{ .Params.cta_headline }}</h2>
+        <p class="text-gray-700 text-lg mb-8">{{ .Params.cta_text }}</p>
+        <a href="{{ .Params.cta_link | relURL }}" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-green hover:bg-brand-green-dark text-white font-bold rounded-lg transition-all shadow-lg">
+            {{ .Params.cta_button_text }} <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+{{ end }}

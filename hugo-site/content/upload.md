@@ -1,0 +1,20 @@
+---
+title: "Upload Files"
+description: "Send your artwork files for an existing order."
+layout: "upload"
+headline: "Upload Artwork Files"
+intro: "Already placed an order? Use this form to securely send your artwork and design files to our production team."
+file_tips:
+  - icon: "file-pdf"
+    color: "brand-green"
+    title: "PDF Files"
+    description: "Press-ready PDFs are preferred for print jobs. Ensure fonts are embedded or outlined."
+  - icon: "palette"
+    color: "brand-orange"
+    title: "Vector Artwork"
+    description: "AI, EPS, or SVG files work best for logos and graphics that need to scale."
+  - icon: "images"
+    color: "brand-teal"
+    title: "High-Res Images"
+    description: "Photos should be at least 300 DPI at the final print size."
+---

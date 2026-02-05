@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Our Services on Yoder Graphics</title>
+    <link>http://localhost:1313/services/</link>
+    <description>Recent content in Our Services on Yoder Graphics</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commercial Printing</title>
+      <link>http://localhost:1313/services/print/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/print/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design Services</title>
+      <link>http://localhost:1313/services/design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fulfillment Services</title>
+      <link>http://localhost:1313/services/fulfillment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/fulfillment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promo &amp; Apparel</title>
+      <link>http://localhost:1313/services/promo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/promo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vehicle Wraps &amp; Fleet Graphics</title>
+      <link>http://localhost:1313/services/wraps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/wraps/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

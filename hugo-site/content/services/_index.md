@@ -1,0 +1,42 @@
+---
+title: "Our Services"
+description: "Everything your brand touches. Under one roof."
+
+# Section content
+headline: "Our"
+headline_highlight: "Services"
+intro: "Five divisions. One team that knows your brand. Design it. Print it. Wrap it. Ship it. All brand-perfect."
+
+# Service cards
+services:
+  - title: "Graphic Design"
+    description: "Design that works as hard as you do. Logos, brand identity, vehicle graphics — built to last and designed to convert."
+    link: "services/design/"
+    link_text: "Learn More"
+    icon: "fa-palette"
+    color: "brand-orange"
+  - title: "Vehicle Wraps"
+    description: "Your fleet works for you every day. We make sure it looks the part — designed, printed, and installed by 3M certified professionals."
+    link: "services/wraps/"
+    link_text: "Learn More"
+    icon: "fa-car"
+    color: "brand-green"
+  - title: "Commercial Printing"
+    description: "The materials that represent you. Business cards to banners, checks to direct mail — consistent quality, every time."
+    link: "services/print/"
+    link_text: "Learn More"
+    icon: "fa-print"
+    color: "brand-teal"
+  - title: "Promo & Apparel"
+    description: "Branded gear people actually want to wear. Apparel, promotional products, corporate gifts — all matched to your brand."
+    link: "services/promo/"
+    link_text: "Learn More"
+    icon: "fa-shirt"
+    color: "brand-yellow"
+  - title: "Fulfillment Services"
+    description: "We store it, kit it, ship it. Warehousing and fulfillment for businesses that need marketing materials on demand."
+    link: "services/fulfillment/"
+    link_text: "Learn More"
+    icon: "fa-box"
+    color: "brand-lime"
+---

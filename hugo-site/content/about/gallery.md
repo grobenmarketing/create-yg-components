@@ -1,0 +1,53 @@
+---
+title: "Gallery"
+description: "See examples of our work across signage, wraps, and print."
+layout: "gallery"
+
+# Section content
+headline: "Our"
+headline_highlight: "Work"
+intro: "Explore our portfolio of stunning vehicle wraps, signage, and print projects."
+
+# Filter buttons
+filters:
+  - label: "All"
+    value: "all"
+  - label: "Signs"
+    value: "signs"
+  - label: "Wraps"
+    value: "wraps"
+  - label: "Print"
+    value: "print"
+
+gallery:
+  - image: "/img/index/cargo-van.png"
+    alt: "Vehicle Wrap"
+    category: "wraps"
+    label: "Vehicle Wraps"
+    color: "brand-orange"
+  - image: "/img/bannerimg-wraps.png"
+    alt: "Fleet Graphics"
+    category: "wraps"
+    label: "Vehicle Wraps"
+    color: "brand-orange"
+  - image: "/img/bannerimg-signs.png"
+    alt: "Signs & Banners"
+    category: "signs"
+    label: "Signage"
+    color: "brand-teal"
+  - image: "/img/bannerimg-cards.png"
+    alt: "Business Cards"
+    category: "print"
+    label: "Printing"
+    color: "brand-green"
+  - image: "/img/bannerimg-apparel.png"
+    alt: "Custom Apparel"
+    category: "print"
+    label: "Apparel"
+    color: "brand-yellow"
+  - image: "/img/bannerimg-computer.png"
+    alt: "Design Services"
+    category: "print"
+    label: "Design"
+    color: "brand-green"
+---
