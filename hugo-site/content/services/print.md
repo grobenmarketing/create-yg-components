@@ -3,7 +3,7 @@ title: "Commercial Printing"
 description: "The materials that represent you."
 icon: "print"
 color: "brand-teal"
-headline: "Business cards to banners. Consistent quality, every time."
+headline: "From brochures to Direct Main to Labels. Consistent quality, every time."
 intro:
   - "The materials that go in front of decision-makers need to represent you professionally. Business cards, brochures, presentation folders, direct mail — these aren't commodity items. They're your reputation in print."
   - "We've been doing commercial printing since 1980 — long before digital made everyone a \"printer.\" We understand paper stocks, color matching, and what it takes to make printed materials that look right and last."

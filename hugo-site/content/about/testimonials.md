@@ -2,8 +2,6 @@
 title: "Testimonials"
 description: "Don't just take our word for it — hear from businesses who've experienced the Yoder Graphics difference."
 layout: "testimonials"
-
-# Section content
 headline: "Client"
 headline_highlight: "Reviews"
 intro: "See what our customers have to say about working with Yoder Graphics."

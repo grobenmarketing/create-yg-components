@@ -5,7 +5,7 @@ icon: "shirt"
 color: "brand-yellow"
 headline: "Apparel, promotional products, corporate gifts — all matched to your brand."
 intro:
-  - "Your team represents your company. So does the gear they wear and the items you hand out. We source apparel and promotional products that people actually want to keep — not the stuff that ends up in a drawer."
+  - "Your team represents your company. So does the gear they wear and the items you hand out. We provide apparel and promotional products that people actually want to keep — not the stuff that ends up in a drawer."
   - "We added promotional products in 2000 because clients kept asking. Now it's a full division — access to thousands of items, decorated with your logo, delivered when you need them. Same attention to brand consistency as everything else we do."
 cta_text: "Request a Quote"
 services_title: "What We Offer"

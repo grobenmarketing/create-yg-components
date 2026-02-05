@@ -3,17 +3,15 @@ title: "Our History"
 description: "Nearly five decades of growth, innovation, and commitment to our clients."
 layout: "history"
 
-# Author section
 author_name: "Marc Yoder"
 author_title: "President, Yoder Graphics"
 author_bio: "Second-generation owner continuing the family legacy. Marc joined the company in 1985 and has led its evolution from traditional business forms to a full-spectrum marketing partner."
 author_cta_text: "Watch Our Story"
 
-# CTA section
 cta_headline: "Ready to Be Part of Our Story?"
 cta_text: "Join the thousands of businesses who have trusted Yoder Graphics with their marketing needs."
 cta_button_text: "Get Started Today"
-cta_link: "quote/"
+cta_link: "contact/"
 
 timeline:
   - year: "1976"

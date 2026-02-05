@@ -3,7 +3,6 @@ title: "Our Team"
 description: "The people who make it happen."
 layout: "team"
 
-# Section content
 headline: "Meet Our"
 headline_highlight: "Team"
 intro: "Designers, installers, project managers — the team that handles your business-critical work from start to finish."

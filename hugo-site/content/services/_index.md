@@ -2,12 +2,10 @@
 title: "Our Services"
 description: "Everything your brand touches. Under one roof."
 
-# Section content
 headline: "Our"
 headline_highlight: "Services"
 intro: "Five divisions. One team that knows your brand. Design it. Print it. Wrap it. Ship it. All brand-perfect."
 
-# Service cards
 services:
   - title: "Graphic Design"
     description: "Design that works as hard as you do. Logos, brand identity, vehicle graphics — built to last and designed to convert."

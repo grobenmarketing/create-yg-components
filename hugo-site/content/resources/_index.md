@@ -2,12 +2,10 @@
 title: "Resources"
 description: "Helpful guides, insights, and information to support your marketing decisions."
 
-# Section content
 headline: "Helpful"
 headline_highlight: "Resources"
 intro: "Guides, insights, and information to support your marketing decisions."
 
-# Resource cards
 resources:
   - title: "Blog"
     description: "Stay up to date with industry trends, tips, and insights from our team of marketing experts."

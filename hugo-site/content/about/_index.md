@@ -2,17 +2,14 @@
 title: "About Us"
 description: "Business-critical marketing since 1976."
 
-# Hero/Mission Section
 headline: "We exist because some work can't be wrong"
 intro: "When the marketing materials matter — the fleet that represents you on every highway, the materials that go in front of your biggest clients — businesses trust Yoder Graphics."
 
-# Why Clients Stay Section
 why_clients_stay_title: "Why clients stay"
 why_clients_stay_paragraphs:
-  - "We handle the common jobs and the oddball requests. Large orders, delivered on time, brand-perfect every time. One team that knows your brand handles everything — no re-explaining, no inconsistency between vendors."
+  - "We handle the common jobs and custom, detailed requests. Large orders, delivered on time, brand-perfect every time. One team that knows your brand handles everything — no re-explaining, no inconsistency between vendors."
   - "As a veteran-owned company, we bring discipline, precision, and accountability to every project. We match colors across substrates. We proof everything. We sweat the details you didn't know existed."
 
-# Stats Section
 stats_title: "The numbers"
 stats:
   - number: "49+"
@@ -24,7 +21,6 @@ stats:
   - number: "100%"
     label: "Satisfaction Guaranteed"
 
-# About Grid Cards
 grid_title: "Learn More About Us"
 cards:
   - title: "Our Team"

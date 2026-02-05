@@ -3,12 +3,10 @@ title: "Gallery"
 description: "See examples of our work across signage, wraps, and print."
 layout: "gallery"
 
-# Section content
 headline: "Our"
 headline_highlight: "Work"
 intro: "Explore our portfolio of stunning vehicle wraps, signage, and print projects."
 
-# Filter buttons
 filters:
   - label: "All"
     value: "all"
